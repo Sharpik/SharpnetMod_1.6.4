@@ -1,0 +1,18 @@
+[
+{
+	"modid": "ModSharpnet",
+	"name": "ModSharpnet",
+	"description": "Sharpnet Building Mod",
+	"version": "1.0.1",
+	"dependencies": ["IC2"],
+	"credits": "Sharp",
+	"authors": ["Sharp"],
+	"logoFile": "",
+	"url": "http://www.sharpnet.unas.net",
+	"updateUrl": "",
+	"parent": "",
+	"screenshots": [],
+	"requiredMods": ["IC2"],
+	"useDependencyInformation": "true",
+}
+]
