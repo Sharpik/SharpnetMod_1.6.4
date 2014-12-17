@@ -1,0 +1,52 @@
+-1 - No render (used for signs, pure tile entities)
+0 - Standard blocks
+1 - "Crossed Squares" (Flowers, reeds, etc)
+2 - Torches
+3 - Fire
+4 - Fluids
+5 - Redstone Wire
+6 - Crops
+7 - Doors
+8 - Ladders
+9 - Minecart tracks
+10 - Stairs
+11 - Fences
+12 - Levers
+13 - Cacti
+14 - Beds
+15 - Redstone Repeaters
+16 - Piston Base
+17 - Piston Extension
+18 - Panes (iron bars and glass panes)
+19 - Melon and Pumpkin stems
+20 - Vines
+21 - Fence gates
+24 - Cauldrons
+25 - Brewing stands
+26 - End Portal Frames
+
+
+    /**
+     * Is this block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
+     * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.
+     */
+    public boolean isOpaqueCube()
+    {
+        return false;
+    }
+
+    /**
+     * If this block doesn't render as an ordinary block it will return False (examples: signs, buttons, stairs, etc)
+     */
+    public boolean renderAsNormalBlock()
+    {
+        return false;
+    }
+
+    /**
+     * The type of render function that is called for this block
+     */
+    public int getRenderType()
+    {
+        return 1;
+    }

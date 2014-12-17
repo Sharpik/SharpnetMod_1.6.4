@@ -17,9 +17,13 @@ import java.io.File;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemFood;
 import net.minecraftforge.common.MinecraftForge;
-import ModSharpnet.Block.*;
 import net.minecraft.creativetab.CreativeTabs;
-//import ModSharpnet.Item.*;
+import ModSharpnet.Block.*;
+import ModSharpnet.Item.*;
+import cpw.mods.fml.client.registry.RenderingRegistry;
+import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.item.ItemArmor;
+import net.minecraftforge.common.EnumHelper;
 
 // IC2 Dependency
 //import ic2.api.item.Items;
@@ -37,10 +41,7 @@ public class ModSharpnet
     public static ModSharpnet instance;
     public static String modid = "ModSharpnet";
     
-    
     // Blocks register
-    
-    
     
     public static Block SharpnetBuildingBlocks1;
     public static int SharpnetBuildingBlocks1ID;
@@ -117,6 +118,9 @@ public class ModSharpnet
     //public static Block ;
     //public static int ;
     
+    //Material Register
+    public static EnumArmorMaterial SharpnetArmorCloth = EnumHelper.addArmorMaterial("SharpnetArmorCloth", 5, new int[] {1, 3, 2, 1}, 30);
+    
     // Config register
     public void initConfiguration(FMLInitializationEvent event)
     {
@@ -150,6 +154,9 @@ public class ModSharpnet
         SharpnetCornSeedsID = (config.get("Items", "SharpnetCornSeeds", 6505).getInt())-256;
         SharpnetCornID = (config.get("Items", "SharpnetCorn", 6506).getInt())-256;
         SharpnetFlaxSeedsID = (config.get("Items", "SharpnetFlaxSeeds", 6507).getInt())-256;
+        Items.armor_formal_boots_ID = (config.get("Items", "armor_formal_boots", 6508).getInt())-256;
+        Items.armor_formal_suit_ID = (config.get("Items", "armor_formal_suit", 6509).getInt())-256;
+        Items.armor_formal_trousers_ID = (config.get("Items", "armor_formal_trousers", 6510).getInt())-256;
        
         config.save();
     }
@@ -378,7 +385,7 @@ public class ModSharpnet
         
         //End Debug
                
-        sharpnetFlowerBlocks1 = new SharpnetFlowerBlocks1(sharpnetFlowerBlocks1ID).setUnlocalizedName("SharpnetFlowerBlocks1").setHardness(0.0F).setResistance(0.0F).setCreativeTab(CreativeTabs.tabDecorations).setStepSound(Block.soundGlassFootstep);
+        sharpnetFlowerBlocks1 = new SharpnetFlowerBlocks1(sharpnetFlowerBlocks1ID).setUnlocalizedName("SharpnetFlowerBlocks1").setHardness(0.0F).setResistance(0.0F).setCreativeTab(CreativeTabs.tabDecorations).setStepSound(Block.soundGrassFootstep);
         GameRegistry.registerBlock(sharpnetFlowerBlocks1, SharpnetFlowerItemBlocks1.class, sharpnetFlowerBlocks1.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(sharpnetFlowerBlocks1, 1, 0), "Daffodil Flower");
         LanguageRegistry.addName(new ItemStack(sharpnetFlowerBlocks1, 1, 1), "Flora Cactus");
@@ -426,6 +433,20 @@ public class ModSharpnet
         SharpnetFlaxSeeds = new ShItemSeeds(SharpnetFlaxSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 9).setUnlocalizedName("SharpnetFlaxSeedsItem").setTextureName(modid+":seeds/seeds_flax");
         GameRegistry.registerItem(SharpnetFlaxSeeds, "Flax Seeds");
         LanguageRegistry.addName(new ItemStack(SharpnetFlaxSeeds, 1, 0), "Flax Seeds");
+        
+        //Armors
+        
+        Items.armor_formal_boots = (new SharpnetArmor(Items.armor_formal_boots_ID, SharpnetArmorCloth, 0, 3, 10, "formal", "armor/boots_formal").setUnlocalizedName("boots_formal"));
+        GameRegistry.registerItem(Items.armor_formal_boots, "Formal Boots");
+        LanguageRegistry.addName(new ItemStack(Items.armor_formal_boots, 1, 0), "Formal Boots");
+        
+        Items.armor_formal_suit = (new SharpnetArmor(Items.armor_formal_suit_ID, SharpnetArmorCloth, 0, 1, 10, "formal", "armor/t-shirt_formal").setUnlocalizedName("t-shirt_formal"));
+        GameRegistry.registerItem(Items.armor_formal_suit, "Formal Suit");
+        LanguageRegistry.addName(new ItemStack(Items.armor_formal_suit, 1, 0), "Formal Suit");
+        
+        Items.armor_formal_trousers = (new SharpnetArmor(Items.armor_formal_trousers_ID, SharpnetArmorCloth, 0, 2, 10, "formal", "armor/trausers_formal").setUnlocalizedName("trausers_formal"));
+        GameRegistry.registerItem(Items.armor_formal_trousers, "Formal Trousers");
+        LanguageRegistry.addName(new ItemStack(Items.armor_formal_trousers, 1, 0), "Formal Trousers");
         
         //Recipes register stack alliases
         ItemStack TomatoSeeds = new ItemStack(SharpnetTomatoSeeds);

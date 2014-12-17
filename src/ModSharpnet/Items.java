@@ -1,6 +1,7 @@
 package ModSharpnet;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 
 public class Items
 {
