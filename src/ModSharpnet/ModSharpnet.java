@@ -468,7 +468,7 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Items.guttalax, 1, 0), "Guttalax");
         
         //Item Alcohol
-        Items.beer = new ShItemFoodPlacer1(Items.bottle_ID, 4, 2.0F, false, Blocks.drinks1_block_ID, 0).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/Beer");
+        Items.beer = new ShItemFoodPlacer1(Items.beer_ID, 4, 2.0F, false, Blocks.drinks1_block_ID, 0).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/Beer");
         GameRegistry.registerItem(Items.beer, "Beer");
         LanguageRegistry.addName(new ItemStack(Items.beer, 1, 0), "Beer");
         

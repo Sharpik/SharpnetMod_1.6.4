@@ -22,7 +22,7 @@ public class SharpnetDrinksBlocks1 extends Block
     
     @SideOnly(Side.CLIENT)
     public Icon[] iconArray;
-    private int dropID = this.blockID;
+    private int dropID;
     private int blockMetaData;
     
     public SharpnetDrinksBlocks1(int par1)
@@ -55,11 +55,11 @@ public class SharpnetDrinksBlocks1 extends Block
         return 1;
     }
     
-    public void getDroping(int ID,int metadata)
+    public void getDroping(int ID,int metadata, World world, int x, int y, int z)
     {
         if(ID != 0){dropID = ID;}
-        if(metadata == 0){metadata = blockMetaData;}
-        switch(metadata)
+        if(metadata != 0){blockMetaData = metadata;} else {blockMetaData = world.getBlockMetadata(x, y, z);}
+        switch(blockMetaData)
         {
             case 0: dropID = Items.beer_ID; break;
             case 1: dropID = Items.wine_ID; break;
@@ -77,16 +77,15 @@ public class SharpnetDrinksBlocks1 extends Block
             */
             default: dropID = Items.bottle_ID; break;
         }
+        ItemStack ItemTospawn = new ItemStack(dropID, 1, 0);
+        EntityItem Ispawn1 = new EntityItem(world,x,y,z,ItemTospawn);
+        world.spawnEntityInWorld(Ispawn1);
     }
     
     @Override
     public void breakBlock(World world, int x, int y, int z, int par5, int par6)
     {
-        blockMetaData = world.getBlockMetadata(x, y, z);
-        getDroping(0,0);
-        ItemStack ItemTospawn = new ItemStack(dropID, 1, 0);
-        EntityItem Ispawn1 = new EntityItem(world,x,y,z,ItemTospawn);
-        world.spawnEntityInWorld(Ispawn1);
+        getDroping(0,0,world,x,y,z);
     }
     
     @Override
