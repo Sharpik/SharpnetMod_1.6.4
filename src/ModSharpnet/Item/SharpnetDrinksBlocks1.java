@@ -77,6 +77,8 @@ public class SharpnetDrinksBlocks1 extends Block
             */
             default: dropID = Items.bottle_ID; break;
         }
+        //Fix for itemspawn
+        dropID = dropID + 256;
         ItemStack ItemTospawn = new ItemStack(dropID, 1, 0);
         EntityItem Ispawn1 = new EntityItem(world,x,y,z,ItemTospawn);
         world.spawnEntityInWorld(Ispawn1);
@@ -91,13 +93,13 @@ public class SharpnetDrinksBlocks1 extends Block
     @Override
     public int idDropped (int par1, Random par2Random, int par3)
     {
-          return 0;
+        return 0;
     }
     
     @Override
     public int damageDropped (int metadata)
     {
-            return 0;
+        return 0;
     }
     
     @Override
