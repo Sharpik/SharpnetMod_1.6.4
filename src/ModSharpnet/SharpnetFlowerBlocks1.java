@@ -85,7 +85,7 @@ public class SharpnetFlowerBlocks1 extends BlockFlower
     @Override
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List subBlocks)
     {
-        for (int sub = 1; sub < flowerTypes.length; ++sub)
+        for (int sub = 0; sub < flowerTypes.length; ++sub)
         {
             subBlocks.add(new ItemStack(par1, 1, sub));
         }

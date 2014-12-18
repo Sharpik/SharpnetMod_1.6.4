@@ -20,9 +20,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.creativetab.CreativeTabs;
 import ModSharpnet.Block.*;
 import ModSharpnet.Item.*;
-import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.minecraft.item.EnumArmorMaterial;
-import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.EnumHelper;
 
 // IC2 Dependency
@@ -145,6 +143,7 @@ public class ModSharpnet
         SharpnetStargateBlocks1ID = config.get("Blocks", "SharpnetStargateBlocks1", 3182).getInt();
         SharpnetStargateBlocks2ID = config.get("Blocks", "SharpnetStargateBlocks2", 3183).getInt();
         sharpnetFlowerBlocks1ID = config.get("Blocks", "SharpnetFlowerBlocks1", 2504).getInt();
+        Blocks.drinks1_block_ID = config.get("Blocks", "drinks1_block", 2515).getInt();
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
         SharpnetTomatoSeedsID = (config.get("Items", "SharpnetTomatoSeeds", 6501).getInt())-256;
@@ -154,9 +153,26 @@ public class ModSharpnet
         SharpnetCornSeedsID = (config.get("Items", "SharpnetCornSeeds", 6505).getInt())-256;
         SharpnetCornID = (config.get("Items", "SharpnetCorn", 6506).getInt())-256;
         SharpnetFlaxSeedsID = (config.get("Items", "SharpnetFlaxSeeds", 6507).getInt())-256;
+        //Items Armor
         Items.armor_formal_boots_ID = (config.get("Items", "armor_formal_boots", 6508).getInt())-256;
         Items.armor_formal_suit_ID = (config.get("Items", "armor_formal_suit", 6509).getInt())-256;
         Items.armor_formal_trousers_ID = (config.get("Items", "armor_formal_trousers", 6510).getInt())-256;
+        Items.armor_jeans_black_ID = (config.get("Items", "armor_jeans_black", 6511).getInt())-256;
+        Items.armor_jeans_blue_ID = (config.get("Items", "armor_jeans_blue", 6512).getInt())-256;
+        Items.armor_sunglasses_ID = (config.get("Items", "armor_sunglasses", 6513).getInt())-256;
+        Items.armor_trekie_suit_ID = (config.get("Items", "armor_trekie_suit", 6514).getInt())-256;
+        Items.armor_trekie_trousers_ID = (config.get("Items", "armor_trekie_trousers", 6515).getInt())-256;
+        Items.armor_trousers_black_ID = (config.get("Items", "armor_trousers_black", 6516).getInt())-256;
+        Items.armor_tshirt_black_ID = (config.get("Items", "armor_tshirt_black", 6517).getInt())-256;
+        Items.armor_tshirt_blue_ID = (config.get("Items", "armor_tshirt_blue", 6518).getInt())-256;
+        Items.armor_tshirt_green_ID = (config.get("Items", "armor_tshirt_green", 6519).getInt())-256;
+        Items.armor_tshirt_orange_ID = (config.get("Items", "armor_tshirt_orange", 6520).getInt())-256;
+        Items.armor_tshirt_white_ID = (config.get("Items", "armor_tshirt_white", 6521).getInt())-256;
+        //Items Alcohol
+        Items.bottle_ID = (config.get("Items", "bottle", 6522).getInt())-256;
+        Items.beer_ID = (config.get("Items", "beer", 6523).getInt())-256;
+        Items.wine_ID = (config.get("Items", "wine", 6524).getInt())-256;
+        Items.guttalax_ID = (config.get("Items", "guttalax", 6538).getInt())-256;
        
         config.save();
     }
@@ -404,6 +420,19 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(sharpnetFlowerBlocks1, 1, 14), "Mantis Shrimp");
         LanguageRegistry.addName(new ItemStack(sharpnetFlowerBlocks1, 1, 15), "Hedgehog Cactus");
         
+        //Blocks Alcohol
+        Blocks.drinks1_block = new SharpnetDrinksBlocks1(Blocks.drinks1_block_ID).setUnlocalizedName("SharpnetDrinksBlocks1");
+        GameRegistry.registerBlock(Blocks.drinks1_block, SharpnetDrinksItemBlocks1.class, Blocks.drinks1_block.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 0), "Beer");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 1), "Wine");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 2), "Cofee");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 3), "Whiskey");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 4), "Tequilla Silver");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 5), "Tequilla Gold");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 6), "Rum");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 7), "Semtex");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 8), "Cup of Tea");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 9), "Hot Chocolate");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
@@ -434,9 +463,26 @@ public class ModSharpnet
         GameRegistry.registerItem(SharpnetFlaxSeeds, "Flax Seeds");
         LanguageRegistry.addName(new ItemStack(SharpnetFlaxSeeds, 1, 0), "Flax Seeds");
         
+        Items.guttalax = new ShItemFood(Items.guttalax_ID, -4 , 0.0F, false ).setUnlocalizedName("Guttalax").setTextureName(modid+":food/guttalax");
+        GameRegistry.registerItem(Items.guttalax, "Guttalax");
+        LanguageRegistry.addName(new ItemStack(Items.guttalax, 1, 0), "Guttalax");
+        
+        //Item Alcohol
+        Items.beer = new ShItemFoodPlacer1(Items.bottle_ID, 4, 2.0F, false, Blocks.drinks1_block_ID, 0).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/Beer");
+        GameRegistry.registerItem(Items.beer, "Beer");
+        LanguageRegistry.addName(new ItemStack(Items.beer, 1, 0), "Beer");
+        
+        Items.wine = new ShItemFoodPlacer1(Items.wine_ID, 10, 3.0F, false, Blocks.drinks1_block_ID, 1).setUnlocalizedName("Wine").setTextureName(modid+":drinks&food/wine");
+        GameRegistry.registerItem(Items.wine, "Wine");
+        LanguageRegistry.addName(new ItemStack(Items.wine, 1, 0), "Wine");
+        
+        Items.bottle = new ShItemPlacer(Items.bottle_ID, Blocks.drinks1_block_ID, 0).setUnlocalizedName("Bottle_Empty").setTextureName(modid+":drinks&food/bottle");
+        GameRegistry.registerItem(Items.bottle, "Bottle Empty");
+        LanguageRegistry.addName(new ItemStack(Items.bottle, 1, 0), "Bottle Empty");
+        
         //Armors
         
-        Items.armor_formal_boots = (new SharpnetArmor(Items.armor_formal_boots_ID, SharpnetArmorCloth, 0, 3, 10, "formal", "armor/boots_formal").setUnlocalizedName("boots_formal"));
+        Items.armor_formal_boots = (new SharpnetArmor(Items.armor_formal_boots_ID, SharpnetArmorCloth, 0, 3, 10, "formal", "armor/boots").setUnlocalizedName("boots_formal"));
         GameRegistry.registerItem(Items.armor_formal_boots, "Formal Boots");
         LanguageRegistry.addName(new ItemStack(Items.armor_formal_boots, 1, 0), "Formal Boots");
         
@@ -444,9 +490,53 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.armor_formal_suit, "Formal Suit");
         LanguageRegistry.addName(new ItemStack(Items.armor_formal_suit, 1, 0), "Formal Suit");
         
-        Items.armor_formal_trousers = (new SharpnetArmor(Items.armor_formal_trousers_ID, SharpnetArmorCloth, 0, 2, 10, "formal", "armor/trausers_formal").setUnlocalizedName("trausers_formal"));
+        Items.armor_formal_trousers = (new SharpnetArmor(Items.armor_formal_trousers_ID, SharpnetArmorCloth, 0, 2, 10, "formal", "armor/trousers_formal").setUnlocalizedName("trousers_formal"));
         GameRegistry.registerItem(Items.armor_formal_trousers, "Formal Trousers");
         LanguageRegistry.addName(new ItemStack(Items.armor_formal_trousers, 1, 0), "Formal Trousers");
+        
+        Items.armor_jeans_black = (new SharpnetArmor(Items.armor_jeans_black_ID, SharpnetArmorCloth, 0, 2, 10, "jeans_black", "armor/jeans_black").setUnlocalizedName("jeans_black"));
+        GameRegistry.registerItem(Items.armor_jeans_black, "Jeans Black");
+        LanguageRegistry.addName(new ItemStack(Items.armor_jeans_black, 1, 0), "Jeans Black");
+        
+        Items.armor_jeans_blue = (new SharpnetArmor(Items.armor_jeans_blue_ID, SharpnetArmorCloth, 0, 2, 10, "jeans_blue", "armor/jeans_blue").setUnlocalizedName("jeans_blue"));
+        GameRegistry.registerItem(Items.armor_jeans_blue, "Jeans Blue");
+        LanguageRegistry.addName(new ItemStack(Items.armor_jeans_blue, 1, 0), "Jeans Blue");
+        
+        Items.armor_trousers_black = (new SharpnetArmor(Items.armor_trousers_black_ID, SharpnetArmorCloth, 0, 2, 10, "trousers_black", "armor/trousers_black").setUnlocalizedName("trousers_black"));
+        GameRegistry.registerItem(Items.armor_trousers_black, "Trousers Black");
+        LanguageRegistry.addName(new ItemStack(Items.armor_trousers_black, 1, 0), "Trousers Black");
+        
+        Items.armor_trekie_trousers = (new SharpnetArmor(Items.armor_trekie_trousers_ID, SharpnetArmorCloth, 0, 2, 10, "trekie", "armor/trousers_trekie").setUnlocalizedName("trousers_trekie"));
+        GameRegistry.registerItem(Items.armor_trekie_trousers, "Trekie Trousers");
+        LanguageRegistry.addName(new ItemStack(Items.armor_trekie_trousers, 1, 0), "Trekie Trousers");
+        
+        Items.armor_trekie_suit = (new SharpnetArmor(Items.armor_trekie_suit_ID, SharpnetArmorCloth, 0, 1, 10, "trekie", "armor/t-shirt_trekie").setUnlocalizedName("t-shirt_trekie"));
+        GameRegistry.registerItem(Items.armor_trekie_suit, "Trekie Suit");
+        LanguageRegistry.addName(new ItemStack(Items.armor_trekie_suit, 1, 0), "Trekie Suit");
+        
+        Items.armor_tshirt_black = (new SharpnetArmor(Items.armor_tshirt_black_ID, SharpnetArmorCloth, 0, 1, 10, "tshirt_black", "armor/t-shirt_black").setUnlocalizedName("t-shirt_black"));
+        GameRegistry.registerItem(Items.armor_tshirt_black, "T-Shirt Black");
+        LanguageRegistry.addName(new ItemStack(Items.armor_tshirt_black, 1, 0), "T-Shirt Black");
+        
+        Items.armor_tshirt_blue = (new SharpnetArmor(Items.armor_tshirt_blue_ID, SharpnetArmorCloth, 0, 1, 10, "tshirt_blue", "armor/t-shirt_blue").setUnlocalizedName("t-shirt_blue"));
+        GameRegistry.registerItem(Items.armor_tshirt_blue, "T-Shirt Blue");
+        LanguageRegistry.addName(new ItemStack(Items.armor_tshirt_blue, 1, 0), "T-Shirt Blue");
+        
+        Items.armor_tshirt_green = (new SharpnetArmor(Items.armor_tshirt_green_ID, SharpnetArmorCloth, 0, 1, 10, "tshirt_green", "armor/t-shirt_green").setUnlocalizedName("t-shirt_green"));
+        GameRegistry.registerItem(Items.armor_tshirt_green, "T-Shirt Green");
+        LanguageRegistry.addName(new ItemStack(Items.armor_tshirt_green, 1, 0), "T-Shirt Green");
+        
+        Items.armor_tshirt_orange = (new SharpnetArmor(Items.armor_tshirt_orange_ID, SharpnetArmorCloth, 0, 1, 10, "tshirt_orange", "armor/t-shirt_orange").setUnlocalizedName("t-shirt_orange"));
+        GameRegistry.registerItem(Items.armor_tshirt_orange, "T-Shirt Orange");
+        LanguageRegistry.addName(new ItemStack(Items.armor_tshirt_orange, 1, 0), "T-Shirt Orange");
+        
+        Items.armor_tshirt_white = (new SharpnetArmor(Items.armor_tshirt_white_ID, SharpnetArmorCloth, 0, 1, 10, "tshirt_white", "armor/t-shirt_white").setUnlocalizedName("t-shirt_white"));
+        GameRegistry.registerItem(Items.armor_tshirt_white, "T-Shirt White");
+        LanguageRegistry.addName(new ItemStack(Items.armor_tshirt_white, 1, 0), "T-Shirt White");
+        
+        Items.armor_sunglasses = (new SharpnetArmor(Items.armor_sunglasses_ID, SharpnetArmorCloth, 0, 0, 10, "formal", "armor/sun_glass").setUnlocalizedName("sun_glass"));
+        GameRegistry.registerItem(Items.armor_sunglasses, "Sunglasses");
+        LanguageRegistry.addName(new ItemStack(Items.armor_sunglasses, 1, 0), "Sunglasses");
         
         //Recipes register stack alliases
         ItemStack TomatoSeeds = new ItemStack(SharpnetTomatoSeeds);

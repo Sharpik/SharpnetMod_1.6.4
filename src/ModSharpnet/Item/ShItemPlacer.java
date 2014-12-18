@@ -7,12 +7,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ShPlacer extends Item
+public class ShItemPlacer extends Item
 {
     private int setBlockID;
     private int setBlockMeta;
     
-    public ShPlacer(int ID, int blockID, int blockMeta)
+    public ShItemPlacer(int ID, int blockID, int blockMeta)
     {
         super(ID);
         this.setBlockID = blockID;

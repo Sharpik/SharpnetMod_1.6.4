@@ -39,6 +39,9 @@ public class Items
     public static Item armor_jeans_black;
     public static int armor_jeans_black_ID;
     
+    public static Item armor_jeans_blue;
+    public static int armor_jeans_blue_ID;
+    
     public static Item armor_sunglasses;
     public static int armor_sunglasses_ID;
     
