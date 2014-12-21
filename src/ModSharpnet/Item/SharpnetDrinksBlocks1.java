@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
@@ -32,9 +33,17 @@ public class SharpnetDrinksBlocks1 extends Block
         this.setResistance(0.0F);
         this.setStepSound(Block.soundGlassFootstep);
         this.setCreativeTab((CreativeTabs)null);
-        setBurnProperties(par1, 30, 60);
+        setBurnProperties(par1, 60, 60);
+        
         float f = 0.2F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 3.0F, 0.5F + f);
+    }
+    
+    // make it non colidable :)
+    @Override
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+    {
+        return null;
     }
     
     @Override
@@ -61,8 +70,8 @@ public class SharpnetDrinksBlocks1 extends Block
         if(metadata != 0){blockMetaData = metadata;} else {blockMetaData = world.getBlockMetadata(x, y, z);}
         switch(blockMetaData)
         {
-            case 0: dropID = Items.beer_ID; break;
-            case 1: dropID = Items.wine_ID; break;
+            case 0: dropID = Items.beer.itemID; break;
+            case 1: dropID = Items.wine.itemID; break;
             /*
             case 2: dropID = Items.; break;
             case 3: dropID = Items.; break;
@@ -75,10 +84,10 @@ public class SharpnetDrinksBlocks1 extends Block
             case 10: dropID = Items.; break;
             case 11: dropID = Items.; break;
             */
-            default: dropID = Items.bottle_ID; break;
+            default: dropID = Items.bottle.itemID; break;
         }
         //Fix for itemspawn
-        dropID = dropID + 256;
+        //dropID = dropID + 256;
         ItemStack ItemTospawn = new ItemStack(dropID, 1, 0);
         EntityItem Ispawn1 = new EntityItem(world,x,y,z,ItemTospawn);
         world.spawnEntityInWorld(Ispawn1);

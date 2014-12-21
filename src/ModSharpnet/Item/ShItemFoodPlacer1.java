@@ -5,6 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
@@ -41,8 +42,9 @@ public class ShItemFoodPlacer1 extends Item
     
     private int setBlockID;
     private int setBlockMeta;
+    private int drunkval;
 
-    public ShItemFoodPlacer1(int par1, int par2, float par3, boolean par4, int blockID, int blockMeta)
+    public ShItemFoodPlacer1(int par1, int par2, float par3, boolean par4, int blockID, int blockMeta, int Drunkval)
     {
         super(par1);
         this.itemUseDuration = 32;
@@ -52,11 +54,13 @@ public class ShItemFoodPlacer1 extends Item
         this.setCreativeTab(CreativeTabs.tabFood);
         this.setBlockID = blockID;
         this.setBlockMeta = blockMeta;
+        this.drunkval = Drunkval;
+        this.setAlwaysEdible();
     }
 
-    public ShItemFoodPlacer1(int par1, int par2, boolean par3, int blockID, int blockMeta)
+    public ShItemFoodPlacer1(int par1, int par2, boolean par3, int blockID, int blockMeta, int Drunkval)
     {
-        this(par1, par2, 0.6F, par3, blockID, blockMeta);
+        this(par1, par2, 0.6F, par3, blockID, blockMeta, Drunkval);
     }
 
     @Override
@@ -96,6 +100,11 @@ public class ShItemFoodPlacer1 extends Item
         if (!par2World.isRemote && this.potionId > 0 && par2World.rand.nextFloat() < this.potionEffectProbability)
         {
             par3EntityPlayer.addPotionEffect(new PotionEffect(this.potionId, this.potionDuration * 20, this.potionAmplifier));
+        }
+        //Alcohol
+        if( ((par3EntityPlayer.getFoodStats().getFoodLevel()) >= 20) && (this.drunkval > 0) )
+        {
+            par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.confusion.id, this.drunkval * 20, 6));
         }
     }
 
