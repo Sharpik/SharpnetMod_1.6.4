@@ -35,8 +35,8 @@ public class SharpnetDrinksBlocks1 extends Block
         this.setCreativeTab((CreativeTabs)null);
         setBurnProperties(par1, 60, 60);
         
-        float f = 0.2F;
-        this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 3.0F, 0.5F + f);
+        float f = 0.3F;
+        this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 3.0F, 0.6F + f);
     }
     
     // make it non colidable :)

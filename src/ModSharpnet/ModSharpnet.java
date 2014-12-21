@@ -547,7 +547,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.cocacola, "Cocacola");
         LanguageRegistry.addName(new ItemStack(Items.cocacola, 1, 0), "Cocacola");
         
-        Items.bottle = new ShItemPlacer(Items.bottle_ID, Blocks.drinks1_block.blockID, 0).setUnlocalizedName("Bottle_Empty").setTextureName(modid+":drinks&food/bottle");
+        Items.bottle = new ShItemPlacer(Items.bottle_ID, Blocks.drinks1_block.blockID, 15).setUnlocalizedName("Bottle_Empty").setTextureName(modid+":drinks&food/bottle");
         GameRegistry.registerItem(Items.bottle, "Bottle Empty");
         LanguageRegistry.addName(new ItemStack(Items.bottle, 1, 0), "Bottle Empty");
         
