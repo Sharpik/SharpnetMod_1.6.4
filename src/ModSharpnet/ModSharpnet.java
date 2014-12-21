@@ -172,6 +172,19 @@ public class ModSharpnet
         Items.bottle_ID = (config.get("Items", "bottle", 6522).getInt())-256;
         Items.beer_ID = (config.get("Items", "beer", 6523).getInt())-256;
         Items.wine_ID = (config.get("Items", "wine", 6524).getInt())-256;
+        Items.cofee_ID = (config.get("Items", "cofee", 6525).getInt())-256;
+        Items.whiskey_ID = (config.get("Items", "whiskey", 6526).getInt())-256;
+        Items.tequilla_silver_ID = (config.get("Items", "tequilla_silver", 6527).getInt())-256;
+        Items.tequilla_gold_ID = (config.get("Items", "tequilla_gold", 6528).getInt())-256;
+        Items.rum_ID = (config.get("Items", "rum", 6529).getInt())-256;
+        Items.semtex_ID = (config.get("Items", "semtex", 6530).getInt())-256;
+        Items.cup_of_tea_ID = (config.get("Items", "cup_of_tea", 6531).getInt())-256;
+        Items.hot_chocolate_ID = (config.get("Items", "hot_chocolate", 6532).getInt())-256;
+        Items.honey_ID = (config.get("Items", "honey", 6533).getInt())-256;
+        Items.catchup_ID = (config.get("Items", "catchup", 6534).getInt())-256;
+        Items.glass_of_vine_ID = (config.get("Items", "glass_of_vine", 6535).getInt())-256;
+        Items.vodka_ID = (config.get("Items", "vodka", 6536).getInt())-256;
+        Items.cocacola_ID = (config.get("Items", "cocacola", 6537).getInt())-256;
         Items.guttalax_ID = (config.get("Items", "guttalax", 6538).getInt())-256;
        
         config.save();
@@ -433,6 +446,12 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 7), "Semtex");
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 8), "Cup of Tea");
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 9), "Hot Chocolate");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 10), "Honey");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 11), "Catchup");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 12), "Glass of Vine");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 13), "Vodka");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 14), "CocaCola");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 15), "Bottle");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
@@ -468,15 +487,67 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Items.guttalax, 1, 0), "Guttalax");
         
         //Item Alcohol
-        Items.beer = new ShItemFoodPlacer1(Items.beer_ID, 4, 2.0F, false, Blocks.drinks1_block_ID, 0, 20).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/beer");
+        Items.beer = new ShItemFoodPlacer1(Items.beer_ID, 4, 2.0F, false, Blocks.drinks1_block.blockID, 0, 2, 20).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/beer");
         GameRegistry.registerItem(Items.beer, "Beer");
         LanguageRegistry.addName(new ItemStack(Items.beer, 1, 0), "Beer");
         
-        Items.wine = new ShItemFoodPlacer1(Items.wine_ID, 10, 3.0F, false, Blocks.drinks1_block_ID, 1, 60).setUnlocalizedName("Wine").setTextureName(modid+":drinks&food/wine");
+        Items.wine = new ShItemFoodPlacer1(Items.wine_ID, 10, 3.0F, false, Blocks.drinks1_block.blockID, 1, 2, 60).setUnlocalizedName("Wine").setTextureName(modid+":drinks&food/wine");
         GameRegistry.registerItem(Items.wine, "Wine");
         LanguageRegistry.addName(new ItemStack(Items.wine, 1, 0), "Wine");
         
-        Items.bottle = new ShItemPlacer(Items.bottle_ID, Blocks.drinks1_block_ID, 0).setUnlocalizedName("Bottle_Empty").setTextureName(modid+":drinks&food/bottle");
+        Items.cofee = new ShItemFoodPlacer1(Items.cofee_ID, 3, 0.5F, false, Blocks.drinks1_block.blockID, 2, 1, 40).setUnlocalizedName("Cofee").setTextureName(modid+":drinks&food/cofee");
+        GameRegistry.registerItem(Items.cofee, "Cofee");
+        LanguageRegistry.addName(new ItemStack(Items.cofee, 1, 0), "Cofee");
+        
+        Items.whiskey = new ShItemFoodPlacer1(Items.whiskey_ID, 10, 3.0F, false, Blocks.drinks1_block.blockID, 3, 2, 60).setUnlocalizedName("Whiskey").setTextureName(modid+":drinks&food/whiskey");
+        GameRegistry.registerItem(Items.whiskey, "Whiskey");
+        LanguageRegistry.addName(new ItemStack(Items.whiskey, 1, 0), "Whiskey");
+        
+        Items.tequilla_silver = new ShItemFoodPlacer1(Items.tequilla_silver_ID, 6, 1.0F, false, Blocks.drinks1_block.blockID, 4, 2, 60).setUnlocalizedName("Tequilla_silver").setTextureName(modid+":drinks&food/tequilla_s");
+        GameRegistry.registerItem(Items.tequilla_silver, "Tequilla Silver");
+        LanguageRegistry.addName(new ItemStack(Items.tequilla_silver, 1, 0), "Tequilla Silver");
+        
+        Items.tequilla_gold = new ShItemFoodPlacer1(Items.tequilla_gold_ID, 8, 1.2F, false, Blocks.drinks1_block.blockID, 5, 2, 60).setUnlocalizedName("Tequilla_gold").setTextureName(modid+":drinks&food/tequilla_g");
+        GameRegistry.registerItem(Items.tequilla_silver, "Tequilla Gold");
+        LanguageRegistry.addName(new ItemStack(Items.tequilla_silver, 1, 0), "Tequilla Gold");
+        
+        Items.rum = new ShItemFoodPlacer1(Items.rum_ID, 5, 1.0F, false, Blocks.drinks1_block.blockID, 6, 2, 50).setUnlocalizedName("Rum").setTextureName(modid+":drinks&food/rum");
+        GameRegistry.registerItem(Items.rum, "Rum");
+        LanguageRegistry.addName(new ItemStack(Items.rum, 1, 0), "Rum");
+        
+        Items.semtex = new ShItemFoodPlacer1(Items.semtex_ID, 2, 0.5F, false, Blocks.drinks1_block.blockID, 7, 1, 60).setUnlocalizedName("Semtex").setTextureName(modid+":drinks&food/semtex");
+        GameRegistry.registerItem(Items.semtex, "Semtex");
+        LanguageRegistry.addName(new ItemStack(Items.semtex, 1, 0), "Semtex");
+        
+        Items.cup_of_tea = new ShItemFoodPlacer1(Items.cup_of_tea_ID, 3, 0.5F, false, Blocks.drinks1_block.blockID, 8, 0, 0).setUnlocalizedName("Cup_of_tea").setTextureName(modid+":drinks&food/tea_cup");
+        GameRegistry.registerItem(Items.cup_of_tea, "Cup of Tea");
+        LanguageRegistry.addName(new ItemStack(Items.cup_of_tea, 1, 0), "Cup of Tea");
+        
+        Items.hot_chocolate = new ShItemFoodPlacer1(Items.hot_chocolate_ID, 4, 0.8F, false, Blocks.drinks1_block.blockID, 9, 0, 0).setUnlocalizedName("Hot_chocolate").setTextureName(modid+":drinks&food/chocolate_hot");
+        GameRegistry.registerItem(Items.hot_chocolate, "Hot Chocolate");
+        LanguageRegistry.addName(new ItemStack(Items.hot_chocolate, 1, 0), "Hot Chocolate");
+        
+        Items.honey = new ShItemFoodPlacer1(Items.honey_ID, 3, 0.8F, false, Blocks.drinks1_block.blockID, 10, 0, 0).setUnlocalizedName("Honey").setTextureName(modid+":drinks&food/honey");
+        GameRegistry.registerItem(Items.honey, "Honey");
+        LanguageRegistry.addName(new ItemStack(Items.honey, 1, 0), "Honey");
+        
+        Items.catchup = new ShItemFoodPlacer1(Items.catchup_ID, 6, 1.0F, false, Blocks.drinks1_block.blockID, 11, 0, 0).setUnlocalizedName("Catchup").setTextureName(modid+":drinks&food/catchup");
+        GameRegistry.registerItem(Items.catchup, "Catchup");
+        LanguageRegistry.addName(new ItemStack(Items.catchup, 1, 0), "Catchup");
+        
+        Items.glass_of_vine = new ShItemFoodPlacer1(Items.glass_of_vine_ID, 2, 0.8F, false, Blocks.drinks1_block.blockID, 12, 2, 15).setUnlocalizedName("Glass_of_vine").setTextureName(modid+":drinks&food/glass_of_vine");
+        GameRegistry.registerItem(Items.glass_of_vine, "Glass of vine");
+        LanguageRegistry.addName(new ItemStack(Items.glass_of_vine, 1, 0), "Glass of vine");
+        
+        Items.vodka = new ShItemFoodPlacer1(Items.vodka_ID, 6, 1.0F, false, Blocks.drinks1_block.blockID, 13, 2, 5).setUnlocalizedName("Vodka").setTextureName(modid+":drinks&food/vodka");
+        GameRegistry.registerItem(Items.vodka, "Vodka");
+        LanguageRegistry.addName(new ItemStack(Items.vodka, 1, 0), "Vodka");
+        
+        Items.cocacola = new ShItemFoodPlacer1(Items.cocacola_ID, 6, 0.8F, false, Blocks.drinks1_block.blockID, 14, 1, 20).setUnlocalizedName("Cocacola").setTextureName(modid+":drinks&food/cocacola");
+        GameRegistry.registerItem(Items.cocacola, "Cocacola");
+        LanguageRegistry.addName(new ItemStack(Items.cocacola, 1, 0), "Cocacola");
+        
+        Items.bottle = new ShItemPlacer(Items.bottle_ID, Blocks.drinks1_block.blockID, 0).setUnlocalizedName("Bottle_Empty").setTextureName(modid+":drinks&food/bottle");
         GameRegistry.registerItem(Items.bottle, "Bottle Empty");
         LanguageRegistry.addName(new ItemStack(Items.bottle, 1, 0), "Bottle Empty");
         

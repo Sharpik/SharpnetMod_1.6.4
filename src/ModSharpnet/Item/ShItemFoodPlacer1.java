@@ -43,8 +43,9 @@ public class ShItemFoodPlacer1 extends Item
     private int setBlockID;
     private int setBlockMeta;
     private int drunkval;
+    private int drunktype;
 
-    public ShItemFoodPlacer1(int par1, int par2, float par3, boolean par4, int blockID, int blockMeta, int Drunkval)
+    public ShItemFoodPlacer1(int par1, int par2, float par3, boolean par4, int blockID, int blockMeta, int DrunkType, int DrunkVal)
     {
         super(par1);
         this.itemUseDuration = 32;
@@ -54,13 +55,14 @@ public class ShItemFoodPlacer1 extends Item
         this.setCreativeTab(CreativeTabs.tabFood);
         this.setBlockID = blockID;
         this.setBlockMeta = blockMeta;
-        this.drunkval = Drunkval;
+        this.drunkval = DrunkVal;
+        this.drunktype = DrunkType;
         this.setAlwaysEdible();
     }
 
-    public ShItemFoodPlacer1(int par1, int par2, boolean par3, int blockID, int blockMeta, int Drunkval)
+    public ShItemFoodPlacer1(int par1, int par2, boolean par3, int blockID, int blockMeta, int DrunkType, int DrunkVal)
     {
-        this(par1, par2, 0.6F, par3, blockID, blockMeta, Drunkval);
+        this(par1, par2, 0.6F, par3, blockID, blockMeta, DrunkType, DrunkVal);
     }
 
     @Override
@@ -101,10 +103,21 @@ public class ShItemFoodPlacer1 extends Item
         {
             par3EntityPlayer.addPotionEffect(new PotionEffect(this.potionId, this.potionDuration * 20, this.potionAmplifier));
         }
-        //Alcohol
-        if( ((par3EntityPlayer.getFoodStats().getFoodLevel()) >= 20) && (this.drunkval > 0) )
+        //Drink Types
+        switch(drunktype)
         {
-            par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.confusion.id, this.drunkval * 20, 6));
+            case 0: // none
+                break;
+            case 1: //coffe & semtex etc..
+                    par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.digSpeed.id, this.drunkval * 20, 1));
+                    par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, this.drunkval * 20, 1));
+                break;
+            case 2: // alcohol
+                if( ((par3EntityPlayer.getFoodStats().getFoodLevel()) >= 20) && (this.drunkval > 0) )
+                {
+                    par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.confusion.id, this.drunkval * 20, 6));
+                }
+                break;
         }
     }
 

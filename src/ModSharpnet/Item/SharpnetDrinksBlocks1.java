@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 public class SharpnetDrinksBlocks1 extends Block
 {
     
-    public static final String[] drinkTypes = new String[] {"beer", "wine", "cofee", "whiskey", "tequilla_s", "tequilla_g", "rum", "semtex", "tea_cup", "chocolate_hot", "blank", "blank", "blank", "blank", "blank", "blank"};
+    public static final String[] drinkTypes = new String[] {"beer", "wine", "cofee", "whiskey", "tequilla_s", "tequilla_g", "rum", "semtex", "tea_cup", "chocolate_hot", "honey", "catchup", "glass_of_vine", "vodka", "cocacola", "bottle"};
     
     @SideOnly(Side.CLIENT)
     public Icon[] iconArray;
@@ -67,30 +67,36 @@ public class SharpnetDrinksBlocks1 extends Block
     public void getDroping(int ID,int metadata, World world, int x, int y, int z)
     {
         if(ID != 0){dropID = ID;}
-        if(metadata != 0){blockMetaData = metadata;} else {blockMetaData = world.getBlockMetadata(x, y, z);}
+        if(metadata != 0){blockMetaData = metadata;} else{blockMetaData = world.getBlockMetadata(x, y, z);}
         switch(blockMetaData)
         {
             case 0: dropID = Items.beer.itemID; break;
             case 1: dropID = Items.wine.itemID; break;
-            /*
-            case 2: dropID = Items.; break;
-            case 3: dropID = Items.; break;
-            case 4: dropID = Items.; break;
-            case 5: dropID = Items.; break;
-            case 6: dropID = Items.; break;
-            case 7: dropID = Items.; break;
-            case 8: dropID = Items.; break;
-            case 9: dropID = Items.; break;
-            case 10: dropID = Items.; break;
-            case 11: dropID = Items.; break;
-            */
-            default: dropID = Items.bottle.itemID; break;
+            case 2: dropID = Items.cofee.itemID; break;
+            case 3: dropID = Items.whiskey.itemID; break;
+            case 4: dropID = Items.tequilla_silver.itemID; break;
+            case 5: dropID = Items.tequilla_gold.itemID; break;
+            case 6: dropID = Items.rum.itemID; break;
+            case 7: dropID = Items.semtex.itemID; break;
+            case 8: dropID = Items.cup_of_tea.itemID; break;
+            case 9: dropID = Items.hot_chocolate.itemID; break;
+            case 10: dropID = Items.honey.itemID; break;
+            case 11: dropID = Items.catchup.itemID; break;
+            case 12: dropID = Items.glass_of_vine.itemID; break;
+            case 13: dropID = Items.vodka.itemID; break;
+            case 14: dropID = Items.cocacola.itemID; break;
+            case 15: dropID = Items.bottle.itemID; break;
+            //default: dropID = Items.bottle.itemID; break;
+            default: dropID = 0; break;
         }
-        //Fix for itemspawn
+        //Fix for itemspawn id when's ID from config used
         //dropID = dropID + 256;
-        ItemStack ItemTospawn = new ItemStack(dropID, 1, 0);
-        EntityItem Ispawn1 = new EntityItem(world,x,y,z,ItemTospawn);
-        world.spawnEntityInWorld(Ispawn1);
+        if (dropID != 0)
+        {
+            ItemStack ItemTospawn = new ItemStack(dropID, 1, 0);
+            EntityItem Ispawn1 = new EntityItem(world,x,y,z,ItemTospawn);
+            world.spawnEntityInWorld(Ispawn1);
+        }
     }
     
     @Override
