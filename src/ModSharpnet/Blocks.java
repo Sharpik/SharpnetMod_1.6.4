@@ -49,6 +49,9 @@ public class Blocks
     public static Block drinks1_block;
     public static int drinks1_block_ID;
     
+    public static Block food1_block;
+    public static int food1_block_ID;
+    
     public static Block electro1_block;
     public static int electro1_block_ID;
     

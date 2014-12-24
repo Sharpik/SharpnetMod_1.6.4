@@ -1,4 +1,4 @@
-package ModSharpnet.Item;
+package ModSharpnet.Block;
 
 import ModSharpnet.Items;
 import static ModSharpnet.ModSharpnet.modid;
@@ -14,36 +14,39 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class SharpnetDrinksBlocks1 extends Block
+public class SharpnetFoodBlocks1 extends Block
 {
     
-    public static final String[] drinkTypes = new String[] {"beer", "wine", "cofee", "whiskey", "tequilla_s", "tequilla_g", "rum", "semtex", "tea_cup", "chocolate_hot", "honey", "catchup", "glass_of_vine", "vodka", "cocacola", "bottle"};
+    //public static final String[] foodTypes = new String[] {"plate_pizza", "plate_salad", "plate_salad_filet", "blank", "blank", "blank", "blank", "blank", "blank", "blank", "blank", "blank", "blank", "blank", "blank", "blank"};
+    public static final String[] foodTypes = new String[] {"pizza", "potato_salad", "salad_fillet"};
     
     @SideOnly(Side.CLIENT)
     public Icon[] iconArray;
     private int dropID;
     private int blockMetaData;
     
-    public SharpnetDrinksBlocks1(int par1)
+    public SharpnetFoodBlocks1(int par1)
     {
-        super(par1, Material.glass);
-        this.setHardness(0.0F);
-        this.setResistance(0.0F);
-        this.setStepSound(Block.soundGlassFootstep);
+        super(par1, Material.cake);
+        this.setHardness(0.1F);
+        this.setResistance(0.1F);
+        this.setStepSound(Block.soundClothFootstep);
         this.setCreativeTab((CreativeTabs)null);
-        setBurnProperties(par1, 60, 60);
-        
-        float f = 0.3F;
-        this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 3.0F, 0.6F + f);
+        //this.setCreativeTab(CreativeTabs.tabDecorations);
+        setBurnProperties(par1, 30, 30);
+        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.0625F, 1.0F);
+        this.renderSide(0);
     }
     
-    // make it non colidable :)
     @Override
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
     {
-        return null;
+        byte b0 = 0;
+        float f = 0.0625F;
+        return AxisAlignedBB.getAABBPool().getAABB((double)par2 + this.minX, (double)par3 + this.minY, (double)par4 + this.minZ, (double)par2 + this.maxX, (double)((float)par3 + (float)b0 * f), (double)par4 + this.maxZ);
     }
     
     @Override
@@ -58,10 +61,23 @@ public class SharpnetDrinksBlocks1 extends Block
         return false;
     }
     
-    @Override
-    public int getRenderType()
+    public void setBlockBoundsForItemRender()
     {
-        return 1;
+        this.renderSide(0);
+    }
+    
+    protected void renderSide(int par1)
+    {
+        byte b0 = 0;
+        float f = (float)(1 * (1 + b0)) / 16.0F;
+        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, f, 1.0F);
+    }
+    
+    @SideOnly(Side.CLIENT)
+    @Override
+    public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
+    {
+        return par5 == 1 ? true : super.shouldSideBeRendered(par1IBlockAccess, par2, par3, par4, par5);
     }
     
     public void getDroping(int ID,int metadata, World world, int x, int y, int z)
@@ -70,9 +86,10 @@ public class SharpnetDrinksBlocks1 extends Block
         if(metadata != 0){blockMetaData = metadata;} else{blockMetaData = world.getBlockMetadata(x, y, z);}
         switch(blockMetaData)
         {
-            case 0: dropID = Items.beer.itemID; break;
-            case 1: dropID = Items.wine.itemID; break;
-            case 2: dropID = Items.cofee.itemID; break;
+            case 0: dropID = Items.pizza.itemID; break;
+            case 1: dropID = Items.salad.itemID; break;
+            case 2: dropID = Items.salad_fillet.itemID; break;
+                /*
             case 3: dropID = Items.whiskey.itemID; break;
             case 4: dropID = Items.tequilla_silver.itemID; break;
             case 5: dropID = Items.tequilla_gold.itemID; break;
@@ -86,11 +103,9 @@ public class SharpnetDrinksBlocks1 extends Block
             case 13: dropID = Items.vodka.itemID; break;
             case 14: dropID = Items.cocacola.itemID; break;
             case 15: dropID = Items.bottle.itemID; break;
-            //default: dropID = Items.bottle.itemID; break;
+                        */
             default: dropID = 0; break;
         }
-        //Fix for itemspawn id when's ID from config used
-        //dropID = dropID + 256;
         if (dropID != 0)
         {
             ItemStack ItemTospawn = new ItemStack(dropID, 1, 0);
@@ -124,31 +139,25 @@ public class SharpnetDrinksBlocks1 extends Block
     }
 
     @SideOnly(Side.CLIENT)
-    /**
-     * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
-     */
     @Override
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List subBlocks)
     {
-        for (int sub = 0; sub < drinkTypes.length; ++sub)
+        for (int sub = 0; sub < foodTypes.length; ++sub)
         {
             subBlocks.add(new ItemStack(par1, 1, sub));
         }
     }
 
     @SideOnly(Side.CLIENT)
-    /**
-     * When this method is called, your block should register all the icons it needs with the given IconRegister. This
-     * is the only chance you get to register icons.
-     */
     @Override
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.iconArray = new Icon[drinkTypes.length];
+        this.iconArray = new Icon[foodTypes.length];
+        //this.iconArray = new Icon[2];
 
         for (int i = 0; i < this.iconArray.length; ++i)
         {
-            this.iconArray[i] = par1IconRegister.registerIcon(modid+":drinks&food/" + drinkTypes[i]);
+            this.iconArray[i] = par1IconRegister.registerIcon(modid+":drinks&food/" + foodTypes[i]);
         }
     }
     

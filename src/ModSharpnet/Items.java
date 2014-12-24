@@ -315,6 +315,9 @@ public class Items
     public static Item sabre;
     public static int sabre_ID;
     
+    public static Item salad;
+    public static int salad_ID;
+    
     public static Item salad_fillet;
     public static int salad_fillet_ID;
     

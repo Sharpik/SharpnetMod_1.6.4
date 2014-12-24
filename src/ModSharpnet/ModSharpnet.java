@@ -18,8 +18,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemFood;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.creativetab.CreativeTabs;
-import ModSharpnet.Block.*;
 import ModSharpnet.Item.*;
+import ModSharpnet.Block.*;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraftforge.common.EnumHelper;
 
@@ -144,6 +144,7 @@ public class ModSharpnet
         SharpnetStargateBlocks2ID = config.get("Blocks", "SharpnetStargateBlocks2", 3183).getInt();
         sharpnetFlowerBlocks1ID = config.get("Blocks", "SharpnetFlowerBlocks1", 2504).getInt();
         Blocks.drinks1_block_ID = config.get("Blocks", "drinks1_block", 2515).getInt();
+        Blocks.food1_block_ID = config.get("Blocks", "food1_block", 2516).getInt();
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
         SharpnetTomatoSeedsID = (config.get("Items", "SharpnetTomatoSeeds", 6501).getInt())-256;
@@ -186,6 +187,9 @@ public class ModSharpnet
         Items.vodka_ID = (config.get("Items", "vodka", 6536).getInt())-256;
         Items.cocacola_ID = (config.get("Items", "cocacola", 6537).getInt())-256;
         Items.guttalax_ID = (config.get("Items", "guttalax", 6538).getInt())-256;
+        Items.pizza_ID = (config.get("Items", "pizza", 6539).getInt())-256;
+        Items.salad_ID = (config.get("Items", "salad", 6540).getInt())-256;
+        Items.salad_fillet_ID = (config.get("Items", "salad_fillet", 6541).getInt())-256;
        
         config.save();
     }
@@ -453,6 +457,28 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 14), "CocaCola");
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 15), "Bottle");
         
+        //Blocks Food
+        Blocks.food1_block = new SharpnetFoodBlocks1(Blocks.food1_block_ID).setUnlocalizedName("SharpnetFoodBlocks1");
+        GameRegistry.registerBlock(Blocks.food1_block, SharpnetFoodItemBlocks1.class, Blocks.food1_block.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 0), "Plate - Pizza");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 1), "Plate - Salad");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 2), "Plate - Salad filet");
+        /*
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 3), "Whiskey");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 4), "Tequilla Silver");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 5), "Tequilla Gold");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 6), "Rum");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 7), "Semtex");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 8), "Cup of Tea");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 9), "Hot Chocolate");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 10), "Honey");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 11), "Catchup");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 12), "Glass of Vine");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 13), "Vodka");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 14), "CocaCola");
+        LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 15), "Bottle");
+        */
+        
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
         GameRegistry.registerItem(SharpnetTomatoSeeds, "Tomato Seeds");
@@ -550,6 +576,18 @@ public class ModSharpnet
         Items.bottle = new ShItemPlacer(Items.bottle_ID, Blocks.drinks1_block.blockID, 15).setUnlocalizedName("Bottle_Empty").setTextureName(modid+":drinks&food/bottle");
         GameRegistry.registerItem(Items.bottle, "Bottle Empty");
         LanguageRegistry.addName(new ItemStack(Items.bottle, 1, 0), "Bottle Empty");
+        
+        Items.pizza = new ShItemFoodPlacer1(Items.pizza_ID, 20, 3.0F, false, Blocks.food1_block.blockID, 0, 0, 0).setUnlocalizedName("Pizza").setTextureName(modid+":drinks&food/pizza2");
+        GameRegistry.registerItem(Items.pizza, "Pizza");
+        LanguageRegistry.addName(new ItemStack(Items.pizza, 1, 0), "Pizza");
+        
+        Items.salad = new ShItemFoodPlacer1(Items.salad_ID, 6, 0.8F, false, Blocks.food1_block.blockID, 1, 0, 0).setUnlocalizedName("Salad").setTextureName(modid+":drinks&food/potato_salad");
+        GameRegistry.registerItem(Items.salad, "Salad");
+        LanguageRegistry.addName(new ItemStack(Items.salad, 1, 0), "Salad");
+        
+        Items.salad_fillet = new ShItemFoodPlacer1(Items.salad_fillet_ID, 14, 0.8F, false, Blocks.food1_block.blockID, 2, 0, 0).setUnlocalizedName("salad_fillet").setTextureName(modid+":drinks&food/salad_fillet");
+        GameRegistry.registerItem(Items.salad_fillet, "Salad + Fillet");
+        LanguageRegistry.addName(new ItemStack(Items.salad_fillet, 1, 0), "Salad + Fillet");
         
         //Armors
         
