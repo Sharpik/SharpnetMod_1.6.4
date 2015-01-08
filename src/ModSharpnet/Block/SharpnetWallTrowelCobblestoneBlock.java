@@ -41,7 +41,7 @@ public class SharpnetWallTrowelCobblestoneBlock extends Block
     {
         super(par1, Material.rock);
         setUnlocalizedName("Sharpnet Trowel Wall Cobblestone");
-        setHardness(5.0F).setStepSound(Block.soundStoneFootstep);
+        setHardness(2.0F).setStepSound(Block.soundStoneFootstep);
         setResistance(10.0F);
         setCreativeTab(CreativeTabs.tabBlock);
     }

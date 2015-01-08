@@ -40,8 +40,8 @@ public class SharpnetWallTrowelBricksBlock extends Block
     {
         super(par1, Material.rock);
         setUnlocalizedName("Sharpnet Trowel Wall Bricks");
-        setHardness(5.0F).setStepSound(Block.soundStoneFootstep);
-        setResistance(10.0F);
+        setHardness(3.0F).setStepSound(Block.soundStoneFootstep);
+        setResistance(12.0F);
         setCreativeTab(CreativeTabs.tabBlock);
     }
     
