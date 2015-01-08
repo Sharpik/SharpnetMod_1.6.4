@@ -145,6 +145,8 @@ public class ModSharpnet
         sharpnetFlowerBlocks1ID = config.get("Blocks", "SharpnetFlowerBlocks1", 2504).getInt();
         Blocks.drinks1_block_ID = config.get("Blocks", "drinks1_block", 2515).getInt();
         Blocks.food1_block_ID = config.get("Blocks", "food1_block", 2516).getInt();
+        Blocks.wall_cobblestone_trowel_ID = config.get("Blocks", "wall_cobblestone_trowel", 2517).getInt();
+        Blocks.wall_bricks_trowel_ID = config.get("Blocks", "wall_bricks_trowel", 2518).getInt();
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
         SharpnetTomatoSeedsID = (config.get("Items", "SharpnetTomatoSeeds", 6501).getInt())-256;
@@ -190,6 +192,9 @@ public class ModSharpnet
         Items.pizza_ID = (config.get("Items", "pizza", 6539).getInt())-256;
         Items.salad_ID = (config.get("Items", "salad", 6540).getInt())-256;
         Items.salad_fillet_ID = (config.get("Items", "salad_fillet", 6541).getInt())-256;
+        
+        //Items Tools
+        Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
        
         config.save();
     }
@@ -479,6 +484,44 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.food1_block, 1, 15), "Bottle");
         */
         
+        Blocks.wall_cobblestone_trowel = new SharpnetWallTrowelCobblestoneBlock(Blocks.wall_cobblestone_trowel_ID, "SharpnetWallTrowelCobblestoneBlock");
+        GameRegistry.registerBlock(Blocks.wall_cobblestone_trowel, SharpnetWallTrowelCobblestoneItemBlocks.class, "SharpnetWallTrowelCobblestoneBlock");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 0), "Cobblestone Trowel Wall - White");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 1), "Cobblestone Trowel Wall - Orange");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 2), "Cobblestone Trowel Wall - Magenta");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 3), "Cobblestone Trowel Wall - Light Blue");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 4), "Cobblestone Trowel Wall - Yellow");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 5), "Cobblestone Trowel Wall - Lime");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 6), "Cobblestone Trowel Wall - Pink");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 7), "Cobblestone Trowel Wall - Gray");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 8), "Cobblestone Trowel Wall - Light Gray");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 9), "Cobblestone Trowel Wall - Cyan");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 10), "Cobblestone Trowel Wall - Purple");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 11), "Cobblestone Trowel Wall - Blue");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 12), "Cobblestone Trowel Wall - Brown");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 13), "Cobblestone Trowel Wall - Green");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 14), "Cobblestone Trowel Wall - Red");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_cobblestone_trowel, 1, 15), "Cobblestone Trowel Wall - Black");
+        
+        Blocks.wall_bricks_trowel = new SharpnetWallTrowelBricksBlock(Blocks.wall_bricks_trowel_ID, "SharpnetWallTrowelBricksBlock");
+        GameRegistry.registerBlock(Blocks.wall_bricks_trowel, SharpnetWallTrowelBricksItemBlocks.class, "SharpnetWallTrowelBricksBlock");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 0), "Bricks Trowel Wall - White");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 1), "Bricks Trowel Wall - Orange");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 2), "Bricks Trowel Wall - Magenta");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 3), "Bricks Trowel Wall - Light Blue");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 4), "Bricks Trowel Wall - Yellow");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 5), "Bricks Trowel Wall - Lime");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 6), "Bricks Trowel Wall - Pink");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 7), "Bricks Trowel Wall - Gray");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 8), "Bricks Trowel Wall - Light Gray");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 9), "Bricks Trowel Wall - Cyan");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 10), "Bricks Trowel Wall - Purple");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 11), "Bricks Trowel Wall - Blue");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 12), "Bricks Trowel Wall - Brown");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 13), "Bricks Trowel Wall - Green");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 14), "Bricks Trowel Wall - Red");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 15), "Bricks Trowel Wall - Black");
+        
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
         GameRegistry.registerItem(SharpnetTomatoSeeds, "Tomato Seeds");
@@ -647,6 +690,11 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.armor_sunglasses, "Sunglasses");
         LanguageRegistry.addName(new ItemStack(Items.armor_sunglasses, 1, 0), "Sunglasses");
         
+        //Tools
+        Items.trowel = (new SharpnetThrowel(Items.trowel_ID).setUnlocalizedName("Throwel"));
+        GameRegistry.registerItem(Items.trowel, "Throwel");
+        LanguageRegistry.addName(new ItemStack(Items.trowel, 1, 0), "Throwel");
+        
         //Recipes register stack alliases
         ItemStack TomatoSeeds = new ItemStack(SharpnetTomatoSeeds);
         ItemStack Tomato = new ItemStack(SharpnetTomato);
@@ -656,6 +704,15 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(TomatoSeeds, Tomato);
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetCucumberSeeds, 1), new ItemStack(SharpnetCucumber));
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetCornSeeds, 1), new ItemStack(SharpnetCorn));
+        
+        //Recipe Throwel
+        GameRegistry.addRecipe(new ItemStack(Items.trowel,1,0), new Object[]
+        {
+            " SC",
+            "II ",
+            'S', Item.stick, 'C', Item.clay, 'I', Item.ingotIron
+        });
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.trowel,1,0), new ItemStack(Items.trowel,1,8), Item.clay);
         
         //Events
         MinecraftForge.EVENT_BUS.register(new SharpnetBonemealEvent());

@@ -84,6 +84,11 @@ public class Blocks
     
     public static Block money_block;
     public static int money_block_ID;
-   
+    
+    public static Block wall_cobblestone_trowel;
+    public static int wall_cobblestone_trowel_ID;
+    
+    public static Block wall_bricks_trowel;
+    public static int wall_bricks_trowel_ID;
     
 }

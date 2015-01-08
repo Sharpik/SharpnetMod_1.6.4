@@ -446,4 +446,8 @@ public class Items
     
     public static Item zgros;
     public static int zgros_ID;
+    
+    public static Item trowel;
+    public static int trowel_ID;
+    
 }
