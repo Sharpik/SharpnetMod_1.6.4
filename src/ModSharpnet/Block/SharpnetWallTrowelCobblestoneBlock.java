@@ -72,7 +72,8 @@ public class SharpnetWallTrowelCobblestoneBlock extends Block
        @Override
     public void onBlockClicked(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer)
     {
-        itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID;
+        if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
+        { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; }
         
         if (itemInHandID == blackPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel.blockID, 15, 2); damageItemInHands(par5EntityPlayer,painterID);}
         if (itemInHandID == redPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel.blockID, 14, 2); damageItemInHands(par5EntityPlayer,painterID);}

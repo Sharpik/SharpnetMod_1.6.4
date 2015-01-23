@@ -25,13 +25,20 @@ public class SharpnetRoadsBlocks1 extends Block
     private static final int yellowPainterID = ic2.api.item.Items.getItem("yellowPainter").itemID;
     private static final int whitePainterID = ic2.api.item.Items.getItem("whitePainter").itemID;
     
-    public SharpnetRoadsBlocks1(int par1,String par2Material)
+    public SharpnetRoadsBlocks1(int par1,Material par2Material)
     {
-        super(par1, Material.rock);
+        super(par1, par2Material);
         setUnlocalizedName("Sharpnet Road Blocks 1");
         setHardness(5.0F).setStepSound(Block.soundStoneFootstep);
         setResistance(10.0F);
         setCreativeTab(CreativeTabs.tabBlock);
+    }
+    
+    // Snow can't deploy there
+    @Override
+    public boolean isOpaqueCube()
+    {
+        return false;
     }
     
     // TADY ZMENIT POCET VARIANT 1 - 16
@@ -58,7 +65,8 @@ public class SharpnetRoadsBlocks1 extends Block
     @Override
     public void onBlockClicked(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer)
     {
-        itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID;
+        if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
+        { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; }
         
         if (itemInHandID == blackPainterID){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 2, 2); damageItemInHands(par5EntityPlayer,painterID);}
         if (itemInHandID == lightGreyPainterID){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 0, 2); damageItemInHands(par5EntityPlayer,painterID);}

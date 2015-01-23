@@ -20,6 +20,8 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.creativetab.CreativeTabs;
 import ModSharpnet.Item.*;
 import ModSharpnet.Block.*;
+import java.lang.reflect.Field;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraftforge.common.EnumHelper;
 
@@ -118,6 +120,7 @@ public class ModSharpnet
     
     //Material Register
     public static EnumArmorMaterial SharpnetArmorCloth = EnumHelper.addArmorMaterial("SharpnetArmorCloth", 5, new int[] {1, 3, 2, 1}, 30);
+    public static Material SharpnetRoadsBlocksMaterial = new ShMaterial(MapColor.stoneColor);
     
     // Config register
     public void initConfiguration(FMLInitializationEvent event)
@@ -209,7 +212,7 @@ public class ModSharpnet
     public void load(FMLInitializationEvent event)
     {
         this.initConfiguration(event);
-        
+          
         //Debug
         
         //Sharpnet Blocks
@@ -366,7 +369,7 @@ public class ModSharpnet
         //LanguageRegistry.addName(new ItemStack(SharpnetRoofsBlocks1, 1, 14), "Tile Wood 15 Block");
         //LanguageRegistry.addName(new ItemStack(SharpnetRoofsBlocks1, 1, 15), "Tile Wood 16 Block");
         
-        SharpnetRoadsBlocks1 = new SharpnetRoadsBlocks1(SharpnetRoadsBlocks1ID, "SharpnetRoadsBlocks1");
+        SharpnetRoadsBlocks1 = new SharpnetRoadsBlocks1(SharpnetRoadsBlocks1ID, SharpnetRoadsBlocksMaterial);
         GameRegistry.registerBlock(SharpnetRoadsBlocks1, SharpnetRoadsItemBlocks1.class, "SharpnetRoadsBlocks1");
         LanguageRegistry.addName(new ItemStack(SharpnetRoadsBlocks1, 1, 0), "Road Gray");
         LanguageRegistry.addName(new ItemStack(SharpnetRoadsBlocks1, 1, 1), "Swear 1");
