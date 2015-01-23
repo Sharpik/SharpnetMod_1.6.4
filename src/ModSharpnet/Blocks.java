@@ -91,4 +91,7 @@ public class Blocks
     public static Block wall_bricks_trowel;
     public static int wall_bricks_trowel_ID;
     
+    public static Block wall_stone_slab_trowel;
+    public static int wall_stone_slab_trowel_ID;
+    
 }

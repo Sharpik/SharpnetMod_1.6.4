@@ -150,6 +150,7 @@ public class ModSharpnet
         Blocks.food1_block_ID = config.get("Blocks", "food1_block", 2516).getInt();
         Blocks.wall_cobblestone_trowel_ID = config.get("Blocks", "wall_cobblestone_trowel", 2517).getInt();
         Blocks.wall_bricks_trowel_ID = config.get("Blocks", "wall_bricks_trowel", 2518).getInt();
+        Blocks.wall_stone_slab_trowel_ID = config.get("Blocks", "wall_stone_slab_trowel", 2519).getInt();
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
         SharpnetTomatoSeedsID = (config.get("Items", "SharpnetTomatoSeeds", 6501).getInt())-256;
@@ -524,6 +525,25 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 13), "Bricks Trowel Wall - Green");
         LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 14), "Bricks Trowel Wall - Red");
         LanguageRegistry.addName(new ItemStack(Blocks.wall_bricks_trowel, 1, 15), "Bricks Trowel Wall - Black");
+        
+        Blocks.wall_stone_slab_trowel = new SharpnetWallTrowelStoneSlabBlock(Blocks.wall_stone_slab_trowel_ID, "SharpnetWallTrowelStoneSlabBlock");
+        GameRegistry.registerBlock(Blocks.wall_stone_slab_trowel, SharpnetWallTrowelStoneSlabItemBlocks.class, "SharpnetWallTrowelStoneSlabBlock");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 0), "Stone Slab Trowel Wall - White");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 1), "Stone Slab Trowel Wall - Orange");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 2), "Stone Slab Trowel Wall - Magenta");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 3), "Stone Slab Trowel Wall - Light Blue");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 4), "Stone Slab Trowel Wall - Yellow");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 5), "Stone Slab Trowel Wall - Lime");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 6), "Stone Slab Trowel Wall - Pink");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 7), "Stone Slab Trowel Wall - Gray");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 8), "Stone Slab Trowel Wall - Light Gray");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 9), "Stone Slab Trowel Wall - Cyan");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 10), "Stone Slab Trowel Wall - Purple");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 11), "Stone Slab Trowel Wall - Blue");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 12), "Stone Slab Trowel Wall - Brown");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 13), "Stone Slab Trowel Wall - Green");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 14), "Stone Slab Trowel Wall - Red");
+        LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 15), "Stone Slab Trowel Wall - Black");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");

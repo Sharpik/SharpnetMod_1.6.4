@@ -5,7 +5,7 @@ import net.minecraft.item.ItemArmor;
 
 public class Items
 {
-        //ID TODO Items
+    //ID TODO Items
     public static Item money1000;
     public static int money1000ID;
     
@@ -450,4 +450,22 @@ public class Items
     public static Item trowel;
     public static int trowel_ID;
     
+    //IC2 API
+    public static final int IC2_painterID = ic2.api.item.Items.getItem("painter").itemID;
+    public static final int IC2_blackPainterID = ic2.api.item.Items.getItem("blackPainter").itemID;
+    public static final int IC2_redPainterID = ic2.api.item.Items.getItem("redPainter").itemID;
+    public static final int IC2_greenPainterID = ic2.api.item.Items.getItem("greenPainter").itemID;
+    public static final int IC2_brownPainterID = ic2.api.item.Items.getItem("brownPainter").itemID;
+    public static final int IC2_bluePainterID = ic2.api.item.Items.getItem("bluePainter").itemID;
+    public static final int IC2_purplePainterID = ic2.api.item.Items.getItem("purplePainter").itemID;
+    public static final int IC2_cyanPainterID = ic2.api.item.Items.getItem("cyanPainter").itemID;
+    public static final int IC2_lightGreyPainterID = ic2.api.item.Items.getItem("lightGreyPainter").itemID;
+    public static final int IC2_darkGreyPainterID = ic2.api.item.Items.getItem("darkGreyPainter").itemID;
+    public static final int IC2_pinkPainterID = ic2.api.item.Items.getItem("pinkPainter").itemID;
+    public static final int IC2_limePainterID = ic2.api.item.Items.getItem("limePainter").itemID;
+    public static final int IC2_yellowPainterID = ic2.api.item.Items.getItem("yellowPainter").itemID;
+    public static final int IC2_cloudPainterID = ic2.api.item.Items.getItem("cloudPainter").itemID;
+    public static final int IC2_magentaPainterID = ic2.api.item.Items.getItem("magentaPainter").itemID;
+    public static final int IC2_orangePainterID = ic2.api.item.Items.getItem("orangePainter").itemID;
+    public static final int IC2_whitePainterID = ic2.api.item.Items.getItem("whitePainter").itemID;
 }
