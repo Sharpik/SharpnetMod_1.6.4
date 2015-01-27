@@ -157,7 +157,7 @@ public class ModSharpnet
         Blocks.wall_stone_slab_trowel_ID = config.get("Blocks", "wall_stone_slab_trowel", 2519).getInt();
         
         // Other Mods
-        Blocks.PR_Basalt_blockID = config_mod_PR.get("Blocks", "block_stonesID", 0).getInt();
+        Blocks.PR_block_stonesID = config_mod_PR.get("Blocks", "block_stonesID", 0).getInt();
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
         SharpnetTomatoSeedsID = (config.get("Items", "SharpnetTomatoSeeds", 6501).getInt())-256;
@@ -764,7 +764,7 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_cobblestone_trowel,8,14), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Item.dyePowder, 1, 1)); //
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_cobblestone_trowel,8,15), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Item.dyePowder, 1, 0)); //Black
         
-        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Block.stoneDoubleSlab,1,0), Item.clay);
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Block.brick,1,0), Item.clay);
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_bricks_trowel,8,0), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Item.dyePowder, 1, 15)); //White
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_bricks_trowel,8,1), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Item.dyePowder, 1, 14)); //Orange
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_bricks_trowel,8,2), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Item.dyePowder, 1, 13)); //
@@ -811,7 +811,7 @@ public class ModSharpnet
 
         Recipes.macerator.addRecipe(new RecipeInputItemStack(input), null, output);
         */
-        Recipes.compressor.addRecipe(new RecipeInputItemStack(ic2.api.item.Items.getItem("lavaCell")) , null, new ItemStack(Blocks.PR_Basalt_blockID,1,15) );
+        Recipes.compressor.addRecipe(new RecipeInputItemStack(ic2.api.item.Items.getItem("lavaCell")) , null, new ItemStack(Blocks.PR_block_stonesID,1,3) );
     }
     
     
