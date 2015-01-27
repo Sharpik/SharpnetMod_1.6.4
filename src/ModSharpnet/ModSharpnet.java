@@ -20,6 +20,8 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.creativetab.CreativeTabs;
 import ModSharpnet.Item.*;
 import ModSharpnet.Block.*;
+import ic2.api.recipe.RecipeInputItemStack;
+import ic2.api.recipe.Recipes;
 import java.lang.reflect.Field;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.item.EnumArmorMaterial;
@@ -127,6 +129,8 @@ public class ModSharpnet
     {
         Configuration config = new Configuration(new File("config/SharpnetMod_1.6.4.cfg"));
         config.load();
+        Configuration config_mod_PR = new Configuration(new File("config/ProjectRed.cfg"));
+        config_mod_PR.load();
         
         //Blocks ID
         Blocks.SharpnetOreBlocks1ID = config.get("Blocks", "SharpnetOreBlocks1", 2505).getInt();
@@ -151,6 +155,9 @@ public class ModSharpnet
         Blocks.wall_cobblestone_trowel_ID = config.get("Blocks", "wall_cobblestone_trowel", 2517).getInt();
         Blocks.wall_bricks_trowel_ID = config.get("Blocks", "wall_bricks_trowel", 2518).getInt();
         Blocks.wall_stone_slab_trowel_ID = config.get("Blocks", "wall_stone_slab_trowel", 2519).getInt();
+        
+        // Other Mods
+        Blocks.PR_Basalt_blockID = config_mod_PR.get("Blocks", "block_stonesID", 0).getInt();
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
         SharpnetTomatoSeedsID = (config.get("Items", "SharpnetTomatoSeeds", 6501).getInt())-256;
@@ -199,6 +206,8 @@ public class ModSharpnet
         
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
+        
+        // Other Mods
        
         config.save();
     }
@@ -755,7 +764,7 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_cobblestone_trowel,8,14), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Item.dyePowder, 1, 1)); //
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_cobblestone_trowel,8,15), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Item.dyePowder, 1, 0)); //Black
         
-        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Block.brick,1,0), Item.clay);
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Block.stoneDoubleSlab,1,0), Item.clay);
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_bricks_trowel,8,0), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Item.dyePowder, 1, 15)); //White
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_bricks_trowel,8,1), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Item.dyePowder, 1, 14)); //Orange
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_bricks_trowel,8,2), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Item.dyePowder, 1, 13)); //
@@ -772,6 +781,23 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_bricks_trowel,8,14), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Item.dyePowder, 1, 1)); //
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_bricks_trowel,8,15), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Blocks.wall_bricks_trowel,1,12), new ItemStack(Item.dyePowder, 1, 0)); //Black
         
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Block.stoneDoubleSlab,1,0), Item.clay);
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,0), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 15)); //White
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,1), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 14)); //Orange
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,2), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 13)); //
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,3), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 12)); //
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,4), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 11)); //
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,5), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 10)); //
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,6), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 9)); //
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,7), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 8)); //
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,8), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 7)); //
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,9), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 6)); //
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,10), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 5)); //
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,11), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 4)); //
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,13), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 2)); //
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,14), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 1)); //
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,15), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 0)); //Black
+        
         //Events
         MinecraftForge.EVENT_BUS.register(new SharpnetBonemealEvent());
         MinecraftForge.EVENT_BUS.register(new SharpnetEvent_LivingDrops());
@@ -785,6 +811,7 @@ public class ModSharpnet
 
         Recipes.macerator.addRecipe(new RecipeInputItemStack(input), null, output);
         */
+        Recipes.compressor.addRecipe(new RecipeInputItemStack(ic2.api.item.Items.getItem("lavaCell")) , null, new ItemStack(Blocks.PR_Basalt_blockID,1,15) );
     }
     
     

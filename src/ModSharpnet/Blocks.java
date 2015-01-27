@@ -94,4 +94,6 @@ public class Blocks
     public static Block wall_stone_slab_trowel;
     public static int wall_stone_slab_trowel_ID;
     
+    //Project Red
+    public static int PR_Basalt_blockID;
 }
