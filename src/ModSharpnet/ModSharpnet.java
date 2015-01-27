@@ -157,7 +157,7 @@ public class ModSharpnet
         Blocks.wall_stone_slab_trowel_ID = config.get("Blocks", "wall_stone_slab_trowel", 2519).getInt();
         
         // Other Mods
-        Blocks.PR_block_stonesID = config_mod_PR.get("Blocks", "block_stonesID", 0).getInt();
+        Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
         SharpnetTomatoSeedsID = (config.get("Items", "SharpnetTomatoSeeds", 6501).getInt())-256;
