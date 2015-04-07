@@ -450,6 +450,9 @@ public class Items
     public static Item trowel;
     public static int trowel_ID;
     
+    //doors
+    public static Item door1_item;
+    
     //IC2 API
     public static final int IC2_painterID = ic2.api.item.Items.getItem("painter").itemID;
     public static final int IC2_blackPainterID = ic2.api.item.Items.getItem("blackPainter").itemID;

@@ -155,6 +155,7 @@ public class ModSharpnet
         Blocks.wall_cobblestone_trowel_ID = config.get("Blocks", "wall_cobblestone_trowel", 2517).getInt();
         Blocks.wall_bricks_trowel_ID = config.get("Blocks", "wall_bricks_trowel", 2518).getInt();
         Blocks.wall_stone_slab_trowel_ID = config.get("Blocks", "wall_stone_slab_trowel", 2519).getInt();
+        Blocks.door1_block_ID = config.get("Blocks", "door1_block_", 2521).getInt(); // Don't forget to add + 1
         
         // Other Mods
         Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
@@ -553,6 +554,14 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 13), "Stone Slab Trowel Wall - Green");
         LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 14), "Stone Slab Trowel Wall - Red");
         LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 15), "Stone Slab Trowel Wall - Black");
+        
+        //Blocks Door
+        Blocks.door1_block = new SharpnetDoor1Block(Blocks.door1_block_ID, Material.wood);
+        Items.door1_item = new SharpnetDoor1ItemBlock(Blocks.door1_block_ID-257, Blocks.door1_block);
+        GameRegistry.registerBlock(Blocks.door1_block, "SharpnetDoor1Block");
+        LanguageRegistry.addName(new ItemStack(Blocks.door1_block, 1, 0), "Door 1 Block");
+        GameRegistry.registerItem(Items.door1_item, "SharpnetDoor1Item");
+        LanguageRegistry.addName(new ItemStack(Items.door1_item, 1, 0), "Door 1");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
