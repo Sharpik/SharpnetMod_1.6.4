@@ -24,6 +24,11 @@ public class SharpnetEvent_LivingDrops
             {
                 event.entityLiving.dropItem(Item.bone.itemID, 2);
                 event.entityLiving.dropItem(Item.leather.itemID, 2);
+                event.entityLiving.dropItem(Items.mutton_raw.itemID, 1);
+            }
+            if (rand < 0.25D)
+            {
+                event.entityLiving.dropItem(Items.mutton_raw.itemID, 1);
             }
 	}
         //Cow

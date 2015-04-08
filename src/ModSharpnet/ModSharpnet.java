@@ -18,14 +18,15 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemFood;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.creativetab.CreativeTabs;
-import ModSharpnet.Item.*;
-import ModSharpnet.Block.*;
-import ic2.api.recipe.RecipeInputItemStack;
-import ic2.api.recipe.Recipes;
-import java.lang.reflect.Field;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraftforge.common.EnumHelper;
+
+import ModSharpnet.Item.*;
+import ModSharpnet.Block.*;
+
+import ic2.api.recipe.RecipeInputItemStack;
+import ic2.api.recipe.Recipes;
 
 // IC2 Dependency
 //import ic2.api.item.Items;
@@ -204,9 +205,15 @@ public class ModSharpnet
         Items.pizza_ID = (config.get("Items", "pizza", 6539).getInt())-256;
         Items.salad_ID = (config.get("Items", "salad", 6540).getInt())-256;
         Items.salad_fillet_ID = (config.get("Items", "salad_fillet", 6541).getInt())-256;
+        //Items Food
+        Items.mutton_raw_ID = (config.get("Items", "mutton_raw", 423).getInt())-256;
+        Items.mutton_cooked_ID = (config.get("Items", "mutton_cooked", 424).getInt())-256;
         
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
+        
+        //Items Resources
+        Items.roofing_tile_ID = (config.get("Items", "roofing_tile", 6543).getInt())-256;
         
         // Other Mods
        
@@ -596,6 +603,14 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.guttalax, "Guttalax");
         LanguageRegistry.addName(new ItemStack(Items.guttalax, 1, 0), "Guttalax");
         
+        Items.mutton_raw = (new ItemFood(Items.mutton_raw_ID, 2 , 0.3F, true).setUnlocalizedName("Mutton_Raw").setTextureName(modid+":food/mutton_raw"));
+        GameRegistry.registerItem(Items.mutton_raw, "Mutton Raw");
+        LanguageRegistry.addName(new ItemStack(Items.mutton_raw, 1, 0), "Mutton Raw");
+        
+        Items.mutton_cooked = new ItemFood(Items.mutton_cooked_ID, 6 , 0.6F, true ).setUnlocalizedName("mutton_cooked").setTextureName(modid+":food/mutton_cooked");
+        GameRegistry.registerItem(Items.mutton_cooked, "Mutton Cooked");
+        LanguageRegistry.addName(new ItemStack(Items.mutton_cooked, 1, 0), "Mutton Cooked");
+        
         //Item Alcohol
         Items.beer = new ShItemFoodPlacer1(Items.beer_ID, 4, 2.0F, false, Blocks.drinks1_block.blockID, 0, 2, 20).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/beer");
         GameRegistry.registerItem(Items.beer, "Beer");
@@ -736,6 +751,11 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.trowel, "Throwel");
         LanguageRegistry.addName(new ItemStack(Items.trowel, 1, 0), "Throwel");
         
+        //Resources
+        Items.roofing_tile = (new SharpnetRoofingTile(Items.roofing_tile_ID).setUnlocalizedName("Roofing_tile"));
+        GameRegistry.registerItem(Items.roofing_tile, "Roofing Tile");
+        LanguageRegistry.addName(new ItemStack(Items.roofing_tile, 1, 0), "Roofing Tile");
+        
         //Recipes register stack alliases
         ItemStack TomatoSeeds = new ItemStack(SharpnetTomatoSeeds);
         ItemStack Tomato = new ItemStack(SharpnetTomato);
@@ -745,6 +765,8 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(TomatoSeeds, Tomato);
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetCucumberSeeds, 1), new ItemStack(SharpnetCucumber));
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetCornSeeds, 1), new ItemStack(SharpnetCorn));
+        
+        GameRegistry.addSmelting(Items.mutton_raw.itemID, new ItemStack(Items.mutton_cooked, 1), 0.35F);
         
         //Recipe Throwel
         GameRegistry.addRecipe(new ItemStack(Items.trowel,1,0), new Object[]
@@ -807,6 +829,59 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,14), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 1)); //
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_stone_slab_trowel,8,15), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Blocks.wall_stone_slab_trowel,1,12), new ItemStack(Item.dyePowder, 1, 0)); //Black
         
+        //Recipe roofs
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.roofing_tile,2,0), new ItemStack(Item.brick,1,0));
+        
+        GameRegistry.addRecipe(new ItemStack(SharpnetRoofsBlocks1,1,0), new Object[]
+        {
+            "RRR",
+            "RRR",
+            "RRR",
+            'R', Items.roofing_tile,
+        });
+        
+            //Black
+        GameRegistry.addRecipe(new ItemStack(SharpnetRoofsBlocks1,1,1), new Object[]
+        {
+            "RRR",
+            "RDR",
+            "RRR",
+            'R', Items.roofing_tile, 'D', new ItemStack(Item.dyePowder,1,0),
+        });
+            //Red
+        GameRegistry.addRecipe(new ItemStack(SharpnetRoofsBlocks1,1,4), new Object[]
+        {
+            "RRR",
+            "RDR",
+            "RRR",
+            'R', Items.roofing_tile, 'D', new ItemStack(Item.dyePowder,1,1),
+        });
+            //Green
+        GameRegistry.addRecipe(new ItemStack(SharpnetRoofsBlocks1,1,3), new Object[]
+        {
+            "RRR",
+            "RDR",
+            "RRR",
+            'R', Items.roofing_tile, 'D', new ItemStack(Item.dyePowder,1,2),
+        });
+            //Blue
+        GameRegistry.addRecipe(new ItemStack(SharpnetRoofsBlocks1,1,2), new Object[]
+        {
+            "RRR",
+            "RDR",
+            "RRR",
+            'R', Items.roofing_tile, 'D', new ItemStack(Item.dyePowder,1,4),
+        });
+            //Yellow
+        GameRegistry.addRecipe(new ItemStack(SharpnetRoofsBlocks1,1,5), new Object[]
+        {
+            "RRR",
+            "RDR",
+            "RRR",
+            'R', Items.roofing_tile, 'D', new ItemStack(Item.dyePowder,1,11),
+        });
+        
+        
         //Events
         MinecraftForge.EVENT_BUS.register(new SharpnetBonemealEvent());
         MinecraftForge.EVENT_BUS.register(new SharpnetEvent_LivingDrops());
@@ -821,6 +896,7 @@ public class ModSharpnet
         Recipes.macerator.addRecipe(new RecipeInputItemStack(input), null, output);
         */
         Recipes.compressor.addRecipe(new RecipeInputItemStack(ic2.api.item.Items.getItem("lavaCell")) , null, new ItemStack(Blocks.PR_block_stonesID,1,3) );
+        
     }
     
     

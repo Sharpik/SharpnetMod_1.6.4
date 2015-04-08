@@ -447,8 +447,20 @@ public class Items
     public static Item zgros;
     public static int zgros_ID;
     
+    //Tools
     public static Item trowel;
     public static int trowel_ID;
+    
+    //Resources
+    public static Item roofing_tile;
+    public static int roofing_tile_ID;
+    
+    //Food
+    public static Item mutton_raw;
+    public static int mutton_raw_ID;
+    
+    public static Item mutton_cooked;
+    public static int mutton_cooked_ID;
     
     //doors
     public static Item door1_item;
