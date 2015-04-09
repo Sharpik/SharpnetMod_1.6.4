@@ -9,6 +9,7 @@ import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.IconFlipped;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
@@ -30,6 +31,7 @@ class SharpnetDoor1Block extends BlockDoor
         setResistance(2.0F);
         setLightOpacity(0);
         setBurnProperties(door1_block_ID, 30, 60);
+        this.setCreativeTab((CreativeTabs)null);
     }
     
     @SideOnly(Side.CLIENT)

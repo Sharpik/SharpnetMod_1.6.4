@@ -462,6 +462,12 @@ public class Items
     public static Item mutton_cooked;
     public static int mutton_cooked_ID;
     
+    public static Item tea_seeds;
+    public static int tea_seeds_ID;
+    
+    public static Item tea_leaves;
+    public static int tea_leaves_ID;
+    
     //doors
     public static Item door1_item;
     

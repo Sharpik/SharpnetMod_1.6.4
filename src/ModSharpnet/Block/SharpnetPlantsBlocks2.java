@@ -1,13 +1,7 @@
-package ModSharpnet;
+package ModSharpnet.Block;
 
+import ModSharpnet.Items;
 import static ModSharpnet.ModSharpnet.modid;
-import static ModSharpnet.ModSharpnet.SharpnetCorn;
-import static ModSharpnet.ModSharpnet.SharpnetCornSeeds;
-import static ModSharpnet.ModSharpnet.SharpnetCucumber;
-import static ModSharpnet.ModSharpnet.SharpnetCucumberSeeds;
-import static ModSharpnet.ModSharpnet.SharpnetFlaxSeeds;
-import static ModSharpnet.ModSharpnet.SharpnetTomato;
-import static ModSharpnet.ModSharpnet.SharpnetTomatoSeeds;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
@@ -18,7 +12,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
-import net.minecraft.item.Item;
 import net.minecraft.block.Block;
 import static net.minecraft.block.Block.blocksList;
 import net.minecraft.block.BlockFlower;
@@ -27,10 +20,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
 
-public class SharpnetPlantsBlocks1 extends BlockFlower
+public class SharpnetPlantsBlocks2 extends BlockFlower
 {
 
-    public SharpnetPlantsBlocks1(int par1, Material par2Material)
+    public SharpnetPlantsBlocks2(int par1, Material par2Material)
     {
         super(par1, par2Material);
         this.setTickRandomly(true);
@@ -38,14 +31,14 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
         this.setCreativeTab((CreativeTabs)null);
         //this.setCreativeTab(CreativeTabs.tabFood);
-        this.setUnlocalizedName("Sharpnet Plants Blocks 1");
+        this.setUnlocalizedName("Sharpnet Plants Blocks 2");
         this.setHardness(0.0F).setStepSound(Block.soundGrassFootstep);
         this.setResistance(0.0F);
         this.disableStats();
     }
     
     // TADY ZMENIT POCET VARIANT 1 - 16
-    public int pocet = 12;
+    public int pocet = 3;
     public int dropID = this.blockID;
     public int dropMeta = 0;
     public int blockMetaData;
@@ -68,7 +61,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
              // f = modifikace růstu rostlin
             double maxgrowing = 30.F;
             
-            // First plant Tomato
+            // First plant Tea
             if (meta < 2)
             {
                 maxgrowing = 30.F;
@@ -78,6 +71,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
                     par1World.setBlockMetadataWithNotify(par2, par3, par4, meta, 2);
                 }
             }
+            /*
             // Secound plant Cucumber
             if ((meta > 2) && (meta < 5))
             {
@@ -118,6 +112,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
                     par1World.setBlockMetadataWithNotify(par2, par3, par4, meta, 2);
                 }
             }
+            */
         }
     }
     
@@ -202,7 +197,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
     @Override
     public int getRenderType()
     {
-        return 6;
+        return 1;
     }
 
     /**
@@ -213,11 +208,14 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
     {
         blockMetaData = world.getBlockMetadata(x, y, z);
         
-        //Náhradní item spawn pro Flax - 2 itemy
-        if (blockMetaData == 11)
+        //Náhradní item spawn pro Tea - 2 itemy
+        if (blockMetaData == 2)
         {
-            ItemStack Itemspawn1 = new ItemStack(SharpnetFlaxSeeds,2);
-            ItemStack Itemspawn2 = new ItemStack(Item.silk,3);
+            Random rand = new Random();
+            int randomNum = rand.nextInt((3 - 1) + 1) + 1;
+        
+            ItemStack Itemspawn1 = new ItemStack(Items.tea_seeds,2);
+            ItemStack Itemspawn2 = new ItemStack(Items.tea_leaves,randomNum);
             EntityItem Ispawn1 = new EntityItem(world,x,y,z,Itemspawn1);
             EntityItem Ispawn2 = new EntityItem(world,x,y,z,Itemspawn2);
             world.spawnEntityInWorld(Ispawn1);
@@ -231,10 +229,12 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
         if(metadata == 0){metadata = blockMetaData;}
         switch(metadata)
         {
-            //Tomato 0 - 2 meta
-            case 0: dropID = SharpnetTomatoSeeds.itemID; break;
-            case 1: dropID = SharpnetTomatoSeeds.itemID; break;
-            case 2: dropID = SharpnetTomato.itemID; break;
+            //Tea 0 - 2 meta
+            case 0: dropID = Items.tea_seeds.itemID; break;
+            case 1: dropID = Items.tea_seeds.itemID; break;
+            //case 2: dropID = Items.tea_leaves.itemID; break;
+            case 2: dropID = 0; break;
+                /*
             //Cucumber 3 - 5 meta
             case 3: dropID = SharpnetCucumberSeeds.itemID; break;
             case 4: dropID = SharpnetCucumberSeeds.itemID; break;
@@ -247,23 +247,13 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
             case 9: dropID = SharpnetFlaxSeeds.itemID; break;
             case 10: dropID = SharpnetFlaxSeeds.itemID; break;
             case 11: dropID = SharpnetFlaxSeeds.itemID; break;
-            //Tea 12 - 14 meta
-                /*
-            case 12: dropID = SharpnetFlaxSeeds.itemID; break;
-            case 13: dropID = SharpnetFlaxSeeds.itemID; break;
-            case 14: dropID = SharpnetFlaxSeeds.itemID; break;*/
+            */
         }
         return dropMeta;
     }
     
     protected int getSeedItem()
     {
-        /*
-        if(blockMetaData <= 2){getDroping(SharpnetTomato.itemID,0);}
-        if((blockMetaData >= 3) && (blockMetaData <= 5)){getDroping(SharpnetCucumber.itemID,0);}
-        if((blockMetaData >= 6) && (blockMetaData <= 8)){getDroping(SharpnetCorn.itemID,0);}
-        if((blockMetaData >= 9) && (blockMetaData <= 1)){getDroping(SharpnetCorn.itemID,0);}
-        */
         getDroping(0,0);
         return dropID;
     }
@@ -302,11 +292,13 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
         int min = 1;
         int max = 1;
         
-        if(blockMetaData == 2){max = 3;}
+        if(blockMetaData == 2){min = 0; max = 0;}
+        /*
         if(blockMetaData == 5){max = 3;}
         if(blockMetaData == 8){max = 3;}
         if(blockMetaData == 11){min = 0; max = 0;}
         if(blockMetaData == 14){max = 3;}
+        */
         
         Random rand = new Random();
         int randomNum = rand.nextInt((max - min) + 1) + min;
@@ -328,9 +320,10 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
             switch(i)
             {
                 //Registrace textur
-                case 0:{icons[i] = par1.registerIcon(modid+":plants/pla_tomato_1");break;}
-                case 1:{icons[i] = par1.registerIcon(modid+":plants/pla_tomato_2");break;}
-                case 2:{icons[i] = par1.registerIcon(modid+":plants/pla_tomato_3");break;}
+                case 0:{icons[i] = par1.registerIcon(modid+":plants/tea_1");break;}
+                case 1:{icons[i] = par1.registerIcon(modid+":plants/tea_2");break;}
+                case 2:{icons[i] = par1.registerIcon(modid+":plants/tea_3");break;}
+                /*
                 case 3:{icons[i] = par1.registerIcon(modid+":plants/pla_cucumber_1");break;}
                 case 4:{icons[i] = par1.registerIcon(modid+":plants/pla_cucumber_2");break;}
                 case 5:{icons[i] = par1.registerIcon(modid+":plants/pla_cucumber_3");break;}
@@ -340,9 +333,9 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
                 case 9:{icons[i] = par1.registerIcon(modid+":plants/flax_1");break;}
                 case 10:{icons[i] = par1.registerIcon(modid+":plants/flax_4");break;}
                 case 11:{icons[i] = par1.registerIcon(modid+":plants/flax_5.2");break;}
-                case 12:{icons[i] = par1.registerIcon(modid+":plants/tea_1");break;}
-                case 13:{icons[i] = par1.registerIcon(modid+":plants/tea_2");break;}
-                case 14:{icons[i] = par1.registerIcon(modid+":plants/tea_3");break;}/*
+                case 12:{icons[i] = par1.registerIcon(modid+":tiles_wood/DP9");break;}
+                case 13:{icons[i] = par1.registerIcon(modid+":tiles_wood/tile14");break;}
+                case 14:{icons[i] = par1.registerIcon(modid+":tiles_wood/tile15");break;}
                 case 15:{icons[i] = par1.registerIcon(modid+":tiles_wood/tile16");break;}*/
                 default:{icons[i] = par1.registerIcon(modid+":error");break;}
             }

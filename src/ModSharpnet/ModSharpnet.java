@@ -157,6 +157,8 @@ public class ModSharpnet
         Blocks.wall_bricks_trowel_ID = config.get("Blocks", "wall_bricks_trowel", 2518).getInt();
         Blocks.wall_stone_slab_trowel_ID = config.get("Blocks", "wall_stone_slab_trowel", 2519).getInt();
         Blocks.door1_block_ID = config.get("Blocks", "door1_block_", 2521).getInt(); // Don't forget to add + 1
+        Blocks.SharpnetPlantsBlocks2ID =  config.get("Blocks", "SharpnetPlantsBlocks2", 2545).getInt();
+        Blocks.lighting_stick_block_ID =  config.get("Blocks", "lighting_stick_block", 2546).getInt();
         
         // Other Mods
         Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
@@ -208,6 +210,8 @@ public class ModSharpnet
         //Items Food
         Items.mutton_raw_ID = (config.get("Items", "mutton_raw", 423).getInt())-256;
         Items.mutton_cooked_ID = (config.get("Items", "mutton_cooked", 424).getInt())-256;
+        Items.tea_seeds_ID = (config.get("Items", "tea_seeds", 6544).getInt())-256;
+        Items.tea_leaves_ID = (config.get("Items", "tea_leaves", 6545).getInt())-256;
         
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
@@ -414,6 +418,26 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 6), "Corn Plant");
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 7), "Corn Plant");
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 8), "Corn Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 9), "Flax Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 10), "Flax Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 11), "Flax Plant");
+        
+        Blocks.SharpnetPlantsBlocks2 = new SharpnetPlantsBlocks2(Blocks.SharpnetPlantsBlocks2ID, Material.plants);
+        GameRegistry.registerBlock(Blocks.SharpnetPlantsBlocks2, SharpnetPlantsItemBlocks2.class, "SharpnetPlantsBlocks2");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 0), "Tea Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 1), "Tea Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 2), "Tea Plant");
+        /*
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 3), "Cucumber Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 4), "Cucumber Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 5), "Cucumber Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 6), "Corn Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 7), "Corn Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 8), "Corn Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 9), "Flax Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 10), "Flax Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 11), "Flax Plant");
+        */
         
         SharpnetStargateBlocks1 = new SharpnetStargateBlocks1(SharpnetStargateBlocks1ID, "SharpnetStargateBlocks1");
         GameRegistry.registerBlock(SharpnetStargateBlocks1, SharpnetStargateItemBlocks1.class, "SharpnetStargateBlocks1");
@@ -562,6 +586,10 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 14), "Stone Slab Trowel Wall - Red");
         LanguageRegistry.addName(new ItemStack(Blocks.wall_stone_slab_trowel, 1, 15), "Stone Slab Trowel Wall - Black");
         
+        Blocks.lighting_stick_block = new SharpnetLightingStickBlock1(Blocks.lighting_stick_block_ID);
+        GameRegistry.registerBlock(Blocks.lighting_stick_block, "SharpnetLightingStickBlock1");
+        LanguageRegistry.addName(new ItemStack(Blocks.lighting_stick_block, 1, 0), "Lighting Stick");
+        
         //Blocks Door
         Blocks.door1_block = new SharpnetDoor1Block(Blocks.door1_block_ID, Material.wood);
         Items.door1_item = new SharpnetDoor1ItemBlock(Blocks.door1_block_ID-257, Blocks.door1_block);
@@ -610,6 +638,15 @@ public class ModSharpnet
         Items.mutton_cooked = new ItemFood(Items.mutton_cooked_ID, 6 , 0.6F, true ).setUnlocalizedName("mutton_cooked").setTextureName(modid+":food/mutton_cooked");
         GameRegistry.registerItem(Items.mutton_cooked, "Mutton Cooked");
         LanguageRegistry.addName(new ItemStack(Items.mutton_cooked, 1, 0), "Mutton Cooked");
+        
+        Items.tea_seeds = new ShItemSeeds(Items.tea_seeds_ID, Blocks.SharpnetPlantsBlocks2.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTeaSeedsItem").setTextureName(modid+":seeds/seeds_tea");
+        GameRegistry.registerItem(Items.tea_seeds, "Tea Seeds");
+        LanguageRegistry.addName(new ItemStack(Items.tea_seeds, 1, 0), "Tea Seeds");
+        
+        Items.tea_leaves = (new Item(Items.tea_leaves_ID).setUnlocalizedName("Tea_Leaves").setTextureName(modid+":food/tea_leaves"));
+        GameRegistry.registerItem(Items.tea_leaves, "Tea Leaves");
+        LanguageRegistry.addName(new ItemStack(Items.tea_leaves, 1, 0), "Tea Leaves");
+        
         
         //Item Alcohol
         Items.beer = new ShItemFoodPlacer1(Items.beer_ID, 4, 2.0F, false, Blocks.drinks1_block.blockID, 0, 2, 20).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/beer");
@@ -687,7 +724,7 @@ public class ModSharpnet
         Items.salad_fillet = new ShItemFoodPlacer1(Items.salad_fillet_ID, 14, 0.8F, false, Blocks.food1_block.blockID, 2, 0, 0).setUnlocalizedName("salad_fillet").setTextureName(modid+":drinks&food/salad_fillet");
         GameRegistry.registerItem(Items.salad_fillet, "Salad + Fillet");
         LanguageRegistry.addName(new ItemStack(Items.salad_fillet, 1, 0), "Salad + Fillet");
-        
+             
         //Armors
         
         Items.armor_formal_boots = (new SharpnetArmor(Items.armor_formal_boots_ID, SharpnetArmorCloth, 0, 3, 10, "formal", "armor/boots").setUnlocalizedName("boots_formal"));
@@ -755,7 +792,7 @@ public class ModSharpnet
         Items.roofing_tile = (new SharpnetRoofingTile(Items.roofing_tile_ID).setUnlocalizedName("Roofing_tile"));
         GameRegistry.registerItem(Items.roofing_tile, "Roofing Tile");
         LanguageRegistry.addName(new ItemStack(Items.roofing_tile, 1, 0), "Roofing Tile");
-        
+         
         //Recipes register stack alliases
         ItemStack TomatoSeeds = new ItemStack(SharpnetTomatoSeeds);
         ItemStack Tomato = new ItemStack(SharpnetTomato);
@@ -767,6 +804,7 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetCornSeeds, 1), new ItemStack(SharpnetCorn));
         
         GameRegistry.addSmelting(Items.mutton_raw.itemID, new ItemStack(Items.mutton_cooked, 1), 0.35F);
+        GameRegistry.addSmelting(Items.tea_leaves.itemID, new ItemStack(Items.cup_of_tea, 1), 0.35F);
         
         //Recipe Throwel
         GameRegistry.addRecipe(new ItemStack(Items.trowel,1,0), new Object[]

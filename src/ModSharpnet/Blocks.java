@@ -8,6 +8,9 @@ public class Blocks
     public static Block SharpnetOreBlocks1;
     public static int SharpnetOreBlocks1ID;
     
+    public static Block SharpnetPlantsBlocks2;
+    public static int SharpnetPlantsBlocks2ID;
+    
     //ID TODO Blocks
     
     public static Block door1_block;
