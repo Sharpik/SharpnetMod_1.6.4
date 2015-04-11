@@ -108,10 +108,10 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
                     par1World.setBlockMetadataWithNotify(par2, par3, par4, meta, 2);
                 }
             }
-            // Fifth plant
+            // Fifth plant Vine
             if ((meta > 11) && (meta < 14))
             {
-
+                maxgrowing = 40.0F;
                 if (par5Random.nextInt((int)(maxgrowing / f) + 1) == 0)
                 {
                     ++meta;
@@ -340,9 +340,9 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
                 case 9:{icons[i] = par1.registerIcon(modid+":plants/flax_1");break;}
                 case 10:{icons[i] = par1.registerIcon(modid+":plants/flax_4");break;}
                 case 11:{icons[i] = par1.registerIcon(modid+":plants/flax_5.2");break;}
-                case 12:{icons[i] = par1.registerIcon(modid+":plants/tea_1");break;}
-                case 13:{icons[i] = par1.registerIcon(modid+":plants/tea_2");break;}
-                case 14:{icons[i] = par1.registerIcon(modid+":plants/tea_3");break;}/*
+                case 12:{icons[i] = par1.registerIcon(modid+":plants/vine_1");break;}
+                case 13:{icons[i] = par1.registerIcon(modid+":plants/vine_2");break;}
+                case 14:{icons[i] = par1.registerIcon(modid+":plants/vine_3");break;}/*
                 case 15:{icons[i] = par1.registerIcon(modid+":tiles_wood/tile16");break;}*/
                 default:{icons[i] = par1.registerIcon(modid+":error");break;}
             }

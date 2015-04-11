@@ -421,22 +421,25 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 9), "Flax Plant");
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 10), "Flax Plant");
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 11), "Flax Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 12), "Vine Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 13), "Vine Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 14), "Vine Plant");
         
         Blocks.SharpnetPlantsBlocks2 = new SharpnetPlantsBlocks2(Blocks.SharpnetPlantsBlocks2ID, Material.plants);
         GameRegistry.registerBlock(Blocks.SharpnetPlantsBlocks2, SharpnetPlantsItemBlocks2.class, "SharpnetPlantsBlocks2");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 0), "Tea Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 1), "Tea Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 2), "Tea Plant");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPlantsBlocks2, 1, 0), "Tea Plant");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPlantsBlocks2, 1, 1), "Tea Plant");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPlantsBlocks2, 1, 2), "Tea Plant");
         /*
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 3), "Cucumber Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 4), "Cucumber Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 5), "Cucumber Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 6), "Corn Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 7), "Corn Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 8), "Corn Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 9), "Flax Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 10), "Flax Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 11), "Flax Plant");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPlantsBlocks2, 1, 3), "Cucumber Plant");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPlantsBlocks2, 1, 4), "Cucumber Plant");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPlantsBlocks2, 1, 5), "Cucumber Plant");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPlantsBlocks2, 1, 6), "Corn Plant");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPlantsBlocks2, 1, 7), "Corn Plant");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPlantsBlocks2, 1, 8), "Corn Plant");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPlantsBlocks2, 1, 9), "Flax Plant");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPlantsBlocks2, 1, 10), "Flax Plant");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPlantsBlocks2, 1, 11), "Flax Plant");
         */
         
         SharpnetStargateBlocks1 = new SharpnetStargateBlocks1(SharpnetStargateBlocks1ID, "SharpnetStargateBlocks1");
