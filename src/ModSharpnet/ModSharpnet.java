@@ -215,6 +215,8 @@ public class ModSharpnet
         
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
+        Items.stuff_of_day_ID = (config.get("Items", "stuff_of_day", 6546).getInt())-256;
+        Items.stuff_of_weather_ID = (config.get("Items", "stuff_of_weather", 6547).getInt())-256;
         
         //Items Resources
         Items.roofing_tile_ID = (config.get("Items", "roofing_tile", 6543).getInt())-256;
@@ -646,7 +648,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.tea_seeds, "Tea Seeds");
         LanguageRegistry.addName(new ItemStack(Items.tea_seeds, 1, 0), "Tea Seeds");
         
-        Items.tea_leaves = (new Item(Items.tea_leaves_ID).setUnlocalizedName("Tea_Leaves").setTextureName(modid+":food/tea_leaves"));
+        Items.tea_leaves = (new Item(Items.tea_leaves_ID).setUnlocalizedName("Tea_Leaves").setTextureName(modid+":food/tea_leaves").setCreativeTab(CreativeTabs.tabFood));
         GameRegistry.registerItem(Items.tea_leaves, "Tea Leaves");
         LanguageRegistry.addName(new ItemStack(Items.tea_leaves, 1, 0), "Tea Leaves");
         
@@ -791,8 +793,16 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.trowel, "Throwel");
         LanguageRegistry.addName(new ItemStack(Items.trowel, 1, 0), "Throwel");
         
+        Items.stuff_of_day = (new SharpnetStuffs1(Items.stuff_of_day_ID, 3, 16).setUnlocalizedName("stuff_of_day").setTextureName(modid+":tools/stuff"));
+        GameRegistry.registerItem(Items.stuff_of_day, "Stuff of Day");
+        LanguageRegistry.addName(new ItemStack(Items.stuff_of_day, 1, 0), "Stuff of Day");
+        
+        Items.stuff_of_weather = (new SharpnetStuffs1(Items.stuff_of_weather_ID, 1, 16).setUnlocalizedName("stuff_of_weather").setTextureName(modid+":tools/stuff"));
+        GameRegistry.registerItem(Items.stuff_of_weather, "Stuff of Weather");
+        LanguageRegistry.addName(new ItemStack(Items.stuff_of_weather, 1, 0), "Stuff of Weather");
+        
         //Resources
-        Items.roofing_tile = (new SharpnetRoofingTile(Items.roofing_tile_ID).setUnlocalizedName("Roofing_tile"));
+        Items.roofing_tile = (new Item(Items.roofing_tile_ID).setUnlocalizedName("Roofing_tile").setTextureName(modid+":resources/roofing_tile").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.roofing_tile, "Roofing Tile");
         LanguageRegistry.addName(new ItemStack(Items.roofing_tile, 1, 0), "Roofing Tile");
          
