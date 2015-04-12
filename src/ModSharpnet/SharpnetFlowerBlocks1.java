@@ -64,8 +64,9 @@ public class SharpnetFlowerBlocks1 extends BlockFlower
     public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4)
     {
         int l = par1World.getBlockId(par2, par3, par4);
+        int l_down = par1World.getBlockId(par2, par3 - 1, par4);
         Block block = Block.blocksList[l];
-        return (block == null || block.isBlockReplaceable(par1World, par2, par3, par4)) && canThisPlantGrowOnThisBlockID(l);
+        return (block == null || block.isBlockReplaceable(par1World, par2, par3, par4)) && canThisPlantGrowOnThisBlockID(l_down);
     }
 
     @Override
