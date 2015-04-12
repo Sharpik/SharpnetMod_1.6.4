@@ -469,7 +469,41 @@ public class Items
     public static int tea_leaves_ID;
     
     //doors
-    public static Item door1_item;
+    public static Item door1_block_item;
+    public static int door1_block_item_ID;
+    
+    public static Item door_secret1_block_item;
+    public static int door_secret1_block_item_ID;
+    
+    public static Item door_secret2_block_item;
+    public static int door_secret2_block_item_ID;
+    
+    public static Item door_secret3_block_item;
+    public static int door_secret3_block_item_ID;
+    
+    public static Item door5_block_item;
+    public static int door5_block_item_ID;
+    
+    public static Item door6_block_item;
+    public static int door6_block_item_ID;
+    
+    public static Item door7_block_item;
+    public static int door7_block_item_ID;
+    
+    public static Item door8_block_item;
+    public static int door8_block_item_ID;
+    
+    public static Item door9_block_item;
+    public static int door9_block_item_ID;
+    
+    public static Item door10_block_item;
+    public static int door10_block_item_ID;
+    
+    public static Item door11_block_item;
+    public static int door11_block_item_ID;
+    
+    public static Item door12_block_item;
+    public static int door12_block_item_ID;
     
     //IC2 API
     public static final int IC2_painterID = ic2.api.item.Items.getItem("painter").itemID;

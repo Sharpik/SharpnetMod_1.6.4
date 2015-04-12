@@ -160,9 +160,20 @@ public class ModSharpnet
         Blocks.wall_cobblestone_trowel_ID = config.get("Blocks", "wall_cobblestone_trowel", 2517).getInt();
         Blocks.wall_bricks_trowel_ID = config.get("Blocks", "wall_bricks_trowel", 2518).getInt();
         Blocks.wall_stone_slab_trowel_ID = config.get("Blocks", "wall_stone_slab_trowel", 2519).getInt();
-        Blocks.door1_block_ID = config.get("Blocks", "door1_block_", 2521).getInt(); // Don't forget to add + 1
         Blocks.SharpnetPlantsBlocks2ID =  config.get("Blocks", "SharpnetPlantsBlocks2", 2545).getInt();
         Blocks.lighting_stick_block_ID =  config.get("Blocks", "lighting_stick_block", 2546).getInt();
+        Blocks.door1_block_ID = config.get("Blocks", "door1_block_", 2547).getInt();
+        Blocks.door_secret1_block_ID = config.get("Blocks", "door_secret1_block", 2548).getInt();
+        Blocks.door_secret2_block_ID = config.get("Blocks", "door_secret2_block", 2549).getInt();
+        Blocks.door_secret3_block_ID = config.get("Blocks", "door_secret3_block", 2550).getInt();
+        Blocks.door5_block_ID = config.get("Blocks", "door5_block_", 2551).getInt();
+        Blocks.door6_block_ID = config.get("Blocks", "door6_block_", 2552).getInt();
+        Blocks.door7_block_ID = config.get("Blocks", "door7_block_", 2553).getInt();
+        Blocks.door8_block_ID = config.get("Blocks", "door8_block_", 2554).getInt();
+        Blocks.door9_block_ID = config.get("Blocks", "door9_block_", 2555).getInt();
+        Blocks.door10_block_ID = config.get("Blocks", "door10_block_", 2556).getInt();
+        Blocks.door11_block_ID = config.get("Blocks", "door11_block_", 2557).getInt();
+        Blocks.door12_block_ID = config.get("Blocks", "door12_block_", 2558).getInt();
         
         // Other Mods
         Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
@@ -225,6 +236,20 @@ public class ModSharpnet
         Items.stuff_of_death_ID = (config.get("Items", "stuff_of_death", 6549).getInt())-256;
         Items.stuff_of_warp_ID = (config.get("Items", "stuff_of_warp", 6550).getInt())-256;
         
+        //Items Blocks
+        Items.door1_block_item_ID = (config.get("Items", "door1_block_item", 6551).getInt())-256;
+        Items.door_secret1_block_item_ID = (config.get("Items", "door_secret1_block_item", 6552).getInt())-256;
+        Items.door_secret2_block_item_ID = (config.get("Items", "door_secret2_block_item", 6553).getInt())-256;
+        Items.door_secret3_block_item_ID = (config.get("Items", "door_secret3_block_item", 6554).getInt())-256;
+        Items.door5_block_item_ID = (config.get("Items", "door5_block_item", 6555).getInt())-256;
+        Items.door6_block_item_ID = (config.get("Items", "door6_block_item", 6556).getInt())-256;
+        Items.door7_block_item_ID = (config.get("Items", "door7_block_item", 6557).getInt())-256;
+        Items.door8_block_item_ID = (config.get("Items", "door8_block_item", 6558).getInt())-256;
+        Items.door9_block_item_ID = (config.get("Items", "door9_block_item", 6559).getInt())-256;
+        Items.door10_block_item_ID = (config.get("Items", "door10_block_item", 6560).getInt())-256;
+        Items.door11_block_item_ID = (config.get("Items", "door11_block_item", 6561).getInt())-256;
+        Items.door12_block_item_ID = (config.get("Items", "door12_block_item", 6562).getInt())-256;
+                
         //Items Resources
         Items.roofing_tile_ID = (config.get("Items", "roofing_tile", 6543).getInt())-256;
         
@@ -604,12 +629,89 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.lighting_stick_block, 1, 0), "Lighting Stick");
         
         //Blocks Door
-        Blocks.door1_block = new SharpnetDoor1Block(Blocks.door1_block_ID, Material.wood);
-        Items.door1_item = new SharpnetDoor1ItemBlock(Blocks.door1_block_ID-257, Blocks.door1_block);
-        GameRegistry.registerBlock(Blocks.door1_block, "SharpnetDoor1Block");
+        Blocks.door1_block = new SharpnetDoors1Block(Blocks.door1_block_ID, Material.wood,Items.door1_block_item_ID+256,1).setUnlocalizedName("SharpnetDoors1Block1");
+        Items.door1_block_item = new SharpnetDoors1ItemBlock(Items.door1_block_item_ID, Blocks.door1_block,1).setUnlocalizedName("SharpnetDoors1ItemBlock1");
+        GameRegistry.registerBlock(Blocks.door1_block, "SharpnetDoors1Block1");
         LanguageRegistry.addName(new ItemStack(Blocks.door1_block, 1, 0), "Door 1 Block");
-        GameRegistry.registerItem(Items.door1_item, "SharpnetDoor1Item");
-        LanguageRegistry.addName(new ItemStack(Items.door1_item, 1, 0), "Door 1");
+        GameRegistry.registerItem(Items.door1_block_item, "SharpnetDoors1Item1");
+        LanguageRegistry.addName(new ItemStack(Items.door1_block_item, 1, 0), "Door 1");
+        
+        Blocks.door_secret1_block = new SharpnetDoors1Block(Blocks.door_secret1_block_ID, Material.wood,Items.door_secret1_block_item_ID+256,2).setUnlocalizedName("SharpnetDoors1Block2");
+        Items.door_secret1_block_item = new SharpnetDoors1ItemBlock(Items.door_secret1_block_item_ID, Blocks.door_secret1_block,2).setUnlocalizedName("SharpnetDoors1ItemBlock2");
+        GameRegistry.registerBlock(Blocks.door_secret1_block, "SharpnetDoors1Block2");
+        LanguageRegistry.addName(new ItemStack(Blocks.door_secret1_block, 1, 0), "Secret Door 1 Block");
+        GameRegistry.registerItem(Items.door_secret1_block_item, "SharpnetDoors1Item2");
+        LanguageRegistry.addName(new ItemStack(Items.door_secret1_block_item, 1, 0), "Secret Door Bookshelf");
+        
+        Blocks.door_secret2_block = new SharpnetDoors1Block(Blocks.door_secret2_block_ID, Material.wood,Items.door_secret2_block_item_ID+256,3).setUnlocalizedName("SharpnetDoors1Block3");
+        Items.door_secret2_block_item = new SharpnetDoors1ItemBlock(Items.door_secret2_block_item_ID, Blocks.door_secret2_block,3).setUnlocalizedName("SharpnetDoors1ItemBlock3");
+        GameRegistry.registerBlock(Blocks.door_secret2_block, "SharpnetDoors1Block3");
+        LanguageRegistry.addName(new ItemStack(Blocks.door_secret2_block, 1, 0), "Secret Door 2 Block");
+        GameRegistry.registerItem(Items.door_secret2_block_item, "SharpnetDoors1Item3");
+        LanguageRegistry.addName(new ItemStack(Items.door_secret2_block_item, 1, 0), "Secret Door Mossy");
+        
+        Blocks.door_secret3_block = new SharpnetDoors1Block(Blocks.door_secret3_block_ID, Material.wood,Items.door_secret3_block_item_ID+256,4).setUnlocalizedName("SharpnetDoors1Block4");
+        Items.door_secret3_block_item = new SharpnetDoors1ItemBlock(Items.door_secret3_block_item_ID, Blocks.door_secret3_block,4).setUnlocalizedName("SharpnetDoors1ItemBlock4");
+        GameRegistry.registerBlock(Blocks.door_secret3_block, "SharpnetDoors1Block4");
+        LanguageRegistry.addName(new ItemStack(Blocks.door_secret3_block, 1, 0), "Secret Door 3 Block");
+        GameRegistry.registerItem(Items.door_secret3_block_item, "SharpnetDoors1Item4");
+        LanguageRegistry.addName(new ItemStack(Items.door_secret3_block_item, 1, 0), "Secret Door Cobblestone");
+        
+        Blocks.door5_block = new SharpnetDoors1Block(Blocks.door5_block_ID, Material.wood,Items.door5_block_item_ID+256,5).setUnlocalizedName("SharpnetDoors1Block5");
+        Items.door5_block_item = new SharpnetDoors1ItemBlock(Items.door5_block_item_ID, Blocks.door5_block,5).setUnlocalizedName("SharpnetDoors1ItemBlock5");
+        GameRegistry.registerBlock(Blocks.door5_block, "SharpnetDoors1Block5");
+        LanguageRegistry.addName(new ItemStack(Blocks.door5_block, 1, 0), "Door 5 Block");
+        GameRegistry.registerItem(Items.door5_block_item, "SharpnetDoors1Item5");
+        LanguageRegistry.addName(new ItemStack(Items.door5_block_item, 1, 0), "Door 5");
+        
+        Blocks.door6_block = new SharpnetDoors1Block(Blocks.door6_block_ID, Material.wood,Items.door6_block_item_ID+256,6).setUnlocalizedName("SharpnetDoors1Block6");
+        Items.door6_block_item = new SharpnetDoors1ItemBlock(Items.door6_block_item_ID, Blocks.door6_block,6).setUnlocalizedName("SharpnetDoors1ItemBlock6");
+        GameRegistry.registerBlock(Blocks.door6_block, "SharpnetDoors1Block6");
+        LanguageRegistry.addName(new ItemStack(Blocks.door6_block, 1, 0), "Door 6 Block");
+        GameRegistry.registerItem(Items.door6_block_item, "SharpnetDoors1Item6");
+        LanguageRegistry.addName(new ItemStack(Items.door6_block_item, 1, 0), "Door 6");
+        
+        Blocks.door7_block = new SharpnetDoors1Block(Blocks.door7_block_ID, Material.wood,Items.door7_block_item_ID+256,7).setUnlocalizedName("SharpnetDoors1Block7");
+        Items.door7_block_item = new SharpnetDoors1ItemBlock(Items.door7_block_item_ID, Blocks.door7_block,7).setUnlocalizedName("SharpnetDoors1ItemBlock7");
+        GameRegistry.registerBlock(Blocks.door7_block, "SharpnetDoors1Block7");
+        LanguageRegistry.addName(new ItemStack(Blocks.door7_block, 1, 0), "Door 7 Block");
+        GameRegistry.registerItem(Items.door7_block_item, "SharpnetDoors1Item7");
+        LanguageRegistry.addName(new ItemStack(Items.door7_block_item, 1, 0), "Door 7");
+        
+        Blocks.door8_block = new SharpnetDoors1Block(Blocks.door8_block_ID, Material.wood,Items.door8_block_item_ID+256,8).setUnlocalizedName("SharpnetDoors1Block8");
+        Items.door8_block_item = new SharpnetDoors1ItemBlock(Items.door8_block_item_ID, Blocks.door8_block,8).setUnlocalizedName("SharpnetDoors1ItemBlock8");
+        GameRegistry.registerBlock(Blocks.door8_block, "SharpnetDoors1Block8");
+        LanguageRegistry.addName(new ItemStack(Blocks.door8_block, 1, 0), "Door 8 Block");
+        GameRegistry.registerItem(Items.door8_block_item, "SharpnetDoors1Item8");
+        LanguageRegistry.addName(new ItemStack(Items.door8_block_item, 1, 0), "Door 8");
+        
+        Blocks.door9_block = new SharpnetDoors1Block(Blocks.door9_block_ID, Material.wood,Items.door9_block_item_ID+256,9).setUnlocalizedName("SharpnetDoors1Block9");
+        Items.door9_block_item = new SharpnetDoors1ItemBlock(Items.door9_block_item_ID, Blocks.door9_block,9).setUnlocalizedName("SharpnetDoors1ItemBlock9");
+        GameRegistry.registerBlock(Blocks.door9_block, "SharpnetDoors1Block9");
+        LanguageRegistry.addName(new ItemStack(Blocks.door9_block, 1, 0), "Door 9 Block");
+        GameRegistry.registerItem(Items.door9_block_item, "SharpnetDoors1Item9");
+        LanguageRegistry.addName(new ItemStack(Items.door9_block_item, 1, 0), "Door 9");
+        
+        Blocks.door10_block = new SharpnetDoors1Block(Blocks.door10_block_ID, Material.wood,Items.door10_block_item_ID+256,10).setUnlocalizedName("SharpnetDoors1Block10");
+        Items.door10_block_item = new SharpnetDoors1ItemBlock(Items.door10_block_item_ID, Blocks.door10_block,10).setUnlocalizedName("SharpnetDoors1ItemBlock10");
+        GameRegistry.registerBlock(Blocks.door10_block, "SharpnetDoors1Block10");
+        LanguageRegistry.addName(new ItemStack(Blocks.door10_block, 1, 0), "Door 10 Block");
+        GameRegistry.registerItem(Items.door10_block_item, "SharpnetDoors1Item10");
+        LanguageRegistry.addName(new ItemStack(Items.door10_block_item, 1, 0), "Door 10");
+        
+        Blocks.door11_block = new SharpnetDoors1Block(Blocks.door11_block_ID, Material.wood,Items.door11_block_item_ID+256,11).setUnlocalizedName("SharpnetDoors1Block11");
+        Items.door11_block_item = new SharpnetDoors1ItemBlock(Items.door11_block_item_ID, Blocks.door11_block,11).setUnlocalizedName("SharpnetDoors1ItemBlock11");
+        GameRegistry.registerBlock(Blocks.door11_block, "SharpnetDoors1Block11");
+        LanguageRegistry.addName(new ItemStack(Blocks.door11_block, 1, 0), "Door 11 Block");
+        GameRegistry.registerItem(Items.door11_block_item, "SharpnetDoors1Item11");
+        LanguageRegistry.addName(new ItemStack(Items.door11_block_item, 1, 0), "Door 11");
+        
+        Blocks.door12_block = new SharpnetDoors1Block(Blocks.door12_block_ID, Material.wood,Items.door12_block_item_ID+256,12).setUnlocalizedName("SharpnetDoors1Block12");
+        Items.door12_block_item = new SharpnetDoors1ItemBlock(Items.door12_block_item_ID, Blocks.door12_block,12).setUnlocalizedName("SharpnetDoors1ItemBlock12");
+        GameRegistry.registerBlock(Blocks.door12_block, "SharpnetDoors1Block12");
+        LanguageRegistry.addName(new ItemStack(Blocks.door12_block, 1, 0), "Door 12 Block");
+        GameRegistry.registerItem(Items.door12_block_item, "SharpnetDoors1Item12");
+        LanguageRegistry.addName(new ItemStack(Items.door12_block_item, 1, 0), "Door 12");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");

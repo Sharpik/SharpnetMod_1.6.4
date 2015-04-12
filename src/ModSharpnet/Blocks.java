@@ -16,14 +16,14 @@ public class Blocks
     public static Block door1_block;
     public static int door1_block_ID;
     
-    public static Block door2_block;
-    public static int door2_block_ID;
+    public static Block door_secret1_block;
+    public static int door_secret1_block_ID;
     
-    public static Block door3_block;
-    public static int door3_block_ID;
+    public static Block door_secret2_block;
+    public static int door_secret2_block_ID;
     
-    public static Block door4_block;
-    public static int door4_block_ID;
+    public static Block door_secret3_block;
+    public static int door_secret3_block_ID;
     
     public static Block door5_block;
     public static int door5_block_ID;

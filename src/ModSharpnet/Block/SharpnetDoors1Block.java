@@ -1,5 +1,6 @@
-package ModSharpnet;
+package ModSharpnet.Block;
 
+import ModSharpnet.Items;
 import static ModSharpnet.ModSharpnet.modid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -15,7 +16,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-class SharpnetDoor1Block extends BlockDoor
+public class SharpnetDoors1Block extends BlockDoor
 {
     @SideOnly(Side.CLIENT)
     private Icon[] Ikona1;
@@ -23,15 +24,19 @@ class SharpnetDoor1Block extends BlockDoor
     @SideOnly(Side.CLIENT)
     private Icon[] Ikona2;
     
-    public SharpnetDoor1Block(int door1_block_ID, Material par2Material)
+    public int DropItemId = 0;
+    public int DoorNum = 1;
+    
+    public SharpnetDoors1Block(int door1_block_ID, Material par2Material, int dropId, int doorNum)
     {
         super(door1_block_ID, par2Material);
-        setUnlocalizedName("Sharpnet Door 1");
         setHardness(1.0F);
         setResistance(2.0F);
         setLightOpacity(0);
         setBurnProperties(door1_block_ID, 30, 60);
         this.setCreativeTab((CreativeTabs)null);
+        this.DropItemId = dropId;
+        this.DoorNum = doorNum;
     }
     
     @SideOnly(Side.CLIENT)
@@ -111,8 +116,25 @@ class SharpnetDoor1Block extends BlockDoor
     {
         this.Ikona1 = new Icon[2];
         this.Ikona2 = new Icon[2];
-        this.Ikona1[0] = par1IconRegister.registerIcon(modid+":doors/door_1.1");
-        this.Ikona2[0] = par1IconRegister.registerIcon(modid+":doors/door_1.2");
+        switch(DoorNum)
+        {
+            case 2:
+                this.Ikona1[0] = par1IconRegister.registerIcon("minecraft:bookshelf");
+                this.Ikona2[0] = par1IconRegister.registerIcon("minecraft:bookshelf");
+                break;
+            case 3:
+                this.Ikona1[0] = par1IconRegister.registerIcon("minecraft:cobblestone_mossy");
+                this.Ikona2[0] = par1IconRegister.registerIcon("minecraft:cobblestone_mossy");
+                break;
+            case 4:
+                this.Ikona1[0] = par1IconRegister.registerIcon("minecraft:cobblestone");
+                this.Ikona2[0] = par1IconRegister.registerIcon("minecraft:cobblestone");
+                break;
+            default:
+                this.Ikona1[0] = par1IconRegister.registerIcon(modid+":doors/door_" + DoorNum + ".1");
+                this.Ikona2[0] = par1IconRegister.registerIcon(modid+":doors/door_" + DoorNum + ".2");
+                break;
+        }
         this.Ikona1[1] = new IconFlipped(this.Ikona1[0], true, false);
         this.Ikona2[1] = new IconFlipped(this.Ikona2[0], true, false);
     }
@@ -120,13 +142,14 @@ class SharpnetDoor1Block extends BlockDoor
     @Override
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return (par1 & 8) != 0 ? 0 : (this.blockID-1);
+        if ((par1 & 8) != 0) { return  0;}
+        else { return DropItemId; }
     }
     
     @Override
     public int idPicked(World par1World, int par2, int par3, int par4)
     {
-        return this.blockID-1;
+        return DropItemId;
     }
     
     @Override

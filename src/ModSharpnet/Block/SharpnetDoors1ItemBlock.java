@@ -1,5 +1,6 @@
-package ModSharpnet;
+package ModSharpnet.Block;
 
+import ModSharpnet.Blocks;
 import static ModSharpnet.ModSharpnet.modid;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -9,18 +10,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class SharpnetDoor1ItemBlock extends Item
+public class SharpnetDoors1ItemBlock extends Item
 {
     private Block block;
 
-    public SharpnetDoor1ItemBlock(int par1, Block doorBlock)
+    public SharpnetDoors1ItemBlock(int par1, Block doorBlock, int doorNum)
     {
         super(par1);
         this.setCreativeTab(CreativeTabs.tabRedstone);
         this.maxStackSize = 1;
-        this.setTextureName(modid+":doors/door_1");
-        this.setUnlocalizedName(Blocks.door1_block.getUnlocalizedName());
         this.block = doorBlock;
+        this.setTextureName(modid+":doors/door_" + doorNum);
     }
     
     @Override
