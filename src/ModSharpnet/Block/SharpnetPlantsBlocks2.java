@@ -2,6 +2,7 @@ package ModSharpnet.Block;
 
 import ModSharpnet.Items;
 import static ModSharpnet.ModSharpnet.modid;
+import static ModSharpnet.ModSharpnet.SHdebug;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
@@ -22,7 +23,9 @@ import net.minecraftforge.common.ForgeDirection;
 
 public class SharpnetPlantsBlocks2 extends BlockFlower
 {
-
+    // TADY ZMENIT POCET VARIANT 1 - 16
+    public static int pocet = 3;
+    
     public SharpnetPlantsBlocks2(int par1, Material par2Material)
     {
         super(par1, par2Material);
@@ -37,8 +40,6 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
         this.disableStats();
     }
     
-    // TADY ZMENIT POCET VARIANT 1 - 16
-    public int pocet = 3;
     public int dropID = this.blockID;
     public int dropMeta = 0;
     public int blockMetaData;
@@ -346,7 +347,13 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side,int metadata)
     {
-        return icons[metadata];
+        if (metadata < pocet)
+        {
+            //debug
+            if (SHdebug == true) System.out.println("SharpnetMod Plant Block 2: Icon Reg Meta:" + metadata);
+            return icons[metadata];
+        }
+        return null;
     }
     
     @Override

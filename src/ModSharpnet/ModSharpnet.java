@@ -114,6 +114,7 @@ public class ModSharpnet
     public static Item SharpnetFlaxSeeds;
     public static int SharpnetFlaxSeedsID;
     
+    public static boolean SHdebug;
     
     //public static Item 
     //public static int 
@@ -124,7 +125,7 @@ public class ModSharpnet
     //Material Register
     public static EnumArmorMaterial SharpnetArmorCloth = EnumHelper.addArmorMaterial("SharpnetArmorCloth", 5, new int[] {1, 3, 2, 1}, 30);
     public static Material SharpnetRoadsBlocksMaterial = new ShMaterial(MapColor.stoneColor);
-    
+     
     // Config register
     public void initConfiguration(FMLInitializationEvent event)
     {
@@ -132,6 +133,9 @@ public class ModSharpnet
         config.load();
         Configuration config_mod_PR = new Configuration(new File("config/ProjectRed.cfg"));
         config_mod_PR.load();
+        
+        //Others
+        SHdebug = config.get("boolean", "SHdebug", false).getBoolean(false);
         
         //Blocks ID
         Blocks.SharpnetOreBlocks1ID = config.get("Blocks", "SharpnetOreBlocks1", 2505).getInt();

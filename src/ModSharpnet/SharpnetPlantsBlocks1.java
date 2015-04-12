@@ -45,7 +45,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
     }
     
     // TADY ZMENIT POCET VARIANT 1 - 16
-    public int pocet = 12;
+    public static int pocet = 12;
     public int dropID = this.blockID;
     public int dropMeta = 0;
     public int blockMetaData;
@@ -353,7 +353,13 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side,int metadata)
     {
+        if (metadata < pocet)
+        {
+        //debug
+        if (ModSharpnet.SHdebug == true) System.out.println("SharpnetMod Plant Block 1: Icon Reg Meta:" + metadata);
         return icons[metadata];
+        }
+        return null;
     }
     
     @Override
