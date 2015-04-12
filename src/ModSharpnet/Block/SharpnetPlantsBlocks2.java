@@ -31,7 +31,7 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
         this.setCreativeTab((CreativeTabs)null);
         //this.setCreativeTab(CreativeTabs.tabFood);
-        this.setUnlocalizedName("Sharpnet Plants Blocks 2");
+        this.setUnlocalizedName("SharpnetPlantsBlocks2");
         this.setHardness(0.0F).setStepSound(Block.soundGrassFootstep);
         this.setResistance(0.0F);
         this.disableStats();

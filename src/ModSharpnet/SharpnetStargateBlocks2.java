@@ -15,10 +15,10 @@ import net.minecraft.util.Icon;
 public class SharpnetStargateBlocks2 extends Block
 {
 
-    public SharpnetStargateBlocks2(int par1,String par2Material)
+    public SharpnetStargateBlocks2(int par1,String par2)
     {
         super(par1, Material.rock);
-        setUnlocalizedName("Sharpnet Stargate Blocks 2");
+        setUnlocalizedName(par2);
         setHardness(5.0F).setStepSound(Block.soundStoneFootstep);
         setResistance(10.0F);
         setCreativeTab(CreativeTabs.tabBlock);
