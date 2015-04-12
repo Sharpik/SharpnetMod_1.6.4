@@ -35,7 +35,7 @@ public class SharpnetPlantsItemBlocks1 extends ItemBlock
     @Override
     public int getMetadata (int damageValue)
     {
-            return damageValue;
+            return ThisMaxDamage;
     }
     
     @Override

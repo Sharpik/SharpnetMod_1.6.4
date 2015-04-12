@@ -355,9 +355,9 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
     {
         if (metadata < pocet)
         {
-        //debug
-        if (ModSharpnet.SHdebug == true) System.out.println("SharpnetMod Plant Block 1: Icon Reg Meta:" + metadata);
-        return icons[metadata];
+            //debug
+            if (ModSharpnet.SHdebug == true) System.out.println("SharpnetMod Plant Block 1: Icon Reg Meta:" + metadata + " pocet: " + pocet);
+            return icons[metadata];
         }
         return null;
     }
@@ -366,12 +366,12 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
     {
-        /*
+        
         for(int i = 0; i < pocet; i++)
         {
             par3List.add(new ItemStack(par1, 1, i));
         }
-        */
+        
         /*
         //Registrace Bloků do creative tabu
         par3List.add(new ItemStack(par1, 1, 0));

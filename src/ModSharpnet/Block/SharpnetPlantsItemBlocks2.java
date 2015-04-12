@@ -11,13 +11,12 @@ import net.minecraft.util.Icon;
 public class SharpnetPlantsItemBlocks2 extends ItemBlock
 {
     private final Block block = Blocks.SharpnetPlantsBlocks2;
-    private int ThisMaxDamage = 0;
+    private final int ThisMaxDamage = ((SharpnetPlantsBlocks2.pocet) -1);
     
     public SharpnetPlantsItemBlocks2(int id)
     {
 	super(id);
 	setHasSubtypes(true);
-        ThisMaxDamage = SharpnetPlantsBlocks2.pocet -1;
     }
     
     @Override
@@ -38,7 +37,7 @@ public class SharpnetPlantsItemBlocks2 extends ItemBlock
     @Override
     public int getMetadata (int damageValue)
     {
-            return damageValue;
+            return ThisMaxDamage;
     }
     
     @Override

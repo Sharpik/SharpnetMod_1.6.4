@@ -220,7 +220,10 @@ public class ModSharpnet
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
         Items.stuff_of_day_ID = (config.get("Items", "stuff_of_day", 6546).getInt())-256;
-        Items.stuff_of_weather_ID = (config.get("Items", "stuff_of_weather", 6547).getInt())-256;
+        Items.stuff_of_night_ID = (config.get("Items", "stuff_of_night", 6547).getInt())-256;
+        Items.stuff_of_weather_ID = (config.get("Items", "stuff_of_weather", 6548).getInt())-256;
+        Items.stuff_of_death_ID = (config.get("Items", "stuff_of_death", 6549).getInt())-256;
+        Items.stuff_of_warp_ID = (config.get("Items", "stuff_of_warp", 6550).getInt())-256;
         
         //Items Resources
         Items.roofing_tile_ID = (config.get("Items", "roofing_tile", 6543).getInt())-256;
@@ -427,9 +430,10 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 9), "Flax Plant");
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 10), "Flax Plant");
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 11), "Flax Plant");
+        /*
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 12), "Vine Plant");
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 13), "Vine Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 14), "Vine Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 14), "Vine Plant");*/
         
         Blocks.SharpnetPlantsBlocks2 = new SharpnetPlantsBlocks2(Blocks.SharpnetPlantsBlocks2ID, Material.plants);
         GameRegistry.registerBlock(Blocks.SharpnetPlantsBlocks2, SharpnetPlantsItemBlocks2.class, "SharpnetPlantsBlocks2");
@@ -801,9 +805,21 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.stuff_of_day, "Stuff of Day");
         LanguageRegistry.addName(new ItemStack(Items.stuff_of_day, 1, 0), "Stuff of Day");
         
+        Items.stuff_of_night = (new SharpnetStuffs1(Items.stuff_of_night_ID, 4, 16).setUnlocalizedName("stuff_of_night").setTextureName(modid+":tools/stuff"));
+        GameRegistry.registerItem(Items.stuff_of_night, "Stuff of Night");
+        LanguageRegistry.addName(new ItemStack(Items.stuff_of_night, 1, 0), "Stuff of Night");
+        
         Items.stuff_of_weather = (new SharpnetStuffs1(Items.stuff_of_weather_ID, 1, 16).setUnlocalizedName("stuff_of_weather").setTextureName(modid+":tools/stuff"));
         GameRegistry.registerItem(Items.stuff_of_weather, "Stuff of Weather");
         LanguageRegistry.addName(new ItemStack(Items.stuff_of_weather, 1, 0), "Stuff of Weather");
+        
+        Items.stuff_of_death = (new SharpnetStuffs1(Items.stuff_of_death_ID, 5, 16).setUnlocalizedName("stuff_of_death").setTextureName(modid+":tools/stuff"));
+        GameRegistry.registerItem(Items.stuff_of_death, "Stuff of Death");
+        LanguageRegistry.addName(new ItemStack(Items.stuff_of_death, 1, 0), "Stuff of Death");
+        
+        Items.stuff_of_warp = (new SharpnetStuffs1(Items.stuff_of_warp_ID, 6, 16).setUnlocalizedName("stuff_of_warp").setTextureName(modid+":tools/stuff"));
+        GameRegistry.registerItem(Items.stuff_of_warp, "Stuff of Warp");
+        LanguageRegistry.addName(new ItemStack(Items.stuff_of_warp, 1, 0), "Stuff of Warp");
         
         //Resources
         Items.roofing_tile = (new Item(Items.roofing_tile_ID).setUnlocalizedName("Roofing_tile").setTextureName(modid+":resources/roofing_tile").setCreativeTab(CreativeTabs.tabMaterials));

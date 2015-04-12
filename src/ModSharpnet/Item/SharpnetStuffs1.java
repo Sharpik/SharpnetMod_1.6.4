@@ -6,10 +6,13 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatMessageComponent;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
 public class SharpnetStuffs1 extends Item
@@ -66,6 +69,24 @@ public class SharpnetStuffs1 extends Item
                     par3EntityPlayer.sendChatToPlayer(new ChatMessageComponent().addText("Its 20:00 O clock!"));
                     par1ItemStack.damageItem(1, par3EntityPlayer);
                     break;
+                case 6:
+                    Vec3 vec3 = par3EntityPlayer.getPosition(1.0F);
+                    ++vec3.yCoord;
+                    Vec3 lookVec = par3EntityPlayer.getLook(1.0F);
+                    Vec3 addedVector = vec3.addVector(lookVec.xCoord * 50.0D, lookVec.yCoord * 50.0D, lookVec.zCoord * 50.0D);
+                    MovingObjectPosition movingObjPos = par2World.clip(vec3, addedVector);
+                    if (movingObjPos != null)
+                    {
+                        int blockX = movingObjPos.blockX;
+                        int blockY = movingObjPos.blockY;
+                        int blockZ = movingObjPos.blockZ;
+                        EntityPlayerMP playerMP = (EntityPlayerMP)par3EntityPlayer;
+                        playerMP.setPositionAndUpdate((double)blockX, (double)((float)blockY + 1.2F), (double)blockZ);
+                        playerMP.fallDistance = 0.0F;
+                        par3EntityPlayer.sendChatToPlayer(new ChatMessageComponent().addText("Teleport Position [ X: " + blockX + " Y: " + blockY + " Z: " + blockZ + " ]"));
+                        par1ItemStack.damageItem(1, par3EntityPlayer);
+                    }
+                    break;
             }
 
             par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
@@ -76,6 +97,10 @@ public class SharpnetStuffs1 extends Item
     @Override
     public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLivingBase, EntityLivingBase par3EntityLivingBase)
     {
+        if (StuffType == 5)
+        {
+            par2EntityLivingBase.setHealth(0);
+        }
         par1ItemStack.damageItem(1, par3EntityLivingBase);
         return true;
     }
