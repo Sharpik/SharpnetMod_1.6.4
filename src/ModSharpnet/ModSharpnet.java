@@ -227,6 +227,8 @@ public class ModSharpnet
         Items.mutton_cooked_ID = (config.get("Items", "mutton_cooked", 424).getInt())-256;
         Items.tea_seeds_ID = (config.get("Items", "tea_seeds", 6544).getInt())-256;
         Items.tea_leaves_ID = (config.get("Items", "tea_leaves", 6545).getInt())-256;
+        Items.cofee_beans_raw_ID = (config.get("Items", "cofee_beans_raw", 6567).getInt())-256;
+        Items.cofee_beans_ID = (config.get("Items", "cofee_beans", 6568).getInt())-256;
         
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
@@ -750,6 +752,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.mutton_raw, "Mutton Raw");
         LanguageRegistry.addName(new ItemStack(Items.mutton_raw, 1, 0), "Mutton Raw");
         
+        //Place holder Mutton
         Items.mutton_cooked = new ItemFood(Items.mutton_cooked_ID, 6 , 0.6F, true ).setUnlocalizedName("mutton_cooked").setTextureName(modid+":food/mutton_cooked");
         GameRegistry.registerItem(Items.mutton_cooked, "Mutton Cooked");
         LanguageRegistry.addName(new ItemStack(Items.mutton_cooked, 1, 0), "Mutton Cooked");
@@ -762,6 +765,13 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.tea_leaves, "Tea Leaves");
         LanguageRegistry.addName(new ItemStack(Items.tea_leaves, 1, 0), "Tea Leaves");
         
+        Items.cofee_beans_raw = new ShItemSeeds(Items.cofee_beans_raw_ID, Blocks.SharpnetPlantsBlocks2.blockID, Block.tilledField.blockID, 3).setUnlocalizedName("SharpnetCofeeSeedsItem").setTextureName(modid+":seeds/seeds_cofee");
+        GameRegistry.registerItem(Items.cofee_beans_raw, "Cofee Beans Raw");
+        LanguageRegistry.addName(new ItemStack(Items.cofee_beans_raw, 1, 0), "Cofee Beans Raw");
+        
+        Items.cofee_beans = (new Item(Items.cofee_beans_ID).setUnlocalizedName("Cofee_Beans").setTextureName(modid+":food/cofee_beans").setCreativeTab(CreativeTabs.tabFood));
+        GameRegistry.registerItem(Items.cofee_beans, "Cofee Beans");
+        LanguageRegistry.addName(new ItemStack(Items.cofee_beans, 1, 0), "Cofee Beans");
         
         //Item Alcohol
         Items.beer = new ShItemFoodPlacer1(Items.beer_ID, 4, 2.0F, false, Blocks.drinks1_block.blockID, 0, 2, 20).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/beer");
@@ -940,6 +950,8 @@ public class ModSharpnet
         
         GameRegistry.addSmelting(Items.mutton_raw.itemID, new ItemStack(Items.mutton_cooked, 1), 0.35F);
         GameRegistry.addSmelting(Items.tea_leaves.itemID, new ItemStack(Items.cup_of_tea, 1), 0.35F);
+        GameRegistry.addSmelting(Items.cofee_beans_raw.itemID, new ItemStack(Items.cofee_beans, 1), 0.35F);
+        GameRegistry.addSmelting(Items.cofee_beans.itemID, new ItemStack(Items.cofee, 1), 0.35F);
         
         //Recipe Throwel
         GameRegistry.addRecipe(new ItemStack(Items.trowel,1,0), new Object[]

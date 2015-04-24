@@ -153,6 +153,9 @@ public class Items
     public static Item cofee;
     public static int cofee_ID;
     
+    public static Item cofee_beans_raw;
+    public static int cofee_beans_raw_ID;
+    
     public static Item cofee_beans;
     public static int cofee_beans_ID;
     

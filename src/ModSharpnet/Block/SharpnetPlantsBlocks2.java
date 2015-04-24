@@ -24,7 +24,7 @@ import net.minecraftforge.common.ForgeDirection;
 public class SharpnetPlantsBlocks2 extends BlockFlower
 {
     // TADY ZMENIT POCET VARIANT 1 - 16
-    public static int pocet = 3;
+    public static int pocet = 6;
     
     public SharpnetPlantsBlocks2(int par1, Material par2Material)
     {
@@ -65,7 +65,18 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             // First plant Tea
             if (meta < 2)
             {
-                maxgrowing = 30.F;
+                maxgrowing = 31.F;
+                if (par5Random.nextInt((int)(maxgrowing / f) + 1) == 0)
+                {
+                    ++meta;
+                    par1World.setBlockMetadataWithNotify(par2, par3, par4, meta, 2);
+                }
+            }
+            
+            // Secound plant Cofee
+            if ((meta > 2) && (meta < 5))
+            {
+                maxgrowing = 28.F;
                 if (par5Random.nextInt((int)(maxgrowing / f) + 1) == 0)
                 {
                     ++meta;
@@ -73,16 +84,6 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
                 }
             }
             /*
-            // Secound plant Cucumber
-            if ((meta > 2) && (meta < 5))
-            {
-                maxgrowing = 25.F;
-                if (par5Random.nextInt((int)(maxgrowing / f) + 1) == 0)
-                {
-                    ++meta;
-                    par1World.setBlockMetadataWithNotify(par2, par3, par4, meta, 2);
-                }
-            }
             // Third plant Corn
             if ((meta > 5) && (meta < 8))
             {
@@ -235,11 +236,12 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             case 1: dropID = Items.tea_seeds.itemID; break;
             //case 2: dropID = Items.tea_leaves.itemID; break;
             case 2: dropID = 0; break;
-                /*
-            //Cucumber 3 - 5 meta
-            case 3: dropID = SharpnetCucumberSeeds.itemID; break;
-            case 4: dropID = SharpnetCucumberSeeds.itemID; break;
-            case 5: dropID = SharpnetCucumber.itemID; break;
+                
+            //Cofee 3 - 5 meta
+            case 3: dropID = Items.cofee_beans_raw.itemID; break;
+            case 4: dropID = Items.cofee_beans_raw.itemID; break;
+            case 5: dropID = Items.cofee_beans_raw.itemID; break;
+            /*
             //Corn 6 - 8 meta
             case 6: dropID = SharpnetCornSeeds.itemID; break;
             case 7: dropID = SharpnetCornSeeds.itemID; break;
@@ -294,8 +296,8 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
         int max = 1;
         
         if(blockMetaData == 2){min = 0; max = 0;}
+        if(blockMetaData == 5){min = 2; max = 4;}
         /*
-        if(blockMetaData == 5){max = 3;}
         if(blockMetaData == 8){max = 3;}
         if(blockMetaData == 11){min = 0; max = 0;}
         if(blockMetaData == 14){max = 3;}
@@ -324,10 +326,10 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
                 case 0:{icons[i] = par1.registerIcon(modid+":plants/tea_1");break;}
                 case 1:{icons[i] = par1.registerIcon(modid+":plants/tea_2");break;}
                 case 2:{icons[i] = par1.registerIcon(modid+":plants/tea_3");break;}
+                case 3:{icons[i] = par1.registerIcon(modid+":plants/cofee_1");break;}
+                case 4:{icons[i] = par1.registerIcon(modid+":plants/cofee_2");break;}
+                case 5:{icons[i] = par1.registerIcon(modid+":plants/cofee_3");break;}
                 /*
-                case 3:{icons[i] = par1.registerIcon(modid+":plants/pla_cucumber_1");break;}
-                case 4:{icons[i] = par1.registerIcon(modid+":plants/pla_cucumber_2");break;}
-                case 5:{icons[i] = par1.registerIcon(modid+":plants/pla_cucumber_3");break;}
                 case 6:{icons[i] = par1.registerIcon(modid+":plants/pla_corn1");break;}
                 case 7:{icons[i] = par1.registerIcon(modid+":plants/pla_corn2");break;}
                 case 8:{icons[i] = par1.registerIcon(modid+":plants/pla_corn3");break;}
