@@ -253,6 +253,8 @@ public class ModSharpnet
         Items.door10_block_item_ID = (config.get("Items", "door10_block_item", 6560).getInt())-256;
         Items.door11_block_item_ID = (config.get("Items", "door11_block_item", 6561).getInt())-256;
         Items.door12_block_item_ID = (config.get("Items", "door12_block_item", 6562).getInt())-256;
+        Items.barrel_ID = (config.get("Items", "barrel", 6013).getInt())-256;
+        Items.barrel_of_wine_ID = (config.get("Items", "barrel_of_wine", 6014).getInt())-256;
                 
         //Items Resources
         Items.roofing_tile_ID = (config.get("Items", "roofing_tile", 6543).getInt())-256;
@@ -972,6 +974,23 @@ public class ModSharpnet
             'S', Item.stick, 'C', Item.clay, 'I', Item.ingotIron
         });
         GameRegistry.addShapelessRecipe(new ItemStack(Items.trowel,1,0), new ItemStack(Items.trowel,1,8), Item.clay);
+        
+        //Recipe Barrel
+        GameRegistry.addRecipe(new ItemStack(Items.barrel_of_wine_ID+256,1,0), new Object[]
+        {
+            "GGG",
+            "GBG",
+            "GGG",
+            'G', Items.grape_red, 'B', new ItemStack(Items.barrel_ID+256,1,0)
+        });
+        //Recipe Bottle of Vine
+        GameRegistry.addRecipe(new ItemStack(Items.wine,6,0), new Object[]
+        {
+            "G G",
+            "GBG",
+            "G G",
+            'B', new ItemStack(Items.barrel_of_wine_ID+256,1,0), 'G', Items.bottle
+        });
         
         //Recipe throwel wall
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_cobblestone_trowel,1,12), new ItemStack(Block.cobblestone,1,0), Item.clay);

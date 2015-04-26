@@ -17,6 +17,7 @@ import net.minecraft.block.Block;
 import static net.minecraft.block.Block.blocksList;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
@@ -43,6 +44,7 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
     public int dropID = this.blockID;
     public int dropMeta = 0;
     public int blockMetaData;
+    private static int itemInHandID = 0;
     
     @Override
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
@@ -220,8 +222,11 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             ItemStack Itemspawn2 = new ItemStack(Items.tea_leaves,randomNum);
             EntityItem Ispawn1 = new EntityItem(world,x,y,z,Itemspawn1);
             EntityItem Ispawn2 = new EntityItem(world,x,y,z,Itemspawn2);
-            world.spawnEntityInWorld(Ispawn1);
-            world.spawnEntityInWorld(Ispawn2);
+            if (!world.isRemote)
+            {
+                world.spawnEntityInWorld(Ispawn1);
+                world.spawnEntityInWorld(Ispawn2);
+            }
         }
     }
         
@@ -258,6 +263,46 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             case 14: dropID = SharpnetFlaxSeeds.itemID; break;*/
         }
         return dropMeta;
+    }
+    
+    @Override
+    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
+    {
+        blockMetaData = par1World.getBlockMetadata(par2, par3, par4);
+        //System.out.println("SHdebug: Player " + par5EntityPlayer.getDisplayName() +" clicked on block with META: " + blockMetaData);
+        Random rand = new Random();
+        
+        if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
+        { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; }
+        
+        //Tea drop
+        if( blockMetaData == 2)
+        {
+            ItemStack Itemspawn1 = new ItemStack(Items.tea_leaves,quantityDropped(rand));
+            EntityItem Ispawn1 = new EntityItem(par1World,par2,par3,par4,Itemspawn1);
+            if (!par1World.isRemote)
+            {
+                par1World.spawnEntityInWorld(Ispawn1);
+                par1World.setBlock(par2, par3 , par4, this.blockID, 1, 2);
+                return true;
+            }
+        }
+        
+        //Coffee drop
+        if( blockMetaData == 5)
+        {
+            ItemStack Itemspawn1 = new ItemStack(Items.cofee_beans_raw,quantityDropped(rand));
+            EntityItem Ispawn1 = new EntityItem(par1World,par2,par3,par4,Itemspawn1);
+            if (!par1World.isRemote)
+            {
+                par1World.spawnEntityInWorld(Ispawn1);
+                par1World.setBlock(par2, par3 , par4, this.blockID, 4, 2);
+                return true;
+            }
+        }
+        
+        //if (itemInHandID == blackPainterID){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 2, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        return false;
     }
     
     protected int getSeedItem()

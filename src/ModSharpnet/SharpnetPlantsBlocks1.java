@@ -120,6 +120,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
                     par1World.setBlockMetadataWithNotify(par2, par3, par4, meta, 2);
                 }
             }
+            if (meta == 14) {this.setHardness(1.0F);}
         }
     }
     
@@ -222,8 +223,11 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
             ItemStack Itemspawn2 = new ItemStack(Item.silk,3);
             EntityItem Ispawn1 = new EntityItem(world,x,y,z,Itemspawn1);
             EntityItem Ispawn2 = new EntityItem(world,x,y,z,Itemspawn2);
-            world.spawnEntityInWorld(Ispawn1);
-            world.spawnEntityInWorld(Ispawn2);
+            if (!world.isRemote)
+            {
+                world.spawnEntityInWorld(Ispawn1);
+                world.spawnEntityInWorld(Ispawn2);
+            }
         }
     }
         
@@ -258,25 +262,43 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
     }
     
     @Override
-    public void onBlockClicked(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer)
+    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
     {
         blockMetaData = par1World.getBlockMetadata(par2, par3, par4);
+        //System.out.println("SHdebug: Player " + par5EntityPlayer.getDisplayName() +" clicked on block with META: " + blockMetaData);
+        Random rand = new Random();
         
         if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
         { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; }
         
+        //Tomato drop
+        if( blockMetaData == 2)
+        {
+            ItemStack Itemspawn1 = new ItemStack(SharpnetTomato,quantityDropped(rand));
+            EntityItem Ispawn1 = new EntityItem(par1World,par2,par3,par4,Itemspawn1);
+            if (!par1World.isRemote)
+            {
+                par1World.spawnEntityInWorld(Ispawn1);
+                par1World.setBlock(par2, par3 , par4, this.blockID, 1, 2);
+                return true;
+            }
+        }
+        
         //Vine drop
         if( blockMetaData == 14)
         {
-            Random rand = new Random();
             ItemStack Itemspawn1 = new ItemStack(Items.grape_red,quantityDropped(rand));
             EntityItem Ispawn1 = new EntityItem(par1World,par2,par3,par4,Itemspawn1);
-            par1World.spawnEntityInWorld(Ispawn1);
-            par1World.setBlock(par2, par3 , par4, this.blockID, 13, 2);
+            if (!par1World.isRemote)
+            {
+                par1World.spawnEntityInWorld(Ispawn1);
+                par1World.setBlock(par2, par3 , par4, this.blockID, 13, 2);
+                return true;
+            }
         }
         
         //if (itemInHandID == blackPainterID){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 2, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        
+        return false;
     }
     
     protected int getSeedItem()
