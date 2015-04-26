@@ -278,7 +278,15 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
         if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
         { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; itemInHandMeta = par5EntityPlayer.getCurrentEquippedItem().getItemDamage(); }
         
-        if ( (itemInHandID == 351) && (itemInHandMeta == 15) ){par5EntityPlayer.inventory.getCurrentItem().stackSize++; return false;}
+            if ( (itemInHandID == 351) && (itemInHandMeta == 15) )
+                {
+                    switch (blockMetaData)
+                    {
+                        case 2: par5EntityPlayer.inventory.getCurrentItem().stackSize++; break;
+                        case 5: par5EntityPlayer.inventory.getCurrentItem().stackSize++; break;
+                    }
+                    return false;
+                }
 
             //Tea drop
             if( blockMetaData == 2)
