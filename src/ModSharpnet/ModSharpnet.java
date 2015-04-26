@@ -781,7 +781,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.grape_red_seeds, "Grape Red Seeds");
         LanguageRegistry.addName(new ItemStack(Items.grape_red_seeds, 1, 0), "Grape Red Seeds");
         
-        Items.grape_red = new ItemFood(Items.grape_red_ID, 2 , 0.2F, false ).setUnlocalizedName("grape_red").setTextureName(modid+":food/grape_red");
+        Items.grape_red = new ItemFood(Items.grape_red_ID, 3 , 0.2F, false ).setUnlocalizedName("grape_red").setTextureName(modid+":food/grape_red");
         GameRegistry.registerItem(Items.grape_red, "Grape Red");
         LanguageRegistry.addName(new ItemStack(Items.grape_red, 1, 0), "Grape Red");
         

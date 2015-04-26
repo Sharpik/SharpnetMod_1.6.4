@@ -50,7 +50,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
     public int dropID = this.blockID;
     public int dropMeta = 0;
     public int blockMetaData;
-    private static int itemInHandID = 0;
+    private int itemInHandID = 0;
     
     @Override
     protected boolean canThisPlantGrowOnThisBlockID(int par1)

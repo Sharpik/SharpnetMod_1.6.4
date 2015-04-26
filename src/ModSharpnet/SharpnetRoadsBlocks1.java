@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 public class SharpnetRoadsBlocks1 extends Block
 {
     
-    private static int itemInHandID = 0;
+    private int itemInHandID = 0;
     private static final int painterID = ic2.api.item.Items.getItem("painter").itemID;
     private static final int blackPainterID = ic2.api.item.Items.getItem("blackPainter").itemID;
     private static final int lightGreyPainterID = ic2.api.item.Items.getItem("lightGreyPainter").itemID;

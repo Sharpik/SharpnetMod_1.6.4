@@ -44,7 +44,10 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
     public int dropID = this.blockID;
     public int dropMeta = 0;
     public int blockMetaData;
-    private static int itemInHandID = 0;
+    private int itemInHandID = 0;
+    private int itemInHandMeta = 0;
+    private boolean legalBlockBreak = false;
+    private boolean secondaryDrop = false;
     
     @Override
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
@@ -213,7 +216,7 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
         blockMetaData = world.getBlockMetadata(x, y, z);
         
         //Náhradní item spawn pro Tea - 2 itemy
-        if (blockMetaData == 2)
+        if ((blockMetaData == 2) && (!legalBlockBreak))
         {
             Random rand = new Random();
             int randomNum = rand.nextInt((3 - 1) + 1) + 1;
@@ -225,7 +228,7 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             if (!world.isRemote)
             {
                 world.spawnEntityInWorld(Ispawn1);
-                world.spawnEntityInWorld(Ispawn2);
+                if (!secondaryDrop) {world.spawnEntityInWorld(Ispawn2);}
             }
         }
     }
@@ -273,34 +276,36 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
         Random rand = new Random();
         
         if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
-        { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; }
+        { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; itemInHandMeta = par5EntityPlayer.getCurrentEquippedItem().getItemDamage(); }
         
-        //Tea drop
-        if( blockMetaData == 2)
-        {
-            ItemStack Itemspawn1 = new ItemStack(Items.tea_leaves,quantityDropped(rand));
-            EntityItem Ispawn1 = new EntityItem(par1World,par2,par3,par4,Itemspawn1);
-            if (!par1World.isRemote)
+        if ( (itemInHandID == 351) && (itemInHandMeta == 15) ){return false;}
+
+            //Tea drop
+            if( blockMetaData == 2)
             {
-                par1World.spawnEntityInWorld(Ispawn1);
-                par1World.setBlock(par2, par3 , par4, this.blockID, 1, 2);
-                return true;
+                if (!par1World.isRemote)
+                {
+                    secondaryDrop = true;
+                    par1World.setBlock(par2, par3 , par4, this.blockID, 1, 2);
+                    return true;
+                }
             }
-        }
-        
-        //Coffee drop
-        if( blockMetaData == 5)
-        {
-            ItemStack Itemspawn1 = new ItemStack(Items.cofee_beans_raw,quantityDropped(rand));
-            EntityItem Ispawn1 = new EntityItem(par1World,par2,par3,par4,Itemspawn1);
-            if (!par1World.isRemote)
+
+            //Coffee drop
+            if( blockMetaData == 5)
             {
-                par1World.spawnEntityInWorld(Ispawn1);
-                par1World.setBlock(par2, par3 , par4, this.blockID, 4, 2);
-                return true;
+                ItemStack Itemspawn1 = new ItemStack(Items.cofee_beans_raw,quantityDropped(rand));
+                EntityItem Ispawn1 = new EntityItem(par1World,par2,par3,par4,Itemspawn1);
+                if (!par1World.isRemote)
+                {
+                    par1World.spawnEntityInWorld(Ispawn1);
+                    legalBlockBreak = true;
+                    par1World.setBlock(par2, par3 , par4, this.blockID, 4, 2);
+                    legalBlockBreak = false;
+                    return true;
+                }
             }
-        }
-        
+
         //if (itemInHandID == blackPainterID){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 2, 2); damageItemInHands(par5EntityPlayer,painterID);}
         return false;
     }
