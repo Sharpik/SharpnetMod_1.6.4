@@ -471,6 +471,12 @@ public class Items
     public static Item tea_leaves;
     public static int tea_leaves_ID;
     
+    public static Item grape_red_seeds;
+    public static int grape_red_seeds_ID;
+    
+    public static Item grape_red;
+    public static int grape_red_ID;
+    
     //doors
     public static Item door1_block_item;
     public static int door1_block_item_ID;

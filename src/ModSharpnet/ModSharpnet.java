@@ -229,6 +229,8 @@ public class ModSharpnet
         Items.tea_leaves_ID = (config.get("Items", "tea_leaves", 6545).getInt())-256;
         Items.cofee_beans_raw_ID = (config.get("Items", "cofee_beans_raw", 6567).getInt())-256;
         Items.cofee_beans_ID = (config.get("Items", "cofee_beans", 6568).getInt())-256;
+        Items.grape_red_seeds_ID = (config.get("Items", "grape_red_seeds", 6569).getInt())-256;
+        Items.grape_red_ID = (config.get("Items", "grape_red", 6570).getInt())-256;
         
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
@@ -773,6 +775,14 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.cofee_beans, "Cofee Beans");
         LanguageRegistry.addName(new ItemStack(Items.cofee_beans, 1, 0), "Cofee Beans");
         
+        Items.grape_red_seeds = new ShItemSeeds(Items.grape_red_seeds_ID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 12).setUnlocalizedName("SharpnetGrapeRedSeedsItem").setTextureName(modid+":seeds/seeds_grape_red");
+        GameRegistry.registerItem(Items.grape_red_seeds, "Grape Red Seeds");
+        LanguageRegistry.addName(new ItemStack(Items.grape_red_seeds, 1, 0), "Grape Red Seeds");
+        
+        Items.grape_red = new ItemFood(Items.grape_red_ID, 2 , 0.2F, false ).setUnlocalizedName("grape_red").setTextureName(modid+":food/grape_red");
+        GameRegistry.registerItem(Items.grape_red, "Grape Red");
+        LanguageRegistry.addName(new ItemStack(Items.grape_red, 1, 0), "Grape Red");
+        
         //Item Alcohol
         Items.beer = new ShItemFoodPlacer1(Items.beer_ID, 4, 2.0F, false, Blocks.drinks1_block.blockID, 0, 2, 20).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/beer");
         GameRegistry.registerItem(Items.beer, "Beer");
@@ -947,6 +957,7 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(TomatoSeeds, Tomato);
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetCucumberSeeds, 1), new ItemStack(SharpnetCucumber));
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetCornSeeds, 1), new ItemStack(SharpnetCorn));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.grape_red_seeds, 1), new ItemStack(Items.grape_red));
         
         GameRegistry.addSmelting(Items.mutton_raw.itemID, new ItemStack(Items.mutton_cooked, 1), 0.35F);
         GameRegistry.addSmelting(Items.tea_leaves.itemID, new ItemStack(Items.cup_of_tea, 1), 0.35F);

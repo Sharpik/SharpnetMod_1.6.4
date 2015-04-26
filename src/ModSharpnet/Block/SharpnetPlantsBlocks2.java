@@ -251,6 +251,11 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             case 10: dropID = SharpnetFlaxSeeds.itemID; break;
             case 11: dropID = SharpnetFlaxSeeds.itemID; break;
             */
+            //Tea 12 - 14 meta
+            /*
+            case 12: dropID = SharpnetFlaxSeeds.itemID; break;
+            case 13: dropID = SharpnetFlaxSeeds.itemID; break;
+            case 14: dropID = SharpnetFlaxSeeds.itemID; break;*/
         }
         return dropMeta;
     }

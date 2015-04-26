@@ -23,6 +23,7 @@ import net.minecraft.block.Block;
 import static net.minecraft.block.Block.blocksList;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
@@ -45,10 +46,11 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
     }
     
     // TADY ZMENIT POCET VARIANT 1 - 16
-    public static int pocet = 12;
+    public static int pocet = 15;
     public int dropID = this.blockID;
     public int dropMeta = 0;
     public int blockMetaData;
+    private static int itemInHandID = 0;
     
     @Override
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
@@ -247,13 +249,34 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
             case 9: dropID = SharpnetFlaxSeeds.itemID; break;
             case 10: dropID = SharpnetFlaxSeeds.itemID; break;
             case 11: dropID = SharpnetFlaxSeeds.itemID; break;
-            //Tea 12 - 14 meta
-                /*
-            case 12: dropID = SharpnetFlaxSeeds.itemID; break;
-            case 13: dropID = SharpnetFlaxSeeds.itemID; break;
-            case 14: dropID = SharpnetFlaxSeeds.itemID; break;*/
+            //Vine_red 12 - 14 meta
+            case 12: dropID = Items.grape_red_seeds.itemID; break;
+            case 13: dropID = Items.grape_red_seeds.itemID; break;
+            case 14: dropID = Items.grape_red.itemID; break;
         }
         return dropMeta;
+    }
+    
+    @Override
+    public void onBlockClicked(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer)
+    {
+        blockMetaData = par1World.getBlockMetadata(par2, par3, par4);
+        
+        if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
+        { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; }
+        
+        //Vine drop
+        if( blockMetaData == 14)
+        {
+            Random rand = new Random();
+            ItemStack Itemspawn1 = new ItemStack(Items.grape_red,quantityDropped(rand));
+            EntityItem Ispawn1 = new EntityItem(par1World,par2,par3,par4,Itemspawn1);
+            par1World.spawnEntityInWorld(Ispawn1);
+            par1World.setBlock(par2, par3 , par4, this.blockID, 13, 2);
+        }
+        
+        //if (itemInHandID == blackPainterID){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 2, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        
     }
     
     protected int getSeedItem()
@@ -340,10 +363,10 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
                 case 9:{icons[i] = par1.registerIcon(modid+":plants/flax_1");break;}
                 case 10:{icons[i] = par1.registerIcon(modid+":plants/flax_4");break;}
                 case 11:{icons[i] = par1.registerIcon(modid+":plants/flax_5.2");break;}
-                case 12:{icons[i] = par1.registerIcon(modid+":plants/vine_1");break;}
-                case 13:{icons[i] = par1.registerIcon(modid+":plants/vine_2");break;}
-                case 14:{icons[i] = par1.registerIcon(modid+":plants/vine_3");break;}/*
-                case 15:{icons[i] = par1.registerIcon(modid+":tiles_wood/tile16");break;}*/
+                case 12:{icons[i] = par1.registerIcon(modid+":plants/vine_fence_1");break;}
+                case 13:{icons[i] = par1.registerIcon(modid+":plants/vine_fence_2");break;}
+                case 14:{icons[i] = par1.registerIcon(modid+":plants/vine_fence_3");break;}
+                /*case 15:{icons[i] = par1.registerIcon(modid+":tiles_wood/tile16");break;}*/
                 default:{icons[i] = par1.registerIcon(modid+":error");break;}
             }
         }
