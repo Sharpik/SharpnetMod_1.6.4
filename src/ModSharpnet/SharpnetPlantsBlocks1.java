@@ -267,6 +267,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
         blockMetaData = par1World.getBlockMetadata(par2, par3, par4);
         //System.out.println("SHdebug: Player " + par5EntityPlayer.getDisplayName() +" clicked on block with META: " + blockMetaData);
         Random rand = new Random();
+        itemInHandID = 0;
         
         if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
         { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; }

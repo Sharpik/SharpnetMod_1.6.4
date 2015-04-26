@@ -65,6 +65,7 @@ public class SharpnetRoadsBlocks1 extends Block
     @Override
     public void onBlockClicked(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer)
     {
+        itemInHandID = 0;
         if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
         { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; }
         
