@@ -227,8 +227,8 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             EntityItem Ispawn2 = new EntityItem(world,x,y,z,Itemspawn2);
             if (!world.isRemote)
             {
-                world.spawnEntityInWorld(Ispawn1);
-                if (!secondaryDrop) {world.spawnEntityInWorld(Ispawn2);}
+                if (!secondaryDrop) {world.spawnEntityInWorld(Ispawn1);}
+                world.spawnEntityInWorld(Ispawn2);
             }
         }
     }
