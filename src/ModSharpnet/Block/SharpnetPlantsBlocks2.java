@@ -43,11 +43,10 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
     
     public int dropID = this.blockID;
     public int dropMeta = 0;
-    public int blockMetaData;
+    public int blockMetaData = 0;
     private int itemInHandID = 0;
     private int itemInHandMeta = 0;
-    private boolean legalBlockBreak = false;
-    private boolean secondaryDrop = false;
+    private boolean secondaryDrop = true;
     
     @Override
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
@@ -216,7 +215,7 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
         blockMetaData = world.getBlockMetadata(x, y, z);
         
         //Náhradní item spawn pro Tea - 2 itemy
-        if ((blockMetaData == 2) && (!legalBlockBreak))
+        if (blockMetaData == 2)
         {
             Random rand = new Random();
             int randomNum = rand.nextInt((3 - 1) + 1) + 1;
@@ -227,7 +226,7 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             EntityItem Ispawn2 = new EntityItem(world,x,y,z,Itemspawn2);
             if (!world.isRemote)
             {
-                if (!secondaryDrop) {world.spawnEntityInWorld(Ispawn1);}
+                if (secondaryDrop) {world.spawnEntityInWorld(Ispawn1);}
                 world.spawnEntityInWorld(Ispawn2);
             }
         }
@@ -279,14 +278,14 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
         if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
         { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; itemInHandMeta = par5EntityPlayer.getCurrentEquippedItem().getItemDamage(); }
         
-        if ( (itemInHandID == 351) && (itemInHandMeta == 15) ){return false;}
+        if ( (itemInHandID == 351) && (itemInHandMeta == 15) ){par5EntityPlayer.inventory.getCurrentItem().stackSize++; return false;}
 
             //Tea drop
             if( blockMetaData == 2)
             {
                 if (!par1World.isRemote)
                 {
-                    secondaryDrop = true;
+                    secondaryDrop = false;
                     par1World.setBlock(par2, par3 , par4, this.blockID, 1, 2);
                     return true;
                 }
@@ -300,9 +299,7 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
                 if (!par1World.isRemote)
                 {
                     par1World.spawnEntityInWorld(Ispawn1);
-                    legalBlockBreak = true;
                     par1World.setBlock(par2, par3 , par4, this.blockID, 4, 2);
-                    legalBlockBreak = false;
                     return true;
                 }
             }

@@ -461,10 +461,9 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 9), "Flax Plant");
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 10), "Flax Plant");
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 11), "Flax Plant");
-        /*
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 12), "Vine Plant");
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 13), "Vine Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 14), "Vine Plant");*/
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 14), "Vine Plant");
         
         Blocks.SharpnetPlantsBlocks2 = new SharpnetPlantsBlocks2(Blocks.SharpnetPlantsBlocks2ID, Material.plants);
         GameRegistry.registerBlock(Blocks.SharpnetPlantsBlocks2, SharpnetPlantsItemBlocks2.class, "SharpnetPlantsBlocks2");
@@ -966,6 +965,27 @@ public class ModSharpnet
         GameRegistry.addSmelting(Items.cofee_beans_raw.itemID, new ItemStack(Items.cofee_beans, 1), 0.35F);
         GameRegistry.addSmelting(Items.cofee_beans.itemID, new ItemStack(Items.cofee, 1), 0.35F);
         
+        //Recipe Flower duplication
+        GameRegistry.addShapelessRecipe(new ItemStack(37, 4,0), new ItemStack(37, 1, 0), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(38, 4,0), new ItemStack(38, 1, 0), new ItemStack(351, 1, 15));
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,0), new ItemStack(sharpnetFlowerBlocks1, 1, 0), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,1), new ItemStack(sharpnetFlowerBlocks1, 1, 1), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,2), new ItemStack(sharpnetFlowerBlocks1, 1, 2), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,3), new ItemStack(sharpnetFlowerBlocks1, 1, 3), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,4), new ItemStack(sharpnetFlowerBlocks1, 1, 4), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,5), new ItemStack(sharpnetFlowerBlocks1, 1, 5), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,6), new ItemStack(sharpnetFlowerBlocks1, 1, 6), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,7), new ItemStack(sharpnetFlowerBlocks1, 1, 7), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 3,8), new ItemStack(sharpnetFlowerBlocks1, 1, 8), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,9), new ItemStack(sharpnetFlowerBlocks1, 1, 9), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 5,10), new ItemStack(sharpnetFlowerBlocks1, 1, 10), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,11), new ItemStack(sharpnetFlowerBlocks1, 1, 11), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,12), new ItemStack(sharpnetFlowerBlocks1, 1, 12), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 3,13), new ItemStack(sharpnetFlowerBlocks1, 1, 13), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,14), new ItemStack(sharpnetFlowerBlocks1, 1, 14), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,15), new ItemStack(sharpnetFlowerBlocks1, 1, 15), new ItemStack(351, 1, 15));
+        
         //Recipe Throwel
         GameRegistry.addRecipe(new ItemStack(Items.trowel,1,0), new Object[]
         {
@@ -975,7 +995,23 @@ public class ModSharpnet
         });
         GameRegistry.addShapelessRecipe(new ItemStack(Items.trowel,1,0), new ItemStack(Items.trowel,1,8), Item.clay);
         
+        //Recipe Bottle Empty
+        GameRegistry.addRecipe(new ItemStack(Items.bottle,6,0), new Object[]
+        {
+            " W ",
+            "GGG",
+            "GGG",
+            'W', new ItemStack(5,1,0), 'G', new ItemStack(20,1,0)
+        });
         //Recipe Barrel
+        GameRegistry.addRecipe(new ItemStack(Items.barrel_ID+256,1,0), new Object[]
+        {
+            "WWW",
+            "W W",
+            "WWW",
+            'W', new ItemStack(5,1,0)
+        });
+        //Recipe Barrel of Vine
         GameRegistry.addRecipe(new ItemStack(Items.barrel_of_wine_ID+256,1,0), new Object[]
         {
             "GGG",
@@ -990,6 +1026,103 @@ public class ModSharpnet
             "GBG",
             "G G",
             'B', new ItemStack(Items.barrel_of_wine_ID+256,1,0), 'G', Items.bottle
+        });
+        
+        //Recipe Door 1
+        GameRegistry.addRecipe(new ItemStack(Items.door1_block_item,1,0), new Object[]
+        {
+            "WW ",
+            "WW ",
+            "WW ",
+            'W', new ItemStack(SharpnetTilesWoodBlocks1,1,0)
+        });
+        //Recipe Door 5
+        GameRegistry.addRecipe(new ItemStack(Items.door5_block_item,1,0), new Object[]
+        {
+            "WW ",
+            "WW ",
+            "WW ",
+            'W', new ItemStack(SharpnetTilesWoodBlocks1,1,4)
+        });
+        //Recipe Door 6
+        GameRegistry.addRecipe(new ItemStack(Items.door6_block_item,1,0), new Object[]
+        {
+            "WW ",
+            "WW ",
+            "WW ",
+            'W', new ItemStack(5,1,3)
+        });
+        //Recipe Door 7
+        GameRegistry.addRecipe(new ItemStack(Items.door7_block_item,1,0), new Object[]
+        {
+            "WW ",
+            "VV ",
+            "WW ",
+            'W', new ItemStack(SharpnetTilesWoodBlocks1,1,4), 'V', new ItemStack(5,1,3)
+        });
+        //Recipe Door 8
+        GameRegistry.addRecipe(new ItemStack(Items.door8_block_item,1,0), new Object[]
+        {
+            "WW ",
+            "WW ",
+            "WW ",
+            'W', new ItemStack(SharpnetTilesWoodBlocks1,1,2)
+        });
+        //Recipe Door 9
+        GameRegistry.addRecipe(new ItemStack(Items.door9_block_item,1,0), new Object[]
+        {
+            "VV ",
+            "WW ",
+            "VV ",
+            'W', new ItemStack(SharpnetTilesWoodBlocks1,1,2), 'V', new ItemStack(5,1,3)
+        });
+        //Recipe Door 10
+        GameRegistry.addRecipe(new ItemStack(Items.door10_block_item,1,0), new Object[]
+        {
+            "GG ",
+            "WW ",
+            "WW ",
+            'G', new ItemStack(20,1,0), 'W', new ItemStack(5,1,2)
+        });
+        //Recipe Door 11
+        GameRegistry.addRecipe(new ItemStack(Items.door11_block_item,1,0), new Object[]
+        {
+            "WW ",
+            "GG ",
+            "WW ",
+            'G', new ItemStack(20,1,0), 'W', new ItemStack(5,1,3)
+        });
+        //Recipe Door 12
+        GameRegistry.addRecipe(new ItemStack(Items.door12_block_item,1,0), new Object[]
+        {
+            "WW ",
+            "WW ",
+            "WW ",
+            'W', new ItemStack(SharpnetTilesWoodBlocks1,1,5)
+        });
+        //Recipe Door Secret Book
+        GameRegistry.addRecipe(new ItemStack(Items.door_secret1_block_item,1,0), new Object[]
+        {
+            "WW ",
+            "BBL",
+            "WW ",
+            'B', new ItemStack(340,1,0), 'W', new ItemStack(5,1,3), 'L', new ItemStack(69,1,0)
+        });
+        //Recipe Door Secret Moss
+        GameRegistry.addRecipe(new ItemStack(Items.door_secret2_block_item,1,0), new Object[]
+        {
+            "SS ",
+            "SSL",
+            "SS ",
+            'S', new ItemStack(48,1,0), 'L', new ItemStack(69,1,0)
+        });
+        //Recipe Door Secret Cobble
+        GameRegistry.addRecipe(new ItemStack(Items.door_secret3_block_item,1,0), new Object[]
+        {
+            "SS ",
+            "SSL",
+            "SS ",
+            'S', new ItemStack(4,1,0), 'L', new ItemStack(69,1,0)
         });
         
         //Recipe throwel wall

@@ -49,13 +49,16 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
     public static int pocet = 15;
     public int dropID = this.blockID;
     public int dropMeta = 0;
-    public int blockMetaData;
+    public int blockMetaData = 0;
+    private int itemInHandMeta = 0;
     private int itemInHandID = 0;
     
     @Override
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
     {
-        return par1 == Block.tilledField.blockID;
+        if (par1 == Block.tilledField.blockID) {return true;}
+        if ( (par1 == 2) && (blockMetaData == 12) ) {return true;}
+        return false;
     }
     
     @Override
@@ -271,6 +274,8 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
         
         if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
         { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; }
+        
+        if ( (itemInHandID == 351) && (itemInHandMeta == 15) ){par5EntityPlayer.inventory.getCurrentItem().stackSize++; return false;}
         
         //Tomato drop
         if( blockMetaData == 2)
