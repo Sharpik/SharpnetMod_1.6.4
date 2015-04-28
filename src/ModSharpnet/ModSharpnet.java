@@ -275,25 +275,25 @@ public class ModSharpnet
         Items.roll_of_paper_red_ID = (config.get("Items", "roll_of_paper_red", 6585).getInt())-256;
         Items.roll_of_paper_white_ID = (config.get("Items", "roll_of_paper_white", 6586).getInt())-256;
         Items.roll_of_paper_yellow_ID = (config.get("Items", "roll_of_paper_yellow", 6587).getInt())-256;
-        
         Items.tile_black_ID = (config.get("Items", "tile_black", 6588).getInt())-256;
         Items.tile_blue_ID = (config.get("Items", "tile_blue", 6589).getInt())-256;
         Items.tile_brown_ID = (config.get("Items", "tile_brown", 6590).getInt())-256;
         Items.tile_green_ID = (config.get("Items", "tile_green", 6591).getInt())-256;
-        Items.tile_orange_ID = (config.get("Items", "tile_orange", 6592).getInt())-256;
-        Items.tile_red_ID = (config.get("Items", "tile_red", 6593).getInt())-256;
-        Items.tile_white_ID = (config.get("Items", "tile_white", 6594).getInt())-256;
-        Items.tile_yellow_ID = (config.get("Items", "tile_yellow", 6595).getInt())-256;
-        Items.wood_tile1_ID = (config.get("Items", "wood_tile1", 6596).getInt())-256;
-        Items.wood_tile2_ID = (config.get("Items", "wood_tile2", 6597).getInt())-256;
-        Items.wood_tile3_ID = (config.get("Items", "wood_tile3", 6598).getInt())-256;
-        Items.wood_tile4_ID = (config.get("Items", "wood_tile4", 6599).getInt())-256;
-        Items.wood_tile_black_ID = (config.get("Items", "wood_tile_black", 6600).getInt())-256;
-        Items.wood_tile_blue_ID = (config.get("Items", "wood_tile_blue", 6601).getInt())-256;
-        Items.wood_tile_green_ID = (config.get("Items", "wood_tile_green", 6602).getInt())-256;
-        Items.wood_tile_orange_ID = (config.get("Items", "wood_tile_orange", 6603).getInt())-256;
-        Items.wood_tile_red_ID = (config.get("Items", "wood_tile_red", 6604).getInt())-256;
-        Items.wood_tile_yellow_ID = (config.get("Items", "wood_tile_yellow", 6605).getInt())-256;
+        Items.tile_grey_ID = (config.get("Items", "tile_grey", 6592).getInt())-256;
+        Items.tile_orange_ID = (config.get("Items", "tile_orange", 6593).getInt())-256;
+        Items.tile_red_ID = (config.get("Items", "tile_red", 6594).getInt())-256;
+        Items.tile_white_ID = (config.get("Items", "tile_white", 6595).getInt())-256;
+        Items.tile_yellow_ID = (config.get("Items", "tile_yellow", 6596).getInt())-256;
+        Items.wood_tile_oak_ID = (config.get("Items", "wood_tile_oak", 6597).getInt())-256;
+        Items.wood_tile_birch_ID = (config.get("Items", "wood_tile_birch", 6598).getInt())-256;
+        Items.wood_tile_spruce_ID = (config.get("Items", "wood_tile_spruce", 6599).getInt())-256;
+        Items.wood_tile_jungle_ID = (config.get("Items", "wood_tile_jungle", 6600).getInt())-256;
+        Items.wood_tile_black_ID = (config.get("Items", "wood_tile_black", 6601).getInt())-256;
+        Items.wood_tile_blue_ID = (config.get("Items", "wood_tile_blue", 6602).getInt())-256;
+        Items.wood_tile_green_ID = (config.get("Items", "wood_tile_green", 6603).getInt())-256;
+        Items.wood_tile_orange_ID = (config.get("Items", "wood_tile_orange", 6604).getInt())-256;
+        Items.wood_tile_red_ID = (config.get("Items", "wood_tile_red", 6605).getInt())-256;
+        Items.wood_tile_yellow_ID = (config.get("Items", "wood_tile_yellow", 6606).getInt())-256;
         
         // Other Mods
        
@@ -1038,7 +1038,66 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.roll_of_paper_yellow, "Roll of paper yellow");
         LanguageRegistry.addName(new ItemStack(Items.roll_of_paper_yellow, 1, 0), "Roll of paper yellow");
         
-         
+        Items.tile_black = (new Item(Items.tile_black_ID).setUnlocalizedName("Tile_black").setTextureName(modid+":resources/tile_black").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.tile_black, "Tile black");
+        LanguageRegistry.addName(new ItemStack(Items.tile_black, 1, 0), "Tile black");
+        Items.tile_blue = (new Item(Items.tile_blue_ID).setUnlocalizedName("Tile_blue").setTextureName(modid+":resources/tile_blue").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.tile_blue, "Tile blue");
+        LanguageRegistry.addName(new ItemStack(Items.tile_blue, 1, 0), "Tile blue");
+        Items.tile_brown = (new Item(Items.tile_brown_ID).setUnlocalizedName("Tile_brown").setTextureName(modid+":resources/tile_brown").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.tile_brown, "Tile brown");
+        LanguageRegistry.addName(new ItemStack(Items.tile_brown, 1, 0), "Tile brown");
+        Items.tile_green = (new Item(Items.tile_green_ID).setUnlocalizedName("Tile_green").setTextureName(modid+":resources/tile_green").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.tile_green, "Tile green");
+        LanguageRegistry.addName(new ItemStack(Items.tile_green, 1, 0), "Tile green");
+        Items.tile_grey = (new Item(Items.tile_grey_ID).setUnlocalizedName("Tile_grey").setTextureName(modid+":resources/tile_grey").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.tile_grey, "Tile grey");
+        LanguageRegistry.addName(new ItemStack(Items.tile_grey, 1, 0), "Tile grey");
+        Items.tile_orange = (new Item(Items.tile_orange_ID).setUnlocalizedName("Tile_orange").setTextureName(modid+":resources/tile_orange").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.tile_orange, "Tile orange");
+        LanguageRegistry.addName(new ItemStack(Items.tile_orange, 1, 0), "Tile orange");
+        Items.tile_red = (new Item(Items.tile_red_ID).setUnlocalizedName("Tile_red").setTextureName(modid+":resources/tile_red").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.tile_red, "Tile red");
+        LanguageRegistry.addName(new ItemStack(Items.tile_red, 1, 0), "Tile red");
+        Items.tile_white = (new Item(Items.tile_white_ID).setUnlocalizedName("Tile_white").setTextureName(modid+":resources/tile_white").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.tile_white, "Tile white");
+        LanguageRegistry.addName(new ItemStack(Items.tile_white, 1, 0), "Tile white");
+        Items.tile_yellow = (new Item(Items.tile_yellow_ID).setUnlocalizedName("Tile_yellow").setTextureName(modid+":resources/tile_yellow").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.tile_yellow, "Tile yellow");
+        LanguageRegistry.addName(new ItemStack(Items.tile_yellow, 1, 0), "Tile yellow");
+        
+        Items.wood_tile_oak = (new Item(Items.wood_tile_oak_ID).setUnlocalizedName("Wood_tile_oak").setTextureName(modid+":resources/wood_tile_oak").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.wood_tile_oak, "Wood tile oak");
+        LanguageRegistry.addName(new ItemStack(Items.wood_tile_oak, 1, 0), "Wood tile Oak");
+        Items.wood_tile_birch = (new Item(Items.wood_tile_birch_ID).setUnlocalizedName("Wood_tile_birch").setTextureName(modid+":resources/wood_tile_birch").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.wood_tile_birch, "Wood tile birch");
+        LanguageRegistry.addName(new ItemStack(Items.wood_tile_birch, 1, 0), "Wood tile birch");
+        Items.wood_tile_spruce = (new Item(Items.wood_tile_spruce_ID).setUnlocalizedName("Wood_tile_spruce").setTextureName(modid+":resources/wood_tile_spruce").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.wood_tile_spruce, "Wood tile spruce");
+        LanguageRegistry.addName(new ItemStack(Items.wood_tile_spruce, 1, 0), "Wood tile spruce");
+        Items.wood_tile_jungle = (new Item(Items.wood_tile_jungle_ID).setUnlocalizedName("Wood_tile_jungle").setTextureName(modid+":resources/wood_tile_jungle").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.wood_tile_jungle, "Wood tile jungle");
+        LanguageRegistry.addName(new ItemStack(Items.wood_tile_jungle, 1, 0), "Wood tile jungle");
+        
+        Items.wood_tile_black = (new Item(Items.wood_tile_black_ID).setUnlocalizedName("Wood_tile_black").setTextureName(modid+":resources/wood_tile_black").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.wood_tile_black, "Wood tile black");
+        LanguageRegistry.addName(new ItemStack(Items.wood_tile_black, 1, 0), "Wood tile black");
+        Items.wood_tile_blue = (new Item(Items.wood_tile_blue_ID).setUnlocalizedName("Wood_tile_blue").setTextureName(modid+":resources/wood_tile_blue").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.wood_tile_blue, "Wood tile blue");
+        LanguageRegistry.addName(new ItemStack(Items.wood_tile_blue, 1, 0), "Wood tile blue");
+        Items.wood_tile_green = (new Item(Items.wood_tile_green_ID).setUnlocalizedName("Wood_tile_green").setTextureName(modid+":resources/wood_tile_green").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.wood_tile_green, "Wood tile green");
+        LanguageRegistry.addName(new ItemStack(Items.wood_tile_green, 1, 0), "Wood tile green");
+        Items.wood_tile_orange = (new Item(Items.wood_tile_orange_ID).setUnlocalizedName("Wood_tile_orange").setTextureName(modid+":resources/wood_tile_orange").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.wood_tile_orange, "Wood tile orange");
+        LanguageRegistry.addName(new ItemStack(Items.wood_tile_orange, 1, 0), "Wood tile orange");
+        Items.wood_tile_red = (new Item(Items.wood_tile_red_ID).setUnlocalizedName("Wood_tile_red").setTextureName(modid+":resources/wood_tile_red").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.wood_tile_red, "Wood tile red");
+        LanguageRegistry.addName(new ItemStack(Items.wood_tile_red, 1, 0), "Wood tile red");
+        Items.wood_tile_yellow = (new Item(Items.wood_tile_yellow_ID).setUnlocalizedName("Wood_tile_yellow").setTextureName(modid+":resources/wood_tile_yellow").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.wood_tile_yellow, "Wood tile yellow");
+        LanguageRegistry.addName(new ItemStack(Items.wood_tile_yellow, 1, 0), "Wood tile yellow");
+
         //Recipes register stack alliases
         ItemStack TomatoSeeds = new ItemStack(SharpnetTomatoSeeds);
         ItemStack Tomato = new ItemStack(SharpnetTomato);

@@ -417,17 +417,17 @@ public class Items
     public static Item wine;
     public static int wine_ID;
     
-    public static Item wood_tile1;
-    public static int wood_tile1_ID;
+    public static Item wood_tile_oak;
+    public static int wood_tile_oak_ID;
     
-    public static Item wood_tile2;
-    public static int wood_tile2_ID;
+    public static Item wood_tile_birch;
+    public static int wood_tile_birch_ID;
     
-    public static Item wood_tile3;
-    public static int wood_tile3_ID;
+    public static Item wood_tile_spruce;
+    public static int wood_tile_spruce_ID;
     
-    public static Item wood_tile4;
-    public static int wood_tile4_ID;
+    public static Item wood_tile_jungle;
+    public static int wood_tile_jungle_ID;
     
     public static Item wood_tile_black;
     public static int wood_tile_black_ID;
