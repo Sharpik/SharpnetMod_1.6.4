@@ -258,6 +258,42 @@ public class ModSharpnet
                 
         //Items Resources
         Items.roofing_tile_ID = (config.get("Items", "roofing_tile", 6543).getInt())-256;
+        Items.cloth_black_ID = (config.get("Items", "cloth_black", 6571).getInt())-256;
+        Items.cloth_blue_ID = (config.get("Items", "cloth_blue", 6572).getInt())-256;
+        Items.cloth_brown_ID = (config.get("Items", "cloth_brown", 6573).getInt())-256;
+        Items.cloth_gray_ID = (config.get("Items", "cloth_gray", 6574).getInt())-256;
+        Items.cloth_green_ID = (config.get("Items", "cloth_green", 6575).getInt())-256;
+        Items.cloth_orange_ID = (config.get("Items", "cloth_orange", 6576).getInt())-256;
+        Items.cloth_red_ID = (config.get("Items", "cloth_red", 6577).getInt())-256;
+        Items.cloth_white_ID = (config.get("Items", "cloth_white", 6578).getInt())-256;
+        Items.cloth_yellow_ID = (config.get("Items", "cloth_yellow", 6579).getInt())-256;
+        Items.roll_of_paper_black_ID = (config.get("Items", "roll_of_paper_black", 6580).getInt())-256;
+        Items.roll_of_paper_blue_ID = (config.get("Items", "roll_of_paper_blue", 6581).getInt())-256;
+        Items.roll_of_paper_brown_ID = (config.get("Items", "roll_of_paper_brown", 6582).getInt())-256;
+        Items.roll_of_paper_green_ID = (config.get("Items", "roll_of_paper_green", 6583).getInt())-256;
+        Items.roll_of_paper_orange_ID = (config.get("Items", "roll_of_paper_orange", 6584).getInt())-256;
+        Items.roll_of_paper_red_ID = (config.get("Items", "roll_of_paper_red", 6585).getInt())-256;
+        Items.roll_of_paper_white_ID = (config.get("Items", "roll_of_paper_white", 6586).getInt())-256;
+        Items.roll_of_paper_yellow_ID = (config.get("Items", "roll_of_paper_yellow", 6587).getInt())-256;
+        
+        Items.tile_black_ID = (config.get("Items", "tile_black", 6588).getInt())-256;
+        Items.tile_blue_ID = (config.get("Items", "tile_blue", 6589).getInt())-256;
+        Items.tile_brown_ID = (config.get("Items", "tile_brown", 6590).getInt())-256;
+        Items.tile_green_ID = (config.get("Items", "tile_green", 6591).getInt())-256;
+        Items.tile_orange_ID = (config.get("Items", "tile_orange", 6592).getInt())-256;
+        Items.tile_red_ID = (config.get("Items", "tile_red", 6593).getInt())-256;
+        Items.tile_white_ID = (config.get("Items", "tile_white", 6594).getInt())-256;
+        Items.tile_yellow_ID = (config.get("Items", "tile_yellow", 6595).getInt())-256;
+        Items.wood_tile1_ID = (config.get("Items", "wood_tile1", 6596).getInt())-256;
+        Items.wood_tile2_ID = (config.get("Items", "wood_tile2", 6597).getInt())-256;
+        Items.wood_tile3_ID = (config.get("Items", "wood_tile3", 6598).getInt())-256;
+        Items.wood_tile4_ID = (config.get("Items", "wood_tile4", 6599).getInt())-256;
+        Items.wood_tile_black_ID = (config.get("Items", "wood_tile_black", 6600).getInt())-256;
+        Items.wood_tile_blue_ID = (config.get("Items", "wood_tile_blue", 6601).getInt())-256;
+        Items.wood_tile_green_ID = (config.get("Items", "wood_tile_green", 6602).getInt())-256;
+        Items.wood_tile_orange_ID = (config.get("Items", "wood_tile_orange", 6603).getInt())-256;
+        Items.wood_tile_red_ID = (config.get("Items", "wood_tile_red", 6604).getInt())-256;
+        Items.wood_tile_yellow_ID = (config.get("Items", "wood_tile_yellow", 6605).getInt())-256;
         
         // Other Mods
        
@@ -948,6 +984,60 @@ public class ModSharpnet
         Items.roofing_tile = (new Item(Items.roofing_tile_ID).setUnlocalizedName("Roofing_tile").setTextureName(modid+":resources/roofing_tile").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.roofing_tile, "Roofing Tile");
         LanguageRegistry.addName(new ItemStack(Items.roofing_tile, 1, 0), "Roofing Tile");
+        
+        Items.cloth_black = (new Item(Items.cloth_black_ID).setUnlocalizedName("Cloth_black").setTextureName(modid+":resources/cloth_black").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.cloth_black, "Cloth Black");
+        LanguageRegistry.addName(new ItemStack(Items.cloth_black, 1, 0), "Cloth Black");
+        Items.cloth_blue = (new Item(Items.cloth_blue_ID).setUnlocalizedName("Cloth_blue").setTextureName(modid+":resources/cloth_blue").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.cloth_blue, "Cloth Blue");
+        LanguageRegistry.addName(new ItemStack(Items.cloth_blue, 1, 0), "Cloth Blue");
+        Items.cloth_brown = (new Item(Items.cloth_brown_ID).setUnlocalizedName("Cloth_brown").setTextureName(modid+":resources/cloth_brown").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.cloth_brown, "Cloth Brown");
+        LanguageRegistry.addName(new ItemStack(Items.cloth_brown, 1, 0), "Cloth Brown");
+        Items.cloth_gray = (new Item(Items.cloth_gray_ID).setUnlocalizedName("Cloth_gray").setTextureName(modid+":resources/cloth_gray").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.cloth_gray, "Cloth Gray");
+        LanguageRegistry.addName(new ItemStack(Items.cloth_gray, 1, 0), "Cloth Gray");
+        Items.cloth_green = (new Item(Items.cloth_green_ID).setUnlocalizedName("Cloth_green").setTextureName(modid+":resources/cloth_green").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.cloth_green, "Cloth Green");
+        LanguageRegistry.addName(new ItemStack(Items.cloth_green, 1, 0), "Cloth Green");
+        Items.cloth_orange = (new Item(Items.cloth_orange_ID).setUnlocalizedName("Cloth_orange").setTextureName(modid+":resources/cloth_orange").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.cloth_orange, "Cloth Orange");
+        LanguageRegistry.addName(new ItemStack(Items.cloth_orange, 1, 0), "Cloth Orange");
+        Items.cloth_red = (new Item(Items.cloth_red_ID).setUnlocalizedName("Cloth_red").setTextureName(modid+":resources/cloth_red").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.cloth_red, "Cloth Red");
+        LanguageRegistry.addName(new ItemStack(Items.cloth_red, 1, 0), "Cloth Red");
+        Items.cloth_white = (new Item(Items.cloth_white_ID).setUnlocalizedName("Cloth_white").setTextureName(modid+":resources/cloth_white").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.cloth_white, "Cloth White");
+        LanguageRegistry.addName(new ItemStack(Items.cloth_white, 1, 0), "Cloth White");
+        Items.cloth_yellow = (new Item(Items.cloth_yellow_ID).setUnlocalizedName("Cloth_yellow").setTextureName(modid+":resources/cloth_yellow").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.cloth_yellow, "Cloth Yellow");
+        LanguageRegistry.addName(new ItemStack(Items.cloth_yellow, 1, 0), "Cloth Yellow");
+        
+        Items.roll_of_paper_black = (new Item(Items.roll_of_paper_black_ID).setUnlocalizedName("Roll_of_paper_black").setTextureName(modid+":resources/roll_of_paper_black").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.roll_of_paper_black, "Roll of paper black");
+        LanguageRegistry.addName(new ItemStack(Items.roll_of_paper_black, 1, 0), "Roll of paper black");
+        Items.roll_of_paper_blue = (new Item(Items.roll_of_paper_blue_ID).setUnlocalizedName("Roll_of_paper_blue").setTextureName(modid+":resources/roll_of_paper_blue").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.roll_of_paper_blue, "Roll of paper blue");
+        LanguageRegistry.addName(new ItemStack(Items.roll_of_paper_blue, 1, 0), "Roll of paper blue");
+        Items.roll_of_paper_brown = (new Item(Items.roll_of_paper_brown_ID).setUnlocalizedName("Roll_of_paper_brown").setTextureName(modid+":resources/roll_of_paper_brown").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.roll_of_paper_brown, "Roll of paper brown");
+        LanguageRegistry.addName(new ItemStack(Items.roll_of_paper_brown, 1, 0), "Roll of paper brown");
+        Items.roll_of_paper_green = (new Item(Items.roll_of_paper_green_ID).setUnlocalizedName("Roll_of_paper_green").setTextureName(modid+":resources/roll_of_paper_green").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.roll_of_paper_green, "Roll of paper green");
+        LanguageRegistry.addName(new ItemStack(Items.roll_of_paper_green, 1, 0), "Roll of paper green");
+        Items.roll_of_paper_orange = (new Item(Items.roll_of_paper_orange_ID).setUnlocalizedName("Roll_of_paper_orange").setTextureName(modid+":resources/roll_of_paper_orange").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.roll_of_paper_orange, "Roll of paper orange");
+        LanguageRegistry.addName(new ItemStack(Items.roll_of_paper_orange, 1, 0), "Roll of paper orange");
+        Items.roll_of_paper_red = (new Item(Items.roll_of_paper_red_ID).setUnlocalizedName("Roll_of_paper_red").setTextureName(modid+":resources/roll_of_paper_red").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.roll_of_paper_red, "Roll of paper red");
+        LanguageRegistry.addName(new ItemStack(Items.roll_of_paper_red, 1, 0), "Roll of paper red");
+        Items.roll_of_paper_white = (new Item(Items.roll_of_paper_white_ID).setUnlocalizedName("Roll_of_paper_white").setTextureName(modid+":resources/roll_of_paper_white").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.roll_of_paper_white, "Roll of paper white");
+        LanguageRegistry.addName(new ItemStack(Items.roll_of_paper_white, 1, 0), "Roll of paper white");
+        Items.roll_of_paper_yellow = (new Item(Items.roll_of_paper_yellow_ID).setUnlocalizedName("Roll_of_paper_yellow").setTextureName(modid+":resources/roll_of_paper_yellow").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.roll_of_paper_yellow, "Roll of paper yellow");
+        LanguageRegistry.addName(new ItemStack(Items.roll_of_paper_yellow, 1, 0), "Roll of paper yellow");
+        
          
         //Recipes register stack alliases
         ItemStack TomatoSeeds = new ItemStack(SharpnetTomatoSeeds);

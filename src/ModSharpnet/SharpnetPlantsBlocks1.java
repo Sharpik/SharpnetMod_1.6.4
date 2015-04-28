@@ -123,7 +123,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
                     par1World.setBlockMetadataWithNotify(par2, par3, par4, meta, 2);
                 }
             }
-            if (meta == 14) {this.setHardness(1.0F);}
+            
         }
     }
     
