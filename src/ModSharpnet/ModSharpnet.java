@@ -800,7 +800,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.tea_seeds, "Tea Seeds");
         LanguageRegistry.addName(new ItemStack(Items.tea_seeds, 1, 0), "Tea Seeds");
         
-        Items.tea_leaves = (new Item(Items.tea_leaves_ID).setUnlocalizedName("Tea_Leaves").setTextureName(modid+":food/tea_leaves").setCreativeTab(CreativeTabs.tabFood));
+        Items.tea_leaves = (new Item(Items.tea_leaves_ID).setUnlocalizedName("Tea_Leaves").setTextureName(modid+":drinks&food/tea_leaves").setCreativeTab(CreativeTabs.tabFood));
         GameRegistry.registerItem(Items.tea_leaves, "Tea Leaves");
         LanguageRegistry.addName(new ItemStack(Items.tea_leaves, 1, 0), "Tea Leaves");
         
@@ -808,7 +808,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.cofee_beans_raw, "Cofee Beans Raw");
         LanguageRegistry.addName(new ItemStack(Items.cofee_beans_raw, 1, 0), "Cofee Beans Raw");
         
-        Items.cofee_beans = (new Item(Items.cofee_beans_ID).setUnlocalizedName("Cofee_Beans").setTextureName(modid+":food/cofee_beans").setCreativeTab(CreativeTabs.tabFood));
+        Items.cofee_beans = (new Item(Items.cofee_beans_ID).setUnlocalizedName("Cofee_Beans").setTextureName(modid+":drinks&food/cofee_beans").setCreativeTab(CreativeTabs.tabFood));
         GameRegistry.registerItem(Items.cofee_beans, "Cofee Beans");
         LanguageRegistry.addName(new ItemStack(Items.cofee_beans, 1, 0), "Cofee Beans");
         
