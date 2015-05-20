@@ -97,6 +97,9 @@ public class Blocks
     public static Block wall_stone_slab_trowel;
     public static int wall_stone_slab_trowel_ID;
     
+    public static Block panel_metal1_block;
+    public static int panel_metal1_block_ID;
+    
     //Project Red
     public static int PR_block_stonesID;
 }

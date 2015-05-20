@@ -27,6 +27,8 @@ import ModSharpnet.Block.*;
 
 import ic2.api.recipe.RecipeInputItemStack;
 import ic2.api.recipe.Recipes;
+import static net.minecraft.block.Block.soundLadderFootstep;
+import static net.minecraft.block.Block.soundMetalFootstep;
 
 // IC2 Dependency
 //import ic2.api.item.Items;
@@ -35,7 +37,7 @@ import ic2.api.recipe.Recipes;
 
 
 
-@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.1", dependencies="required-after:IC2")
+@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.2", dependencies="required-after:IC2")
 @NetworkMod(clientSideRequired=true, serverSideRequired=true)
 
 public class ModSharpnet
@@ -162,18 +164,21 @@ public class ModSharpnet
         Blocks.wall_stone_slab_trowel_ID = config.get("Blocks", "wall_stone_slab_trowel", 2519).getInt();
         Blocks.SharpnetPlantsBlocks2ID =  config.get("Blocks", "SharpnetPlantsBlocks2", 2545).getInt();
         Blocks.lighting_stick_block_ID =  config.get("Blocks", "lighting_stick_block", 2546).getInt();
-        Blocks.door1_block_ID = config.get("Blocks", "door1_block_", 2547).getInt();
+        Blocks.door1_block_ID = config.get("Blocks", "door1_block", 2547).getInt();
         Blocks.door_secret1_block_ID = config.get("Blocks", "door_secret1_block", 2548).getInt();
         Blocks.door_secret2_block_ID = config.get("Blocks", "door_secret2_block", 2549).getInt();
         Blocks.door_secret3_block_ID = config.get("Blocks", "door_secret3_block", 2550).getInt();
-        Blocks.door5_block_ID = config.get("Blocks", "door5_block_", 2551).getInt();
-        Blocks.door6_block_ID = config.get("Blocks", "door6_block_", 2552).getInt();
-        Blocks.door7_block_ID = config.get("Blocks", "door7_block_", 2553).getInt();
-        Blocks.door8_block_ID = config.get("Blocks", "door8_block_", 2554).getInt();
-        Blocks.door9_block_ID = config.get("Blocks", "door9_block_", 2555).getInt();
-        Blocks.door10_block_ID = config.get("Blocks", "door10_block_", 2556).getInt();
-        Blocks.door11_block_ID = config.get("Blocks", "door11_block_", 2557).getInt();
-        Blocks.door12_block_ID = config.get("Blocks", "door12_block_", 2558).getInt();
+        Blocks.door5_block_ID = config.get("Blocks", "door5_block", 2551).getInt();
+        Blocks.door6_block_ID = config.get("Blocks", "door6_block", 2552).getInt();
+        Blocks.door7_block_ID = config.get("Blocks", "door7_block", 2553).getInt();
+        Blocks.door8_block_ID = config.get("Blocks", "door8_block", 2554).getInt();
+        Blocks.door9_block_ID = config.get("Blocks", "door9_bloc_", 2555).getInt();
+        Blocks.door10_block_ID = config.get("Blocks", "door10_block", 2556).getInt();
+        Blocks.door11_block_ID = config.get("Blocks", "door11_block", 2557).getInt();
+        Blocks.door12_block_ID = config.get("Blocks", "door12_block", 2558).getInt();
+        //Place holder for ST doors 2559
+        Blocks.panel_metal1_block_ID = config.get("Blocks", "panel_metal1_block", 2560).getInt();
+        Blocks.ladder_iron1_block_ID = config.get("Blocks", "ladder_iron1_block", 2561).getInt();
         
         // Other Mods
         Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
@@ -753,6 +758,14 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.door12_block, 1, 0), "Door 12 Block");
         GameRegistry.registerItem(Items.door12_block_item, "SharpnetDoors1Item12");
         LanguageRegistry.addName(new ItemStack(Items.door12_block_item, 1, 0), "Door 12");
+        
+        Blocks.panel_metal1_block = new SharpnetPanels1Block(Blocks.panel_metal1_block_ID, modid+":building/metal1",modid+":building/metal1",Material.iron, true).setHardness(2.0F).setResistance(5.0F).setStepSound(soundMetalFootstep).setUnlocalizedName("Panel Metal 1");
+        GameRegistry.registerBlock(Blocks.panel_metal1_block, "Sharpnetpanel_metal1_block");
+        LanguageRegistry.addName(new ItemStack(Blocks.panel_metal1_block, 1, 0), "Panel Metal 1");
+        
+        Blocks.ladder_iron1_block = new SharpnetLadder1Block(Blocks.ladder_iron1_block_ID).setTextureName(modid+":others/ladder_iron1").setHardness(0.4F).setStepSound(soundLadderFootstep).setUnlocalizedName("Ladder Iron 1");
+        GameRegistry.registerBlock(Blocks.ladder_iron1_block, "SharpnetLaderIron1_block");
+        LanguageRegistry.addName(new ItemStack(Blocks.ladder_iron1_block, 1, 0), "Ladder Iron 1");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
