@@ -172,13 +172,16 @@ public class ModSharpnet
         Blocks.door6_block_ID = config.get("Blocks", "door6_block", 2552).getInt();
         Blocks.door7_block_ID = config.get("Blocks", "door7_block", 2553).getInt();
         Blocks.door8_block_ID = config.get("Blocks", "door8_block", 2554).getInt();
-        Blocks.door9_block_ID = config.get("Blocks", "door9_bloc_", 2555).getInt();
+        Blocks.door9_block_ID = config.get("Blocks", "door9_block", 2555).getInt();
         Blocks.door10_block_ID = config.get("Blocks", "door10_block", 2556).getInt();
         Blocks.door11_block_ID = config.get("Blocks", "door11_block", 2557).getInt();
         Blocks.door12_block_ID = config.get("Blocks", "door12_block", 2558).getInt();
         //Place holder for ST doors 2559
         Blocks.panel_metal1_block_ID = config.get("Blocks", "panel_metal1_block", 2560).getInt();
         Blocks.ladder_iron1_block_ID = config.get("Blocks", "ladder_iron1_block", 2561).getInt();
+        Blocks.electro1_block_ID = config.get("Blocks", "electro1_block", 2562).getInt();
+        Blocks.garden_deco_block_ID = config.get("Blocks", "garden_deco_block", 2563).getInt();
+        Blocks.money_block_ID = config.get("Blocks", "money_block", 2564).getInt();
         
         // Other Mods
         Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
@@ -766,6 +769,12 @@ public class ModSharpnet
         Blocks.ladder_iron1_block = new SharpnetLadder1Block(Blocks.ladder_iron1_block_ID).setTextureName(modid+":others/ladder_iron1").setHardness(0.4F).setStepSound(soundLadderFootstep).setUnlocalizedName("Ladder Iron 1");
         GameRegistry.registerBlock(Blocks.ladder_iron1_block, "SharpnetLaderIron1_block");
         LanguageRegistry.addName(new ItemStack(Blocks.ladder_iron1_block, 1, 0), "Ladder Iron 1");
+        
+        Blocks.electro1_block = new SharpnetElectro1Block(Blocks.electro1_block_ID).setUnlocalizedName("SharpnetElectro1Block");
+        GameRegistry.registerBlock(Blocks.electro1_block, SharpnetElectro1ItemBlocks.class, Blocks.electro1_block.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.electro1_block, 1, 0), "Mixer");
+        LanguageRegistry.addName(new ItemStack(Blocks.electro1_block, 1, 1), "Cofee Machine");
+        LanguageRegistry.addName(new ItemStack(Blocks.electro1_block, 1, 2), "Electric Kettle");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
