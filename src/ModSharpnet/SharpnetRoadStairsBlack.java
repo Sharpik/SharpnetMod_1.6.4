@@ -7,6 +7,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
 
 class SharpnetRoadStairsBlack extends BlockStairs
 {
@@ -20,6 +22,12 @@ class SharpnetRoadStairsBlack extends BlockStairs
         this.ExtendedBlock = ExtendedBlock;
         setCreativeTab(CreativeTabs.tabBlock);
         this.useNeighborBrightness[BlockID] = true;
+    }
+    
+    @Override
+    public void onBlockClicked(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer)
+    {
+        return;
     }
     
     @SideOnly(Side.CLIENT)
