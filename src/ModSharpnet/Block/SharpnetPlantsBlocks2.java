@@ -64,12 +64,12 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             int meta = par1World.getBlockMetadata(par2, par3, par4);
             float f = this.getGrowthRate(par1World, par2, par3, par4);
              // f = modifikace růstu rostlin
-            double maxgrowing = 30.F;
+            double maxgrowing = 50.F;
             
             // First plant Tea
             if (meta < 2)
             {
-                maxgrowing = 31.F;
+                maxgrowing = 60.F;
                 if (par5Random.nextInt((int)(maxgrowing / f) + 1) == 0)
                 {
                     ++meta;
@@ -80,7 +80,7 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             // Secound plant Cofee
             if ((meta > 2) && (meta < 5))
             {
-                maxgrowing = 28.F;
+                maxgrowing = 70.F;
                 if (par5Random.nextInt((int)(maxgrowing / f) + 1) == 0)
                 {
                     ++meta;
@@ -227,6 +227,7 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             if (!world.isRemote)
             {
                 if (secondaryDrop) {world.spawnEntityInWorld(Ispawn1);}
+                secondaryDrop = true;
                 world.spawnEntityInWorld(Ispawn2);
             }
         }
@@ -293,7 +294,7 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             {
                 if (!par1World.isRemote)
                 {
-                    secondaryDrop = true;
+                    secondaryDrop = false;
                     par1World.setBlock(par2, par3 , par4, this.blockID, 1, 2);
                     return true;
                 }

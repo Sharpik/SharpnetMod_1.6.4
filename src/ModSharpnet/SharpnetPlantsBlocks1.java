@@ -71,12 +71,12 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
             int meta = par1World.getBlockMetadata(par2, par3, par4);
             float f = this.getGrowthRate(par1World, par2, par3, par4);
              // f = modifikace růstu rostlin
-            double maxgrowing = 30.F;
+            double maxgrowing = 50.F;
             
             // First plant Tomato
             if (meta < 2)
             {
-                maxgrowing = 30.F;
+                maxgrowing = 45.F;
                 if (par5Random.nextInt((int)(maxgrowing / f) + 1) == 0)
                 {
                     ++meta;
@@ -86,7 +86,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
             // Secound plant Cucumber
             if ((meta > 2) && (meta < 5))
             {
-                maxgrowing = 25.F;
+                maxgrowing = 45.F;
                 if (par5Random.nextInt((int)(maxgrowing / f) + 1) == 0)
                 {
                     ++meta;
@@ -96,7 +96,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
             // Third plant Corn
             if ((meta > 5) && (meta < 8))
             {
-                maxgrowing = 35.0F;
+                maxgrowing = 55.0F;
                 if (par5Random.nextInt((int)(maxgrowing / f) + 1) == 0)
                 {
                     ++meta;
@@ -106,7 +106,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
             // Fourth plant Flax
             if ((meta > 8) && (meta < 11))
             {
-                maxgrowing = 40.0F;
+                maxgrowing = 55.0F;
                 if (par5Random.nextInt((int)(maxgrowing / f) + 1) == 0)
                 {
                     ++meta;
@@ -116,7 +116,7 @@ public class SharpnetPlantsBlocks1 extends BlockFlower
             // Fifth plant Vine
             if ((meta > 11) && (meta < 14))
             {
-                maxgrowing = 40.0F;
+                maxgrowing = 75.0F;
                 if (par5Random.nextInt((int)(maxgrowing / f) + 1) == 0)
                 {
                     ++meta;
