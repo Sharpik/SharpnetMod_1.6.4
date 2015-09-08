@@ -74,22 +74,22 @@ public class SharpnetWallTrowelBricksBlock extends Block
         if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
         { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; }
         
-        if (itemInHandID == blackPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 15, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == redPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 14, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == greenPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 13, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == brownPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 12, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == bluePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 11, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == purplePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 10, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == cyanPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 9, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == lightGreyPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 8, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == darkGreyPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 7, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == pinkPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 6, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == limePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 5, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == yellowPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 4, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == cloudPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 3, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == magentaPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 2, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == orangePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 1, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == whitePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel.blockID, 0, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == blackPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 15, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == redPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 14, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == greenPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 13, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == brownPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 12, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == bluePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 11, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == purplePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 10, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == cyanPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 9, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == lightGreyPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 8, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == darkGreyPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 7, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == pinkPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 6, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == limePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 5, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == yellowPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 4, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == cloudPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 3, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == magentaPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 2, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == orangePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 1, 2); damageItemInHands(par5EntityPlayer,painterID);}
+        if (itemInHandID == whitePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_bricks_trowel_block.blockID, 0, 2); damageItemInHands(par5EntityPlayer,painterID);}
         
     }
     

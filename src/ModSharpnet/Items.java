@@ -16,13 +16,13 @@ public class Items
     public static int money10ID;
     
     public static Item destiledEthanol_1;
-    public static int destiledEthanol_1ID;
+    public static int destiledEthanol_1_ID;
     
     public static Item destiledEthanol_2;
-    public static int destiledEthanol_2ID;
+    public static int destiledEthanol_2_ID;
     
     public static Item destiledEthanol_3;
-    public static int destiledEthanol_3ID;
+    public static int destiledEthanol_3_ID;
     
     public static Item armor_formal_boots;
     public static int armor_formal_boots_ID;

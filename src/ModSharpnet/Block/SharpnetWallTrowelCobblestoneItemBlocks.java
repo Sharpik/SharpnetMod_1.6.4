@@ -18,7 +18,7 @@ public class SharpnetWallTrowelCobblestoneItemBlocks extends ItemBlock
 	public String getUnlocalizedName(ItemStack itemstack)
         {
             int damage = itemstack.getItemDamage();
-            return Blocks.wall_cobblestone_trowel.getUnlocalizedName() + "." + damage;
+            return Blocks.wall_cobblestone_trowel_block.getUnlocalizedName() + "." + damage;
 	}
         
         @Override
@@ -30,7 +30,7 @@ public class SharpnetWallTrowelCobblestoneItemBlocks extends ItemBlock
         @Override
         public Icon getIconFromDamage(int par1)
         {
-            return Blocks.wall_cobblestone_trowel.getIcon(0, par1);
+            return Blocks.wall_cobblestone_trowel_block.getIcon(0, par1);
         }
 
 }

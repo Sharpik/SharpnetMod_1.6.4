@@ -33,9 +33,9 @@ public class SharpnetThrowel extends Item
         {
         switch(blockType)
         {
-            case 4: par3World.setBlock(par4, par5 , par6, Blocks.wall_cobblestone_trowel.blockID, 12, 2); par1ItemStack.damageItem(1, par2EntityPlayer); break;
-            case 43: par3World.setBlock(par4, par5 , par6, Blocks.wall_stone_slab_trowel.blockID, 12, 2); par1ItemStack.damageItem(1, par2EntityPlayer); break;
-            case 45: par3World.setBlock(par4, par5 , par6, Blocks.wall_bricks_trowel.blockID, 12, 2); par1ItemStack.damageItem(1, par2EntityPlayer); break;
+            case 4: par3World.setBlock(par4, par5 , par6, Blocks.wall_cobblestone_trowel_block.blockID, 12, 2); par1ItemStack.damageItem(1, par2EntityPlayer); break;
+            case 43: par3World.setBlock(par4, par5 , par6, Blocks.wall_stone_slab_trowel_block.blockID, 12, 2); par1ItemStack.damageItem(1, par2EntityPlayer); break;
+            case 45: par3World.setBlock(par4, par5 , par6, Blocks.wall_bricks_trowel_block.blockID, 12, 2); par1ItemStack.damageItem(1, par2EntityPlayer); break;
             default: return false;
         }
         return true;
