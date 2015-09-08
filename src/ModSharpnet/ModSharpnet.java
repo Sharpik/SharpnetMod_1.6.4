@@ -263,7 +263,7 @@ public class ModSharpnet
         Items.door11_block_item_ID = (config.get("Items", "door11_block_item", 6561).getInt())-256;
         Items.door12_block_item_ID = (config.get("Items", "door12_block_item", 6562).getInt())-256;
         Items.barrel_ID = (config.get("Items", "barrel", 6563).getInt())-256;
-        Items.barrel_of_wine_ID = (config.get("Items", "barrel_of_wine", 6563).getInt())-256;
+        Items.barrel_of_wine_ID = (config.get("Items", "barrel_of_wine", 6564).getInt())-256;
                 
         //Items Resources
         Items.roofing_tile_ID = (config.get("Items", "roofing_tile", 6543).getInt())-256;
@@ -939,11 +939,11 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.salad_fillet, "Salad + Fillet");
         LanguageRegistry.addName(new ItemStack(Items.salad_fillet, 1, 0), "Salad + Fillet");
         
-        Items.barrel = (new ShItemPlacer(Items.barrel_ID, Blocks.deco1_block.blockID,0).setUnlocalizedName("barrel").setTextureName(modid+":resources/barrel").setCreativeTab(CreativeTabs.tabMaterials));
+        Items.barrel = (new ShItemPlacer(Items.barrel_ID, Blocks.deco1_block.blockID,0).setUnlocalizedName("barrel").setTextureName(modid+":resources/barrel").setCreativeTab(CreativeTabs.tabDecorations));
         GameRegistry.registerItem(Items.barrel, "Barrel");
         LanguageRegistry.addName(new ItemStack(Items.barrel, 1, 0), "Barrel");
         
-        Items.barrel_of_wine = (new ShItemPlacer(Items.barrel_of_wine_ID, Blocks.deco1_block.blockID,1).setUnlocalizedName("barrel_of_wine").setTextureName(modid+":resources/barrel_of_wine").setCreativeTab(CreativeTabs.tabMaterials));
+        Items.barrel_of_wine = (new ShItemPlacer(Items.barrel_of_wine_ID, Blocks.deco1_block.blockID,1).setUnlocalizedName("barrel_of_wine").setTextureName(modid+":resources/barrel_of_wine").setCreativeTab(CreativeTabs.tabDecorations));
         GameRegistry.registerItem(Items.barrel_of_wine, "Barrel of Wine");
         LanguageRegistry.addName(new ItemStack(Items.barrel_of_wine, 1, 0), "Barrel of Wine");
              
