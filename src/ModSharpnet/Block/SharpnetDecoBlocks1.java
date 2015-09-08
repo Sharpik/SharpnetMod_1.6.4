@@ -1,5 +1,6 @@
 package ModSharpnet.Block;
 
+import ModSharpnet.Items;
 import static ModSharpnet.ModSharpnet.modid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -9,11 +10,16 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.world.World;
 
 public class SharpnetDecoBlocks1 extends Block
 {
+    public int dropID = 0;
+    public int dropMeta = 0;
+    public int dropCount = 0;
     
     public SharpnetDecoBlocks1(int par1)
     {
@@ -27,24 +33,44 @@ public class SharpnetDecoBlocks1 extends Block
     }
     
     // TADY ZMENIT POCET VARIANT 1 - 16
-    public int pocet = 6;
+    public int pocet = 6;    
+    
+    @Override
+    public void breakBlock(World world, int x, int y, int z, int par5, int par6)
+    {
+        dropCount = 1;
+        
+        switch(par6)
+        {
+            case 0: dropID = Items.barrel.itemID; dropMeta = 0; break;
+            case 1: dropID = Items.barrel_of_wine.itemID; dropMeta = 0; break;
+            default: dropID = par5; dropMeta = par6; break;
+        }
+        
+        if (dropID != 0)
+        {
+            ItemStack SpawnedItemStack = new ItemStack(dropID, dropCount, dropMeta);
+            EntityItem SpawnedItemEntity = new EntityItem(world,x,y,z,SpawnedItemStack);
+            world.spawnEntityInWorld(SpawnedItemEntity);
+        }
+    }
     
     @Override
     public int idDropped (int par1, Random par2Random, int par3)
     {
-          return this.blockID;
+          return 0;
     }
     
     @Override
     public int damageDropped (int metadata)
     {
-            return metadata;
+            return 0;
     }
     
     @Override
     public int quantityDropped(Random par1Random)
     {
-        return 1;
+        return 0;
     }
     
     @SideOnly(Side.CLIENT)
