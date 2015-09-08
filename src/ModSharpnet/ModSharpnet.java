@@ -252,6 +252,11 @@ public class ModSharpnet
         Items.potatoes_chips_ID = (config.get("Items", "potatoes_chips", 6614).getInt())-256;
         Items.flour_ID = (config.get("Items", "flour", 6615).getInt())-256;
         Items.dough_ID = (config.get("Items", "dough", 6616).getInt())-256;
+        Items.butter_ID = (config.get("Items", "butter", 6617).getInt())-256;
+        Items.tomato_puree_ID = (config.get("Items", "tomato_puree", 6618).getInt())-256;
+        Items.cheese_ID = (config.get("Items", "cheese", 6619).getInt())-256;
+        Items.raw_pizza_ID = (config.get("Items", "raw_pizza", 6620).getInt())-256;
+        Items.slice_of_bread_ID = (config.get("Items", "slice_of_bread", 6621).getInt())-256;
         
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
@@ -878,11 +883,11 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.bottle_of_milk, "Bottle of Milk");
         LanguageRegistry.addName(new ItemStack(Items.bottle_of_milk, 1, 0), "Bottle of Milk");
         
-        Items.sliced_potatoe = (new Item(Items.sliced_potatoe_ID).setUnlocalizedName("sliced_potatoe").setTextureName(modid+":food/sliced_potatoe").setCreativeTab(CreativeTabs.tabFood));
+        Items.sliced_potatoe = (new Item(Items.sliced_potatoe_ID).setUnlocalizedName("sliced_potatoe").setTextureName(modid+":food/potatoe_sliced").setCreativeTab(CreativeTabs.tabFood));
         GameRegistry.registerItem(Items.sliced_potatoe, "Sliced Potatoe");
         LanguageRegistry.addName(new ItemStack(Items.sliced_potatoe, 1, 0), "Sliced Potatoe");
         
-        Items.potatoes_chips = new ItemFood(Items.potatoes_chips_ID, 1 , 0.2F, false ).setUnlocalizedName("potatoes_chips").setTextureName(modid+":food/potatoes_chips");
+        Items.potatoes_chips = new ItemFood(Items.potatoes_chips_ID, 1 , 0.2F, false ).setUnlocalizedName("potatoes_chips").setTextureName(modid+":food/potato_chips");
         GameRegistry.registerItem(Items.potatoes_chips, "Potatoes Chips");
         LanguageRegistry.addName(new ItemStack(Items.potatoes_chips, 1, 0), "Potatoes Chips");
         
@@ -893,6 +898,26 @@ public class ModSharpnet
         Items.dough = (new Item(Items.dough_ID).setUnlocalizedName("dough").setTextureName(modid+":food/dough").setCreativeTab(CreativeTabs.tabFood));
         GameRegistry.registerItem(Items.dough, "Dough");
         LanguageRegistry.addName(new ItemStack(Items.dough, 1, 0), "Dough");
+        
+        Items.butter = (new Item(Items.butter_ID).setUnlocalizedName("butter").setTextureName(modid+":food/butter").setCreativeTab(CreativeTabs.tabFood));
+        GameRegistry.registerItem(Items.butter, "Butter");
+        LanguageRegistry.addName(new ItemStack(Items.butter, 1, 0), "Butter");
+        
+        Items.tomato_puree = (new Item(Items.tomato_puree_ID).setUnlocalizedName("tomato_puree").setTextureName(modid+":food/tomato_puree").setCreativeTab(CreativeTabs.tabFood));
+        GameRegistry.registerItem(Items.tomato_puree, "Tomato Puree");
+        LanguageRegistry.addName(new ItemStack(Items.tomato_puree, 1, 0), "Tomato Puree");
+        
+        Items.cheese = new ItemFood(Items.cheese_ID, 4 , 2.5F, false ).setUnlocalizedName("cheese").setTextureName(modid+":food/cheese");
+        GameRegistry.registerItem(Items.cheese, "Cheese");
+        LanguageRegistry.addName(new ItemStack(Items.cheese, 1, 0), "Cheese");
+        
+        Items.raw_pizza = (new Item(Items.raw_pizza_ID).setUnlocalizedName("raw_pizza").setTextureName(modid+":drinks&food/pizza1").setCreativeTab(CreativeTabs.tabFood));
+        GameRegistry.registerItem(Items.raw_pizza, "Raw Pizza");
+        LanguageRegistry.addName(new ItemStack(Items.raw_pizza, 1, 0), "Raw Pizza");
+        
+        Items.slice_of_bread = new ItemFood(Items.slice_of_bread_ID, 1 , 0.8F, false ).setUnlocalizedName("slice_of_bread").setTextureName(modid+":food/bread_slice_of");
+        GameRegistry.registerItem(Items.slice_of_bread, "Slice of Bread");
+        LanguageRegistry.addName(new ItemStack(Items.slice_of_bread, 1, 0), "Slice of Bread");
         
         //Item Alcohol
         Items.beer = new ShItemFoodPlacer1(Items.beer_ID, 4, 2.0F, false, Blocks.drinks1_block.blockID, 0, 2, 20).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/beer");
@@ -1220,6 +1245,28 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(new ItemStack(Items.sliced_potatoe, 1,0), new ItemStack(Item.potato, 1, 0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.flour, 1,0), new ItemStack(Item.wheat, 1, 0), new ItemStack(Item.wheat, 1, 0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.dough, 1,0), new ItemStack(Items.flour, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.tomato_puree, 2,0), new ItemStack(SharpnetTomato, 1, 0), new ItemStack(Item.sugar, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.slice_of_bread, 4,0), new ItemStack(Item.bread, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.butter, 1,0), new ItemStack(Item.bucketMilk, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.butter, 1,0), new ItemStack(Items.bottle_of_milk, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.cheese, 2,0), new ItemStack(Item.bucketMilk, 1, 0), new ItemStack(Items.butter, 1,0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.cheese, 2,0), new ItemStack(Items.bottle_of_milk, 1, 0), new ItemStack(Items.butter, 1,0));
+        
+        GameRegistry.addRecipe(new ItemStack(Items.catchup,1,0), new Object[]
+        {
+            "TTT",
+            "TBT",
+            "TTT",
+            'T', Items.tomato_puree, 'B', Items.bottle
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(Items.raw_pizza,1,0), new Object[]
+        {
+            " C ",
+            "TDT",
+            "   ",
+            'T', Items.tomato_puree, 'C', Items.cheese, 'D', Items.dough
+        });
         
         //Smelting
         GameRegistry.addSmelting(Items.mutton_raw.itemID, new ItemStack(Items.mutton_cooked, 1), 0.35F);
@@ -1228,6 +1275,7 @@ public class ModSharpnet
         GameRegistry.addSmelting(Items.cofee_beans.itemID, new ItemStack(Items.cofee, 1), 0.35F);
         GameRegistry.addSmelting(Items.sliced_potatoe.itemID, new ItemStack(Items.potatoes_chips, 1), 0.35F);
         GameRegistry.addSmelting(Items.dough.itemID, new ItemStack(Item.bread, 1), 0.35F);
+        GameRegistry.addSmelting(Items.raw_pizza.itemID, new ItemStack(Items.pizza, 1), 0.35F);
         
         GameRegistry.addSmelting(Items.mixed_ethanol.itemID, new ItemStack(Items.destiledEthanol_1, 1), 0.35F);
         GameRegistry.addSmelting(Items.destiledEthanol_1.itemID, new ItemStack(Items.destiledEthanol_2, 1), 0.35F);
@@ -1253,6 +1301,21 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 3,13), new ItemStack(sharpnetFlowerBlocks1, 1, 13), new ItemStack(351, 1, 15));
         GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,14), new ItemStack(sharpnetFlowerBlocks1, 1, 14), new ItemStack(351, 1, 15));
         GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,15), new ItemStack(sharpnetFlowerBlocks1, 1, 15), new ItemStack(351, 1, 15));
+        
+        //Recipe Gunpowder
+        GameRegistry.addShapelessRecipe(new ItemStack(Item.gunpowder, 1,0), new ItemStack(Item.coal, 1, 0), new ItemStack(Item.redstone, 1, 0));
+        
+        //Recipe Exchange Charocoal to Coal
+        GameRegistry.addShapelessRecipe(new ItemStack(Item.coal, 1,0), new ItemStack(Item.coal, 1, 1));
+        
+        //Recipe TNT
+        GameRegistry.addRecipe(new ItemStack(Block.tnt,1,0), new Object[]
+        {
+            " W ",
+            "GRG",
+            "SSS",
+            'G', Item.gunpowder, 'R', Item.redstone, 'S', Block.sand, 'W', new ItemStack(Block.wood, 1, 0)
+        });
         
         //Recipe Drinks
         GameRegistry.addRecipe(new ItemStack(Items.test_tube,6,0), new Object[]
@@ -1348,9 +1411,9 @@ public class ModSharpnet
         //Recipe Barrel
         GameRegistry.addRecipe(new ItemStack(Items.barrel,1,0), new Object[]
         {
-            "WWW",
             "W W",
-            "WWW",
+            "W W",
+            "W W",
             'W', new ItemStack(5,1,0)
         });
         //Recipe Barrel of Vine
@@ -1461,6 +1524,15 @@ public class ModSharpnet
             'S', new ItemStack(48,1,0), 'L', new ItemStack(69,1,0)
         });
         //Recipe Door Secret Cobble
+        GameRegistry.addRecipe(new ItemStack(Items.door_secret3_block_item,1,0), new Object[]
+        {
+            "SS ",
+            "SSL",
+            "SS ",
+            'S', new ItemStack(4,1,0), 'L', new ItemStack(69,1,0)
+        });
+        
+        //Recipe Tiles
         GameRegistry.addRecipe(new ItemStack(Items.door_secret3_block_item,1,0), new Object[]
         {
             "SS ",
