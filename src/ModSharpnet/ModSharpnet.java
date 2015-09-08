@@ -262,8 +262,8 @@ public class ModSharpnet
         Items.door10_block_item_ID = (config.get("Items", "door10_block_item", 6560).getInt())-256;
         Items.door11_block_item_ID = (config.get("Items", "door11_block_item", 6561).getInt())-256;
         Items.door12_block_item_ID = (config.get("Items", "door12_block_item", 6562).getInt())-256;
-        Items.barrel_ID = (config.get("Items", "barrel", 6013).getInt())-256;
-        Items.barrel_of_wine_ID = (config.get("Items", "barrel_of_wine", 6014).getInt())-256;
+        Items.barrel_ID = (config.get("Items", "barrel", 6563).getInt())-256;
+        Items.barrel_of_wine_ID = (config.get("Items", "barrel_of_wine", 6563).getInt())-256;
                 
         //Items Resources
         Items.roofing_tile_ID = (config.get("Items", "roofing_tile", 6543).getInt())-256;
@@ -789,12 +789,12 @@ public class ModSharpnet
         
         Blocks.deco1_block = new SharpnetDecoBlocks1(Blocks.deco1_block_ID).setUnlocalizedName("SharpnetDecorationBlocks");
         GameRegistry.registerBlock(Blocks.deco1_block, SharpnetDecoItemBlocks1.class, Blocks.deco1_block.getUnlocalizedName());
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 0), "9 Cents");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 1), "8 Euro");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 2), "Money Bag 81C");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 3), "Money Bag 72E");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 4), "Money stack 9x10E");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 5), "Money stack 9x100E");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 0), "Barell");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 1), "Barell of Vine");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 2), "Hay Stack");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 3), "Money Pallet 10E");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 4), "Money Pallet 100E");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 5), "Money Pallet 1000E");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
@@ -1203,7 +1203,7 @@ public class ModSharpnet
             'W', new ItemStack(5,1,0), 'G', new ItemStack(20,1,0)
         });
         //Recipe Barrel
-        GameRegistry.addRecipe(new ItemStack(Items.barrel_ID+256,1,0), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Items.barrel,1,0), new Object[]
         {
             "WWW",
             "W W",
@@ -1211,12 +1211,12 @@ public class ModSharpnet
             'W', new ItemStack(5,1,0)
         });
         //Recipe Barrel of Vine
-        GameRegistry.addRecipe(new ItemStack(Items.barrel_of_wine_ID+256,1,0), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Items.barrel_of_wine,1,0), new Object[]
         {
             "GGG",
             "GBG",
             "GGG",
-            'G', Items.grape_red, 'B', new ItemStack(Items.barrel_ID+256,1,0)
+            'G', Items.grape_red, 'B', new ItemStack(Items.barrel,1,0)
         });
         //Recipe Bottle of Vine
         GameRegistry.addRecipe(new ItemStack(Items.wine,6,0), new Object[]
@@ -1224,7 +1224,7 @@ public class ModSharpnet
             "G G",
             "GBG",
             "G G",
-            'B', new ItemStack(Items.barrel_of_wine_ID+256,1,0), 'G', Items.bottle
+            'B', new ItemStack(Items.barrel_of_wine,1,0), 'G', Items.bottle
         });
         
         //Recipe Door 1

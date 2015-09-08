@@ -19,8 +19,9 @@ public class SharpnetDecoBlocks1 extends Block
     {
         super(par1, Material.wood);
         setUnlocalizedName("Sharpnet Decoration Blocks");
-        setHardness(1.0F);
+        setHardness(0.6F);
         setResistance(1.0F);
+        setBurnProperties(par1, 60, 60);
         setStepSound(Block.soundWoodFootstep);
         setCreativeTab(CreativeTabs.tabDecorations);
     }
@@ -77,6 +78,7 @@ public class SharpnetDecoBlocks1 extends Block
             {
                 case 0:
                 {
+                    setHardness(1.0F);
                     isSided[i] = true;
                     // TOP
                     topIcon[i] = par1.registerIcon(modid+":others/barell2_top");
@@ -88,6 +90,7 @@ public class SharpnetDecoBlocks1 extends Block
                 }
                 case 1:
                 {
+                    setHardness(1.0F);
                     isSided[i] = true;
                     // TOP
                     topIcon[i] = par1.registerIcon(modid+":others/barell2_top");
