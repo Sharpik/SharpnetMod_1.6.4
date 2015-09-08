@@ -293,7 +293,7 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             {
                 if (!par1World.isRemote)
                 {
-                    secondaryDrop = false;
+                    secondaryDrop = true;
                     par1World.setBlock(par2, par3 , par4, this.blockID, 1, 2);
                     return true;
                 }
