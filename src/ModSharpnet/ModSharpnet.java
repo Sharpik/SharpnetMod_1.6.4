@@ -37,7 +37,7 @@ import static net.minecraft.block.Block.soundMetalFootstep;
 
 
 
-@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.2", dependencies="required-after:IC2")
+@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.3", dependencies="required-after:IC2")
 @NetworkMod(clientSideRequired=true, serverSideRequired=true)
 
 public class ModSharpnet
@@ -1238,18 +1238,25 @@ public class ModSharpnet
         //GameRegistry.addShapelessRecipe(TomatoSeeds, Tomato);
         
         //Recipes Old
-        GameRegistry.addShapelessRecipe(new ItemStack(Item.flint,1,0), new ItemStack(Block.gravel,1,0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Item.flint,1,0), new ItemStack(Block.gravel,1,0), new ItemStack(Block.gravel,1,0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Item.seeds,2,0), new ItemStack(Item.wheat,1,0));
+        GameRegistry.addRecipe(new ItemStack(Block.stoneDoubleSlab,1,0), new Object[]
+        {
+            "S",
+            "S",
+            'S', Block.stoneSingleSlab
+        });
         GameRegistry.addRecipe(new ItemStack(Block.cobblestoneMossy,1,0), new Object[]
         {
             "W",
             "S",
-            'S', Block.stone, 'W', Item.wheat
+            'S', Block.stone, 'W', Item.seeds
         });
         GameRegistry.addRecipe(new ItemStack(Block.grass,1,0), new Object[]
         {
             "W",
             "S",
-            'S', Block.dirt, 'W', Item.wheat
+            'S', Block.dirt, 'W', Item.seeds
         });
         GameRegistry.addRecipe(new ItemStack(Block.blockClay,1,0), new Object[]
         {
@@ -1264,11 +1271,20 @@ public class ModSharpnet
             "S S",
             'S', Item.silk
         });
-        GameRegistry.addRecipe(new ItemStack(Item.silk,8,0), new Object[]
+        for (int x = 0; x < 16; x++ )
         {
-            "W",
-            "W",
-            'W', Block.cloth
+            GameRegistry.addRecipe(new ItemStack(Item.silk,3,0), new Object[]
+            {
+                "W",
+                "W",
+                'W', new ItemStack(Block.cloth,1,x)
+            });
+        }
+        GameRegistry.addRecipe(new ItemStack(Item.slimeBall,4,0), new Object[]
+        {
+            " C ",
+            "SSS",
+            'C', Block.cactus, 'S', Item.sugar
         });
         
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetTomatoSeeds, 1), new ItemStack(SharpnetTomato));
@@ -1277,13 +1293,14 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(new ItemStack(Items.grape_red_seeds, 1), new ItemStack(Items.grape_red));
         
         GameRegistry.addShapelessRecipe(new ItemStack(Items.sliced_potatoe, 1,0), new ItemStack(Item.potato, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.flour, 1,0), new ItemStack(Item.wheat, 1, 0), new ItemStack(Item.wheat, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.flour, 4,0), new ItemStack(Item.wheat, 1, 0), new ItemStack(Item.wheat, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.flour, 2,0), new ItemStack(Item.seeds, 1, 0), new ItemStack(Item.seeds, 1, 0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.dough, 1,0), new ItemStack(Items.flour, 1, 0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.tomato_puree, 2,0), new ItemStack(SharpnetTomato, 1, 0), new ItemStack(Item.sugar, 1, 0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.slice_of_bread, 4,0), new ItemStack(Item.bread, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.butter, 1,0), new ItemStack(Item.bucketMilk, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.butter, 1,0), new ItemStack(Item.bucketMilk.setContainerItem(Item.bucketEmpty), 1, 0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.butter, 1,0), new ItemStack(Items.bottle_of_milk, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.cheese, 2,0), new ItemStack(Item.bucketMilk, 1, 0), new ItemStack(Items.butter, 1,0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.cheese, 2,0), new ItemStack(Item.bucketMilk.setContainerItem(Item.bucketEmpty), 1, 0), new ItemStack(Items.butter, 1,0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.cheese, 2,0), new ItemStack(Items.bottle_of_milk, 1, 0), new ItemStack(Items.butter, 1,0));
         
         
@@ -1317,31 +1334,35 @@ public class ModSharpnet
         GameRegistry.addSmelting(Items.destiledEthanol_2.itemID, new ItemStack(Items.destiledEthanol_3, 1), 0.35F);
         
         //Recipe Flower duplication
-        GameRegistry.addShapelessRecipe(new ItemStack(37, 4,0), new ItemStack(37, 1, 0), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(38, 4,0), new ItemStack(38, 1, 0), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(Block.plantRed, 4,0), new ItemStack(Block.plantRed, 1, 0), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(Block.plantYellow, 4,0), new ItemStack(Block.plantYellow, 1, 0), new ItemStack(Item.dyePowder, 1, 15));
         
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,0), new ItemStack(sharpnetFlowerBlocks1, 1, 0), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,1), new ItemStack(sharpnetFlowerBlocks1, 1, 1), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,2), new ItemStack(sharpnetFlowerBlocks1, 1, 2), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,3), new ItemStack(sharpnetFlowerBlocks1, 1, 3), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,4), new ItemStack(sharpnetFlowerBlocks1, 1, 4), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,5), new ItemStack(sharpnetFlowerBlocks1, 1, 5), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,6), new ItemStack(sharpnetFlowerBlocks1, 1, 6), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,7), new ItemStack(sharpnetFlowerBlocks1, 1, 7), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 3,8), new ItemStack(sharpnetFlowerBlocks1, 1, 8), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,9), new ItemStack(sharpnetFlowerBlocks1, 1, 9), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 5,10), new ItemStack(sharpnetFlowerBlocks1, 1, 10), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,11), new ItemStack(sharpnetFlowerBlocks1, 1, 11), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,12), new ItemStack(sharpnetFlowerBlocks1, 1, 12), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 3,13), new ItemStack(sharpnetFlowerBlocks1, 1, 13), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,14), new ItemStack(sharpnetFlowerBlocks1, 1, 14), new ItemStack(351, 1, 15));
-        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,15), new ItemStack(sharpnetFlowerBlocks1, 1, 15), new ItemStack(351, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,0), new ItemStack(sharpnetFlowerBlocks1, 1, 0), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,1), new ItemStack(sharpnetFlowerBlocks1, 1, 1), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,2), new ItemStack(sharpnetFlowerBlocks1, 1, 2), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,3), new ItemStack(sharpnetFlowerBlocks1, 1, 3), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,4), new ItemStack(sharpnetFlowerBlocks1, 1, 4), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,5), new ItemStack(sharpnetFlowerBlocks1, 1, 5), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,6), new ItemStack(sharpnetFlowerBlocks1, 1, 6), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,7), new ItemStack(sharpnetFlowerBlocks1, 1, 7), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 3,8), new ItemStack(sharpnetFlowerBlocks1, 1, 8), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,9), new ItemStack(sharpnetFlowerBlocks1, 1, 9), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 5,10), new ItemStack(sharpnetFlowerBlocks1, 1, 10), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 4,11), new ItemStack(sharpnetFlowerBlocks1, 1, 11), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,12), new ItemStack(sharpnetFlowerBlocks1, 1, 12), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 3,13), new ItemStack(sharpnetFlowerBlocks1, 1, 13), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,14), new ItemStack(sharpnetFlowerBlocks1, 1, 14), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(sharpnetFlowerBlocks1, 2,15), new ItemStack(sharpnetFlowerBlocks1, 1, 15), new ItemStack(Item.dyePowder, 1, 15));
         
         //Recipe Gunpowder
         GameRegistry.addShapelessRecipe(new ItemStack(Item.gunpowder, 1,0), new ItemStack(Item.coal, 1, 0), new ItemStack(Item.redstone, 1, 0));
         
         //Recipe Exchange Charocoal to Coal
         GameRegistry.addShapelessRecipe(new ItemStack(Item.coal, 1,0), new ItemStack(Item.coal, 1, 1));
+        
+        //Exchange IC2
+        GameRegistry.addShapelessRecipe(new ItemStack(Item.bucketWater, 1, 0), new ItemStack(Item.bucketEmpty, 1, 0), new ItemStack(ic2.api.item.Items.getItem("waterCell").getItem(), 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(ic2.api.item.Items.getItem("waterCell").getItem(), 1, 0), new ItemStack(Item.bucketWater.setContainerItem(Item.bucketEmpty), 1, 0), new ItemStack(ic2.api.item.Items.getItem("cell").getItem(), 1, 0));
         
         //Recipe TNT
         GameRegistry.addRecipe(new ItemStack(Block.tnt,1,0), new Object[]
@@ -1387,7 +1408,7 @@ public class ModSharpnet
         GameRegistry.addRecipe(new ItemStack(Items.bottle_of_milk,1,0), new Object[]
         {
             "UB",
-            'B', Items.bottle, 'U', Item.bucketMilk
+            'B', Items.bottle, 'U', Item.bucketMilk.setContainerItem(Item.bucketEmpty)
         });
         
         GameRegistry.addRecipe(new ItemStack(Items.guttalax,1,0), new Object[]
@@ -1717,6 +1738,14 @@ public class ModSharpnet
             "WP",
             "PW",
             'W', new ItemStack(Items.wood_tile_oak,1,0), 'P', new ItemStack(Items.wood_tile_spruce,1,0)
+        });
+        
+        //Recipe Lighting Stick
+        GameRegistry.addRecipe(new ItemStack(Blocks.lighting_stick_block,4,0), new Object[]
+        {
+            " G",
+            "S ",
+            'S', new ItemStack(Item.stick,1,0), 'G', new ItemStack(Item.glowstone,1,0)
         });
         
         //recipe Tile
