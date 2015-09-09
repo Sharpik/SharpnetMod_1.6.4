@@ -1327,7 +1327,7 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(new ItemStack(Items.fillet, 1,0), new ItemStack(Item.chickenCooked, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.fillet, 1,0), new ItemStack(Item.fishCooked, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0));
         
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.salad_fillet, 1,0), new ItemStack(Items.potato_salad, 1, 0), new ItemStack(Items.fillet, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.salad_fillet, 1,0), new ItemStack(Items.salad, 1, 0), new ItemStack(Items.fillet, 1, 0));
         
         GameRegistry.addRecipe(new ItemStack(Items.catchup,1,0), new Object[]
         {
