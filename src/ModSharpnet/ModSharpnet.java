@@ -29,6 +29,9 @@ import ic2.api.recipe.RecipeInputItemStack;
 import ic2.api.recipe.Recipes;
 import static net.minecraft.block.Block.soundLadderFootstep;
 import static net.minecraft.block.Block.soundMetalFootstep;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 // IC2 Dependency
 //import ic2.api.item.Items;
@@ -259,6 +262,7 @@ public class ModSharpnet
         Items.slice_of_bread_ID = (config.get("Items", "slice_of_bread", 6621).getInt())-256;
         Items.breadcrumbs_ID = (config.get("Items", "breadcrumbs", 6622).getInt())-256;
         Items.fillet_ID = (config.get("Items", "fillet", 6623).getInt())-256;
+        Items.IngotSteel_ID = (config.get("Items", "IngotSteel", 6625).getInt())-256;
         
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
@@ -1130,6 +1134,12 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.iron_bar, "Iron Bar");
         LanguageRegistry.addName(new ItemStack(Items.iron_bar, 1, 0), "Iron Bar");
         
+        Items.IngotSteel = (new Item(Items.IngotSteel_ID).setUnlocalizedName("IngotSteel").setTextureName(modid+":resources/ingot_steel").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.IngotSteel, "Steel Ingot");
+        LanguageRegistry.addName(new ItemStack(Items.IngotSteel, 1, 0), "Steel Ingot");
+        
+        OreDictionary.registerOre("ingotSteel", Items.IngotSteel);
+        
         Items.cloth_black = (new Item(Items.cloth_black_ID).setUnlocalizedName("Cloth_black").setTextureName(modid+":resources/cloth_black").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.cloth_black, "Cloth Black");
         LanguageRegistry.addName(new ItemStack(Items.cloth_black, 1, 0), "Cloth Black");
@@ -1302,6 +1312,15 @@ public class ModSharpnet
             'C', Block.cactus, 'S', Item.sugar
         });
         
+        //Ore Dictionary
+        /*
+        GameRegistry.addRecipe(new ShapedOreRecipe(Item.bucketEmpty, new Object[]{
+        "FF",
+        'F', "ingotCopper"
+        }));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(Item.bucketEmpty, "ingotCopper"));
+        */
+        
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetTomatoSeeds, 1), new ItemStack(SharpnetTomato));
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetCucumberSeeds, 1), new ItemStack(SharpnetCucumber));
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetCornSeeds, 1), new ItemStack(SharpnetCorn));
@@ -1357,7 +1376,9 @@ public class ModSharpnet
         GameRegistry.addSmelting(Items.mixed_ethanol.itemID, new ItemStack(Items.destiledEthanol_1, 1), 0.35F);
         GameRegistry.addSmelting(Items.destiledEthanol_1.itemID, new ItemStack(Items.destiledEthanol_2, 1), 0.35F);
         GameRegistry.addSmelting(Items.destiledEthanol_2.itemID, new ItemStack(Items.destiledEthanol_3, 1), 0.35F);
-             
+        
+        GameRegistry.addSmelting(Item.ingotIron.itemID, new ItemStack(Items.IngotSteel, 1), 0.35F);
+        
         //Recipe Flower duplication
         GameRegistry.addShapelessRecipe(new ItemStack(Block.plantRed, 4,0), new ItemStack(Block.plantRed, 1, 0), new ItemStack(Item.dyePowder, 1, 15));
         GameRegistry.addShapelessRecipe(new ItemStack(Block.plantYellow, 4,0), new ItemStack(Block.plantYellow, 1, 0), new ItemStack(Item.dyePowder, 1, 15));
