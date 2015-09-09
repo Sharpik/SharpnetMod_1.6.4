@@ -257,6 +257,8 @@ public class ModSharpnet
         Items.cheese_ID = (config.get("Items", "cheese", 6619).getInt())-256;
         Items.raw_pizza_ID = (config.get("Items", "raw_pizza", 6620).getInt())-256;
         Items.slice_of_bread_ID = (config.get("Items", "slice_of_bread", 6621).getInt())-256;
+        Items.breadcrumbs_ID = (config.get("Items", "breadcrumbs", 6622).getInt())-256;
+        Items.fillet_ID = (config.get("Items", "fillet", 6623).getInt())-256;
         
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
@@ -320,6 +322,7 @@ public class ModSharpnet
         Items.wood_tile_orange_ID = (config.get("Items", "wood_tile_orange", 6604).getInt())-256;
         Items.wood_tile_red_ID = (config.get("Items", "wood_tile_red", 6605).getInt())-256;
         Items.wood_tile_yellow_ID = (config.get("Items", "wood_tile_yellow", 6606).getInt())-256;
+        Items.iron_bar_ID = (config.get("Items", "iron_bar", 6624).getInt())-256;
         
         // Other Mods
        
@@ -919,6 +922,14 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.slice_of_bread, "Slice of Bread");
         LanguageRegistry.addName(new ItemStack(Items.slice_of_bread, 1, 0), "Slice of Bread");
         
+        Items.breadcrumbs = (new Item(Items.breadcrumbs_ID).setUnlocalizedName("breadcrumbs").setTextureName(modid+":food/breadcrumbs").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.breadcrumbs, "Breadcrumbs");
+        LanguageRegistry.addName(new ItemStack(Items.breadcrumbs, 1, 0), "Breadcrumbs");
+        
+        Items.fillet = new ItemFood(Items.fillet_ID, 3 , 1.0F, false ).setUnlocalizedName("fillet").setTextureName(modid+":food/fillet");
+        GameRegistry.registerItem(Items.fillet, "Fillet");
+        LanguageRegistry.addName(new ItemStack(Items.fillet, 1, 0), "Fillet");
+        
         //Item Alcohol
         Items.beer = new ShItemFoodPlacer1(Items.beer_ID, 4, 2.0F, false, Blocks.drinks1_block.blockID, 0, 2, 20).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/beer");
         GameRegistry.registerItem(Items.beer, "Beer");
@@ -995,7 +1006,7 @@ public class ModSharpnet
         Items.salad_fillet = new ShItemFoodPlacer1(Items.salad_fillet_ID, 14, 0.8F, false, Blocks.food1_block.blockID, 2, 0, 0).setUnlocalizedName("salad_fillet").setTextureName(modid+":drinks&food/salad_fillet");
         GameRegistry.registerItem(Items.salad_fillet, "Salad + Fillet");
         LanguageRegistry.addName(new ItemStack(Items.salad_fillet, 1, 0), "Salad + Fillet");
-        
+                
         Items.barrel = (new ShItemPlacer(Items.barrel_ID, Blocks.deco1_block.blockID,0).setUnlocalizedName("barrel").setTextureName(modid+":resources/barrel").setCreativeTab(CreativeTabs.tabDecorations));
         GameRegistry.registerItem(Items.barrel, "Barrel");
         LanguageRegistry.addName(new ItemStack(Items.barrel, 1, 0), "Barrel");
@@ -1085,7 +1096,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.armor_sunglasses, "Sunglasses");
         LanguageRegistry.addName(new ItemStack(Items.armor_sunglasses, 1, 0), "Sunglasses");
         
-        //Tools
+        //Item Tools
         Items.trowel = (new SharpnetThrowel(Items.trowel_ID).setUnlocalizedName("Throwel"));
         GameRegistry.registerItem(Items.trowel, "Throwel");
         LanguageRegistry.addName(new ItemStack(Items.trowel, 1, 0), "Throwel");
@@ -1110,10 +1121,14 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.stuff_of_warp, "Stuff of Warp");
         LanguageRegistry.addName(new ItemStack(Items.stuff_of_warp, 1, 0), "Stuff of Warp");
         
-        //Resources
+        //Item Resources
         Items.roofing_tile = (new Item(Items.roofing_tile_ID).setUnlocalizedName("Roofing_tile").setTextureName(modid+":resources/roofing_tile").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.roofing_tile, "Roofing Tile");
         LanguageRegistry.addName(new ItemStack(Items.roofing_tile, 1, 0), "Roofing Tile");
+        
+        Items.iron_bar = (new Item(Items.iron_bar_ID).setUnlocalizedName("iron_bar").setTextureName(modid+":resources/iron_bar").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.iron_bar, "Iron Bar");
+        LanguageRegistry.addName(new ItemStack(Items.iron_bar, 1, 0), "Iron Bar");
         
         Items.cloth_black = (new Item(Items.cloth_black_ID).setUnlocalizedName("Cloth_black").setTextureName(modid+":resources/cloth_black").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.cloth_black, "Cloth Black");
@@ -1302,7 +1317,17 @@ public class ModSharpnet
         GameRegistry.addShapelessRecipe(new ItemStack(Items.butter, 1,0), new ItemStack(Items.bottle_of_milk, 1, 0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.cheese, 2,0), new ItemStack(Item.bucketMilk.setContainerItem(Item.bucketEmpty), 1, 0), new ItemStack(Items.butter, 1,0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.cheese, 2,0), new ItemStack(Items.bottle_of_milk, 1, 0), new ItemStack(Items.butter, 1,0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.potato_salad, 1,0), new ItemStack(Item.potato, 1, 0), new ItemStack(SharpnetCucumber, 1,0), new ItemStack(Item.carrot, 1, 0), new ItemStack(Item.sugar, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.breadcrumbs, 1,0), new ItemStack(Items.slice_of_bread, 1, 0));
         
+        //Recipes Filet
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.fillet, 2,0), new ItemStack(Items.mutton_cooked, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.fillet, 2,0), new ItemStack(Item.porkCooked, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.fillet, 3,0), new ItemStack(Item.beefCooked, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.fillet, 1,0), new ItemStack(Item.chickenCooked, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.fillet, 1,0), new ItemStack(Item.fishCooked, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0));
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.salad_fillet, 1,0), new ItemStack(Items.potato_salad, 1, 0), new ItemStack(Items.fillet, 1, 0));
         
         GameRegistry.addRecipe(new ItemStack(Items.catchup,1,0), new Object[]
         {
@@ -1332,7 +1357,7 @@ public class ModSharpnet
         GameRegistry.addSmelting(Items.mixed_ethanol.itemID, new ItemStack(Items.destiledEthanol_1, 1), 0.35F);
         GameRegistry.addSmelting(Items.destiledEthanol_1.itemID, new ItemStack(Items.destiledEthanol_2, 1), 0.35F);
         GameRegistry.addSmelting(Items.destiledEthanol_2.itemID, new ItemStack(Items.destiledEthanol_3, 1), 0.35F);
-        
+             
         //Recipe Flower duplication
         GameRegistry.addShapelessRecipe(new ItemStack(Block.plantRed, 4,0), new ItemStack(Block.plantRed, 1, 0), new ItemStack(Item.dyePowder, 1, 15));
         GameRegistry.addShapelessRecipe(new ItemStack(Block.plantYellow, 4,0), new ItemStack(Block.plantYellow, 1, 0), new ItemStack(Item.dyePowder, 1, 15));
@@ -1371,6 +1396,16 @@ public class ModSharpnet
             "GRG",
             "SSS",
             'G', Item.gunpowder, 'R', Item.redstone, 'S', Block.sand, 'W', new ItemStack(Block.planks, 1, 0)
+        });
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.iron_bar, 7), new ItemStack(Block.fenceIron));
+        //Recipe Iron Lader
+        GameRegistry.addRecipe(new ItemStack(Blocks.ladder_iron1_block,1,0), new Object[]
+        {
+            "I I",
+            "III",
+            "I I",
+            'I', Items.iron_bar
         });
         
         //Recipe Drinks
@@ -1748,8 +1783,173 @@ public class ModSharpnet
             'S', new ItemStack(Item.stick,1,0), 'G', new ItemStack(Item.glowstone,1,0)
         });
         
-        //recipe Tile
+        //Recipe Tile
         GameRegistry.addShapelessRecipe(new ItemStack(Items.tile_brown,2,0), new ItemStack(Item.brick,1,0));
+        //Recipe Tile Black
+        GameRegistry.addRecipe(new ItemStack(Items.tile_black,8,0), new Object[]
+        {
+            "TTT",
+            "TCT",
+            "TTT",
+            'T', new ItemStack(Items.tile_brown,1,0), 'C', new ItemStack(Item.dyePowder,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.tile_black,8,0), new Object[]
+        {
+            "TTT",
+            "TCT",
+            "TTT",
+            'T', new ItemStack(Items.tile_brown,1,0), 'C', new ItemStack(Item.dyePowder,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.tile_red,8,0), new Object[]
+        {
+            "TTT",
+            "TCT",
+            "TTT",
+            'T', new ItemStack(Items.tile_brown,1,0), 'C', new ItemStack(Item.dyePowder,1,1)
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.tile_green,8,0), new Object[]
+        {
+            "TTT",
+            "TCT",
+            "TTT",
+            'T', new ItemStack(Items.tile_brown,1,0), 'C', new ItemStack(Item.dyePowder,1,2)
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.tile_blue,8,0), new Object[]
+        {
+            "TTT",
+            "TCT",
+            "TTT",
+            'T', new ItemStack(Items.tile_brown,1,0), 'C', new ItemStack(Item.dyePowder,1,4)
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.tile_grey,8,0), new Object[]
+        {
+            "TTT",
+            "TCT",
+            "TTT",
+            'T', new ItemStack(Items.tile_brown,1,0), 'C', new ItemStack(Item.dyePowder,1,8)
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.tile_orange,8,0), new Object[]
+        {
+            "TTT",
+            "TCT",
+            "TTT",
+            'T', new ItemStack(Items.tile_brown,1,0), 'C', new ItemStack(Item.dyePowder,1,14)
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.tile_white,8,0), new Object[]
+        {
+            "TTT",
+            "TCT",
+            "TTT",
+            'T', new ItemStack(Items.tile_brown,1,0), 'C', new ItemStack(Item.dyePowder,1,15)
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.tile_yellow,8,0), new Object[]
+        {
+            "TTT",
+            "TCT",
+            "TTT",
+            'T', new ItemStack(Items.tile_brown,1,0), 'C', new ItemStack(Item.dyePowder,1,11)
+        });
+        
+        
+        //Recipes Cloth
+        GameRegistry.addRecipe(new ItemStack(Items.cloth_white,1,0), new Object[]
+        {
+            "SS",
+            'S', Item.silk
+        });
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.cloth_black,1,0), new ItemStack(Items.cloth_white,1,0), new ItemStack(Item.dyePowder,1,0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.cloth_blue,1,0), new ItemStack(Items.cloth_white,1,0), new ItemStack(Item.dyePowder,1,4));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.cloth_brown,1,0), new ItemStack(Items.cloth_white,1,0), new ItemStack(Item.dyePowder,1,3));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.cloth_gray,1,0), new ItemStack(Items.cloth_white,1,0), new ItemStack(Item.dyePowder,1,8));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.cloth_green,1,0), new ItemStack(Items.cloth_white,1,0), new ItemStack(Item.dyePowder,1,2));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.cloth_orange,1,0), new ItemStack(Items.cloth_white,1,0), new ItemStack(Item.dyePowder,1,14));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.cloth_red,1,0), new ItemStack(Items.cloth_white,1,0), new ItemStack(Item.dyePowder,1,1));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.cloth_yellow,1,0), new ItemStack(Items.cloth_white,1,0), new ItemStack(Item.dyePowder,1,11));
+
+        //Recipe Armors
+        GameRegistry.addRecipe(new ItemStack(Items.armor_formal_boots,1,0), new Object[]
+        {
+            "   ",
+            "C C",
+            "CDC",
+            'C', Items.cloth_black, 'D', Item.diamond
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_formal_trousers,1,0), new Object[]
+        {
+            " D ",
+            "C C",
+            "C C",
+            'C', Items.cloth_black, 'D', Item.diamond
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_formal_suit,1,0), new Object[]
+        {
+            " D ",
+            "CCC",
+            " C ",
+            'C', Items.cloth_black, 'D', Item.diamond
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(Items.armor_jeans_black,1,0), new Object[]
+        {
+            "   ",
+            "CCC",
+            "C C",
+            'C', Items.cloth_black
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_jeans_blue,1,0), new Object[]
+        {
+            " C ",
+            "C C",
+            "C C",
+            'C', Items.cloth_blue
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_trousers_black,1,0), new Object[]
+        {
+            " C ",
+            "C C",
+            "C C",
+            'C', Items.cloth_black
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_tshirt_black,1,0), new Object[]
+        {
+            " C ",
+            "CDC",
+            " C ",
+            'C', Items.cloth_black, 'D', Items.cloth_white
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_tshirt_blue,1,0), new Object[]
+        {
+            " C ",
+            "CCC",
+            " C ",
+            'C', Items.cloth_blue
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_tshirt_green,1,0), new Object[]
+        {
+            " C ",
+            "CCC",
+            " C ",
+            'C', Items.cloth_green
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_tshirt_orange,1,0), new Object[]
+        {
+            " C ",
+            "CCC",
+            " C ",
+            'C', Items.cloth_orange
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_tshirt_white,1,0), new Object[]
+        {
+            " C ",
+            "CCC",
+            " C ",
+            'C', Items.cloth_white
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_sunglasses,1,0), new Object[]
+        {
+            "GWG",
+            'G', Block.thinGlass, 'W', new ItemStack(Block.cloth,1,0)
+        });
         
         //Recipe throwel wall
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wall_cobblestone_trowel_block,1,12), new ItemStack(Block.cobblestone,1,0), Item.clay);

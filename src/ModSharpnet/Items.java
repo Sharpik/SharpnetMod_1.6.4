@@ -458,6 +458,9 @@ public class Items
     public static Item roofing_tile;
     public static int roofing_tile_ID;
     
+    public static Item iron_bar;
+    public static int iron_bar_ID;
+    
     //Food
     public static Item mutton_raw;
     public static int mutton_raw_ID;
