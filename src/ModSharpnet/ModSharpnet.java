@@ -1871,6 +1871,110 @@ public class ModSharpnet
             'T', new ItemStack(Items.tile_brown,1,0), 'C', new ItemStack(Item.dyePowder,1,11)
         });
         
+        //Recipe Tiles Blocks
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,1,0), new Object[]
+        {
+            "TT",
+            "TT",
+            'T', new ItemStack(Items.tile_brown,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,1,1), new Object[]
+        {
+            "AB",
+            "BA",
+            'A', new ItemStack(Items.tile_grey,1,0), 'B', new ItemStack(Items.tile_blue,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,1,2), new Object[]
+        {
+            "AB",
+            "BA",
+            'A', new ItemStack(Items.tile_red,1,0), 'B', new ItemStack(Items.tile_grey,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,1,3), new Object[]
+        {
+            "AB",
+            "BA",
+            'A', new ItemStack(Items.tile_black,1,0), 'B', new ItemStack(Items.tile_white,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,2,4), new Object[]
+        {
+            "ABA",
+            "BAB",
+            "ABA",
+            'A', new ItemStack(Items.tile_yellow,1,0), 'B', new ItemStack(Items.tile_white,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,2,5), new Object[]
+        {
+            "AAA",
+            "BBB",
+            "AAA",
+            'A', new ItemStack(Items.tile_brown,1,0), 'B', new ItemStack(Items.tile_yellow,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,1,6), new Object[]
+        {
+            "AB",
+            "BB",
+            'A', new ItemStack(Items.tile_brown,1,0), 'B', new ItemStack(Items.tile_white,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,2,7), new Object[]
+        {
+            "AAA",
+            "ABA",
+            "AAA",
+            'A', new ItemStack(Items.tile_white,1,0), 'B', new ItemStack(Items.tile_yellow,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,2,8), new Object[]
+        {
+            "ABB",
+            "BBB",
+            "BBA",
+            'A', new ItemStack(Items.tile_brown,1,0), 'B', new ItemStack(Items.tile_orange,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,2,9), new Object[]
+        {
+            "AAB",
+            "BCB",
+            "DAC",
+            'A', new ItemStack(Items.tile_blue,1,0), 'B', new ItemStack(Items.tile_brown,1,0), 'C', new ItemStack(Items.tile_grey,1,0), 'D', new ItemStack(Items.tile_black,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,1,10), new Object[]
+        {
+            "AA",
+            "AA",
+            'A', new ItemStack(Items.tile_white,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,1,11), new Object[]
+        {
+            "AB",
+            "AA",
+            'A', new ItemStack(Items.tile_green,1,0), 'B', new ItemStack(Items.tile_blue,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,1,12), new Object[]
+        {
+            "AB",
+            "AA",
+            'A', new ItemStack(Items.tile_grey,1,0), 'B', new ItemStack(Items.tile_red,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,1,13), new Object[]
+        {
+            "AB",
+            "CC",
+            'A', new ItemStack(Items.tile_red,1,0), 'B', new ItemStack(Items.tile_orange,1,0), 'C', new ItemStack(Items.tile_white,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,2,14), new Object[]
+        {
+            "ABA",
+            "BCB",
+            "ABA",
+            'A', new ItemStack(Items.tile_orange,1,0), 'B', new ItemStack(Items.tile_brown,1,0), 'C', new ItemStack(Items.tile_black,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesBlocks1,2,15), new Object[]
+        {
+            "BAB",
+            "CBC",
+            "BAB",
+            'A', new ItemStack(Items.tile_green,1,0), 'B', new ItemStack(Items.tile_red,1,0), 'C', new ItemStack(Items.tile_yellow,1,0)
+        });
         
         //Recipes Cloth
         GameRegistry.addRecipe(new ItemStack(Items.cloth_white,1,0), new Object[]
