@@ -87,11 +87,13 @@ public class ShItemSlab extends ItemBlock
             int k1 = j1;
             boolean flag = (j1 & 8) != 0;
 
-            if ((par7 == 1 && !flag || par7 == 0 && flag) && i1 == this.theHalfSlab.blockID && k1 == par1ItemStack.getItemDamage() + StartingMeta)
+            if ((par7 == 1 && !flag || par7 == 0 && flag) && i1 == this.theHalfSlab.blockID && k1 == par1ItemStack.getItemDamage())
             {
+                //System.out.println("SharpnetMod Debug Slab: x:" + par4 + " y:" + par5 + " z:" + par6 + " k1:" + k1 + " ItemD:" + par1ItemStack.getItemDamage() + " flag:" + flag + " par7:" + par7 );
                 if (par3World.checkNoEntityCollision(this.doubleSlab.getCollisionBoundingBoxFromPool(par3World, par4, par5, par6)) && par3World.setBlock(par4, par5, par6, this.doubleSlab.blockID, k1, 3))
+                //if ( par3World.setBlock(par4, par5, par6, this.doubleSlab.blockID, k1 + StartingMeta, 3) )
                 {
-                    System.out.println("SharpnetMod Debug Slabs: x:" + par4 + " y:" + par5 + " z:" + par6 + " k1:" + k1 + " ItemD:" + par1ItemStack.getItemDamage() + " flag:" + flag );
+                    //System.out.println("SharpnetMod Debug DoubleSlab: x:" + par4 + " y:" + par5 + " z:" + par6 + " k1:" + k1 + " ItemD:" + par1ItemStack.getItemDamage() + " flag:" + flag );
                     par3World.playSoundEffect((double)((float)par4 + 0.5F), (double)((float)par5 + 0.5F), (double)((float)par6 + 0.5F), this.doubleSlab.stepSound.getPlaceSound(), (this.doubleSlab.stepSound.getVolume() + 1.0F) / 2.0F, this.doubleSlab.stepSound.getPitch() * 0.8F);
                     --par1ItemStack.stackSize;
                 }
@@ -100,6 +102,7 @@ public class ShItemSlab extends ItemBlock
             }
             else
             {
+                //System.out.println("SharpnetMod Debug SlabOut: x:" + par4 + " y:" + par5 + " z:" + par6 + " k1:" + k1 + " ItemD:" + par1ItemStack.getItemDamage() + " flag:" + flag + " par7:" + par7 );
                 return this.func_77888_a(par1ItemStack, par2EntityPlayer, par3World, par4, par5, par6, par7) ? true : super.onItemUse(par1ItemStack, par2EntityPlayer, par3World, par4, par5, par6, par7, par8, par9, par10);
             }
         }
@@ -199,12 +202,14 @@ public class ShItemSlab extends ItemBlock
 
         int i1 = par3World.getBlockId(par4, par5, par6);
         int k1  = par3World.getBlockMetadata(par4, par5, par6);
-
-        if (i1 == this.theHalfSlab.blockID && k1 == (par1ItemStack.getItemDamage() + StartingMeta))
+        //System.out.println("SharpnetMod Debug OutINSlab: x:" + par4 + " y:" + par5 + " z:" + par6 + " k1:" + k1 + " ItemD:" + par1ItemStack.getItemDamage() + " flag-meta:" + StartingMeta + " HS:" + this.theHalfSlab.blockID );
+        
+        if (i1 == this.theHalfSlab.blockID && k1 == (par1ItemStack.getItemDamage()))
         {
             if (par3World.checkNoEntityCollision(this.doubleSlab.getCollisionBoundingBoxFromPool(par3World, par4, par5, par6)) && par3World.setBlock(par4, par5, par6, this.doubleSlab.blockID, k1, 3))
+            //if ( par3World.setBlock(par4, par5, par6, this.doubleSlab.blockID, k1 + StartingMeta, 3) )
             {
-                System.out.println("SharpnetMod Debug Slabs Func: x:" + par4 + " y:" + par5 + " z:" + par6 + " k1:" + k1 + " ItemD:" + par1ItemStack.getItemDamage());
+                //System.out.println("SharpnetMod Debug Slabs Func: x:" + par4 + " y:" + par5 + " z:" + par6 + " k1:" + k1 + " ItemD:" + par1ItemStack.getItemDamage());
                 par3World.playSoundEffect((double)((float)par4 + 0.5F), (double)((float)par5 + 0.5F), (double)((float)par6 + 0.5F), this.doubleSlab.stepSound.getPlaceSound(), (this.doubleSlab.stepSound.getVolume() + 1.0F) / 2.0F, this.doubleSlab.stepSound.getPitch() * 0.8F);
                 --par1ItemStack.stackSize;
             }
