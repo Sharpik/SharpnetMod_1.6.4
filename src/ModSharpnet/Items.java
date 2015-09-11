@@ -520,6 +520,28 @@ public class Items
     public static Item door12_block_item;
     public static int door12_block_item_ID;
     
+    public static Item CD_1;
+    public static int CD_1_ID;
+    public static Item CD_2;
+    public static int CD_2_ID;
+    public static Item CD_3;
+    public static Item CD_4;
+    public static Item CD_5;
+    public static Item CD_6;
+    public static Item CD_7;
+    public static Item CD_8;
+    public static Item CD_9;
+    public static Item CD_10;
+    public static Item CD_11;
+    public static Item CD_12;
+    public static Item CD_13;
+    public static Item CD_14;
+    public static Item CD_15;
+    public static Item CD_16;
+    
+    public static Item debug;
+    public static int debug_ID;
+    
     //IC2 API
     public static final int IC2_painterID = ic2.api.item.Items.getItem("painter").itemID;
     public static final int IC2_blackPainterID = ic2.api.item.Items.getItem("blackPainter").itemID;

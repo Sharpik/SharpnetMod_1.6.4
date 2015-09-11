@@ -30,10 +30,8 @@ import ic2.api.recipe.Recipes;
 import static net.minecraft.block.Block.soundLadderFootstep;
 import static net.minecraft.block.Block.soundMetalFootstep;
 import net.minecraft.block.BlockHalfSlab;
-import net.minecraft.item.ItemSlab;
+import net.minecraft.item.ItemRecord;
 import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 // IC2 Dependency
 //import ic2.api.item.Items;
@@ -272,6 +270,9 @@ public class ModSharpnet
         Items.breadcrumbs_ID = (config.get("Items", "breadcrumbs", 6622).getInt())-256;
         Items.fillet_ID = (config.get("Items", "fillet", 6623).getInt())-256;
         Items.IngotSteel_ID = (config.get("Items", "IngotSteel", 6625).getInt())-256;
+        Items.CD_1_ID = (config.get("Items", "CD_1", 6626).getInt())-256;
+        Items.CD_2_ID = (config.get("Items", "CD_2", 6627).getInt())-256;
+        Items.debug_ID = (config.get("Items", "debug", 6642).getInt())-256;
         
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
@@ -414,8 +415,8 @@ public class ModSharpnet
         //LanguageRegistry.addName(new ItemStack(SharpnetWallsBlocks1, 1, 14), "Wall 15 Block");
         //LanguageRegistry.addName(new ItemStack(SharpnetWallsBlocks1, 1, 15), "Wall 16 Block");
         
-        SharpnetTilesBlocks1 = new SharpnetTilesBlocks1(SharpnetTilesBlocks1ID, true, "SharpnetTilesBlocks1");
-        GameRegistry.registerBlock(SharpnetTilesBlocks1, SharpnetTilesItemBlocks1.class, "SharpnetTilesBlocks1");
+        SharpnetTilesBlocks1 = new SharpnetTilesBlocks1(SharpnetTilesBlocks1ID, true, "TilesBlocks1");
+        GameRegistry.registerBlock(SharpnetTilesBlocks1, SharpnetTilesItemBlocks1.class, "TilesBlocks1");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks1, 1, 0), "Tile 1 Block");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks1, 1, 1), "Tile 2 Block");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks1, 1, 2), "Tile 3 Block");
@@ -433,8 +434,8 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks1, 1, 14), "Tile 15 Block");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks1, 1, 15), "Tile 16 Block");
         
-        SharpnetTilesBlocks2 = new SharpnetTilesBlocks2(SharpnetTilesBlocks2ID, true, "SharpnetTilesBlocks2");
-        GameRegistry.registerBlock(SharpnetTilesBlocks2, SharpnetTilesItemBlocks2.class, "SharpnetTilesBlocks2");
+        SharpnetTilesBlocks2 = new SharpnetTilesBlocks2(SharpnetTilesBlocks2ID, true, "TilesBlocks2");
+        GameRegistry.registerBlock(SharpnetTilesBlocks2, SharpnetTilesItemBlocks2.class, "TilesBlocks2");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks2, 1, 0), "Tile 17 Block");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks2, 1, 1), "Tile 18 Block");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks2, 1, 2), "Tile 19 Block");
@@ -517,11 +518,11 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetRoadsBlocks1, 1, 3), "Road White");
         LanguageRegistry.addName(new ItemStack(SharpnetRoadsBlocks1, 1, 4), "Road Yellow");
         
-        SharpnetRoadStairsGray = new SharpnetRoadStairsGray(SharpnetRoadStairsGrayID, SharpnetRoadsBlocks1, 0);
+        SharpnetRoadStairsGray = new SharpnetRoadStairsGray(SharpnetRoadStairsGrayID, SharpnetRoadsBlocks1, 0).setUnlocalizedName("SharpnetRoadStairsGray");
         GameRegistry.registerBlock(SharpnetRoadStairsGray, "SharpnetRoadStairsGray");
         LanguageRegistry.addName(new ItemStack(SharpnetRoadStairsGray, 1, 0), "Road Stairs Gray");
         
-        SharpnetRoadStairsBlack = new SharpnetRoadStairsBlack(SharpnetRoadStairsBlackID, SharpnetRoadsBlocks1, 2);
+        SharpnetRoadStairsBlack = new SharpnetRoadStairsBlack(SharpnetRoadStairsBlackID, SharpnetRoadsBlocks1, 2).setUnlocalizedName("SharpnetRoadStairsBlack");
         GameRegistry.registerBlock(SharpnetRoadStairsBlack, "SharpnetRoadStairsBlack");
         LanguageRegistry.addName(new ItemStack(SharpnetRoadStairsBlack, 1, 0), "Road Stairs Black");
         
@@ -830,7 +831,7 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 5), "Money Pallet 1000E");
         
         SharpnetTilesSlabBlocks1 = new SharpnetTilesSlabBlocks1(SharpnetTilesSlabBlocks1ID, false, Material.rock);
-        GameRegistry.registerBlock(SharpnetTilesSlabBlocks1, SharpnetTilesItemSlabBlocks1.class, "SharpnetTilesSlabBlocks1");
+        GameRegistry.registerBlock(SharpnetTilesSlabBlocks1, SharpnetTilesItemSlabBlocks1.class, "TilesSlabBlocks1");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 0), "Slab Tile 1");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 1), "Slab Tile 2");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 2), "Slab Tile 3");
@@ -838,16 +839,18 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 4), "Slab Tile 5");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 5), "Slab Tile 6");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 6), "Slab Tile 7");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 7), "Slab Tile 8");
         
         SharpnetTilesSlabBlocks2 = new SharpnetTilesSlabBlocks2(SharpnetTilesSlabBlocks2ID, false, Material.rock);
-        GameRegistry.registerBlock(SharpnetTilesSlabBlocks2, SharpnetTilesItemSlabBlocks2.class, "SharpnetTilesSlabBlocks2");
-        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 0), "Slab Tile 8");
-        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 1), "Slab Tile 9");
-        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 2), "Slab Tile 10");
-        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 3), "Slab Tile 11");
-        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 4), "Slab Tile 12");
-        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 5), "Slab Tile 13");
-        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 6), "Slab Tile 14");
+        GameRegistry.registerBlock(SharpnetTilesSlabBlocks2, SharpnetTilesItemSlabBlocks2.class, "TilesSlabBlocks2");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 0), "Slab Tile 9");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 1), "Slab Tile 10");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 2), "Slab Tile 11");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 3), "Slab Tile 12");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 4), "Slab Tile 13");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 5), "Slab Tile 14");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 6), "Slab Tile 15");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 7), "Slab Tile 16");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
@@ -1072,6 +1075,14 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.liquid_sugar, "Liquid Sugar");
         LanguageRegistry.addName(new ItemStack(Items.liquid_sugar, 1, 0), "Liquid Sugar");
         
+        //Records
+        Items.CD_1 = new ShRecord(Items.CD_1_ID, "cd1") .setTextureName(modid+":records/1") .setUnlocalizedName("cd1");
+        GameRegistry.registerItem(Items.CD_1, "CD 1");
+        LanguageRegistry.addName(new ItemStack(Items.CD_1, 1, 0), "CD 1");
+        Items.CD_2 = new ShRecord(Items.CD_2_ID, "cd2") .setTextureName(modid+":records/2") .setUnlocalizedName("cd2");
+        GameRegistry.registerItem(Items.CD_2, "CD 2");
+        LanguageRegistry.addName(new ItemStack(Items.CD_2, 1, 0), "CD 2");
+        
         //Armors
         Items.armor_formal_boots = (new SharpnetArmor(Items.armor_formal_boots_ID, SharpnetArmorCloth, 0, 3, 10, "formal", "armor/boots").setUnlocalizedName("boots_formal"));
         GameRegistry.registerItem(Items.armor_formal_boots, "Formal Boots");
@@ -1153,6 +1164,10 @@ public class ModSharpnet
         Items.stuff_of_warp = (new SharpnetStuffs1(Items.stuff_of_warp_ID, 6, 16).setUnlocalizedName("stuff_of_warp").setTextureName(modid+":tools/stuff"));
         GameRegistry.registerItem(Items.stuff_of_warp, "Stuff of Warp");
         LanguageRegistry.addName(new ItemStack(Items.stuff_of_warp, 1, 0), "Stuff of Warp");
+        
+        Items.debug = (new debugItem(Items.debug_ID).setUnlocalizedName("debug_item"));
+        GameRegistry.registerItem(Items.debug, "Debug Item");
+        LanguageRegistry.addName(new ItemStack(Items.debug, 1, 0), "Debug Item");
         
         //Item Resources
         Items.roofing_tile = (new Item(Items.roofing_tile_ID).setUnlocalizedName("Roofing_tile").setTextureName(modid+":resources/roofing_tile").setCreativeTab(CreativeTabs.tabMaterials));

@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.world.World;
 
 public class SharpnetTilesSlabBlocks1 extends BlockHalfSlab
 {
@@ -18,7 +19,7 @@ public class SharpnetTilesSlabBlocks1 extends BlockHalfSlab
     public SharpnetTilesSlabBlocks1(int par1, boolean par2, Material par3Material)
     {
         super(par1, par2, Material.rock);
-        setUnlocalizedName("Sharpnet Tiles Slab Blocks 1");
+        setUnlocalizedName("TilesSlabBlocks1Block");
         setHardness(1.0F).setStepSound(Block.soundStoneFootstep);
         setResistance(2.0F);
         setCreativeTab(CreativeTabs.tabBlock);
@@ -29,6 +30,13 @@ public class SharpnetTilesSlabBlocks1 extends BlockHalfSlab
     
     // TADY ZMENIT POCET VARIANT 1 - 8
     public int pocet = 8;
+    
+    @Override
+    @SideOnly(Side.CLIENT)
+    public int idPicked(World par1World, int par2, int par3, int par4)
+    {
+        return this.blockID;
+    }
     
     @SideOnly(Side.CLIENT)
     private Icon[] icons;
@@ -80,6 +88,6 @@ public class SharpnetTilesSlabBlocks1 extends BlockHalfSlab
     }
 
     @Override
-    public String getFullSlabName(int id) { if (id < 0) { id = 0; } return super.getUnlocalizedName(); }
+    public String getFullSlabName(int id) { if (id < 0) { id = 0; } return this.getUnlocalizedName(); }
     
 }

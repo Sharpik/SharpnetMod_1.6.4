@@ -21,7 +21,7 @@ public class ShItemSeeds extends Item implements IPlantable
 
     /** BlockID of the block the seeds can be planted on. */
     private int soilBlockID;
-    public int metadata = 0;
+    private int metadata = 0;
     
     public ShItemSeeds(int par1, int par2, int par3, int meta)
     {

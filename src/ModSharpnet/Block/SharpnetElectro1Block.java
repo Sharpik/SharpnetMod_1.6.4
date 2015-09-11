@@ -25,9 +25,9 @@ public class SharpnetElectro1Block extends Block
     
     @SideOnly(Side.CLIENT)
     public Icon[] iconArray;
-    int itemInHandID = 0;
-    int itemInHandMeta = 0;
-    int BlockMeta = 0;
+    private int itemInHandID = 0;
+    private int itemInHandMeta = 0;
+    private int BlockMeta = 0;
     
     public SharpnetElectro1Block(int par1)
     {

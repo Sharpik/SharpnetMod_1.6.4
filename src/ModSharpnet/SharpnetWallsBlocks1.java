@@ -25,7 +25,7 @@ public class SharpnetWallsBlocks1 extends Block
     }
     
     // TADY ZMENIT POCET VARIANT 1 - 16
-    public int pocet = 13;
+    private int pocet = 13;
     
     @Override
     public int idDropped (int par1, Random par2Random, int par3)

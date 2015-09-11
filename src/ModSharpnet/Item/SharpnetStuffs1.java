@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 public class SharpnetStuffs1 extends Item
 {
-    public int StuffType = 0;
+    private int StuffType = 0;
     
     public SharpnetStuffs1(int id, int typeOfEffect, int uses)
     {

@@ -28,7 +28,7 @@ public class SharpnetRoadsBlocks1 extends Block
     public SharpnetRoadsBlocks1(int par1,Material par2Material)
     {
         super(par1, par2Material);
-        setUnlocalizedName("Sharpnet Road Blocks 1");
+        setUnlocalizedName("RoadBlocks1");
         setHardness(5.0F).setStepSound(Block.soundStoneFootstep);
         setResistance(10.0F);
         setCreativeTab(CreativeTabs.tabBlock);

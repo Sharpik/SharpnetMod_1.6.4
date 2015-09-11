@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.world.World;
 
 public class SharpnetTilesBlocks2 extends BlockHalfSlab
 {
@@ -19,7 +20,7 @@ public class SharpnetTilesBlocks2 extends BlockHalfSlab
     public SharpnetTilesBlocks2(int par1, boolean par2,String par2Material)
     {
         super(par1, par2, Material.rock);
-        setUnlocalizedName("Sharpnet Tiles Blocks 2");
+        setUnlocalizedName("TilesBlocks2Block");
         setHardness(1.0F).setStepSound(Block.soundStoneFootstep);
         setResistance(2.0F);
         setCreativeTab(CreativeTabs.tabBlock);
@@ -44,6 +45,13 @@ public class SharpnetTilesBlocks2 extends BlockHalfSlab
     public int quantityDropped(Random par1Random)
     {
         return 1;
+    }
+    
+    @Override
+    @SideOnly(Side.CLIENT)
+    public int idPicked(World par1World, int par2, int par3, int par4)
+    {
+        return this.blockID;
     }
     
      @SideOnly(Side.CLIENT)

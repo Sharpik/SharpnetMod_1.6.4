@@ -28,23 +28,27 @@ public class SharpnetThrowel extends Item
     @Override
     public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
     {   
-        blockType = par3World.getBlockId(par4, par5, par6);
-        if(par1ItemStack.getItemDamage() < par1ItemStack.getMaxDamage())
+        if(!par3World.isRemote)
         {
-        switch(blockType)
-        {
-            case 4: par3World.setBlock(par4, par5 , par6, Blocks.wall_cobblestone_trowel_block.blockID, 12, 2); par1ItemStack.damageItem(1, par2EntityPlayer); break;
-            case 43: par3World.setBlock(par4, par5 , par6, Blocks.wall_stone_slab_trowel_block.blockID, 12, 2); par1ItemStack.damageItem(1, par2EntityPlayer); break;
-            case 45: par3World.setBlock(par4, par5 , par6, Blocks.wall_bricks_trowel_block.blockID, 12, 2); par1ItemStack.damageItem(1, par2EntityPlayer); break;
-            default: return false;
+            blockType = par3World.getBlockId(par4, par5, par6);
+            if(par1ItemStack.getItemDamage() < par1ItemStack.getMaxDamage())
+            {
+            switch(blockType)
+            {
+                case 4: par3World.setBlock(par4, par5 , par6, Blocks.wall_cobblestone_trowel_block.blockID, 12, 2); par1ItemStack.damageItem(1, par2EntityPlayer); break;
+                case 43: par3World.setBlock(par4, par5 , par6, Blocks.wall_stone_slab_trowel_block.blockID, 12, 2); par1ItemStack.damageItem(1, par2EntityPlayer); break;
+                case 45: par3World.setBlock(par4, par5 , par6, Blocks.wall_bricks_trowel_block.blockID, 12, 2); par1ItemStack.damageItem(1, par2EntityPlayer); break;
+                default: return false;
+            }
+            return true;
+            }
+            else
+            {
+                par1ItemStack.setItemName("Throwel - empty");
+                return false;
+            }
         }
-        return true;
-        }
-        else
-        {
-            par1ItemStack.setItemName("Throwel - empty");
-            return false;
-        }
+        else {return false;}
     }
     
 }
