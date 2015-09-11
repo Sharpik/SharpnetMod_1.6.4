@@ -839,7 +839,7 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 5), "Slab Tile 6");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 6), "Slab Tile 7");
         
-        SharpnetTilesSlabBlocks2 = new SharpnetTilesSlabBlocks1(SharpnetTilesSlabBlocks2ID, false, Material.rock);
+        SharpnetTilesSlabBlocks2 = new SharpnetTilesSlabBlocks2(SharpnetTilesSlabBlocks2ID, false, Material.rock);
         GameRegistry.registerBlock(SharpnetTilesSlabBlocks2, SharpnetTilesItemSlabBlocks2.class, "SharpnetTilesSlabBlocks2");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 0), "Slab Tile 8");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 1), "Slab Tile 9");
