@@ -20,6 +20,7 @@ public class SharpnetStairsBlocks extends BlockStairs
     {
         super(id, extender, 1);
         this.setCreativeTab(CreativeTabs.tabBlock);
+        this.useNeighborBrightness[id] = true;
     }
     
     @Override

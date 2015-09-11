@@ -6,18 +6,19 @@ import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
-public class SharpnetTilesBlocks1 extends Block
+public class SharpnetTilesBlocks1 extends BlockHalfSlab
 {
 
-    public SharpnetTilesBlocks1(int par1,String par2Material)
+    public SharpnetTilesBlocks1(int par1, boolean par2,String par2Material)
     {
-        super(par1, Material.rock);
+        super(par1, par2, Material.rock);
         setUnlocalizedName("Sharpnet Tiles Blocks 1");
         setHardness(1.0F).setStepSound(Block.soundStoneFootstep);
         setResistance(2.0F);
@@ -96,5 +97,8 @@ public class SharpnetTilesBlocks1 extends Block
                  par3List.add(new ItemStack(par1, 1, i));
           }
     }
+    
+    @Override
+    public String getFullSlabName(int id) { if (id < 0) { id = 0; } return super.getUnlocalizedName(); }
     
 }

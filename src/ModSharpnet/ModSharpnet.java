@@ -29,6 +29,8 @@ import ic2.api.recipe.RecipeInputItemStack;
 import ic2.api.recipe.Recipes;
 import static net.minecraft.block.Block.soundLadderFootstep;
 import static net.minecraft.block.Block.soundMetalFootstep;
+import net.minecraft.block.BlockHalfSlab;
+import net.minecraft.item.ItemSlab;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
@@ -96,6 +98,11 @@ public class ModSharpnet
     public static Block sharpnetFlowerBlocks1;
     public static int sharpnetFlowerBlocks1ID;
     
+    public static Block SharpnetTilesSlabBlocks1;
+    public static int SharpnetTilesSlabBlocks1ID;
+    
+    public static Block SharpnetTilesSlabBlocks2;
+    public static int SharpnetTilesSlabBlocks2ID;
     
     // Items Register
     public static Item SharpnetTomatoSeeds;
@@ -186,6 +193,8 @@ public class ModSharpnet
         Blocks.garden_deco_block_ID = config.get("Blocks", "garden_deco_block", 2563).getInt();
         Blocks.money_block_ID = config.get("Blocks", "money_block", 2564).getInt();
         Blocks.deco1_block_ID = config.get("Blocks", "deco1_block", 2565).getInt();
+        SharpnetTilesSlabBlocks1ID = config.get("Blocks", "SharpnetTilesSlabBlocks1", 2566).getInt();
+        SharpnetTilesSlabBlocks2ID = config.get("Blocks", "SharpnetTilesSlabBlocks2", 2567).getInt();
         
         // Other Mods
         Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
@@ -405,7 +414,7 @@ public class ModSharpnet
         //LanguageRegistry.addName(new ItemStack(SharpnetWallsBlocks1, 1, 14), "Wall 15 Block");
         //LanguageRegistry.addName(new ItemStack(SharpnetWallsBlocks1, 1, 15), "Wall 16 Block");
         
-        SharpnetTilesBlocks1 = new SharpnetTilesBlocks1(SharpnetTilesBlocks1ID, "SharpnetTilesBlocks1");
+        SharpnetTilesBlocks1 = new SharpnetTilesBlocks1(SharpnetTilesBlocks1ID, true, "SharpnetTilesBlocks1");
         GameRegistry.registerBlock(SharpnetTilesBlocks1, SharpnetTilesItemBlocks1.class, "SharpnetTilesBlocks1");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks1, 1, 0), "Tile 1 Block");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks1, 1, 1), "Tile 2 Block");
@@ -424,7 +433,7 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks1, 1, 14), "Tile 15 Block");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks1, 1, 15), "Tile 16 Block");
         
-        SharpnetTilesBlocks2 = new SharpnetTilesBlocks2(SharpnetTilesBlocks2ID, "SharpnetTilesBlocks2");
+        SharpnetTilesBlocks2 = new SharpnetTilesBlocks2(SharpnetTilesBlocks2ID, true, "SharpnetTilesBlocks2");
         GameRegistry.registerBlock(SharpnetTilesBlocks2, SharpnetTilesItemBlocks2.class, "SharpnetTilesBlocks2");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks2, 1, 0), "Tile 17 Block");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks2, 1, 1), "Tile 18 Block");
@@ -819,6 +828,26 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 3), "Money Pallet 10E");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 4), "Money Pallet 100E");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 5), "Money Pallet 1000E");
+        
+        SharpnetTilesSlabBlocks1 = new SharpnetTilesSlabBlocks1(SharpnetTilesSlabBlocks1ID, false, Material.rock);
+        GameRegistry.registerBlock(SharpnetTilesSlabBlocks1, SharpnetTilesItemSlabBlocks1.class, "SharpnetTilesSlabBlocks1");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 0), "Slab Tile 1");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 1), "Slab Tile 2");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 2), "Slab Tile 3");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 3), "Slab Tile 4");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 4), "Slab Tile 5");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 5), "Slab Tile 6");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks1, 1, 6), "Slab Tile 7");
+        
+        SharpnetTilesSlabBlocks2 = new SharpnetTilesSlabBlocks1(SharpnetTilesSlabBlocks2ID, false, Material.rock);
+        GameRegistry.registerBlock(SharpnetTilesSlabBlocks2, SharpnetTilesItemSlabBlocks2.class, "SharpnetTilesSlabBlocks2");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 0), "Slab Tile 8");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 1), "Slab Tile 9");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 2), "Slab Tile 10");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 3), "Slab Tile 11");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 4), "Slab Tile 12");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 5), "Slab Tile 13");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 6), "Slab Tile 14");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
@@ -1976,6 +2005,88 @@ public class ModSharpnet
             'A', new ItemStack(Items.tile_green,1,0), 'B', new ItemStack(Items.tile_red,1,0), 'C', new ItemStack(Items.tile_yellow,1,0)
         });
         
+        //Recipes Tiles Blocks Slabs
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks1,4,0), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,0)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks1,4,1), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,1)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks1,4,2), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,2)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks1,4,3), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,3)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks1,4,4), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,4)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks1,4,5), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,5)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks1,4,6), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,6)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks1,4,7), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,7)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks2,4,0), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,8)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks2,4,1), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,9)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks2,4,2), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,10)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks2,4,3), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,11)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks2,4,4), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,12)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks2,4,5), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,13)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks2,4,6), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,14)
+        });
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesSlabBlocks2,4,7), new Object[]
+        {
+            "AA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,15)
+        });
+        
         //Recipes Cloth
         GameRegistry.addRecipe(new ItemStack(Items.cloth_white,1,0), new Object[]
         {
@@ -2080,7 +2191,7 @@ public class ModSharpnet
         GameRegistry.addRecipe(new ItemStack(Items.roll_of_paper_white,1,0), new Object[]
         {
             "PP ",
-            "PP",
+            "PP ",
             "PP ",
             'P', Item.paper
         });
@@ -2339,6 +2450,9 @@ public class ModSharpnet
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
+        //Register Slab
+        Item.itemsList[SharpnetTilesSlabBlocks1.blockID] = new ShItemSlab(SharpnetTilesSlabBlocks1.blockID-256, (BlockHalfSlab)SharpnetTilesSlabBlocks1, (BlockHalfSlab)SharpnetTilesBlocks1, false, 0);
+        Item.itemsList[SharpnetTilesSlabBlocks2.blockID] = new ShItemSlab(SharpnetTilesSlabBlocks2.blockID-256, (BlockHalfSlab)SharpnetTilesSlabBlocks2, (BlockHalfSlab)SharpnetTilesBlocks1, false, 8);
         
     }
 }

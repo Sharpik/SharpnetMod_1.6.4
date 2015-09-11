@@ -4,7 +4,6 @@ import static ModSharpnet.ModSharpnet.modid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
-import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
@@ -13,40 +12,25 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
-public class SharpnetTilesBlocks2 extends BlockHalfSlab
+public class SharpnetTilesSlabBlocks1 extends BlockHalfSlab
 {
-
-    public SharpnetTilesBlocks2(int par1, boolean par2,String par2Material)
+    
+    public SharpnetTilesSlabBlocks1(int par1, boolean par2, Material par3Material)
     {
         super(par1, par2, Material.rock);
-        setUnlocalizedName("Sharpnet Tiles Blocks 2");
+        setUnlocalizedName("Sharpnet Tiles Slab Blocks 1");
         setHardness(1.0F).setStepSound(Block.soundStoneFootstep);
         setResistance(2.0F);
         setCreativeTab(CreativeTabs.tabBlock);
+        this.useNeighborBrightness[par1] = true;
     }
     
-    // TADY ZMENIT POCET VARIANT 1 - 16
-    public int pocet = 4;
+    // !!! Je třeba registrovat v post ini !!!
     
-    @Override
-    public int idDropped (int par1, Random par2Random, int par3)
-    {
-          return this.blockID;
-    }
+    // TADY ZMENIT POCET VARIANT 1 - 8
+    public int pocet = 8;
     
-    @Override
-    public int damageDropped (int metadata)
-    {
-            return metadata;
-    }
-    
-    @Override
-    public int quantityDropped(Random par1Random)
-    {
-        return 1;
-    }
-    
-     @SideOnly(Side.CLIENT)
+    @SideOnly(Side.CLIENT)
     private Icon[] icons;
     
     @Override
@@ -59,26 +43,23 @@ public class SharpnetTilesBlocks2 extends BlockHalfSlab
         {
             switch(i)
             {
-                case 0:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile17");break;}
-                case 1:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile18");break;}
-                case 2:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile19");break;}
-                case 3:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile20");break;}/*
+                case 0:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile1");break;}
+                case 1:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile2");break;}
+                case 2:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile3");break;}
+                case 3:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile4");break;}
                 case 4:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile5");break;}
                 case 5:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile6");break;}
                 case 6:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile7");break;}
                 case 7:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile8");break;}
-                case 8:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile9");break;}
-                case 9:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile10");break;}
-                case 10:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile11");break;}
-                case 11:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile12");break;}
-                case 12:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile13");break;}
-                case 13:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile14");break;}
-                case 14:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile15");break;}
-                case 15:{icons[i] = par1.registerIcon(modid+":tiles_stone/tile16");break;}*/
                 default:{icons[i] = par1.registerIcon(modid+":error");break;}
             }
             
         }
+    }
+    
+    private boolean isBlockSingleSlab(int par0)
+    {
+        return true;
     }
     
     @Override
@@ -97,7 +78,7 @@ public class SharpnetTilesBlocks2 extends BlockHalfSlab
                  par3List.add(new ItemStack(par1, 1, i));
           }
     }
-    
+
     @Override
     public String getFullSlabName(int id) { if (id < 0) { id = 0; } return super.getUnlocalizedName(); }
     
