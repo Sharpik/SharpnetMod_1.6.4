@@ -269,7 +269,7 @@ public class ModSharpnet
         Items.slice_of_bread_ID = (config.get("Items", "slice_of_bread", 6621).getInt())-256;
         Items.breadcrumbs_ID = (config.get("Items", "breadcrumbs", 6622).getInt())-256;
         Items.fillet_ID = (config.get("Items", "fillet", 6623).getInt())-256;
-        Items.popcorn_ID = (config.get("Items", "debug", 6643).getInt())-256;
+        Items.popcorn_ID = (config.get("Items", "popcorn", 6643).getInt())-256;
 
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
@@ -856,7 +856,7 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 6), "Slab Tile 15");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks2, 1, 7), "Slab Tile 16");
         
-        SharpnetTilesSlabBlocks3 = new SharpnetTilesSlabBlocks1(SharpnetTilesSlabBlocks3ID, false, Material.rock);
+        SharpnetTilesSlabBlocks3 = new SharpnetTilesSlabBlocks3(SharpnetTilesSlabBlocks3ID, false, Material.rock);
         GameRegistry.registerBlock(SharpnetTilesSlabBlocks3, SharpnetTilesItemSlabBlocks3.class, "TilesSlabBlocks3");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks3, 1, 0), "Slab Tile 17");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks3, 1, 1), "Slab Tile 18");
