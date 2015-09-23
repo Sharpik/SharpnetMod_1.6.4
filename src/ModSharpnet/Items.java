@@ -276,6 +276,9 @@ public class Items
     public static Item potatoes_chips;
     public static int potatoes_chips_ID;
     
+    public static Item popcorn;
+    public static int popcorn_ID;
+    
     public static Item rake;
     public static int rake_ID;
     

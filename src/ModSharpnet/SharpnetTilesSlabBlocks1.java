@@ -74,8 +74,8 @@ public class SharpnetTilesSlabBlocks1 extends BlockHalfSlab
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int par1,int par2)
     {
-        if (par2 < 8) { return icons[par2]; }
-        if (par2 > 7) { return icons[par2-8]; }
+        if (par2 < pocet) { return icons[par2]; }
+        if (par2 > 7) { return icons[par2-pocet]; }
         return this.blockIcon;
     }
     
