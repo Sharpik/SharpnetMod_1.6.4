@@ -27,14 +27,13 @@ import static net.minecraft.block.Block.soundMetalFootstep;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraftforge.oredict.OreDictionary;
 
+import ModSharpnet.Events.*;
 import ModSharpnet.Item.*;
 import ModSharpnet.Block.*;
-import ModSharpnet.ShRecipes.*;
+import ModSharpnet.Recipes.*;
 
-import ic2.api.recipe.RecipeInputItemStack;
-import ic2.api.recipe.Recipes;
 
-@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.3", dependencies="required-after:IC2")
+@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.4", dependencies="required-after:IC2")
 @NetworkMod(clientSideRequired=true, serverSideRequired=true)
 
 public class ModSharpnet
@@ -353,14 +352,16 @@ public class ModSharpnet
         
     }
     
+    //The Main function.. Alfa and Omega.. The core of Universe :)
     @EventHandler
     public void load(FMLInitializationEvent event)
     {
+        //Execute the config file
         this.initConfiguration(event);
         
+        //Register own proxy settings
         proxy.registerRenderInformation();
         
-        //Debug
         
         //Sharpnet Blocks
         Blocks.SharpnetOreBlocks1 = new SharpnetOreBlocks1(Blocks.SharpnetOreBlocks1ID);
@@ -593,8 +594,6 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetStargateBlocks2, 1, 13), "SG Vortex");
         LanguageRegistry.addName(new ItemStack(SharpnetStargateBlocks2, 1, 14), "SG Iris");
         LanguageRegistry.addName(new ItemStack(SharpnetStargateBlocks2, 1, 15), "SG Iris TOP");
-        
-        //End Debug
                
         sharpnetFlowerBlocks1 = new SharpnetFlowerBlocks1(sharpnetFlowerBlocks1ID).setUnlocalizedName("SharpnetFlowerBlocks1").setHardness(0.0F).setResistance(0.0F).setCreativeTab(CreativeTabs.tabDecorations).setStepSound(Block.soundGrassFootstep);
         GameRegistry.registerBlock(sharpnetFlowerBlocks1, SharpnetFlowerItemBlocks1.class, sharpnetFlowerBlocks1.getUnlocalizedName());
@@ -864,6 +863,9 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks3, 1, 1), "Slab Tile 18");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks3, 1, 2), "Slab Tile 19");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks3, 1, 3), "Slab Tile 20");
+        
+        
+        
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
@@ -1198,7 +1200,7 @@ public class ModSharpnet
         Items.IngotSteel = (new Item(Items.IngotSteel_ID).setUnlocalizedName("IngotSteel").setTextureName(modid+":resources/ingot_steel").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.IngotSteel, "Steel Ingot");
         LanguageRegistry.addName(new ItemStack(Items.IngotSteel, 1, 0), "Steel Ingot");
-        
+        //Register new material as Ore Dictionary one
         OreDictionary.registerOre("ingotSteel", Items.IngotSteel);
         
         Items.cloth_black = (new Item(Items.cloth_black_ID).setUnlocalizedName("Cloth_black").setTextureName(modid+":resources/cloth_black").setCreativeTab(CreativeTabs.tabMaterials));
