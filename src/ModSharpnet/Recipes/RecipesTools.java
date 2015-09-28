@@ -17,7 +17,9 @@ public class RecipesTools
             "II ",
             'S', Item.stick, 'C', Item.clay, 'I', Item.ingotIron
         });
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.trowel,1,0), new ItemStack(Items.trowel,1,8), Item.clay);
-        
+        //Reload for Throwel
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.trowel,1,16), new ItemStack(Items.trowel,1,Short.MAX_VALUE), Item.clay);
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.trowel,1,8), new ItemStack(Items.trowel,1,Short.MAX_VALUE), Item.clay, Item.clay);
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.trowel,1,0), new ItemStack(Items.trowel,1,Short.MAX_VALUE), Item.clay, Item.clay, Item.clay);
     } 
 }

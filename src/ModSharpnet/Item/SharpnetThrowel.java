@@ -17,7 +17,7 @@ public class SharpnetThrowel extends Item
     {
         super(par1);
         this.setMaxStackSize(1);
-        this.setMaxDamage(8);
+        this.setMaxDamage(24);
         this.setCreativeTab(CreativeTabs.tabTools);
         this.setTextureName(modid+":tools/trowel");
     }

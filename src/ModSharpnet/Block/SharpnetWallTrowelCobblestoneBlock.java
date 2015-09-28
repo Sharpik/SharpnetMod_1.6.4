@@ -1,6 +1,7 @@
 package ModSharpnet.Block;
 
 import ModSharpnet.Blocks;
+import ModSharpnet.Items;
 import static ModSharpnet.ModSharpnet.modid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -19,23 +20,7 @@ public class SharpnetWallTrowelCobblestoneBlock extends Block
 {
     
     private static int itemInHandID = 0;
-    private static final int painterID = ic2.api.item.Items.getItem("painter").itemID;
-    private static final int blackPainterID = ic2.api.item.Items.getItem("blackPainter").itemID;
-    private static final int redPainterID = ic2.api.item.Items.getItem("redPainter").itemID;
-    private static final int greenPainterID = ic2.api.item.Items.getItem("greenPainter").itemID;
-    private static final int brownPainterID = ic2.api.item.Items.getItem("brownPainter").itemID;
-    private static final int bluePainterID = ic2.api.item.Items.getItem("bluePainter").itemID;
-    private static final int purplePainterID = ic2.api.item.Items.getItem("purplePainter").itemID;
-    private static final int cyanPainterID = ic2.api.item.Items.getItem("cyanPainter").itemID;
-    private static final int lightGreyPainterID = ic2.api.item.Items.getItem("lightGreyPainter").itemID;
-    private static final int darkGreyPainterID = ic2.api.item.Items.getItem("darkGreyPainter").itemID;
-    private static final int pinkPainterID = ic2.api.item.Items.getItem("pinkPainter").itemID;
-    private static final int limePainterID = ic2.api.item.Items.getItem("limePainter").itemID;
-    private static final int yellowPainterID = ic2.api.item.Items.getItem("yellowPainter").itemID;
-    private static final int cloudPainterID = ic2.api.item.Items.getItem("cloudPainter").itemID;
-    private static final int magentaPainterID = ic2.api.item.Items.getItem("magentaPainter").itemID;
-    private static final int orangePainterID = ic2.api.item.Items.getItem("orangePainter").itemID;
-    private static final int whitePainterID = ic2.api.item.Items.getItem("whitePainter").itemID;
+    private static int blockMeta = 0;
     
     public SharpnetWallTrowelCobblestoneBlock(int par1,String par2Material)
     {
@@ -69,29 +54,33 @@ public class SharpnetWallTrowelCobblestoneBlock extends Block
         return 1;
     }
     
-       @Override
-    public void onBlockClicked(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer)
+    @Override
+    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
     {
         if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
-        { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; }
-        
-        if (itemInHandID == blackPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 15, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == redPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 14, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == greenPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 13, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == brownPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 12, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == bluePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 11, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == purplePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 10, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == cyanPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 9, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == lightGreyPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 8, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == darkGreyPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 7, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == pinkPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 6, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == limePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 5, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == yellowPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 4, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == cloudPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 3, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == magentaPainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 2, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == orangePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 1, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == whitePainterID){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 0, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        
+        {
+            itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID;
+            blockMeta = par1World.getBlockMetadata(par2, par3, par4);
+
+            if ( (itemInHandID == Items.IC2_blackPainterID) && ( blockMeta != 15 ) ){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 15, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_redPainterID) && ( blockMeta != 14 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 14, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_greenPainterID) && ( blockMeta != 13 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 13, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_brownPainterID) && ( blockMeta != 12 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 12, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_bluePainterID) && ( blockMeta != 11 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 11, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_purplePainterID) && ( blockMeta != 10 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 10, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_cyanPainterID) && ( blockMeta != 9 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 9, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_lightGreyPainterID) && ( blockMeta != 8 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 8, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_darkGreyPainterID) && ( blockMeta != 7 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 7, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_pinkPainterID) && ( blockMeta != 6 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 6, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_limePainterID) && ( blockMeta != 5 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 5, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_yellowPainterID) && ( blockMeta != 4 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 4, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_cloudPainterID) && ( blockMeta != 3 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 3, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_magentaPainterID) && ( blockMeta != 2 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 2, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_orangePainterID) && ( blockMeta != 1 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 1, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_whitePainterID) && ( blockMeta != 0 )){par1World.setBlock(par2, par3 , par4, Blocks.wall_cobblestone_trowel_block.blockID, 0, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            
+        }
+        return false;
     }
     
     public void damageItemInHands(EntityPlayer par5EntityPlayer, int id)

@@ -19,11 +19,7 @@ public class SharpnetRoadsBlocks1 extends Block
 {
     
     private int itemInHandID = 0;
-    private static final int painterID = ic2.api.item.Items.getItem("painter").itemID;
-    private static final int blackPainterID = ic2.api.item.Items.getItem("blackPainter").itemID;
-    private static final int lightGreyPainterID = ic2.api.item.Items.getItem("lightGreyPainter").itemID;
-    private static final int yellowPainterID = ic2.api.item.Items.getItem("yellowPainter").itemID;
-    private static final int whitePainterID = ic2.api.item.Items.getItem("whitePainter").itemID;
+    private static int blockMeta = 0;
     
     public SharpnetRoadsBlocks1(int par1,Material par2Material)
     {
@@ -61,19 +57,24 @@ public class SharpnetRoadsBlocks1 extends Block
     {
         return 1;
     }
-    
+    /*
     @Override
     public void onBlockClicked(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer)
+    */
+    @Override
+    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
     {
-        itemInHandID = 0;
         if ((par5EntityPlayer.getCurrentEquippedItem()) != null)
-        { itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID; }
+        {
+            itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID;
+            blockMeta = par1World.getBlockMetadata(par2, par3, par4);
         
-        if (itemInHandID == blackPainterID){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 2, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == lightGreyPainterID){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 0, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == yellowPainterID){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 4, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        if (itemInHandID == whitePainterID){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 3, 2); damageItemInHands(par5EntityPlayer,painterID);}
-        
+            if ( (itemInHandID == Items.IC2_blackPainterID) && ( blockMeta != 2 ) ){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 2, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_lightGreyPainterID) && ( blockMeta != 0 ) ){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 0, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_yellowPainterID) && ( blockMeta != 4 ) ){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 4, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+            if ( (itemInHandID == Items.IC2_whitePainterID) && ( blockMeta != 3 ) ){par1World.setBlock(par2, par3 , par4, SharpnetRoadsBlocks1.blockID, 3, 2); damageItemInHands(par5EntityPlayer,Items.IC2_painterID); return true;}
+        }
+        return false;
     }
     
     public void damageItemInHands(EntityPlayer par5EntityPlayer, int id)
