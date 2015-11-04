@@ -111,11 +111,11 @@ public class RecipesResources
         GameRegistry.addRecipe(new ItemStack(SharpnetMoneyBlock,1,3), new Object[]
         {
             "AAA",
-            "AAA",
+            "A A",
             "AAA",
             'A', new ItemStack(SharpnetMoneyBlock,1,1)
         });
-        GameRegistry.addShapelessRecipe(new ItemStack(SharpnetMoneyBlock,9,1), new ItemStack(SharpnetMoneyBlock,1,3));
+        GameRegistry.addShapelessRecipe(new ItemStack(SharpnetMoneyBlock,8,1), new ItemStack(SharpnetMoneyBlock,1,3));
         
         //Recipe 10Eu Block
         GameRegistry.addRecipe(new ItemStack(Blocks.deco1_block,1,3), new Object[]
