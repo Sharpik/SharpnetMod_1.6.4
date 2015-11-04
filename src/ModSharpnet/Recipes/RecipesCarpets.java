@@ -81,7 +81,7 @@ public class RecipesCarpets
             "BAB",
             "ABA",
             "BAB",
-            'A',Items.cloth_red, 'B',Items.cloth_black
+            'A',Items.cloth_black, 'B',Items.cloth_red
         });
         
         //Recipe Carpet 9
