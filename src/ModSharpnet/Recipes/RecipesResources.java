@@ -93,7 +93,7 @@ public class RecipesResources
             "AAA",
             "AAA",
             "AAA",
-            'A', Items.IC2_CoinID
+            'A', new ItemStack(Items.IC2_CoinID,1,0)
         });
         GameRegistry.addShapelessRecipe(new ItemStack(Items.IC2_CoinID,9,0), new ItemStack(SharpnetMoneyBlock,1,1));
         
