@@ -101,6 +101,12 @@ public class ModSharpnet
     public static Block SharpnetTilesSlabBlocks3;
     public static int SharpnetTilesSlabBlocks3ID;
     
+    public static Block SharpnetTilesWoodSlabBlocks1;
+    public static int SharpnetTilesWoodSlabBlocks1_ID;
+            
+    public static Block SharpnetTilesWoodSlabBlocks2;
+    public static int SharpnetTilesWoodSlabBlocks2_ID;
+    
     // Items Register
     public static Item SharpnetTomatoSeeds;
     public static int SharpnetTomatoSeedsID;
@@ -193,6 +199,8 @@ public class ModSharpnet
         SharpnetTilesSlabBlocks2ID = config.get("Blocks", "SharpnetTilesSlabBlocks2", 2567).getInt();
         SharpnetTilesSlabBlocks3ID = config.get("Blocks", "SharpnetTilesSlabBlocks3", 2568).getInt();
         Blocks.SharpnetMoneyBlock_ID = config.get("Blocks", "SharpnetMoneyBlock", 3102).getInt();
+        SharpnetTilesWoodSlabBlocks1_ID = config.get("Blocks", "SharpnetTilesWoodSlabBlocks1", 3124).getInt();
+        SharpnetTilesWoodSlabBlocks2_ID = config.get("Blocks", "SharpnetTilesWoodSlabBlocks2", 3127).getInt();
         
         // Other Mods
         Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
@@ -881,6 +889,24 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks3, 1, 2), "Slab Tile 19");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesSlabBlocks3, 1, 3), "Slab Tile 20");
         
+        SharpnetTilesWoodSlabBlocks1 = new SharpnetTilesWoodSlabBlocks1(SharpnetTilesWoodSlabBlocks1_ID, false, Material.wood);
+        GameRegistry.registerBlock(SharpnetTilesWoodSlabBlocks1, SharpnetTilesWoodItemSlabBlocks1.class, "TilesWoodSlabBlocks1");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks1, 1, 0), "Wodeen Floor White Slab");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks1, 1, 1), "Wodeen Floor Black Slab");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks1, 1, 2), "Wodeen Floor Blue Slab");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks1, 1, 3), "Wodeen Floor Green Slab");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks1, 1, 4), "Wodeen Floor Orange Slab");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks1, 1, 5), "Wodeen Floor Red Slab");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks1, 1, 6), "Wodeen Floor Yellow Slab");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks1, 1, 7), "Wodeen Floor Normal Slab");
+        
+        SharpnetTilesWoodSlabBlocks2 = new SharpnetTilesWoodSlabBlocks2(SharpnetTilesWoodSlabBlocks2_ID, false, Material.wood);
+        GameRegistry.registerBlock(SharpnetTilesWoodSlabBlocks2, SharpnetTilesWoodItemSlabBlocks2.class, "TilesWoodSlabBlocks2");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks2, 1, 0), "Wodeen Floor 1 Slab");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks2, 1, 1), "Wodeen Floor 2 Slab");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks2, 1, 2), "Wodeen Floor 3 Slab");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks2, 1, 3), "Wodeen Floor 4 Slab");
+        LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks2, 1, 4), "Wodeen Floor 5 Slab");
         
         
         
@@ -1411,6 +1437,8 @@ public class ModSharpnet
         Item.itemsList[SharpnetTilesSlabBlocks1.blockID] = new ShItemSlab(SharpnetTilesSlabBlocks1.blockID-256, (BlockHalfSlab)SharpnetTilesSlabBlocks1, (BlockHalfSlab)SharpnetTilesBlocks1, false, 0);
         Item.itemsList[SharpnetTilesSlabBlocks2.blockID] = new ShItemSlab(SharpnetTilesSlabBlocks2.blockID-256, (BlockHalfSlab)SharpnetTilesSlabBlocks2, (BlockHalfSlab)SharpnetTilesBlocks1, false, 8);
         Item.itemsList[SharpnetTilesSlabBlocks3.blockID] = new ShItemSlab(SharpnetTilesSlabBlocks3.blockID-256, (BlockHalfSlab)SharpnetTilesSlabBlocks3, (BlockHalfSlab)SharpnetTilesBlocks2, false, 0);
+        Item.itemsList[SharpnetTilesWoodSlabBlocks1.blockID] = new ShItemSlab(SharpnetTilesWoodSlabBlocks1.blockID-256, (BlockHalfSlab)SharpnetTilesWoodSlabBlocks1, (BlockHalfSlab)SharpnetTilesWoodSlabBlocks1, false, 0);
+        Item.itemsList[SharpnetTilesWoodSlabBlocks2.blockID] = new ShItemSlab(SharpnetTilesWoodSlabBlocks2.blockID-256, (BlockHalfSlab)SharpnetTilesWoodSlabBlocks2, (BlockHalfSlab)SharpnetTilesWoodSlabBlocks2, false, 0);
         
     }
 }

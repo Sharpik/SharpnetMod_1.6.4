@@ -18,7 +18,7 @@ public class RecipesCarpets
             "ABA",
             "BCB",
             "ABA",
-            'A', Items.cloth_red, 'B',Items.cloth_white, 'C',Items.cloth_brown
+            'A', Items.cloth_white, 'B',Items.cloth_brown, 'C',Items.cloth_black
         });
         
         //Recipe Carpet 2
@@ -33,10 +33,10 @@ public class RecipesCarpets
         //Recipe Carpet 3
         GameRegistry.addRecipe(new ItemStack(SharpnetCarpetsBlocks1,9,2), new Object[]
         {
-            "AAA",
             "ABA",
-            "AAA",
-            'A', Items.cloth_red, 'B',Items.cloth_yellow
+            "ACA",
+            "ABA",
+            'A', Items.cloth_black, 'B',Items.cloth_brown, 'C', Items.cloth_red
         });
         
         //Recipe Carpet 4
@@ -45,16 +45,16 @@ public class RecipesCarpets
             "ABA",
             "BAB",
             "ABA",
-            'A', Items.cloth_orange, 'B',Items.cloth_black
+            'A', Items.cloth_white, 'B',Items.cloth_brown
         });
         
         //Recipe Carpet 5
         GameRegistry.addRecipe(new ItemStack(SharpnetCarpetsBlocks1,9,4), new Object[]
         {
             "AAA",
-            "BAB",
+            "BCB",
             "AAA",
-            'A', Items.cloth_white, 'B',Items.cloth_yellow
+            'A', Items.cloth_black, 'B',Items.cloth_yellow, 'C', Items.cloth_red
         });
         
         //Recipe Carpet 6
@@ -63,20 +63,11 @@ public class RecipesCarpets
             "AAA",
             "BCB",
             "AAA",
-            'A',Items.cloth_red, 'B',Items.cloth_black, 'C',Item.goldNugget
+            'A',Items.cloth_black, 'B',Items.cloth_red, 'C',Item.goldNugget
         });
         
         //Recipe Carpet 7
         GameRegistry.addRecipe(new ItemStack(SharpnetCarpetsBlocks1,9,6), new Object[]
-        {
-            "BBB",
-            "BAB",
-            "BBB",
-            'A',Items.cloth_red, 'B',Items.cloth_black
-        });
-        
-        //Recipe Carpet 8
-        GameRegistry.addRecipe(new ItemStack(SharpnetCarpetsBlocks1,9,7), new Object[]
         {
             "ABA",
             "BCB",
@@ -84,40 +75,49 @@ public class RecipesCarpets
             'A',Items.cloth_green, 'B',Items.cloth_yellow, 'C',Item.goldNugget
         });
         
+        //Recipe Carpet 8
+        GameRegistry.addRecipe(new ItemStack(SharpnetCarpetsBlocks1,9,7), new Object[]
+        {
+            "BAB",
+            "ABA",
+            "BAB",
+            'A',Items.cloth_red, 'B',Items.cloth_black
+        });
+        
         //Recipe Carpet 9
         GameRegistry.addRecipe(new ItemStack(SharpnetCarpetsBlocks1,9,8), new Object[]
         {
-            "AAA",
+            "BAB",
             "ABA",
-            "AAA",
+            "BAB",
             'A',Items.cloth_red, 'B',Items.cloth_black
         });
         
         //Recipe Carpet 10
         GameRegistry.addRecipe(new ItemStack(SharpnetCarpetsBlocks1,9,9), new Object[]
         {
+            "BAB",
             "ABA",
             "BAB",
-            "BAB",
-            'A',Items.cloth_blue, 'B',Items.cloth_red
+            'A',Items.cloth_red, 'B',Items.cloth_white
         });
         
         //Recipe Carpet 11
         GameRegistry.addRecipe(new ItemStack(SharpnetCarpetsBlocks1,9,10), new Object[]
         {
             "AAA",
-            "ABA",
             "AAA",
-            'A',Items.cloth_yellow, 'B',Items.cloth_red
+            "AAA",
+            'A',Items.cloth_blue
         });
         
         //Recipe Carpet 12
         GameRegistry.addRecipe(new ItemStack(SharpnetCarpetsBlocks1,9,11), new Object[]
         {
-            "AAA",
-            "AAA",
-            "AAA",
-            'A',Items.cloth_blue
+            "BAB",
+            "ABA",
+            "BAB",
+            'A',Items.cloth_blue, 'B',Items.cloth_white
         });
         
         //Recipe Carpet 13
@@ -126,7 +126,7 @@ public class RecipesCarpets
             "ABA",
             "BAB",
             "ABA",
-            'A',Items.cloth_blue, 'B',Items.cloth_gray
+            'A',Items.cloth_red, 'B',Items.cloth_gray
         });
         
         //Recipe Carpet 14
@@ -151,7 +151,7 @@ public class RecipesCarpets
         GameRegistry.addRecipe(new ItemStack(SharpnetCarpetsBlocks1,9,15), new Object[]
         {
             "ABA",
-            "ABA",
+            "BAA",
             "ABA",
             'A',Items.cloth_green, 'B',Items.cloth_white
         });
@@ -169,16 +169,16 @@ public class RecipesCarpets
         GameRegistry.addRecipe(new ItemStack(SharpnetCarpetsBlocks2,9,1), new Object[]
         {
             "ABA",
+            "CAA",
             "ABA",
-            "ABA",
-            'A',Items.cloth_green, 'B',Items.cloth_brown
+            'A',Items.cloth_white, 'B',Items.cloth_brown, 'C',Items.cloth_black
         });
         
         //Recipe Carpet 19
         GameRegistry.addRecipe(new ItemStack(SharpnetCarpetsBlocks2,9,2), new Object[]
         {
             "ABA",
-            "CBA",
+            "CAA",
             "ABA",
             'A',Items.cloth_red, 'B',Items.cloth_yellow, 'C',Items.cloth_brown
         });
