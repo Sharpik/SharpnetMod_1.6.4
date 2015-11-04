@@ -1,5 +1,6 @@
 package ModSharpnet.Block;
 
+import ModSharpnet.Items;
 import static ModSharpnet.ModSharpnet.modid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -9,6 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
@@ -16,7 +18,11 @@ import net.minecraft.world.World;
 
 public class SharpnetMoneyBlock extends Block
 {
-
+    
+    public int dropID = 0;
+    public int dropMeta = 0;
+    public int dropCount = 0;
+    
     public SharpnetMoneyBlock(int par1)
     {
         super(par1, Material.circuits);
@@ -59,21 +65,42 @@ public class SharpnetMoneyBlock extends Block
     public int pocet = 7;
     
     @Override
+    public void breakBlock(World world, int x, int y, int z, int par5, int par6)
+    {
+        dropCount = 1;
+        
+        switch(par6)
+        {
+            case 4: dropID = Items.stack_9x10euMoneys.itemID; dropMeta = 0; break;
+            case 5: dropID = Items.stack_9x100euMoneys.itemID; dropMeta = 0; break;
+            case 6: dropID = Items.stack_9x1000euMoneys.itemID; dropMeta = 0; break;
+            default: dropID = par5; dropMeta = par6; break;
+        }
+        
+        if (dropID != 0)
+        {
+            ItemStack SpawnedItemStack = new ItemStack(dropID, dropCount, dropMeta);
+            EntityItem SpawnedItemEntity = new EntityItem(world,x,y,z,SpawnedItemStack);
+            world.spawnEntityInWorld(SpawnedItemEntity);
+        }
+    }
+    
+    @Override
     public int idDropped (int par1, Random par2Random, int par3)
     {
-          return this.blockID;
+          return 0;
     }
     
     @Override
     public int damageDropped (int metadata)
     {
-            return metadata;
+            return 0;
     }
     
     @Override
     public int quantityDropped(Random par1Random)
     {
-        return 1;
+        return 0;
     }
     
     @SideOnly(Side.CLIENT)

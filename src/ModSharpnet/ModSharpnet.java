@@ -188,11 +188,11 @@ public class ModSharpnet
         Blocks.ladder_iron1_block_ID = config.get("Blocks", "ladder_iron1_block", 2561).getInt();
         Blocks.electro1_block_ID = config.get("Blocks", "electro1_block", 2562).getInt();
         Blocks.garden_deco_block_ID = config.get("Blocks", "garden_deco_block", 2563).getInt();
-        Blocks.money_block_ID = config.get("Blocks", "money_block", 2564).getInt();
         Blocks.deco1_block_ID = config.get("Blocks", "deco1_block", 2565).getInt();
         SharpnetTilesSlabBlocks1ID = config.get("Blocks", "SharpnetTilesSlabBlocks1", 2566).getInt();
         SharpnetTilesSlabBlocks2ID = config.get("Blocks", "SharpnetTilesSlabBlocks2", 2567).getInt();
         SharpnetTilesSlabBlocks3ID = config.get("Blocks", "SharpnetTilesSlabBlocks3", 2568).getInt();
+        Blocks.SharpnetMoneyBlock_ID = config.get("Blocks", "SharpnetMoneyBlock", 3102).getInt();
         
         // Other Mods
         Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
@@ -339,6 +339,23 @@ public class ModSharpnet
         Items.wood_tile_yellow_ID = (config.get("Items", "wood_tile_yellow", 6606).getInt())-256;
         Items.iron_bar_ID = (config.get("Items", "iron_bar", 6624).getInt())-256;
         Items.IngotSteel_ID = (config.get("Items", "IngotSteel", 6625).getInt())-256;
+        
+        //Items Value
+        Items.cent_ID = (config.get("Items", "cent", 6015).getInt())-256;
+        Items.money10eu_ID = (config.get("Items", "money10eu", 6016).getInt())-256;
+        Items.money100eu_ID = (config.get("Items", "money100eu", 6017).getInt())-256;
+        Items.money1000eu_ID = (config.get("Items", "money1000eu", 6018).getInt())-256;
+        Items.stack_9x10euMoneys_ID = (config.get("Items", "stack_9x10euMoneys", 6019).getInt())-256;
+        Items.stack_9x100euMoneys_ID = (config.get("Items", "stack_9x100euMoneys", 6020).getInt())-256;
+        Items.stack_9x1000euMoneys_ID = (config.get("Items", "stack_9x1000euMoneys", 6021).getInt())-256;
+        Items.los_100e_items_ID = (config.get("Items", "los_100e_items", 6115).getInt())-256;
+        Items.los_100e_money_ID = (config.get("Items", "los_100e_money", 6116).getInt())-256;
+        Items.rulette_10E_ID = (config.get("Items", "rulette_10E", 6117).getInt())-256;
+        Items.rulette_100E_ID = (config.get("Items", "rulette_100E", 6118).getInt())-256;
+        Items.guess_10E_ID = (config.get("Items", "guess_10E", 6119).getInt())-256;
+        Items.guess_100E_ID = (config.get("Items", "guess_100E", 6120).getInt())-256;
+        Items.sgros_ID = (config.get("Items", "sgros", 6101).getInt())-256;
+        Items.zgros_ID = (config.get("Items", "zgros", 6102).getInt())-256;
         
         // Other Mods
         
@@ -816,15 +833,15 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.electro1_block, 1, 1), "Cofee Machine");
         LanguageRegistry.addName(new ItemStack(Blocks.electro1_block, 1, 2), "Electric Kettle");
         
-        Blocks.money_block = new SharpnetMoneyBlock(Blocks.money_block_ID).setUnlocalizedName("SharpnetMoneyBlock");
-        GameRegistry.registerBlock(Blocks.money_block, SharpnetMoneyItemBlock.class, Blocks.money_block.getUnlocalizedName());
-        LanguageRegistry.addName(new ItemStack(Blocks.money_block, 1, 0), "9 Cents");
-        LanguageRegistry.addName(new ItemStack(Blocks.money_block, 1, 1), "8 Euro");
-        LanguageRegistry.addName(new ItemStack(Blocks.money_block, 1, 2), "Money Bag 81C");
-        LanguageRegistry.addName(new ItemStack(Blocks.money_block, 1, 3), "Money Bag 72E");
-        LanguageRegistry.addName(new ItemStack(Blocks.money_block, 1, 4), "Money stack 9x10E");
-        LanguageRegistry.addName(new ItemStack(Blocks.money_block, 1, 5), "Money stack 9x100E");
-        LanguageRegistry.addName(new ItemStack(Blocks.money_block, 1, 6), "Money stack 9x1000E");
+        Blocks.SharpnetMoneyBlock = new SharpnetMoneyBlock(Blocks.SharpnetMoneyBlock_ID).setUnlocalizedName("SharpnetMoneyBlock");
+        GameRegistry.registerBlock(Blocks.SharpnetMoneyBlock, SharpnetMoneyItemBlock.class, Blocks.SharpnetMoneyBlock.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 0), "9 Cents");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 1), "8 Euro");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 2), "Money Bag 81C");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 3), "Money Bag 72E");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 4), "Money stack 9x10E");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 5), "Money stack 9x100E");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 6), "Money stack 9x1000E");
         
         Blocks.deco1_block = new SharpnetDecoBlocks1(Blocks.deco1_block_ID).setUnlocalizedName("SharpnetDecorationBlocks");
         GameRegistry.registerBlock(Blocks.deco1_block, SharpnetDecoItemBlocks1.class, Blocks.deco1_block.getUnlocalizedName());
@@ -1007,8 +1024,8 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Items.tequilla_silver, 1, 0), "Tequilla Silver");
         
         Items.tequilla_gold = new ShItemFoodPlacer1(Items.tequilla_gold_ID, 8, 1.2F, false, Blocks.drinks1_block.blockID, 5, 2, 60).setUnlocalizedName("Tequilla_gold").setTextureName(modid+":drinks&food/tequilla_g");
-        GameRegistry.registerItem(Items.tequilla_silver, "Tequilla Gold");
-        LanguageRegistry.addName(new ItemStack(Items.tequilla_silver, 1, 0), "Tequilla Gold");
+        GameRegistry.registerItem(Items.tequilla_gold, "Tequilla Gold");
+        LanguageRegistry.addName(new ItemStack(Items.tequilla_gold, 1, 0), "Tequilla Gold");
         
         Items.rum = new ShItemFoodPlacer1(Items.rum_ID, 5, 1.0F, false, Blocks.drinks1_block.blockID, 6, 2, 50).setUnlocalizedName("Rum").setTextureName(modid+":drinks&food/rum");
         GameRegistry.registerItem(Items.rum, "Rum");
@@ -1101,6 +1118,43 @@ public class ModSharpnet
         Items.CD_2 = new ShRecord(Items.CD_2_ID, "modsharpnet:cd2") .setTextureName(modid+":records/2") .setUnlocalizedName("cd2");
         GameRegistry.registerItem(Items.CD_2, "CD 2");
         LanguageRegistry.addName(new ItemStack(Items.CD_2, 1, 0), "CD 2");
+        
+        //Value
+        Items.cent = (new Item(Items.cent_ID).setUnlocalizedName("cent").setTextureName(modid+":resources/cent").setCreativeTab(CreativeTabs.tabDecorations));
+        GameRegistry.registerItem(Items.cent, "Cent");
+        LanguageRegistry.addName(new ItemStack(Items.cent, 1, 0), "Cent");
+        
+        Items.money10eu = (new Item(Items.money10eu_ID).setUnlocalizedName("10eu").setTextureName(modid+":resources/10eu").setCreativeTab(CreativeTabs.tabDecorations));
+        GameRegistry.registerItem(Items.money10eu, "10eu");
+        LanguageRegistry.addName(new ItemStack(Items.money10eu, 1, 0), "10eu");
+        
+        Items.money100eu = (new Item(Items.money100eu_ID).setUnlocalizedName("100eu").setTextureName(modid+":resources/100eu").setCreativeTab(CreativeTabs.tabDecorations));
+        GameRegistry.registerItem(Items.money100eu, "100eu");
+        LanguageRegistry.addName(new ItemStack(Items.money100eu, 1, 0), "100eu");
+        
+        Items.money1000eu = (new Item(Items.money1000eu_ID).setUnlocalizedName("1000eu").setTextureName(modid+":resources/1000eu").setCreativeTab(CreativeTabs.tabDecorations));
+        GameRegistry.registerItem(Items.money1000eu, "1000eu");
+        LanguageRegistry.addName(new ItemStack(Items.money1000eu, 1, 0), "1000eu");
+        
+        Items.stack_9x10euMoneys = (new ShItemPlacer(Items.stack_9x10euMoneys_ID, Blocks.SharpnetMoneyBlock.blockID,4).setUnlocalizedName("stack_9x10euMoneys").setTextureName(modid+":resources/10E_stack").setCreativeTab(CreativeTabs.tabDecorations));
+        GameRegistry.registerItem(Items.stack_9x10euMoneys, "Stack of 900Eu");
+        LanguageRegistry.addName(new ItemStack(Items.stack_9x10euMoneys, 1, 0), "Stack of 900Eu");
+        
+        Items.stack_9x100euMoneys = (new ShItemPlacer(Items.stack_9x100euMoneys_ID, Blocks.SharpnetMoneyBlock.blockID,5).setUnlocalizedName("stack_9x100euMoneys").setTextureName(modid+":resources/100E_stack").setCreativeTab(CreativeTabs.tabDecorations));
+        GameRegistry.registerItem(Items.stack_9x100euMoneys, "Stack of 9000Eu");
+        LanguageRegistry.addName(new ItemStack(Items.stack_9x100euMoneys, 1, 0), "Stack of 9000Eu");
+        
+        Items.stack_9x1000euMoneys = (new ShItemPlacer(Items.stack_9x1000euMoneys_ID, Blocks.SharpnetMoneyBlock.blockID,6).setUnlocalizedName("stack_9x1000euMoneys").setTextureName(modid+":resources/1000E_stack").setCreativeTab(CreativeTabs.tabDecorations));
+        GameRegistry.registerItem(Items.stack_9x1000euMoneys, "Stack of 90000Eu");
+        LanguageRegistry.addName(new ItemStack(Items.stack_9x1000euMoneys, 1, 0), "Stack of 90000Eu");
+        
+        Items.sgros = (new Item(Items.sgros_ID).setUnlocalizedName("sgros").setTextureName(modid+":resources/gros_s").setCreativeTab(CreativeTabs.tabDecorations));
+        GameRegistry.registerItem(Items.sgros, "Stribrnak");
+        LanguageRegistry.addName(new ItemStack(Items.sgros, 1, 0), "Stribrnak");
+        
+        Items.zgros = (new Item(Items.zgros_ID).setUnlocalizedName("zgros").setTextureName(modid+":resources/gros_z").setCreativeTab(CreativeTabs.tabDecorations));
+        GameRegistry.registerItem(Items.zgros, "Zlatak");
+        LanguageRegistry.addName(new ItemStack(Items.zgros, 1, 0), "Zlatak");
         
         //Armors
         Items.armor_formal_boots = (new SharpnetArmor(Items.armor_formal_boots_ID, SharpnetArmorCloth, 0, 3, 10, "formal", "armor/boots").setUnlocalizedName("boots_formal"));

@@ -6,14 +6,14 @@ import net.minecraft.item.ItemArmor;
 public class Items
 {
     //ID TODO Items
-    public static Item money1000;
-    public static int money1000ID;
+    public static Item money1000eu;
+    public static int money1000eu_ID;
     
-    public static Item money100;
-    public static int money100ID;
+    public static Item money100eu;
+    public static int money100eu_ID;
     
-    public static Item money10;
-    public static int money10ID;
+    public static Item money10eu;
+    public static int money10eu_ID;
     
     public static Item destiledEthanol_1;
     public static int destiledEthanol_1_ID;
@@ -339,14 +339,14 @@ public class Items
     public static Item sliced_potatoe;
     public static int sliced_potatoe_ID;
     
-    public static Item stack_9x1000Moneys;
-    public static int stack_9x1000Moneys_ID;
+    public static Item stack_9x1000euMoneys;
+    public static int stack_9x1000euMoneys_ID;
     
-    public static Item stack_9x100Moneys;
-    public static int stack_9x100Moneys_ID;
+    public static Item stack_9x100euMoneys;
+    public static int stack_9x100euMoneys_ID;
     
-    public static Item stack_9x10Moneys;
-    public static int stack_9x10Moneys_ID;
+    public static Item stack_9x10euMoneys;
+    public static int stack_9x10euMoneys_ID;
     
     public static Item stuff_of_day;
     public static int stuff_of_day_ID;

@@ -18,7 +18,7 @@ public class SharpnetMoneyItemBlock extends ItemBlock
 	public String getUnlocalizedName(ItemStack itemstack)
         {
             int damage = itemstack.getItemDamage();
-            return Blocks.money_block.getUnlocalizedName() + "." + damage;
+            return Blocks.SharpnetMoneyBlock.getUnlocalizedName() + "." + damage;
 	}
         
         @Override
@@ -30,7 +30,7 @@ public class SharpnetMoneyItemBlock extends ItemBlock
         @Override
         public Icon getIconFromDamage(int par1)
         {
-            return Blocks.money_block.getIcon(0, par1);
+            return Blocks.SharpnetMoneyBlock.getIcon(0, par1);
         }
         
 }
