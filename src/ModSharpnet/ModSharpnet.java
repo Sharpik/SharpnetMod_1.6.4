@@ -823,7 +823,7 @@ public class ModSharpnet
         GameRegistry.registerBlock(Blocks.panel_metal1_block, "Sharpnetpanel_metal1_block");
         LanguageRegistry.addName(new ItemStack(Blocks.panel_metal1_block, 1, 0), "Panel Metal 1");
         
-        Blocks.ladder_iron1_block = new SharpnetLadder1Block(Blocks.ladder_iron1_block_ID).setTextureName(modid+":others/ladder_iron1").setHardness(0.4F).setStepSound(soundLadderFootstep).setUnlocalizedName("Ladder Iron 1");
+        Blocks.ladder_iron1_block = new SharpnetLadder1Block(Blocks.ladder_iron1_block_ID).setTextureName(modid+":others/ladder_iron1").setHardness(1.0F).setResistance(5.0F).setStepSound(soundLadderFootstep).setUnlocalizedName("Ladder Iron 1");
         GameRegistry.registerBlock(Blocks.ladder_iron1_block, "SharpnetLaderIron1_block");
         LanguageRegistry.addName(new ItemStack(Blocks.ladder_iron1_block, 1, 0), "Ladder Iron 1");
         
@@ -1393,6 +1393,7 @@ public class ModSharpnet
         RecipesClothArmor.register();
         RecipesWalls.register();
         RecipesRoofs.register();
+        RecipesCarpets.register();
         RecipesIC2Machines.register();
         
         

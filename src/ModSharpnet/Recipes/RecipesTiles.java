@@ -290,5 +290,16 @@ public class RecipesTiles
             'A', new ItemStack(SharpnetTilesBlocks2,1,3)
         });
         
+        //Stairs
+        /*
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesStairs1,6,0), new Object[]
+        {
+            "A",
+            "AA",
+            "AAA",
+            'A', new ItemStack(SharpnetTilesBlocks2,1,1)
+        });
+        */
+        
     } 
 }

@@ -35,6 +35,7 @@ public class RecipesFood
         GameRegistry.addShapelessRecipe(new ItemStack(Items.cheese, 2,0), new ItemStack(Items.bottle_of_milk, 1, 0), new ItemStack(Items.butter, 1,0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.salad, 1,0), new ItemStack(Item.potato, 1, 0), new ItemStack(SharpnetCucumber, 1,0), new ItemStack(Item.carrot, 1, 0), new ItemStack(Item.sugar, 1, 0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.breadcrumbs, 1,0), new ItemStack(Items.slice_of_bread, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.honey, 1,0), new ItemStack(Block.plantYellow, 1, 0), new ItemStack(Item.sugar, 1, 0));
         
         //Recipes Filet
         GameRegistry.addShapelessRecipe(new ItemStack(Items.fillet, 2,0), new ItemStack(Items.mutton_cooked, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0), new ItemStack(Items.breadcrumbs, 1, 0));
