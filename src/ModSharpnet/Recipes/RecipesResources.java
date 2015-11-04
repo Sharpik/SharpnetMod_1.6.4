@@ -97,6 +97,26 @@ public class RecipesResources
         });
         GameRegistry.addShapelessRecipe(new ItemStack(Items.IC2_CoinID,9,0), new ItemStack(SharpnetMoneyBlock,1,1));
         
+        //Recipe Coin Bag
+        GameRegistry.addRecipe(new ItemStack(SharpnetMoneyBlock,1,2), new Object[]
+        {
+            "AAA",
+            "AAA",
+            "AAA",
+            'A', new ItemStack(SharpnetMoneyBlock,1,0)
+        });
+        GameRegistry.addShapelessRecipe(new ItemStack(SharpnetMoneyBlock,9,0), new ItemStack(SharpnetMoneyBlock,1,2));
+        
+        //Recipe Euro Bag
+        GameRegistry.addRecipe(new ItemStack(SharpnetMoneyBlock,1,3), new Object[]
+        {
+            "AAA",
+            "AAA",
+            "AAA",
+            'A', new ItemStack(SharpnetMoneyBlock,1,1)
+        });
+        GameRegistry.addShapelessRecipe(new ItemStack(SharpnetMoneyBlock,9,1), new ItemStack(SharpnetMoneyBlock,1,3));
+        
         //Recipe 10Eu Block
         GameRegistry.addRecipe(new ItemStack(Blocks.deco1_block,1,3), new Object[]
         {
