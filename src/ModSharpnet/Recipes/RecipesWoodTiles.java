@@ -214,27 +214,27 @@ public class RecipesWoodTiles
         });
         
         //Recipe Wooden Floor 1 Slab
-        GameRegistry.addRecipe(new ItemStack(SharpnetTilesWoodBlocks2,4,0), new Object[]
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesWoodSlabBlocks2,4,0), new Object[]
         {
             "AA",
             'A', new ItemStack(SharpnetTilesWoodBlocks2,1,0)
         });
-        GameRegistry.addRecipe(new ItemStack(SharpnetTilesWoodBlocks2,4,1), new Object[]
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesWoodSlabBlocks2,4,1), new Object[]
         {
             "AA",
             'A', new ItemStack(SharpnetTilesWoodBlocks2,1,1)
         });
-        GameRegistry.addRecipe(new ItemStack(SharpnetTilesWoodBlocks2,4,2), new Object[]
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesWoodSlabBlocks2,4,2), new Object[]
         {
             "AA",
             'A', new ItemStack(SharpnetTilesWoodBlocks2,1,2)
         });
-        GameRegistry.addRecipe(new ItemStack(SharpnetTilesWoodBlocks2,4,3), new Object[]
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesWoodSlabBlocks2,4,3), new Object[]
         {
             "AA",
             'A', new ItemStack(SharpnetTilesWoodBlocks2,1,3)
         });
-        GameRegistry.addRecipe(new ItemStack(SharpnetTilesWoodBlocks2,4,4), new Object[]
+        GameRegistry.addRecipe(new ItemStack(SharpnetTilesWoodSlabBlocks2,4,4), new Object[]
         {
             "AA",
             'A', new ItemStack(SharpnetTilesWoodBlocks2,1,4)

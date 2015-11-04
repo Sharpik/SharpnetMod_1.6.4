@@ -563,6 +563,7 @@ public class Items
     public static final int IC2_magentaPainterID = ic2.api.item.Items.getItem("magentaPainter").itemID;
     public static final int IC2_orangePainterID = ic2.api.item.Items.getItem("orangePainter").itemID;
     public static final int IC2_whitePainterID = ic2.api.item.Items.getItem("whitePainter").itemID;
+    public static final int IC2_CoinID = ic2.api.item.Items.getItem("coin").itemID;
     
     //Project Red
     
