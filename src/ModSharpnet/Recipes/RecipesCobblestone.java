@@ -25,6 +25,8 @@ public class RecipesCobblestone
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,2), new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,1));
         //Recipe Cobblestone 4
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,3), new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,2));
+        //Recipe Cobblestone 4 to 1
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,0), new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,3));
 
         
     } 

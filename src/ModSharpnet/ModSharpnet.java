@@ -924,7 +924,7 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 9), "Cubes Block 6");
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 10), "Cubes Block 7");
         
-        Blocks.SharpnetCobblestoneBlocks1 = new SharpnetBricksBlocks1(Blocks.SharpnetCobblestoneBlocks1_ID).setUnlocalizedName("CobblestoneBlocks1");
+        Blocks.SharpnetCobblestoneBlocks1 = new SharpnetCobblestoneBlocks1(Blocks.SharpnetCobblestoneBlocks1_ID).setUnlocalizedName("CobblestoneBlocks1");
         GameRegistry.registerBlock(Blocks.SharpnetCobblestoneBlocks1, SharpnetCobblestoneItemBlocks1.class, Blocks.SharpnetCobblestoneBlocks1.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetCobblestoneBlocks1, 1, 0), "Cobblestone Block 1");
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetCobblestoneBlocks1, 1, 1), "Cobblestone Block 2");
