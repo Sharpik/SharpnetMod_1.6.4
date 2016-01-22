@@ -24,7 +24,7 @@ public class SharpnetBricksBlocks1 extends Block
     }
     
     // TADY ZMENIT POCET VARIANT 1 - 16
-    public int pocet = 11;
+    public int pocet = 12;
     
     @Override
     public int idDropped (int par1, Random par2Random, int par3)
@@ -84,8 +84,8 @@ public class SharpnetBricksBlocks1 extends Block
                 case 8:{icons[i] = par1.registerIcon(modid+":bricks/cubes5");isSided[i]=false;break;}
                 case 9:{icons[i] = par1.registerIcon(modid+":bricks/cubes6");isSided[i]=false;break;}
                 case 10:{icons[i] = par1.registerIcon(modid+":bricks/cubes7");isSided[i]=false;break;}
+                case 11:{icons[i] = par1.registerIcon(modid+":bricks/cubes8");isSided[i]=false;break;}
                 /*
-                case 11:{icons[i] = par1.registerIcon(modid+":bricks/blockWall.blue");isSided[i]=false;break;}
                 case 12:{icons[i] = par1.registerIcon(modid+":bricks/blockWall.brown");isSided[i]=false;break;}
                 case 13:{icons[i] = par1.registerIcon(modid+":bricks/blockWall.green");isSided[i]=false;break;}
                 case 14:{icons[i] = par1.registerIcon(modid+":bricks/blockWall.red");isSided[i]=false;break;}
