@@ -14,6 +14,9 @@ public class Blocks
     public static Block SharpnetMoneyBlock;
     public static int SharpnetMoneyBlock_ID;
     
+    public static Block SharpnetBricksBlocks1;
+    public static int SharpnetBricksBlocks1_ID;
+    
     //ID TODO Blocks
     
     public static Block door1_block;

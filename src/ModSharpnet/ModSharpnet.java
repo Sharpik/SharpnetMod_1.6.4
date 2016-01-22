@@ -33,7 +33,7 @@ import ModSharpnet.Block.*;
 import ModSharpnet.Recipes.*;
 
 
-@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.4", dependencies="required-after:IC2")
+@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.5", dependencies="required-after:IC2")
 @NetworkMod(clientSideRequired=true, serverSideRequired=true)
 
 public class ModSharpnet
@@ -201,6 +201,7 @@ public class ModSharpnet
         Blocks.SharpnetMoneyBlock_ID = config.get("Blocks", "SharpnetMoneyBlock", 3102).getInt();
         SharpnetTilesWoodSlabBlocks1_ID = config.get("Blocks", "SharpnetTilesWoodSlabBlocks1", 3124).getInt();
         SharpnetTilesWoodSlabBlocks2_ID = config.get("Blocks", "SharpnetTilesWoodSlabBlocks2", 3127).getInt();
+        Blocks.SharpnetBricksBlocks1_ID = config.get("Blocks", "SharpnetBricksBlocks1", 2569).getInt();
         
         // Other Mods
         Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
@@ -908,6 +909,19 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks2, 1, 3), "Wodeen Floor 4 Slab");
         LanguageRegistry.addName(new ItemStack(SharpnetTilesWoodSlabBlocks2, 1, 4), "Wodeen Floor 5 Slab");
         
+        Blocks.SharpnetBricksBlocks1 = new SharpnetBricksBlocks1(Blocks.SharpnetBricksBlocks1_ID).setUnlocalizedName("SharpnetBricksBlocks1");
+        GameRegistry.registerBlock(Blocks.SharpnetBricksBlocks1, SharpnetMoneyItemBlock.class, Blocks.SharpnetBricksBlocks1.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 0), "Bricks Block 1");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 1), "Bricks Block 2");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 2), "Bricks Block 3");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 3), "Bricks Block 4");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 4), "Cubes Block 1");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 5), "Cubes Block 2");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 6), "Cubes Block 3");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 7), "Cubes Block 4");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 8), "Cubes Block 5");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 9), "Cubes Block 6");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 10), "Cubes Block 7");
         
         
         //Sharpnet Items
@@ -1420,6 +1434,7 @@ public class ModSharpnet
         RecipesWalls.register();
         RecipesRoofs.register();
         RecipesCarpets.register();
+        RecipesBricks.register();
         RecipesIC2Machines.register();
         
         
