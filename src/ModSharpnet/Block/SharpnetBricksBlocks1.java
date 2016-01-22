@@ -18,7 +18,6 @@ public class SharpnetBricksBlocks1 extends Block
     public SharpnetBricksBlocks1(int par1)
     {
         super(par1, Material.rock);
-        setUnlocalizedName("Sharpnet Bricks Block");
         setHardness(3.0F).setStepSound(Block.soundStoneFootstep);
         setResistance(12.0F);
         setCreativeTab(CreativeTabs.tabBlock);

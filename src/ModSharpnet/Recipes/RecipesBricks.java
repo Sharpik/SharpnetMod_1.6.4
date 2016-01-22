@@ -16,7 +16,7 @@ public class RecipesBricks
         {
             "C ",
             " C",
-            'C', Block.cobblestone,
+            'C', Block.stoneBrick,
         });
         
         //Recipe Bricks 2
@@ -25,7 +25,7 @@ public class RecipesBricks
             "CCC",
             "CBC",
             "CCC",
-            'C', Block.cobblestone, 'B', new ItemStack(Item.dyePowder,1,11),
+            'C', new ItemStack(Blocks.SharpnetBricksBlocks1,1,0), 'B', new ItemStack(Item.dyePowder,1,11),
         });
         
         //Recipe Bricks 3
@@ -34,7 +34,7 @@ public class RecipesBricks
             "CCC",
             "CBC",
             "CCC",
-            'C', Block.cobblestone, 'B', new ItemStack(Item.dyePowder,1,3),
+            'C', new ItemStack(Blocks.SharpnetBricksBlocks1,1,0), 'B', new ItemStack(Item.dyePowder,1,3),
         });
         
         //Recipe Bricks 4

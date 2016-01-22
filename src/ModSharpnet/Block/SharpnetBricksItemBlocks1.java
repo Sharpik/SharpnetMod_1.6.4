@@ -18,7 +18,7 @@ public class SharpnetBricksItemBlocks1 extends ItemBlock
 	public String getUnlocalizedName(ItemStack itemstack)
         {
             int damage = itemstack.getItemDamage();
-            return "Sharpnet Bricks Block " + damage;
+            return "BricksBlocks1." + damage;
 	}
         
         @Override
