@@ -917,14 +917,18 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 1), "Bricks Block 2");
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 2), "Bricks Block 3");
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 3), "Bricks Block 4");
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 4), "Cubes Block 1");
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 5), "Cubes Block 2");
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 6), "Cubes Block 3");
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 7), "Cubes Block 4");
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 8), "Cubes Block 5");
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 9), "Cubes Block 6");
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 10), "Cubes Block 7");
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 11), "Cubes Block 8");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 4), "Bricks Block 5");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 5), "Bricks Block 6");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 6), "Bricks Block 7");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 7), "Bricks Block 8");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 8), "Cubes Block 1");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 9), "Cubes Block 2");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 10), "Cubes Block 3");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 11), "Cubes Block 4");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 12), "Cubes Block 5");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 13), "Cubes Block 6");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 14), "Cubes Block 7");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetBricksBlocks1, 1, 15), "Cubes Block 8");
         
         Blocks.SharpnetCobblestoneBlocks1 = new SharpnetCobblestoneBlocks1(Blocks.SharpnetCobblestoneBlocks1_ID).setUnlocalizedName("CobblestoneBlocks1");
         GameRegistry.registerBlock(Blocks.SharpnetCobblestoneBlocks1, SharpnetCobblestoneItemBlocks1.class, Blocks.SharpnetCobblestoneBlocks1.getUnlocalizedName());

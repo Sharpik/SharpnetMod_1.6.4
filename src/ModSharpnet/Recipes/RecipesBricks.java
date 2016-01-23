@@ -52,12 +52,14 @@ public class RecipesBricks
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,5), new ItemStack(Blocks.SharpnetBricksBlocks1,1,4));
         //Recipe Bricks 7
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,6), new ItemStack(Blocks.SharpnetBricksBlocks1,1,5));
-        //Recipe Bricks 7 to 1
-        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,1), new ItemStack(Blocks.SharpnetBricksBlocks1,1,6));
+        //Recipe Bricks 7
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,7), new ItemStack(Blocks.SharpnetBricksBlocks1,1,6));
+        //Recipe Bricks 8 to 1
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,1), new ItemStack(Blocks.SharpnetBricksBlocks1,1,7));
         
         
         //Recipe Cubes 1
-        GameRegistry.addRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,2,7), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,2,8), new Object[]
         {
             " C",
             "C ",
@@ -65,21 +67,21 @@ public class RecipesBricks
         });
         
         //Recipe Cubes 2
-        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,8), new ItemStack(Blocks.SharpnetBricksBlocks1,1,7));
-        //Recipe Cubes 3
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,9), new ItemStack(Blocks.SharpnetBricksBlocks1,1,8));
-        //Recipe Cubes 4
+        //Recipe Cubes 3
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,10), new ItemStack(Blocks.SharpnetBricksBlocks1,1,9));
-        //Recipe Cubes 5
+        //Recipe Cubes 4
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,11), new ItemStack(Blocks.SharpnetBricksBlocks1,1,10));
-        //Recipe Cubes 6
+        //Recipe Cubes 5
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,12), new ItemStack(Blocks.SharpnetBricksBlocks1,1,11));
-        //Recipe Cubes 7
+        //Recipe Cubes 6
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,13), new ItemStack(Blocks.SharpnetBricksBlocks1,1,12));
-        //Recipe Cubes 8
+        //Recipe Cubes 7
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,14), new ItemStack(Blocks.SharpnetBricksBlocks1,1,13));
+        //Recipe Cubes 8
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,15), new ItemStack(Blocks.SharpnetBricksBlocks1,1,14));
         //Recipe Cubes 8 to 1
-        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,7), new ItemStack(Blocks.SharpnetBricksBlocks1,1,14));
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,8), new ItemStack(Blocks.SharpnetBricksBlocks1,1,15));
         
     } 
 }
