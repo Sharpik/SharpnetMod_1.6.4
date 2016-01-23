@@ -204,6 +204,7 @@ public class ModSharpnet
         Blocks.SharpnetBricksBlocks1_ID = config.get("Blocks", "SharpnetBricksBlocks1", 2569).getInt();
         Blocks.SharpnetCobblestoneBlocks1_ID = config.get("Blocks", "SharpnetCobblestoneBlocks1", 2570).getInt();
         Blocks.SharpnetStoneBlocks1_ID = config.get("Blocks", "SharpnetStoneBlocks1", 2571).getInt();
+        Blocks.SharpnetCobblestoneWalls1_ID = config.get("Blocks", "SharpnetCobblestoneWalls1", 2572).getInt();
         
         // Other Mods
         Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
@@ -862,6 +863,9 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 3), "Money Pallet 10E");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 4), "Money Pallet 100E");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 5), "Money Pallet 1000E");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 6), "Roulette");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 7), "Roulette table - Grid");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 8), "Roulette table");
         
         SharpnetTilesSlabBlocks1 = new SharpnetTilesSlabBlocks1(SharpnetTilesSlabBlocks1ID, false, Material.rock);
         GameRegistry.registerBlock(SharpnetTilesSlabBlocks1, SharpnetTilesItemSlabBlocks1.class, "TilesSlabBlocks1");
@@ -945,6 +949,13 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetCobblestoneBlocks1, 1, 9), "Cobblestone Block 6");
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetCobblestoneBlocks1, 1, 10), "Cobblestone Block 7");
         */
+        
+        Blocks.SharpnetCobblestoneWalls1 = new SharpnetCobblestoneWalls1(Blocks.SharpnetCobblestoneWalls1_ID, Blocks.SharpnetCobblestoneBlocks1).setUnlocalizedName("SCobblestoneWalls1");
+        GameRegistry.registerBlock(Blocks.SharpnetCobblestoneWalls1, SharpnetCobblestoneItemWalls1.class, Blocks.SharpnetCobblestoneWalls1.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetCobblestoneWalls1, 1, 0), "Cobblestone Wall 1");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetCobblestoneWalls1, 1, 1), "Cobblestone Wall 2");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetCobblestoneWalls1, 1, 2), "Cobblestone Wall 3");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetCobblestoneWalls1, 1, 3), "Cobblestone Wall 4");
         
         Blocks.SharpnetStoneBlocks1 = new SharpnetStoneBlocks1(Blocks.SharpnetStoneBlocks1_ID).setUnlocalizedName("StoneBlocks1");
         GameRegistry.registerBlock(Blocks.SharpnetStoneBlocks1, SharpnetStoneItemBlocks1.class, Blocks.SharpnetStoneBlocks1.getUnlocalizedName());

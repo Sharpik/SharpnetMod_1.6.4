@@ -27,7 +27,35 @@ public class RecipesCobblestone
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,3), new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,2));
         //Recipe Cobblestone 4 to 1
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,0), new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,3));
-
+        
+        //Recipe Cobblestone Wall 1
+        GameRegistry.addRecipe(new ItemStack(Blocks.SharpnetCobblestoneWalls1,6,0), new Object[]
+        {
+            "CCC",
+            "CCC",
+            'C', new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,0),
+        });
+        //Recipe Cobblestone Wall 2
+        GameRegistry.addRecipe(new ItemStack(Blocks.SharpnetCobblestoneWalls1,6,1), new Object[]
+        {
+            "CCC",
+            "CCC",
+            'C', new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,1),
+        });
+        //Recipe Cobblestone Wall 3
+        GameRegistry.addRecipe(new ItemStack(Blocks.SharpnetCobblestoneWalls1,6,2), new Object[]
+        {
+            "CCC",
+            "CCC",
+            'C', new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,2),
+        });
+        //Recipe Cobblestone Wall 4
+        GameRegistry.addRecipe(new ItemStack(Blocks.SharpnetCobblestoneWalls1,6,3), new Object[]
+        {
+            "CCC",
+            "CCC",
+            'C', new ItemStack(Blocks.SharpnetCobblestoneBlocks1,1,3),
+        });
         
     } 
 }
