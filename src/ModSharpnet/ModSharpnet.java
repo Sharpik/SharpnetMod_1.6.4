@@ -33,7 +33,7 @@ import ModSharpnet.Block.*;
 import ModSharpnet.Recipes.*;
 
 
-@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.5", dependencies="required-after:IC2")
+@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.6", dependencies="required-after:IC2")
 @NetworkMod(clientSideRequired=true, serverSideRequired=true)
 
 public class ModSharpnet
@@ -203,6 +203,7 @@ public class ModSharpnet
         SharpnetTilesWoodSlabBlocks2_ID = config.get("Blocks", "SharpnetTilesWoodSlabBlocks2", 3127).getInt();
         Blocks.SharpnetBricksBlocks1_ID = config.get("Blocks", "SharpnetBricksBlocks1", 2569).getInt();
         Blocks.SharpnetCobblestoneBlocks1_ID = config.get("Blocks", "SharpnetCobblestoneBlocks1", 2570).getInt();
+        Blocks.SharpnetStoneBlocks1_ID = config.get("Blocks", "SharpnetStoneBlocks1", 2571).getInt();
         
         // Other Mods
         Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
@@ -941,6 +942,13 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetCobblestoneBlocks1, 1, 10), "Cobblestone Block 7");
         */
         
+        Blocks.SharpnetStoneBlocks1 = new SharpnetStoneBlocks1(Blocks.SharpnetStoneBlocks1_ID).setUnlocalizedName("StoneBlocks1");
+        GameRegistry.registerBlock(Blocks.SharpnetStoneBlocks1, SharpnetStoneItemBlocks1.class, Blocks.SharpnetStoneBlocks1.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetStoneBlocks1, 1, 0), "Stone Block 1");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetStoneBlocks1, 1, 1), "Stone Block 2");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetStoneBlocks1, 1, 2), "Stone Block 3");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetStoneBlocks1, 1, 3), "Stone Block 4");
+        
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
@@ -1453,6 +1461,7 @@ public class ModSharpnet
         RecipesRoofs.register();
         RecipesCarpets.register();
         RecipesBricks.register();
+        RecipesStone.register();
         RecipesCobblestone.register();
         RecipesIC2Machines.register();
         

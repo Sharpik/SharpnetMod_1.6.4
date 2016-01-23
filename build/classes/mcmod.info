@@ -3,7 +3,7 @@
 	"modid": "ModSharpnet",
 	"name": "ModSharpnet",
 	"description": "Sharpnet Mod",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"dependencies": ["IC2"],
 	"credits": "Sharp",
 	"authors": ["Sharp"],

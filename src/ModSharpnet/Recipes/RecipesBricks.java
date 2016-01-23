@@ -63,8 +63,10 @@ public class RecipesBricks
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,9), new ItemStack(Blocks.SharpnetBricksBlocks1,1,8));
         //Recipe Cubes 7
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,10), new ItemStack(Blocks.SharpnetBricksBlocks1,1,9));
-        //Recipe Cubes 7 to 1
-        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,4), new ItemStack(Blocks.SharpnetBricksBlocks1,1,10));
+        //Recipe Cubes 8
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,11), new ItemStack(Blocks.SharpnetBricksBlocks1,1,10));
+        //Recipe Cubes 8 to 1
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,4), new ItemStack(Blocks.SharpnetBricksBlocks1,1,11));
         
     } 
 }
