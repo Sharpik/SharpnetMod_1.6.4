@@ -24,7 +24,7 @@ public class SharpnetBricksBlocks1 extends Block
     }
     
     // TADY ZMENIT POCET VARIANT 1 - 16
-    public int pocet = 12;
+    public int pocet = 15;
     
     @Override
     public int idDropped (int par1, Random par2Random, int par3)
@@ -77,18 +77,18 @@ public class SharpnetBricksBlocks1 extends Block
                 case 1:{icons[i] = par1.registerIcon(modid+":bricks/brick2");isSided[i]=false;break;}
                 case 2:{icons[i] = par1.registerIcon(modid+":bricks/brick3");isSided[i]=false;break;}
                 case 3:{icons[i] = par1.registerIcon(modid+":bricks/brick4");isSided[i]=false;break;}
-                case 4:{icons[i] = par1.registerIcon(modid+":bricks/cubes1");isSided[i]=false;break;}
-                case 5:{icons[i] = par1.registerIcon(modid+":bricks/cubes2");isSided[i]=false;break;}
-                case 6:{icons[i] = par1.registerIcon(modid+":bricks/cubes3");isSided[i]=false;break;}
-                case 7:{icons[i] = par1.registerIcon(modid+":bricks/cubes4");isSided[i]=false;break;}
-                case 8:{icons[i] = par1.registerIcon(modid+":bricks/cubes5");isSided[i]=false;break;}
-                case 9:{icons[i] = par1.registerIcon(modid+":bricks/cubes6");isSided[i]=false;break;}
-                case 10:{icons[i] = par1.registerIcon(modid+":bricks/cubes7");isSided[i]=false;break;}
-                case 11:{icons[i] = par1.registerIcon(modid+":bricks/cubes8");isSided[i]=false;break;}
+                case 4:{icons[i] = par1.registerIcon(modid+":bricks/brick5");isSided[i]=false;break;}
+                case 5:{icons[i] = par1.registerIcon(modid+":bricks/brick6");isSided[i]=false;break;}
+                case 6:{icons[i] = par1.registerIcon(modid+":bricks/brick7");isSided[i]=false;break;}
+                case 7:{icons[i] = par1.registerIcon(modid+":bricks/cubes1");isSided[i]=false;break;}
+                case 8:{icons[i] = par1.registerIcon(modid+":bricks/cubes2");isSided[i]=false;break;}
+                case 9:{icons[i] = par1.registerIcon(modid+":bricks/cubes3");isSided[i]=false;break;}
+                case 10:{icons[i] = par1.registerIcon(modid+":bricks/cubes4");isSided[i]=false;break;}
+                case 11:{icons[i] = par1.registerIcon(modid+":bricks/cubes5");isSided[i]=false;break;}
+                case 12:{icons[i] = par1.registerIcon(modid+":bricks/cubes6");isSided[i]=false;break;}
+                case 13:{icons[i] = par1.registerIcon(modid+":bricks/cubes7");isSided[i]=false;break;}
+                case 14:{icons[i] = par1.registerIcon(modid+":bricks/cubes8");isSided[i]=false;break;}
                 /*
-                case 12:{icons[i] = par1.registerIcon(modid+":bricks/blockWall.brown");isSided[i]=false;break;}
-                case 13:{icons[i] = par1.registerIcon(modid+":bricks/blockWall.green");isSided[i]=false;break;}
-                case 14:{icons[i] = par1.registerIcon(modid+":bricks/blockWall.red");isSided[i]=false;break;}
                 case 15:{icons[i] = par1.registerIcon(modid+":bricks/blockWall.black");isSided[i]=false;break;}
                 */
                 default:{icons[i] = par1.registerIcon(modid+":error");break;}
