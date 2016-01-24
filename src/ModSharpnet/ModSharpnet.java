@@ -1457,6 +1457,10 @@ public class ModSharpnet
         Items.rulette_10E = (new SharpnetChipRoulette_10e(Items.rulette_10E_ID).setUnlocalizedName("rulette_10E"));
         GameRegistry.registerItem(Items.rulette_10E, "Roulette 10E");
         LanguageRegistry.addName(new ItemStack(Items.rulette_10E, 1, 0), "Roulette 10E");
+        
+        Items.rulette_100E = (new SharpnetChipRoulette_100e(Items.rulette_100E_ID).setUnlocalizedName("rulette_100E"));
+        GameRegistry.registerItem(Items.rulette_100E, "Roulette 100E");
+        LanguageRegistry.addName(new ItemStack(Items.rulette_100E, 1, 0), "Roulette 100E");
 
 
         //Recipes

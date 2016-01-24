@@ -40,23 +40,23 @@ public class SharpnetChipRoulette_10e extends Item
                 if( (blockMetaData == 7) || (blockMetaData == 8) )
                 {
                     Random rand = new Random();
-                    int randomNum = 0;
+                    boolean random = false;
                     String color = "Red";
-                    randomNum = rand.nextInt(1);
-                    if (blockMetaData == 7) { color = "Black"; }
+                    random = rand.nextBoolean();
+                    if (blockMetaData == 8) { color = "Black"; }
                     if (!par3World.isRemote)
                     {
-                        par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("You clicked on " + color));
-                        if(randomNum >= 0.5)
+                        par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("You clicked on " + color + "rand: " + random));
+                        --par1ItemStack.stackSize;
+                        if(random)
                         {
                             ItemStack Itemspawn1 = new ItemStack(Items.money10eu,2);
                             EntityItem Ispawn1 = new EntityItem(par3World,par4,par5,par6,Itemspawn1);
-                            --par1ItemStack.stackSize;
                             par3World.spawnEntityInWorld(Ispawn1);
                             par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("You won: 20 EU!"));
-                            return true;
                         }
                         else { par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("You lose!")); }
+                        return true;
                     }
                 }
                 return false;
