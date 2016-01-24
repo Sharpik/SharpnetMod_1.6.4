@@ -368,6 +368,8 @@ public class ModSharpnet
         Items.guess_100E_ID = (config.get("Items", "guess_100E", 6120).getInt())-256;
         Items.sgros_ID = (config.get("Items", "sgros", 6101).getInt())-256;
         Items.zgros_ID = (config.get("Items", "zgros", 6102).getInt())-256;
+        Items.rulette_10E_ID = (config.get("Items", "rulette_10E", 6644).getInt())-256;
+        Items.rulette_100E_ID = (config.get("Items", "rulette_100E", 6645).getInt())-256;
         
         // Other Mods
         
@@ -864,8 +866,9 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 4), "Money Pallet 100E");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 5), "Money Pallet 1000E");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 6), "Roulette");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 7), "Roulette table - Grid");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 8), "Roulette table");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 7), "Roulette table - Red");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 8), "Roulette table - Black");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 9), "Roulette table");
         
         SharpnetTilesSlabBlocks1 = new SharpnetTilesSlabBlocks1(SharpnetTilesSlabBlocks1ID, false, Material.rock);
         GameRegistry.registerBlock(SharpnetTilesSlabBlocks1, SharpnetTilesItemSlabBlocks1.class, "TilesSlabBlocks1");
@@ -1450,6 +1453,10 @@ public class ModSharpnet
         Items.wood_tile_yellow = (new Item(Items.wood_tile_yellow_ID).setUnlocalizedName("Wood_tile_yellow").setTextureName(modid+":resources/wood_tile_yellow").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.wood_tile_yellow, "Wood tile yellow");
         LanguageRegistry.addName(new ItemStack(Items.wood_tile_yellow, 1, 0), "Wood tile yellow");
+        
+        Items.rulette_10E = (new SharpnetChipRoulette_10e(Items.rulette_10E_ID).setUnlocalizedName("rulette_10E"));
+        GameRegistry.registerItem(Items.rulette_10E, "Roulette 10E");
+        LanguageRegistry.addName(new ItemStack(Items.rulette_10E, 1, 0), "Roulette 10E");
 
 
         //Recipes

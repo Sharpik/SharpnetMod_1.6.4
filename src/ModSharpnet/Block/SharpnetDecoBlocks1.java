@@ -33,7 +33,7 @@ public class SharpnetDecoBlocks1 extends Block
     }
     
     // TADY ZMENIT POCET VARIANT 1 - 16
-    public int pocet = 9;    
+    public int pocet = 10;    
     
     @Override
     public void breakBlock(World world, int x, int y, int z, int par5, int par6)
@@ -206,8 +206,18 @@ public class SharpnetDecoBlocks1 extends Block
                     sideIcon[i] = par1.registerIcon(modid+":others/roulette_side");
                     break;
                 }
+                case 9:
+                {
+                    isSided[i] = true;
+                    // TOP
+                    topIcon[i] = par1.registerIcon(modid+":others/roulette_top4");
+                    // BOTTOM
+                    bottomIcon[i] = par1.registerIcon(modid+":others/roulette_bottom");
+                    // SIDES
+                    sideIcon[i] = par1.registerIcon(modid+":others/roulette_side");
+                    break;
+                }
                 /*
-                case 9:{icons[i] = par1.registerIcon(modid+":walls_trowel/blockWall.cyan");isSided[i]=false;break;}
                 case 10:{icons[i] = par1.registerIcon(modid+":walls_trowel/blockWall.purple");isSided[i]=false;break;}
                 case 11:{icons[i] = par1.registerIcon(modid+":walls_trowel/blockWall.blue");isSided[i]=false;break;}
                 case 12:{icons[i] = par1.registerIcon(modid+":walls_trowel/blockWall.brown");isSided[i]=false;break;}
