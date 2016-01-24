@@ -18,5 +18,41 @@ public class RecipesOtherBlocks
             'S', new ItemStack(Item.stick,1,0), 'G', new ItemStack(Item.glowstone,1,0)
         });
         
+        //Recipe Roulette
+        GameRegistry.addRecipe(new ItemStack(Blocks.deco1_block,1,6), new Object[]
+        {
+            " W ",
+            "WCW",
+            " W ",
+            'W', new ItemStack(Block.cloth,1,13), 'C', new ItemStack(Item.compass,1,0)
+        });
+        
+        //Recipe Roulette - Red
+        GameRegistry.addRecipe(new ItemStack(Blocks.deco1_block,1,7), new Object[]
+        {
+            " W ",
+            "WCW",
+            " W ",
+            'W', new ItemStack(Block.cloth,1,13), 'C', new ItemStack(Block.cloth,1,14)
+        });
+        
+        //Recipe Roulette - Black
+        GameRegistry.addRecipe(new ItemStack(Blocks.deco1_block,1,8), new Object[]
+        {
+            " W ",
+            "WCW",
+            " W ",
+            'W', new ItemStack(Block.cloth,1,13), 'C', new ItemStack(Block.cloth,1,15)
+        });
+        
+        //Recipe Roulette - Top
+        GameRegistry.addRecipe(new ItemStack(Blocks.deco1_block,1,9), new Object[]
+        {
+            " W ",
+            "WWW",
+            " W ",
+            'W', new ItemStack(Block.cloth,1,13)
+        });
+        
     } 
 }
