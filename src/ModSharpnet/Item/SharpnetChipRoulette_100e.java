@@ -22,7 +22,7 @@ public class SharpnetChipRoulette_100e extends Item
     {
         super(par1);
         this.setCreativeTab(CreativeTabs.tabMisc);
-        this.setTextureName(modid+":resources/chip_green");
+        this.setTextureName(modid+":resources/chip_black");
     }
     
     // Par4,5,6 are X, Y, Z
@@ -46,16 +46,16 @@ public class SharpnetChipRoulette_100e extends Item
                     if (blockMetaData == 8) { color = "Black"; }
                     if (!par3World.isRemote)
                     {
-                        par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("You clicked on " + color + "rand: " + random));
+                        par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("You clicked on " + color));
                         --par1ItemStack.stackSize;
                         if(random)
                         {
                             ItemStack Itemspawn1 = new ItemStack(Items.money100eu,2);
                             EntityItem Ispawn1 = new EntityItem(par3World,par4,par5,par6,Itemspawn1);
                             par3World.spawnEntityInWorld(Ispawn1);
-                            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("You won: 200 EU!"));
+                            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("And You won: 200 EU!"));
                         }
-                        else { par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("You lose!")); }
+                        else { par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("And You lose!")); }
                         return true;
                     }
                 }
