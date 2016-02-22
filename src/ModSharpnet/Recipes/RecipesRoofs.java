@@ -73,7 +73,7 @@ public class RecipesRoofs
             'R', new ItemStack(SharpnetRoofsBlocks1,1,0),
         });
         
-        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,1), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs_black,6,0), new Object[]
         {
             "R  ",
             "RR ",
@@ -81,7 +81,7 @@ public class RecipesRoofs
             'R', new ItemStack(SharpnetRoofsBlocks1,1,1),
         });
         
-        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,2), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs_blue,6,0), new Object[]
         {
             "R  ",
             "RR ",
@@ -89,7 +89,7 @@ public class RecipesRoofs
             'R', new ItemStack(SharpnetRoofsBlocks1,1,2),
         });
         
-        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,3), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs_green,6,0), new Object[]
         {
             "R  ",
             "RR ",
@@ -97,7 +97,7 @@ public class RecipesRoofs
             'R', new ItemStack(SharpnetRoofsBlocks1,1,3),
         });
         
-        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,4), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs_red,6,0), new Object[]
         {
             "R  ",
             "RR ",
@@ -105,7 +105,7 @@ public class RecipesRoofs
             'R', new ItemStack(SharpnetRoofsBlocks1,1,4),
         });
         
-        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,5), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs_yellow,6,0), new Object[]
         {
             "R  ",
             "RR ",
@@ -113,7 +113,7 @@ public class RecipesRoofs
             'R', new ItemStack(SharpnetRoofsBlocks1,1,5),
         });
         
-        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,6), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof2_stairs,6,0), new Object[]
         {
             "R  ",
             "RR ",
