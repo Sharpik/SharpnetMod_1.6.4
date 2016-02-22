@@ -1408,7 +1408,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.fuel_cell, "Fuel Cell");
         LanguageRegistry.addName(new ItemStack(Items.fuel_cell, 1, 0), "Fuel Cell");
         
-        Items.cement = (new Item(Items.cement_ID).setUnlocalizedName("cement").setTextureName(modid+":resources/cement").setCreativeTab(CreativeTabs.tabMaterials));
+        Items.cement = (new Item(Items.cement_ID).setUnlocalizedName("cement").setTextureName(modid+":resources/cement_bag").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.cement, "Cement");
         LanguageRegistry.addName(new ItemStack(Items.cement, 1, 0), "Cement");
         

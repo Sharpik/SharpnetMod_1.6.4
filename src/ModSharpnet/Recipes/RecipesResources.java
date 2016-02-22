@@ -148,7 +148,7 @@ public class RecipesResources
         GameRegistry.addShapelessRecipe(new ItemStack(Items.stack_9x1000euMoneys, 9), new ItemStack(Blocks.deco1_block,1,5));
         
         //Recipe Cement
-        GameRegistry.addRecipe(new ItemStack(Blocks.deco1_block,1,5), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Items.cement,4,0), new Object[]
         {
             "RS",
             "CG",
