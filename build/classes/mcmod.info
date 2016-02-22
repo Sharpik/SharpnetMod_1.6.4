@@ -3,8 +3,8 @@
 	"modid": "ModSharpnet",
 	"name": "ModSharpnet",
 	"description": "Sharpnet Mod",
-	"version": "1.0.6",
-	"dependencies": ["IC2"],
+	"version": "1.0.7",
+	"dependencies": ["IC2","BuildCraft|Core","ProjRed|Core"],
 	"credits": "Sharp",
 	"authors": ["Sharp"],
 	"logoFile": "",
@@ -12,7 +12,7 @@
 	"updateUrl": "",
 	"parent": "",
 	"screenshots": [],
-	"requiredMods": ["IC2"],
+	"requiredMods": ["IC2","BuildCraft|Core"],
 	"useDependencyInformation": "true",
 }
 ]

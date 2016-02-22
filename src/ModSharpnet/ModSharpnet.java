@@ -33,7 +33,7 @@ import ModSharpnet.Block.*;
 import ModSharpnet.Recipes.*;
 
 
-@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.6", dependencies="required-after:IC2")
+@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.7", dependencies="required-after:IC2;required-after:BuildCraft|Core;required-after:ProjRed|Core")
 @NetworkMod(clientSideRequired=true, serverSideRequired=true)
 
 public class ModSharpnet
@@ -130,6 +130,9 @@ public class ModSharpnet
     public static int SharpnetFlaxSeedsID;
     
     public static boolean SHdebug;
+    public static boolean ModIndustrialCraft2;
+    public static boolean ModProjectRed;
+    public static boolean ModBuildCraft;
     
     //public static Item 
     //public static int 
@@ -146,8 +149,28 @@ public class ModSharpnet
     {
         Configuration config = new Configuration(new File("config/SharpnetMod_1.6.4.cfg"));
         config.load();
-        Configuration config_mod_PR = new Configuration(new File("config/ProjectRed.cfg"));
-        config_mod_PR.load();
+        
+        ModProjectRed = config.get("boolean", "ModProjectRed", true).getBoolean(true);
+        ModBuildCraft = config.get("boolean", "ModBuildCraft", true).getBoolean(true);
+        ModIndustrialCraft2 = config.get("boolean", "ModIndustrialCraft2", true).getBoolean(true);
+        
+        if(ModProjectRed)
+        {
+            Configuration config_mod_PR = new Configuration(new File("config/ProjectRed.cfg"));
+            config_mod_PR.load();
+            
+            //Blocks
+            Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
+        }
+        if(ModBuildCraft)
+        {
+            Configuration config_mod_BC = new Configuration(new File("config/buildcraft/main.conf"));
+            config_mod_BC.load();
+            
+            //Items
+            Items.BC_Bucket_Oil_ID = (config.get("item", "bucketOil.id", 19107).getInt())+256;
+            Items.BC_Bucket_Fuel_ID = (config.get("item", "bucketFuel.id", 19110).getInt())+256;
+        }
         
         //Others
         SHdebug = config.get("boolean", "SHdebug", false).getBoolean(false);
@@ -213,8 +236,6 @@ public class ModSharpnet
         Blocks.roof1_stairs_yellow_ID = config.get("Blocks", "roof1_stairs_yellow", 2578).getInt();
         Blocks.roof2_stairs_ID = config.get("Blocks", "roof2_stairs", 2579).getInt();
         
-        // Other Mods
-        Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
         SharpnetTomatoSeedsID = (config.get("Items", "SharpnetTomatoSeeds", 6501).getInt())-256;
@@ -358,6 +379,8 @@ public class ModSharpnet
         Items.wood_tile_yellow_ID = (config.get("Items", "wood_tile_yellow", 6606).getInt())-256;
         Items.iron_bar_ID = (config.get("Items", "iron_bar", 6624).getInt())-256;
         Items.IngotSteel_ID = (config.get("Items", "IngotSteel", 6625).getInt())-256;
+        Items.oil_cell_ID = (config.get("Items", "oil_cell", 6646).getInt())-256;
+        Items.fuel_cell_ID = (config.get("Items", "fuel_cell", 6647).getInt())-256;
         
         //Items Value
         Items.cent_ID = (config.get("Items", "cent", 6015).getInt())-256;
@@ -1375,6 +1398,14 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Items.IngotSteel, 1, 0), "Steel Ingot");
         //Register new material as Ore Dictionary one
         OreDictionary.registerOre("ingotSteel", Items.IngotSteel);
+        
+        Items.oil_cell = (new Item(Items.oil_cell_ID).setUnlocalizedName("oil_cell").setTextureName(modid+":resources/cell_oil").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.oil_cell, "Oil Cell");
+        LanguageRegistry.addName(new ItemStack(Items.oil_cell, 1, 0), "Oil Cell");
+        
+        Items.fuel_cell = (new Item(Items.fuel_cell_ID).setUnlocalizedName("fuel_cell").setTextureName(modid+":resources/cell_fuel").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.fuel_cell, "Fuel Cell");
+        LanguageRegistry.addName(new ItemStack(Items.fuel_cell, 1, 0), "Fuel Cell");
         
         Items.cloth_black = (new Item(Items.cloth_black_ID).setUnlocalizedName("Cloth_black").setTextureName(modid+":resources/cloth_black").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.cloth_black, "Cloth Black");

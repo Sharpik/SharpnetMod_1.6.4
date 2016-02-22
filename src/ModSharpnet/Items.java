@@ -567,4 +567,8 @@ public class Items
     
     //Project Red
     
+    //Buildcraft
+    public static int BC_Bucket_Oil_ID;
+    public static int BC_Bucket_Fuel_ID;
+    //public static Item BC_Bucket_Oil;
 }

@@ -1,7 +1,6 @@
 package ModSharpnet.Item;
 
 import static ModSharpnet.ModSharpnet.modid;
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -13,8 +12,9 @@ public class debugItem extends Item
 {
     int blockID = 0;
     int blockMeta = 0;
-    String blockName = "";
+    String blockUName = "";
     String blockIcon = "";
+    String blockDName = "";
     ItemStack Stack;
     
     public debugItem(int par1)
@@ -33,13 +33,18 @@ public class debugItem extends Item
             blockID = par3World.getBlockId(par4, par5, par6);
             blockMeta = par3World.getBlockMetadata(par4, par5, par6);
             Stack = new ItemStack(blockID,1,blockMeta);
-            blockName = Stack.getUnlocalizedName() + " dName:" + Stack.getDisplayName();
+            blockUName = Stack.getUnlocalizedName();
+            blockDName = Stack.getDisplayName();
             blockIcon = Stack.getIconIndex().getIconName();
-            //blockIcon = "";
 
-            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Debug - ID: " + blockID + " Meta: " + blockMeta + " uName: " + blockName));
-            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Icon: " + blockIcon));
-            //System.out.println("SharpnetMod Debug Item: ID:" + blockID + " Meta:" + blockMeta + " uName:" + blockName + " Icon:" + blockIcon);
+            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Debug Item:"));
+            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Block ID: " + blockID));
+            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Block Meta: " + blockMeta));
+            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Block Unregistred Name: " + blockUName));
+            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Block Display Name: " + blockDName));
+            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Block Icon: " + blockIcon));
+            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText(" "));
+            //System.out.println("SharpnetMod Debug Item: ID:" + blockID + " Meta:" + blockMeta + " uName:" + blockUName + " Icon:" + blockIcon);
 
         }
         return true;

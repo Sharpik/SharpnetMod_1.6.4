@@ -8,7 +8,7 @@ import net.minecraft.block.Block;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 import static ModSharpnet.Blocks.SharpnetMoneyBlock;
-import ModSharpnet.Block.SharpnetDecoBlocks1;
+import static ModSharpnet.ModSharpnet.ModBuildCraft;
 
 public class RecipesResources
 {
@@ -146,6 +146,17 @@ public class RecipesResources
             'A', Items.stack_9x1000euMoneys
         });
         GameRegistry.addShapelessRecipe(new ItemStack(Items.stack_9x1000euMoneys, 9), new ItemStack(Blocks.deco1_block,1,5));
+        
+        if(ModBuildCraft)
+        {
+            /*
+            Items.BC_Bucket_Oil = new ItemStack(Items.BC_Bucket_Oil_ID,1,0).getItem();
+            Items.BC_Bucket_Oil.setContainerItem(Item.bucketEmpty);
+            System.out.println("SH Debug: BC_Bucket_Oil - " + Items.BC_Bucket_Oil.itemID);
+            */
+            GameRegistry.addShapelessRecipe(new ItemStack(Items.oil_cell, 1, 0), new ItemStack(Items.BC_Bucket_Oil_ID, 1, 0), new ItemStack(ic2.api.item.Items.getItem("cell").getItem(), 1, 0));
+            GameRegistry.addShapelessRecipe(new ItemStack(Items.fuel_cell, 1, 0), new ItemStack(Items.BC_Bucket_Fuel_ID, 1, 0), new ItemStack(ic2.api.item.Items.getItem("cell").getItem(), 1, 0));
+        }
         
     } 
 }
