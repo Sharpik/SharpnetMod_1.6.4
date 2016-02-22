@@ -1,6 +1,7 @@
 package ModSharpnet.Item;
 
 import static ModSharpnet.ModSharpnet.modid;
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -33,10 +34,11 @@ public class debugItem extends Item
             blockMeta = par3World.getBlockMetadata(par4, par5, par6);
             Stack = new ItemStack(blockID,1,blockMeta);
             blockName = Stack.getUnlocalizedName() + " dName:" + Stack.getDisplayName();
-            //blockIcon = Stack.getIconIndex().toString();
-            blockIcon = "";
+            blockIcon = Stack.getIconIndex().getIconName();
+            //blockIcon = "";
 
-            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Item: ID:" + blockID + " Meta:" + blockMeta + " uName:" + blockName + " Icon:" + blockIcon));
+            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Debug - ID: " + blockID + " Meta: " + blockMeta + " uName: " + blockName));
+            par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Icon: " + blockIcon));
             //System.out.println("SharpnetMod Debug Item: ID:" + blockID + " Meta:" + blockMeta + " uName:" + blockName + " Icon:" + blockIcon);
 
         }

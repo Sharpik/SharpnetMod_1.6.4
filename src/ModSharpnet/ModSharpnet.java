@@ -205,6 +205,13 @@ public class ModSharpnet
         Blocks.SharpnetCobblestoneBlocks1_ID = config.get("Blocks", "SharpnetCobblestoneBlocks1", 2570).getInt();
         Blocks.SharpnetStoneBlocks1_ID = config.get("Blocks", "SharpnetStoneBlocks1", 2571).getInt();
         Blocks.SharpnetCobblestoneWalls1_ID = config.get("Blocks", "SharpnetCobblestoneWalls1", 2572).getInt();
+        Blocks.roof1_stairs_ID = config.get("Blocks", "roof1_stairs", 2573).getInt();
+        Blocks.roof1_stairs_black_ID = config.get("Blocks", "roof1_stairs_black", 2574).getInt();
+        Blocks.roof1_stairs_blue_ID = config.get("Blocks", "roof1_stairs_blue", 2575).getInt();
+        Blocks.roof1_stairs_green_ID = config.get("Blocks", "roof1_stairs_green", 2576).getInt();
+        Blocks.roof1_stairs_red_ID = config.get("Blocks", "roof1_stairs_red", 2577).getInt();
+        Blocks.roof1_stairs_yellow_ID = config.get("Blocks", "roof1_stairs_yellow", 2578).getInt();
+        Blocks.roof2_stairs_ID = config.get("Blocks", "roof2_stairs", 2579).getInt();
         
         // Other Mods
         Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
@@ -953,7 +960,7 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetCobblestoneBlocks1, 1, 10), "Cobblestone Block 7");
         */
         
-        Blocks.SharpnetCobblestoneWalls1 = new SharpnetCobblestoneWalls1(Blocks.SharpnetCobblestoneWalls1_ID, Blocks.SharpnetCobblestoneBlocks1).setUnlocalizedName("SCobblestoneWalls1");
+        Blocks.SharpnetCobblestoneWalls1 = new SharpnetCobblestoneWalls1(Blocks.SharpnetCobblestoneWalls1_ID, Blocks.SharpnetCobblestoneBlocks1).setUnlocalizedName("CobblestoneWalls1");
         GameRegistry.registerBlock(Blocks.SharpnetCobblestoneWalls1, SharpnetCobblestoneItemWalls1.class, Blocks.SharpnetCobblestoneWalls1.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetCobblestoneWalls1, 1, 0), "Cobblestone Wall 1");
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetCobblestoneWalls1, 1, 1), "Cobblestone Wall 2");
@@ -967,6 +974,34 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetStoneBlocks1, 1, 2), "Stone Block 3");
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetStoneBlocks1, 1, 3), "Stone Block 4");
         
+        //Stairs
+        Blocks.roof1_stairs = new SharpnetStairsBlocks(Blocks.roof1_stairs_ID, SharpnetRoofsBlocks1, 0).setUnlocalizedName("SharpnetRoof1Stairs");
+        GameRegistry.registerBlock(Blocks.roof1_stairs, Blocks.roof1_stairs.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.roof1_stairs, 1, 0), "Roof 1 stairs");
+        
+        Blocks.roof1_stairs_black = new SharpnetStairsBlocks(Blocks.roof1_stairs_black_ID, SharpnetRoofsBlocks1, 1).setUnlocalizedName("SharpnetRoof1StairsBlack");
+        GameRegistry.registerBlock(Blocks.roof1_stairs_black, Blocks.roof1_stairs_black.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.roof1_stairs_black, 1, 0), "Roof 1 stairs - Black");
+        
+        Blocks.roof1_stairs_blue = new SharpnetStairsBlocks(Blocks.roof1_stairs_blue_ID, SharpnetRoofsBlocks1, 2).setUnlocalizedName("SharpnetRoof1StairsBlue");
+        GameRegistry.registerBlock(Blocks.roof1_stairs_blue, Blocks.roof1_stairs_blue.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.roof1_stairs_blue, 1, 0), "Roof 1 stairs - Blue");
+        
+        Blocks.roof1_stairs_green = new SharpnetStairsBlocks(Blocks.roof1_stairs_green_ID, SharpnetRoofsBlocks1, 3).setUnlocalizedName("SharpnetRoof1StairsGreen");
+        GameRegistry.registerBlock(Blocks.roof1_stairs_green, Blocks.roof1_stairs_green.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.roof1_stairs_green, 1, 0), "Roof 1 stairs - Black");
+        
+        Blocks.roof1_stairs_red = new SharpnetStairsBlocks(Blocks.roof1_stairs_red_ID, SharpnetRoofsBlocks1, 4).setUnlocalizedName("SharpnetRoof1StairsRed");
+        GameRegistry.registerBlock(Blocks.roof1_stairs_red, Blocks.roof1_stairs_red.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.roof1_stairs_red, 1, 0), "Roof 1 stairs - Red");
+        
+        Blocks.roof1_stairs_yellow = new SharpnetStairsBlocks(Blocks.roof1_stairs_yellow_ID, SharpnetRoofsBlocks1, 5).setUnlocalizedName("SharpnetRoof1StairsYellow");
+        GameRegistry.registerBlock(Blocks.roof1_stairs_yellow, Blocks.roof1_stairs_yellow.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.roof1_stairs_yellow, 1, 0), "Roof 1 stairs - Yellow");
+        
+        Blocks.roof2_stairs = new SharpnetStairsBlocks(Blocks.roof2_stairs_ID, SharpnetRoofsBlocks1, 6).setUnlocalizedName("SharpnetRoof2Stairs");
+        GameRegistry.registerBlock(Blocks.roof2_stairs, Blocks.roof2_stairs.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.roof2_stairs, 1, 0), "Roof 2 stairs");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");

@@ -115,6 +115,27 @@ public class Blocks
     public static Block deco1_block;
     public static int deco1_block_ID;
     
+    public static Block roof1_stairs;
+    public static int roof1_stairs_ID;
+    
+    public static Block roof1_stairs_black;
+    public static int roof1_stairs_black_ID;
+    
+    public static Block roof1_stairs_blue;
+    public static int roof1_stairs_blue_ID;
+    
+    public static Block roof1_stairs_green;
+    public static int roof1_stairs_green_ID;
+    
+    public static Block roof1_stairs_red;
+    public static int roof1_stairs_red_ID;
+    
+    public static Block roof1_stairs_yellow;
+    public static int roof1_stairs_yellow_ID;
+    
+    public static Block roof2_stairs;
+    public static int roof2_stairs_ID;
+    
     //Project Red
     public static int PR_block_stonesID;
 }

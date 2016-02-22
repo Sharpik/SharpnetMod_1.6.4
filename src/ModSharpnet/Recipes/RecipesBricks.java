@@ -20,7 +20,7 @@ public class RecipesBricks
         });
         
         //Recipe Bricks 1
-        GameRegistry.addRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,8,1), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,8,0), new Object[]
         {
             "CCC",
             "CBC",
@@ -43,7 +43,7 @@ public class RecipesBricks
             "CCC",
             "CBC",
             "CCC",
-            'C', new ItemStack(Blocks.SharpnetBricksBlocks1,1,2), 'B', new ItemStack(Item.dyePowder,1,3),
+            'C', new ItemStack(Blocks.SharpnetBricksBlocks1,1,3), 'B', new ItemStack(Item.dyePowder,1,3),
         });
         
         //Recipe Bricks 5
@@ -54,15 +54,15 @@ public class RecipesBricks
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,6), new ItemStack(Blocks.SharpnetBricksBlocks1,1,5));
         //Recipe Bricks 7
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,7), new ItemStack(Blocks.SharpnetBricksBlocks1,1,6));
-        //Recipe Bricks 8 to 1
-        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,1), new ItemStack(Blocks.SharpnetBricksBlocks1,1,7));
+        //Recipe Bricks 8 to 4
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,1,3), new ItemStack(Blocks.SharpnetBricksBlocks1,1,7));
         
         
         //Recipe Cubes 1
         GameRegistry.addRecipe(new ItemStack(Blocks.SharpnetBricksBlocks1,2,8), new Object[]
         {
-            " C",
             "C ",
+            " C",
             'C', Block.cobblestone,
         });
         

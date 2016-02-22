@@ -1,5 +1,6 @@
 package ModSharpnet.Recipes;
 
+import ModSharpnet.Blocks;
 import ModSharpnet.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -62,6 +63,62 @@ public class RecipesRoofs
             "RDR",
             "RRR",
             'R', Items.roofing_tile, 'D', new ItemStack(Item.dyePowder,1,11),
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,0), new Object[]
+        {
+            "R  ",
+            "RR ",
+            "RRR",
+            'R', new ItemStack(SharpnetRoofsBlocks1,1,0),
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,1), new Object[]
+        {
+            "R  ",
+            "RR ",
+            "RRR",
+            'R', new ItemStack(SharpnetRoofsBlocks1,1,1),
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,2), new Object[]
+        {
+            "R  ",
+            "RR ",
+            "RRR",
+            'R', new ItemStack(SharpnetRoofsBlocks1,1,2),
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,3), new Object[]
+        {
+            "R  ",
+            "RR ",
+            "RRR",
+            'R', new ItemStack(SharpnetRoofsBlocks1,1,3),
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,4), new Object[]
+        {
+            "R  ",
+            "RR ",
+            "RRR",
+            'R', new ItemStack(SharpnetRoofsBlocks1,1,4),
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,5), new Object[]
+        {
+            "R  ",
+            "RR ",
+            "RRR",
+            'R', new ItemStack(SharpnetRoofsBlocks1,1,5),
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(Blocks.roof1_stairs,6,6), new Object[]
+        {
+            "R  ",
+            "RR ",
+            "RRR",
+            'R', new ItemStack(SharpnetRoofsBlocks1,1,6),
         });
         
     } 

@@ -1,5 +1,6 @@
 package ModSharpnet.Block;
 
+import ModSharpnet.Blocks;
 import static ModSharpnet.ModSharpnet.modid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -29,7 +30,8 @@ public class SharpnetStoneBlocks1 extends Block
     @Override
     public int idDropped (int par1, Random par2Random, int par3)
     {
-         return this.blockID;
+         //return this.blockID;
+        return Blocks.SharpnetCobblestoneBlocks1.blockID;
     }
     
     @Override
