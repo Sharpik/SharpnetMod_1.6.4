@@ -1,6 +1,8 @@
 package ModSharpnet.Recipes;
 
 import ModSharpnet.Blocks;
+import ModSharpnet.Items;
+import static ModSharpnet.ModSharpnet.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.block.Block;
@@ -52,6 +54,24 @@ public class RecipesOtherBlocks
             "WWW",
             " W ",
             'W', new ItemStack(Block.cloth,1,13)
+        });
+        
+        //Recipe Road - Gray
+        GameRegistry.addRecipe(new ItemStack(SharpnetRoadsBlocks1,8,0), new Object[]
+        {
+            "GGG",
+            "GCG",
+            "GGG",
+            'C', new ItemStack(Items.cement,1,0), 'G', new ItemStack(Block.gravel,1,0)
+        });
+        
+        //Recipe Road - Black
+        GameRegistry.addRecipe(new ItemStack(SharpnetRoadsBlocks1,8,2), new Object[]
+        {
+            "GGG",
+            "GCG",
+            "GGG",
+            'C', new ItemStack(Items.oil_cell,1,0), 'G', new ItemStack(Block.gravel,1,0)
         });
         
     } 

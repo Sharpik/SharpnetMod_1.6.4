@@ -381,6 +381,7 @@ public class ModSharpnet
         Items.IngotSteel_ID = (config.get("Items", "IngotSteel", 6625).getInt())-256;
         Items.oil_cell_ID = (config.get("Items", "oil_cell", 6646).getInt())-256;
         Items.fuel_cell_ID = (config.get("Items", "fuel_cell", 6647).getInt())-256;
+        Items.cement_ID = (config.get("Items", "cement", 6648).getInt())-256;
         
         //Items Value
         Items.cent_ID = (config.get("Items", "cent", 6015).getInt())-256;
@@ -1406,6 +1407,11 @@ public class ModSharpnet
         Items.fuel_cell = (new Item(Items.fuel_cell_ID).setUnlocalizedName("fuel_cell").setTextureName(modid+":resources/cell_fuel").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.fuel_cell, "Fuel Cell");
         LanguageRegistry.addName(new ItemStack(Items.fuel_cell, 1, 0), "Fuel Cell");
+        
+        Items.cement = (new Item(Items.cement_ID).setUnlocalizedName("cement").setTextureName(modid+":resources/cement").setCreativeTab(CreativeTabs.tabMaterials));
+        GameRegistry.registerItem(Items.cement, "Cement");
+        LanguageRegistry.addName(new ItemStack(Items.cement, 1, 0), "Cement");
+        
         
         Items.cloth_black = (new Item(Items.cloth_black_ID).setUnlocalizedName("Cloth_black").setTextureName(modid+":resources/cloth_black").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.cloth_black, "Cloth Black");

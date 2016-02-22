@@ -147,6 +147,15 @@ public class RecipesResources
         });
         GameRegistry.addShapelessRecipe(new ItemStack(Items.stack_9x1000euMoneys, 9), new ItemStack(Blocks.deco1_block,1,5));
         
+        //Recipe Cement
+        GameRegistry.addRecipe(new ItemStack(Blocks.deco1_block,1,5), new Object[]
+        {
+            "RS",
+            "CG",
+            'R', Item.redstone, 'S', Block.sand, 'C', Block.cobblestone, 'G', Block.gravel
+        });
+        
+        
         if(ModBuildCraft)
         {
             /*
