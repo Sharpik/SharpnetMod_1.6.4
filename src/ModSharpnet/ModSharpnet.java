@@ -1557,6 +1557,8 @@ public class ModSharpnet
         RecipesCobblestone.register();
         RecipesIC2Machines.register();
         
+        GameRegistry.registerFuelHandler(new Fuels());
+        
         
         //Events Register
         MinecraftForge.EVENT_BUS.register(new SharpnetBonemealEvent());
