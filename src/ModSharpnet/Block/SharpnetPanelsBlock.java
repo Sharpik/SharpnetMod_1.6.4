@@ -17,18 +17,31 @@ public class SharpnetPanelsBlock  extends BlockPane
     @SideOnly(Side.CLIENT)
     private Icon[] iconArray;
     
+    private int BlocksCount;
     private String[] Textures;
+    private String[] names;
+    public String[][] BlocksInfo = new String[16][2];
 
-    public SharpnetPanelsBlock(int ID, String[] textures, Material material)
+    public SharpnetPanelsBlock(int ID, String[][] blocksInfo, Material material)
     {
         super(ID, "", "", material, true);
-        this.Textures = textures;
+        this.BlocksInfo = blocksInfo;
+        
+        this.BlocksCount = blocksInfo.length;
+        this.names = new String[this.BlocksCount];
+        this.Textures = new String[this.BlocksCount];
+        
+        for(int i = 0; i < this.BlocksCount; i++)
+        {
+            if(this.BlocksInfo[i][0] != null) { this.names[i] = this.BlocksInfo[i][0]; } else { this.names[i] = "Error"; }
+            if(this.BlocksInfo[i][1] != null) { this.Textures[i] = this.BlocksInfo[i][1]; } else { this.Textures[i] = "Error"; }
+        }
     }
     
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
     {
-            for (int i = 0; i < this.Textures.length; i++)
+            for (int i = 0; i < this.BlocksCount; i++)
             {
                     par3List.add(new ItemStack(par1, 1, i));
             }

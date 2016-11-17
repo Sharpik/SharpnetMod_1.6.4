@@ -19,17 +19,30 @@ import net.minecraft.world.World;
 
 public class SharpnetFlowerBlocks extends BlockFlower
 {
+    private int BlocksCount;
     private String[] flowerTypes;
+    private String[] names;
+    public String[][] BlocksInfo = new String[16][2];
     
     @SideOnly(Side.CLIENT)
     public Icon[] iconArray;
 
-    public SharpnetFlowerBlocks(int id, String[] textures)
+    public SharpnetFlowerBlocks(int id, String[][] blocksInfo)
     {
         super(id, Material.plants);
         float f = 0.2F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 3.0F, 0.5F + f);
-        this.flowerTypes = textures;
+        this.BlocksInfo = blocksInfo;
+        
+        this.BlocksCount = blocksInfo.length;
+        this.names = new String[this.BlocksCount];
+        this.flowerTypes = new String[this.BlocksCount];
+        
+        for(int i = 0; i < this.BlocksCount; i++)
+        {
+            if(this.BlocksInfo[i][0] != null) { this.names[i] = this.BlocksInfo[i][0]; } else { this.names[i] = "Error"; }
+            if(this.BlocksInfo[i][1] != null) { this.flowerTypes[i] = this.BlocksInfo[i][1]; } else { this.flowerTypes[i] = "Error"; }
+        }
     }
     
     /**
@@ -128,7 +141,7 @@ public class SharpnetFlowerBlocks extends BlockFlower
     @Override
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List subBlocks)
     {
-        for (int sub = 0; sub < flowerTypes.length; ++sub)
+        for (int sub = 0; sub < this.BlocksCount; ++sub)
         {
             subBlocks.add(new ItemStack(par1, 1, sub));
         }

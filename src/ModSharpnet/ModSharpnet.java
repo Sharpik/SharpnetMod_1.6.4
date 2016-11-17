@@ -670,24 +670,24 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetStargateBlocks2, 1, 14), "SG Iris");
         LanguageRegistry.addName(new ItemStack(SharpnetStargateBlocks2, 1, 15), "SG Iris TOP");
                
-        SharpnetFlowerBlocks1 = new SharpnetFlowerBlocks(SharpnetFlowerBlocks1ID, new String[]
+        SharpnetFlowerBlocks1 = new SharpnetFlowerBlocks(SharpnetFlowerBlocks1ID, new String[][]
         {
-            "flowers/daffodil",
-            "flowers/flora_cactus",
-            "flowers/fuchsia",
-            "flowers/sunflower",
-            "flowers/bonsai",
-            "flowers/snapdragon",
-            "flowers/red_dicot",
-            "flowers/tulips",
-            "flowers/african_daisy",
-            "flowers/dahilia",
-            "flowers/daffodil",
-            "flowers/yellow_dicot",
-            "flowers/bird_of_paradise",
-            "flowers/okee_giant",
-            "flowers/mantis_shrimp",
-            "flowers/hedgehog_cactus"
+            {"daffodil","flowers/daffodil"},
+            {"flora_cactus","flowers/flora_cactus"},
+            {"fuchsia","flowers/fuchsia"},
+            {"sunflower","flowers/sunflower"},
+            {"bonsai","flowers/bonsai"},
+            {"snapdragon","flowers/snapdragon"},
+            {"red_dicot","flowers/red_dicot"},
+            {"tulips","flowers/tulips"},
+            {"african_daisy","flowers/african_daisy"},
+            {"dahilia","flowers/dahilia"},
+            {"daffodil","flowers/daffodil"},
+            {"yellow_dicot","flowers/yellow_dicot"},
+            {"bird_of_paradise","flowers/bird_of_paradise"},
+            {"okee_giant","flowers/okee_giant"},
+            {"mantis_shrimp","flowers/mantis_shrimp"},
+            {"hedgehog_cactus","flowers/hedgehog_cactus"}
         }).setUnlocalizedName("SharpnetFlowerBlocks1").setHardness(0.0F).setResistance(0.0F).setCreativeTab(CreativeTabs.tabDecorations).setStepSound(Block.soundGrassFootstep);
         GameRegistry.registerBlock(SharpnetFlowerBlocks1, SharpnetFlowerItemBlocks.class, SharpnetFlowerBlocks1.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(SharpnetFlowerBlocks1, 1, 0), "Daffodil Flower");
@@ -707,12 +707,12 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetFlowerBlocks1, 1, 14), "Mantis Shrimp");
         LanguageRegistry.addName(new ItemStack(SharpnetFlowerBlocks1, 1, 15), "Hedgehog Cactus");
         
-        SharpnetFlowerBlocks2 = new SharpnetFlowerBlocks(SharpnetFlowerBlocks2ID, new String[]
+        SharpnetFlowerBlocks2 = new SharpnetFlowerBlocks(SharpnetFlowerBlocks2ID, new String[][]
         {
-            "flowers/mech1",
-            "flowers/sukulent1",
-            "flowers/sukulent2",
-            "flowers/sukulent3"
+            {"mech1","flowers/mech1"},
+            {"sukulent1","flowers/sukulent1"},
+            {"sukulent2","flowers/sukulent2"},
+            {"sukulent3","flowers/sukulent3"}
         }).setUnlocalizedName("SharpnetFlowerBlocks2").setHardness(0.0F).setResistance(0.0F).setCreativeTab(CreativeTabs.tabDecorations).setStepSound(Block.soundGrassFootstep);
         GameRegistry.registerBlock(SharpnetFlowerBlocks2, SharpnetFlowerItemBlocks.class, SharpnetFlowerBlocks2.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(SharpnetFlowerBlocks2, 1, 0), "Mech 1");
@@ -908,13 +908,13 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.door12_block_item, "SharpnetDoors1Item12");
         LanguageRegistry.addName(new ItemStack(Items.door12_block_item, 1, 0), "Door 12");
         
-        Blocks.panel_metal1_block = new SharpnetPanelsBlock(Blocks.panel_metal1_block_ID, new String[]
+        Blocks.panel_metal1_block = new SharpnetPanelsBlock(Blocks.panel_metal1_block_ID, new String[][]
         {
-            modid+":building/metal1",
-            modid+":building/metal2",
-            modid+":building/metal3",
-            modid+":building/metal4",
-            modid+":building/metal5"
+            {"metal1",modid+":building/metal1"},
+            {"metal2",modid+":building/metal2"},
+            {"metal3",modid+":building/metal3"},
+            {"metal4",modid+":building/metal4"},
+            {"metal5",modid+":building/metal5"}
         }, Material.iron).setHardness(2.0F).setResistance(5.0F).setStepSound(soundMetalFootstep).setUnlocalizedName("SharpnetPanelMetal1");
         GameRegistry.registerBlock(Blocks.panel_metal1_block, SharpnetPanelsItemBlock.class, Blocks.panel_metal1_block.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(Blocks.panel_metal1_block, 1, 0), "Panel Metal 1");
@@ -924,16 +924,16 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.panel_metal1_block, 1, 4), "Panel Metal 5");
         
         
-        Blocks.panel_wood1_block = new SharpnetPanelsBlock(Blocks.panel_wood1_block_ID, new String[]
+        Blocks.panel_wood1_block = new SharpnetPanelsBlock(Blocks.panel_wood1_block_ID, new String[][]
         {
-            modid+":tiles_wood/w_floor1_black",
-            modid+":tiles_wood/w_floor1_blue",
-            modid+":tiles_wood/w_floor1_green",
-            modid+":tiles_wood/w_floor1_normal",
-            modid+":tiles_wood/w_floor1_orange",
-            modid+":tiles_wood/w_floor1_red",
-            modid+":tiles_wood/w_floor1_white",
-            modid+":tiles_wood/w_floor1_yellow"
+            {"w_floor1_black",modid+":tiles_wood/w_floor1_black"},
+            {"w_floor1_blue",modid+":tiles_wood/w_floor1_blue"},
+            {"w_floor1_green",modid+":tiles_wood/w_floor1_green"},
+            {"w_floor1_normal",modid+":tiles_wood/w_floor1_normal"},
+            {"w_floor1_orange",modid+":tiles_wood/w_floor1_orange"},
+            {"w_floor1_red",modid+":tiles_wood/w_floor1_red"},
+            {"w_floor1_white",modid+":tiles_wood/w_floor1_white"},
+            {"w_floor1_yellow",modid+":tiles_wood/w_floor1_yellow"}
         }, Material.wood).setHardness(1.0F).setResistance(2.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("SharpnetPanelWood1");
         GameRegistry.registerBlock(Blocks.panel_wood1_block, SharpnetPanelsItemBlock.class, Blocks.panel_wood1_block.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(Blocks.panel_wood1_block, 1, 0), "Panel Wood Black");
