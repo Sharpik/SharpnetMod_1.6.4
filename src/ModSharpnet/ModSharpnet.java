@@ -26,6 +26,7 @@ import static net.minecraft.block.Block.soundLadderFootstep;
 import static net.minecraft.block.Block.soundMetalFootstep;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraftforge.oredict.OreDictionary;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 
 import ModSharpnet.Events.*;
 import ModSharpnet.Item.*;
@@ -143,7 +144,10 @@ public class ModSharpnet
     //Material Register
     public static EnumArmorMaterial SharpnetArmorCloth = EnumHelper.addArmorMaterial("SharpnetArmorCloth", 5, new int[] {1, 3, 2, 1}, 30);
     public static Material SharpnetRoadsBlocksMaterial = new ShMaterial(MapColor.stoneColor);
-     
+    
+    //Render Regidter
+    public static int RenderPaneID;
+    
     // Config register
     public void initConfiguration(FMLInitializationEvent event)
     {
@@ -401,6 +405,10 @@ public class ModSharpnet
         Items.zgros_ID = (config.get("Items", "zgros", 6102).getInt())-256;
         Items.rulette_10E_ID = (config.get("Items", "rulette_10E", 6644).getInt())-256;
         Items.rulette_100E_ID = (config.get("Items", "rulette_100E", 6645).getInt())-256;
+        
+        //Render Register
+        RenderPaneID = RenderingRegistry.getNextAvailableRenderId();
+        RenderingRegistry.registerBlockHandler(new RenderPane(RenderPaneID));
         
         // Other Mods
         
@@ -864,9 +872,13 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.door12_block_item, "SharpnetDoors1Item12");
         LanguageRegistry.addName(new ItemStack(Items.door12_block_item, 1, 0), "Door 12");
         
-        Blocks.panel_metal1_block = new SharpnetPanels1Block(Blocks.panel_metal1_block_ID, modid+":building/metal1",modid+":building/metal1",Material.iron, true).setHardness(2.0F).setResistance(5.0F).setStepSound(soundMetalFootstep).setUnlocalizedName("Panel Metal 1");
-        GameRegistry.registerBlock(Blocks.panel_metal1_block, "Sharpnetpanel_metal1_block");
+        Blocks.panel_metal1_block = new SharpnetPanelsBlock(Blocks.panel_metal1_block_ID, new String[]{modid+":building/metal1", modid+":building/metal2", modid+":building/metal3", modid+":building/metal4", modid+":building/metal5"}, Material.iron).setHardness(2.0F).setResistance(5.0F).setStepSound(soundMetalFootstep).setUnlocalizedName("SharpnetPanelMetal");
+        GameRegistry.registerBlock(Blocks.panel_metal1_block, SharpnetPanelsItemBlock.class, Blocks.panel_metal1_block.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(Blocks.panel_metal1_block, 1, 0), "Panel Metal 1");
+        LanguageRegistry.addName(new ItemStack(Blocks.panel_metal1_block, 1, 1), "Panel Metal 2");
+        LanguageRegistry.addName(new ItemStack(Blocks.panel_metal1_block, 1, 2), "Panel Metal 3");
+        LanguageRegistry.addName(new ItemStack(Blocks.panel_metal1_block, 1, 3), "Panel Metal 4");
+        LanguageRegistry.addName(new ItemStack(Blocks.panel_metal1_block, 1, 4), "Panel Metal 5");
         
         Blocks.ladder_iron1_block = new SharpnetLadder1Block(Blocks.ladder_iron1_block_ID).setTextureName(modid+":others/ladder_iron1").setHardness(1.0F).setResistance(5.0F).setStepSound(soundLadderFootstep).setUnlocalizedName("Ladder Iron 1");
         GameRegistry.registerBlock(Blocks.ladder_iron1_block, "SharpnetLaderIron1_block");
