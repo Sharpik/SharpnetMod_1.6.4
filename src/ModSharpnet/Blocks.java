@@ -112,6 +112,9 @@ public class Blocks
     public static Block panel_metal1_block;
     public static int panel_metal1_block_ID;
     
+    public static Block panel_wood1_block;
+    public static int panel_wood1_block_ID;
+    
     public static Block deco1_block;
     public static int deco1_block_ID;
     

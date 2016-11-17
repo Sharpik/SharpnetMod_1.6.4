@@ -8,7 +8,7 @@ import net.minecraft.util.Icon;
 public class SharpnetCrossItemBlocks1 extends ItemBlock
 {
 	private String name = "";
-        private Block block = ModSharpnet.sharpnetFlowerBlocks1;
+        private Block block = ModSharpnet.SharpnetFlowerBlocks1;
         
 	public SharpnetCrossItemBlocks1(int id)
         {
