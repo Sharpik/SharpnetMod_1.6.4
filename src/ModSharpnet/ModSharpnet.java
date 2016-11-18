@@ -134,6 +134,8 @@ public class ModSharpnet
     public static int SharpnetFlaxSeedsID;
     
     public static boolean SHdebug;
+    public static boolean WorldGen;
+    public static boolean WorldGenOres;
     public static boolean ModIndustrialCraft2;
     public static boolean ModProjectRed;
     public static boolean ModBuildCraft;
@@ -181,6 +183,8 @@ public class ModSharpnet
         
         //Others
         SHdebug = config.get("boolean", "SHdebug", false).getBoolean(false);
+        WorldGen = config.get("boolean", "WorldGen", false).getBoolean(false);
+        WorldGenOres = config.get("boolean", "WorldGenOres", false).getBoolean(false);
         
         //Blocks ID
         Blocks.SharpnetOreBlocks1ID = config.get("Blocks", "SharpnetOreBlocks1", 2505).getInt();
@@ -411,14 +415,14 @@ public class ModSharpnet
         Items.rulette_10E_ID = (config.get("Items", "rulette_10E", 6644).getInt())-256;
         Items.rulette_100E_ID = (config.get("Items", "rulette_100E", 6645).getInt())-256;
         
-        //Render Register
-        RenderPaneID = RenderingRegistry.getNextAvailableRenderId();
-        RenderingRegistry.registerBlockHandler(new RenderPane(RenderPaneID));
-        
         // Other Mods
         
         //Save config file changes
         config.save();
+        
+        //Render Register
+        RenderPaneID = RenderingRegistry.getNextAvailableRenderId();
+        RenderingRegistry.registerBlockHandler(new RenderPane(RenderPaneID));
     }
     
     @EventHandler
@@ -1647,6 +1651,8 @@ public class ModSharpnet
         MinecraftForge.EVENT_BUS.register(new SharpnetBonemealEvent());
         MinecraftForge.EVENT_BUS.register(new SharpnetEvent_LivingDrops());
         
+        //World generator
+        GameRegistry.registerWorldGenerator(new ShWorldGen());
     }
     
     
