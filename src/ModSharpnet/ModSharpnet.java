@@ -136,6 +136,7 @@ public class ModSharpnet
     public static boolean SHdebug;
     public static boolean WorldGen;
     public static boolean WorldGenOres;
+    public static boolean WorldGenFlowers;
     public static boolean ModIndustrialCraft2;
     public static boolean ModProjectRed;
     public static boolean ModBuildCraft;
@@ -185,6 +186,7 @@ public class ModSharpnet
         SHdebug = config.get("boolean", "SHdebug", false).getBoolean(false);
         WorldGen = config.get("boolean", "WorldGen", false).getBoolean(false);
         WorldGenOres = config.get("boolean", "WorldGenOres", false).getBoolean(false);
+        WorldGenFlowers = config.get("boolean", "WorldGenFlowers", false).getBoolean(false);
         
         //Blocks ID
         Blocks.SharpnetOreBlocks1ID = config.get("Blocks", "SharpnetOreBlocks1", 2505).getInt();
@@ -686,7 +688,7 @@ public class ModSharpnet
             {"tulips","flowers/tulips"},
             {"african_daisy","flowers/african_daisy"},
             {"dahilia","flowers/dahilia"},
-            {"daffodil","flowers/daffodil"},
+            {"lacustrine","flowers/lacustrine"},
             {"yellow_dicot","flowers/yellow_dicot"},
             {"bird_of_paradise","flowers/bird_of_paradise"},
             {"okee_giant","flowers/okee_giant"},
