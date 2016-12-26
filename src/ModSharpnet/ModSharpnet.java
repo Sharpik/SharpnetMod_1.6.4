@@ -721,7 +721,7 @@ public class ModSharpnet
             {"sukulent3","flowers/sukulent3"}
         }).setUnlocalizedName("SharpnetFlowerBlocks2").setHardness(0.0F).setResistance(0.0F).setCreativeTab(CreativeTabs.tabDecorations).setStepSound(Block.soundGrassFootstep);
         GameRegistry.registerBlock(SharpnetFlowerBlocks2, SharpnetFlowerItemBlocks.class, SharpnetFlowerBlocks2.getUnlocalizedName());
-        LanguageRegistry.addName(new ItemStack(SharpnetFlowerBlocks2, 1, 0), "Mech 1");
+        LanguageRegistry.addName(new ItemStack(SharpnetFlowerBlocks2, 1, 0), "Mechus 1");
         LanguageRegistry.addName(new ItemStack(SharpnetFlowerBlocks2, 1, 1), "Sukulentus 1");
         LanguageRegistry.addName(new ItemStack(SharpnetFlowerBlocks2, 1, 2), "Sukulentus 2");
         LanguageRegistry.addName(new ItemStack(SharpnetFlowerBlocks2, 1, 3), "Sukulentus 3");
