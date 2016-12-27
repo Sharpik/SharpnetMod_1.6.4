@@ -53,7 +53,7 @@ public class ShWorldGen implements IWorldGenerator
                     //Sunflower
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 3, 58, 186, 1, false);
                     //Bonsai
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 4, 58, 186, 1, false);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 4, 58, 186, 1, true);
                     //Snap Dragon
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 5, 58, 186, 1, false);
                     //Reddicot Flower
@@ -78,7 +78,7 @@ public class ShWorldGen implements IWorldGenerator
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 15, 58, 186, 1, false);
                         
                     //Mechus 1
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 0, 58, 186, 1, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 0, 58, 186, 3, true);
                     //Sukulentus 1
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 1, 58, 186, 1, false);
                     //Sukulentus 2
@@ -96,15 +96,15 @@ public class ShWorldGen implements IWorldGenerator
                     //Sem příjdou rostlinky, které se mají spawnovat na pláních
                     
                     //Daffodil Flower
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 0, 58, 186, 1, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 0, 58, 186, 1, false);
                     //Flora Cactus
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 1, 58, 186, 1, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 1, 58, 186, 1, false);
                     //Fuchsia
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 2, 58, 186, 1, true);
                     //Sunflower
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 3, 58, 186, 1, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 3, 58, 186, 3, true);
                     //Bonsai
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 4, 58, 186, 1, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 4, 58, 186, 1, false);
                     //Snap Dragon
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 5, 58, 186, 1, true);
                     //Reddicot Flower
@@ -116,17 +116,17 @@ public class ShWorldGen implements IWorldGenerator
                     //Dahilia Flower
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 9, 58, 186, 1, true);
                     //Lacustrine
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 10, 58, 186, 1, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 10, 58, 186, 3, true);
                     //Yellow Dicot
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 11, 58, 186, 1, true);
                     //Bird of Paradise
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 12, 58, 186, 1, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 12, 58, 186, 1, false);
                     //Okee Giant
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 13, 58, 186, 1, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 13, 58, 186, 1, false);
                     //Mantis Shrimp
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 14, 58, 186, 1, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 14, 58, 186, 1, false);
                     //Hedgehog Cactus
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 15, 58, 186, 1, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 15, 58, 186, 1, false);
                 }          
             }
             if(BiomeDictionary.isBiomeOfType(this.biome, Type.JUNGLE))
@@ -246,13 +246,13 @@ public class ShWorldGen implements IWorldGenerator
     {
         if(turnedOn)
         {
-            for(int i = 0; i < chanceToSpawn; i++)
+            int posX = (chunkX * 16);
+            int posY = minY + random.nextInt(maxY - minY);
+            int posZ = (chunkZ * 16);
+            int count = random.nextInt(chanceToSpawn);
+            if (count >= 1)
             {
-                int posX = (chunkX * 16) + random.nextInt(16);
-                int posY = minY + random.nextInt(maxY - minY);
-                int posZ = (chunkZ * 16) + random.nextInt(16);
-
-                new WorldGenTallGrass(blockID, blockMeta).generate(world, random, posX, posY, posZ);
+                new ShWorldGenFlowers(blockID, blockMeta, count).generate(world, random, posX, posY, posZ);
             }
         }
     }
