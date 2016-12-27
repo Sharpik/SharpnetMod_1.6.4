@@ -34,6 +34,7 @@ public class ShWorldGen implements IWorldGenerator
         
         //Návod jak použít funkci pro spawnování rostlin:
         //FlowerSpawner(world, chunkX, chunkZ, random, <ZDE NÁZEV PROMĚNNÉ S ID BLOKU>, <Sem se dává meta ID (to je to druhé v eShopu za dvojtečkou)>, <minimální výška, kde se bude rostlina spawnovat>, <maximální výška, kde se bude rostlina spawnovat>, <šance kolikrát se rostlinka naspawnuje (klasicky 1)>, <zde se nastavuje zda je toto nastavená aktivní (true) nebo neaktivní (false)>);
+        
         if (biome_type != null)
         {
             
@@ -118,6 +119,7 @@ public class ShWorldGen implements IWorldGenerator
                 
                 return;
             }
+            
             if(biome_type == "Plains")
             {
                 
@@ -161,6 +163,7 @@ public class ShWorldGen implements IWorldGenerator
                 
                 return;
             }
+            
             if( (biome_type == "Jungle") || (biome_type == "JungleHills") )
             {
                 
@@ -211,6 +214,7 @@ public class ShWorldGen implements IWorldGenerator
                 
                 return;
             }
+            
             if( (biome_type == "Desert") || (biome_type == "DesertHills") )
             {
                 
@@ -220,17 +224,15 @@ public class ShWorldGen implements IWorldGenerator
                     
                     //Flora Cactus
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 1, 58, 186, 3, true);                    
+                    //Okee Giant
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 13, 58, 186, 2, true);                    
                     //Mantis Shrimp
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 14, 58, 186, 2, true);
                     //Hedgehog Cactus
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 15, 58, 186, 2, true);
                         
-                    //Mechus 1
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 0, 58, 186, 1, false);
                     //Sukulentus 1
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 1, 58, 186, 2, true);
-                    //Sukulentus 2
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 2, 58, 186, 1, false);
                     //Sukulentus 3
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 3, 58, 186, 2, true);
                 }  

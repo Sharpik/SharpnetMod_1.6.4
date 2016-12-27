@@ -97,11 +97,12 @@ public class SharpnetFlowerBlocks extends BlockFlower
         soil.add(Block.dirt.blockID);
         soil.add(Block.tilledField.blockID);
         
+        int WBlockOriginId = par1World.getBlockId(par2, par3, par4);
         int WBlockSoilId = par1World.getBlockId(par2, par3 - 1, par4);
         int WBlockMeta = par1World.getBlockMetadata(par2, par3, par4);
         
         //these flowers can stay in sand
-        if (par1World.getBlockId(par2, par3, par4) == SharpnetFlowerBlocks1.blockID)
+        if (WBlockOriginId == SharpnetFlowerBlocks1.blockID)
         {
             switch(WBlockMeta)
             {
@@ -113,7 +114,7 @@ public class SharpnetFlowerBlocks extends BlockFlower
         }
         
         //these flowers can stay in sand
-        if (par1World.getBlockId(par2, par3, par4) == SharpnetFlowerBlocks2.blockID)
+        if (WBlockOriginId == SharpnetFlowerBlocks2.blockID)
         {
             switch(WBlockMeta)
             {

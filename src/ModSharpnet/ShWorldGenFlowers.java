@@ -34,7 +34,7 @@ public class ShWorldGenFlowers
             do 
             {
                 block = Block.blocksList[par1World.getBlockId(par3, posY, par5)];
-                if (block != null && !block.isLeaves(par1World, par3, posY, par5))
+                if (block != null && !(block.isLeaves(par1World, par3, posY, par5) || (par1World.getBlockId(par3, posY, par5) == (Block.wood.blockID))) )
                 {
                     break;
                 }
