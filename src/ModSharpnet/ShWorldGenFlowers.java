@@ -19,7 +19,7 @@ public class ShWorldGenFlowers
         
         boolean spawned = false;
         int posY;
-        int[] allowedReplacemants = {18, 31, 78};
+        Integer[] allowedReplacemants = {18, 31, 78};
         
         for (int i1 = 0; i1 < count; ++i1)
         {
@@ -29,7 +29,7 @@ public class ShWorldGenFlowers
             
             Block block = null;
             
-            //System.out.println("ShDebug - spawner: flower: id:" + BlockFlowerID + " Meta:" + BlockFlowerMetadata + " PosX:" + par3 + " PosZ:" + par5 + " count:" + count);
+            //System.out.println("ShDebug - spawner: flower: id:" + BlockFlowerID + " Meta:" + BlockFlowerMetadata + " PosX:" + par3 + " PosYmax:" + maxY + " PosZ:" + par5 + " count:" + count);
 
             do 
             {
@@ -43,6 +43,8 @@ public class ShWorldGenFlowers
 
             if (posY >= minY)
             {
+                //System.out.println("ShDebug - spawner: posY >= minY");
+                
                 int orginID = par1World.getBlockId(par3, posY, par5);
                 
                 if ( par1World.isAirBlock(par3, posY, par5) || Arrays.asList(allowedReplacemants).contains(orginID) )
@@ -50,6 +52,8 @@ public class ShWorldGenFlowers
                     int orginMeta = par1World.getBlockMetadata(par3, posY, par5);
                     
                     par1World.setBlock(par3, posY, par5, BlockFlowerID, BlockFlowerMetadata, 2);
+                    
+                    //System.out.println("ShDebug - spawner: Flower spawned: x:" + par3 +" y:"+ posY +" z:"+ par5);
                     
                     if(!Block.blocksList[BlockFlowerID].canBlockStay(par1World, par3, posY, par5))
                     {
