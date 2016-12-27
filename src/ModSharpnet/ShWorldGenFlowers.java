@@ -4,22 +4,13 @@ import java.util.Arrays;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class ShWorldGenFlowers
 {
-    private int BlockFlowerID;
-    private int BlockFlowerMetadata;
-    private int count;
 
-    public ShWorldGenFlowers(int par1, int par2, int count)
-    {
-        this.BlockFlowerID = par1;
-        this.BlockFlowerMetadata = par2;
-        this.count = count;
-    }
+    public ShWorldGenFlowers(){}
 
-    public boolean generate(World par1World, Random par2Random, int par3, int maxY, int par5, int minY)
+    public boolean generate(World par1World, Random par2Random,int BlockFlowerID, int BlockFlowerMetadata, int par3, int maxY, int par5, int minY, int count)
     {
         if(maxY > 250 ) maxY = 250;
         if(maxY < 1 ) maxY = 2;
@@ -30,13 +21,15 @@ public class ShWorldGenFlowers
         int posY;
         int[] allowedReplacemants = {18, 31, 78};
         
-        for (int i1 = 0; i1 < this.count; ++i1)
+        for (int i1 = 0; i1 < count; ++i1)
         {
-            posY = minY + par2Random.nextInt(maxY - minY);
+            posY = maxY;
             par3 = par3 + par2Random.nextInt(8) - par2Random.nextInt(8);
             par5 = par5 + par2Random.nextInt(8) - par2Random.nextInt(8);
             
             Block block = null;
+            
+            //System.out.println("ShDebug - spawner: flower: id:" + BlockFlowerID + " Meta:" + BlockFlowerMetadata + " PosX:" + par3 + " PosZ:" + par5 + " count:" + count);
 
             do 
             {
@@ -56,18 +49,27 @@ public class ShWorldGenFlowers
                 {
                     int orginMeta = par1World.getBlockMetadata(par3, posY, par5);
                     
-                    par1World.setBlock(par3, posY, par5, this.BlockFlowerID, this.BlockFlowerMetadata, 2);
+                    par1World.setBlock(par3, posY, par5, BlockFlowerID, BlockFlowerMetadata, 2);
                     
-                    if(!Block.blocksList[this.BlockFlowerID].canBlockStay(par1World, par3, posY, par5))
+                    if(!Block.blocksList[BlockFlowerID].canBlockStay(par1World, par3, posY, par5))
                     {
                         par1World.setBlock(par3, posY, par5, orginID, orginMeta, 2);
                     }
-                    else spawned = true;
+                    else
+                    {
+                        spawned = true;
+                    }
+                    //System.out.println("ShDebug - spawner: count: " + i1);
                 }
             }
 
         }
-        if (spawned) return true;
+        if (spawned)
+        {
+            //System.out.println("ShDebug - spawner: TRUE");
+            return true;
+        }
+        //System.out.println("ShDebug - spawner: FALSE");
         return false;
     }
 }

@@ -251,7 +251,7 @@ public class ShWorldGen implements IWorldGenerator
             int count = random.nextInt(maxCount);
             if (count >= 1)
             {
-                new ShWorldGenFlowers(blockID, blockMeta, count).generate(world, random, posX, maxY, posZ, minY);
+                new ShWorldGenFlowers().generate(world, random, blockID, blockMeta, posX, maxY, posZ, minY, count);
             }
         }
     }
