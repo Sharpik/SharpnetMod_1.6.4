@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class ShWorldGenFlowers extends WorldGenerator
+public class ShWorldGenFlowers
 {
     private int BlockFlowerID;
     private int BlockFlowerMetadata;
@@ -18,31 +18,45 @@ public class ShWorldGenFlowers extends WorldGenerator
         this.count = count;
     }
 
-    public boolean generate(World par1World, Random par2Random, int par3, int par4, int par5)
+    public boolean generate(World par1World, Random par2Random, int par3, int maxY, int par5, int minY)
     {
-        Block block = null;
-        do 
-        {
-            block = Block.blocksList[par1World.getBlockId(par3,  par4, par5)];
-            if (block != null && !block.isLeaves(par1World, par3, par4, par5))
-            {
-                break;
-            }
-            par4--;
-        } while (par4 > 0);
-
+        if(maxY > 250 ) maxY = 250;
+        if(maxY < 1 ) maxY = 2;
+        if(minY > 250 ) minY = 250;
+        if(minY < 1 ) minY = 1;
+        
+        boolean spawned = false;
+        int posY;
+        
         for (int i1 = 0; i1 < this.count; ++i1)
         {
-            int j1 = par3 + par2Random.nextInt(8) - par2Random.nextInt(8);
-            int k1 = par4 + par2Random.nextInt(4) - par2Random.nextInt(4);
-            int l1 = par5 + par2Random.nextInt(8) - par2Random.nextInt(8);
+            posY = minY + par2Random.nextInt(maxY - minY);
+            par3 = par2Random.nextInt(8) - par2Random.nextInt(8);
+            par5 = par2Random.nextInt(8) - par2Random.nextInt(8);
+            
+            Block block = null;
 
-            if (par1World.isAirBlock(j1, k1, l1) && Block.blocksList[this.BlockFlowerID].canBlockStay(par1World, j1, k1, l1))
+            do 
             {
-                par1World.setBlock(j1, k1, l1, this.BlockFlowerID, this.BlockFlowerMetadata, 2);
-            }
-        }
+                block = Block.blocksList[par1World.getBlockId(par3,  posY, par5)];
+                if (block != null && !block.isLeaves(par1World, par3, posY, par5))
+                {
+                    break;
+                }
+                posY--;
+            } while (posY > minY);
 
-        return true;
+            if (posY >= minY)
+            {
+                if (par1World.isAirBlock(par3, posY, par5) && Block.blocksList[this.BlockFlowerID].canBlockStay(par1World, par3, posY, par5))
+                {
+                    par1World.setBlock(par3, posY, par5, this.BlockFlowerID, this.BlockFlowerMetadata, 2);
+                    spawned = true;
+                }
+            }
+
+        }
+        if (spawned) return true;
+        return false;
     }
 }

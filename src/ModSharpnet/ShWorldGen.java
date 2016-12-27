@@ -247,12 +247,11 @@ public class ShWorldGen implements IWorldGenerator
         if(turnedOn)
         {
             int posX = (chunkX * 16);
-            int posY = minY + random.nextInt(maxY - minY);
             int posZ = (chunkZ * 16);
             int count = random.nextInt(chanceToSpawn);
             if (count >= 1)
             {
-                new ShWorldGenFlowers(blockID, blockMeta, count).generate(world, random, posX, posY, posZ);
+                new ShWorldGenFlowers(blockID, blockMeta, count).generate(world, random, posX, maxY, posZ, minY);
             }
         }
     }
