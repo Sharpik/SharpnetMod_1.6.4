@@ -16,6 +16,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
+import static ModSharpnet.ModSharpnet.SharpnetFlowerBlocks1;
+import static ModSharpnet.ModSharpnet.SharpnetFlowerBlocks2;
+
 
 public class SharpnetFlowerBlocks extends BlockFlower
 {
@@ -97,13 +100,27 @@ public class SharpnetFlowerBlocks extends BlockFlower
         int WBlockSoilId = par1World.getBlockId(par2, par3 - 1, par4);
         int WBlockMeta = par1World.getBlockMetadata(par2, par3, par4);
         
-        switch(WBlockMeta)
+        //these flowers can stay in sand
+        if (par1World.getBlockId(par2, par3, par4) == SharpnetFlowerBlocks1.blockID)
         {
-            case 1: soil.add(Block.sand.blockID); break;
-            case 12: soil.add(Block.sand.blockID); break;
-            case 13: soil.add(Block.sand.blockID); break;
-            case 14: soil.add(Block.sand.blockID); break;
-            case 15: soil.add(Block.sand.blockID); break;
+            switch(WBlockMeta)
+            {
+                case 1: soil.add(Block.sand.blockID); break;
+                case 13: soil.add(Block.sand.blockID); break;
+                case 14: soil.add(Block.sand.blockID); break;
+                case 15: soil.add(Block.sand.blockID); break;
+            }
+        }
+        
+        //these flowers can stay in sand
+        if (par1World.getBlockId(par2, par3, par4) == SharpnetFlowerBlocks2.blockID)
+        {
+            switch(WBlockMeta)
+            {
+                case 1: soil.add(Block.sand.blockID); break;
+                case 2: soil.add(Block.sand.blockID); break;
+                case 3: soil.add(Block.sand.blockID); break;
+            }
         }
         
         if ( soil.contains(WBlockSoilId) )

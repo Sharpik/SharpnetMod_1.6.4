@@ -1,5 +1,6 @@
 package ModSharpnet;
 
+import java.util.Arrays;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
@@ -27,18 +28,19 @@ public class ShWorldGenFlowers
         
         boolean spawned = false;
         int posY;
+        int[] allowedReplacemants = {18, 31, 78};
         
         for (int i1 = 0; i1 < this.count; ++i1)
         {
             posY = minY + par2Random.nextInt(maxY - minY);
-            par3 = par2Random.nextInt(8) - par2Random.nextInt(8);
-            par5 = par2Random.nextInt(8) - par2Random.nextInt(8);
+            par3 = par3 + par2Random.nextInt(8) - par2Random.nextInt(8);
+            par5 = par5 + par2Random.nextInt(8) - par2Random.nextInt(8);
             
             Block block = null;
 
             do 
             {
-                block = Block.blocksList[par1World.getBlockId(par3,  posY, par5)];
+                block = Block.blocksList[par1World.getBlockId(par3, posY, par5)];
                 if (block != null && !block.isLeaves(par1World, par3, posY, par5))
                 {
                     break;
@@ -48,10 +50,19 @@ public class ShWorldGenFlowers
 
             if (posY >= minY)
             {
-                if (par1World.isAirBlock(par3, posY, par5) && Block.blocksList[this.BlockFlowerID].canBlockStay(par1World, par3, posY, par5))
+                int orginID = par1World.getBlockId(par3, posY, par5);
+                
+                if ( par1World.isAirBlock(par3, posY, par5) || Arrays.asList(allowedReplacemants).contains(orginID) )
                 {
+                    int orginMeta = par1World.getBlockMetadata(par3, posY, par5);
+                    
                     par1World.setBlock(par3, posY, par5, this.BlockFlowerID, this.BlockFlowerMetadata, 2);
-                    spawned = true;
+                    
+                    if(!Block.blocksList[this.BlockFlowerID].canBlockStay(par1World, par3, posY, par5))
+                    {
+                        par1World.setBlock(par3, posY, par5, orginID, orginMeta, 2);
+                    }
+                    else spawned = true;
                 }
             }
 

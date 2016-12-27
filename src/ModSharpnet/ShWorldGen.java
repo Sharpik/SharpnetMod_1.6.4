@@ -242,13 +242,13 @@ public class ShWorldGen implements IWorldGenerator
     }
     
     //Funkce pro spawnování rostlin
-    private void FlowerSpawner(World world, int chunkX, int chunkZ, Random random, int blockID, int blockMeta, int minY, int maxY, int chanceToSpawn, boolean turnedOn)
+    private void FlowerSpawner(World world, int chunkX, int chunkZ, Random random, int blockID, int blockMeta, int minY, int maxY, int maxCount, boolean turnedOn)
     {
         if(turnedOn)
         {
             int posX = (chunkX * 16);
             int posZ = (chunkZ * 16);
-            int count = random.nextInt(chanceToSpawn);
+            int count = random.nextInt(maxCount);
             if (count >= 1)
             {
                 new ShWorldGenFlowers(blockID, blockMeta, count).generate(world, random, posX, maxY, posZ, minY);
