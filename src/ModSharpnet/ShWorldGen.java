@@ -37,8 +37,35 @@ public class ShWorldGen implements IWorldGenerator
         if (biome_type != null)
         {
             
-            //Zde je popsáno v jakém biotopu se bude rostlinka spawnovat (Forest)
-            if(biome_type == "Forest")
+            /* Seznam všech biotopů i s typama:
+            registerBiomeType(ocean,               WATER          );
+            registerBiomeType(plains,              PLAINS         );
+            registerBiomeType(desert,              DESERT         );
+            registerBiomeType(extremeHills,        MOUNTAIN       );
+            registerBiomeType(forest,              FOREST         );
+            registerBiomeType(taiga,               FOREST,  FROZEN);
+            registerBiomeType(taigaHills,          FOREST,  FROZEN);
+            registerBiomeType(swampland,           SWAMP          );
+            registerBiomeType(river,               WATER          );
+            registerBiomeType(frozenOcean,         WATER,   FROZEN);
+            registerBiomeType(frozenRiver,         WATER,   FROZEN);
+            registerBiomeType(icePlains,           FROZEN         );
+            registerBiomeType(iceMountains,        FROZEN         );
+            registerBiomeType(beach,               BEACH          );
+            registerBiomeType(desertHills,         DESERT         );
+            registerBiomeType(jungle,              JUNGLE         );
+            registerBiomeType(jungleHills,         JUNGLE         );
+            registerBiomeType(forestHills,         FOREST         );
+            registerBiomeType(sky,                 END            );
+            registerBiomeType(hell,                NETHER         );
+            registerBiomeType(mushroomIsland,      MUSHROOM       );
+            registerBiomeType(extremeHillsEdge,    MOUNTAIN       );
+            registerBiomeType(mushroomIslandShore, MUSHROOM, BEACH);
+            */
+            
+            //Zde je popsáno v jakém biotopu se bude rostlinka spawnovat (zahrnuty šechny lesní typy biotopů)
+            //if(BiomeDictionary.isBiomeOfType(biome, Type.FOREST))
+            if( (biome_type == "Forest") || (biome_type == "ForestHills") )
             {
                 
                 //Zde se kontroluje zda je v konfiguračním souboru povoleno spawnování Sharpneťáckých rostlinek do mapy
@@ -80,7 +107,7 @@ public class ShWorldGen implements IWorldGenerator
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 15, 58, 186, 1, false);
                         
                     //Mechus 1
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 0, 58, 186, 6, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 0, 58, 186, 8, true);
                     //Sukulentus 1
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 1, 58, 186, 1, false);
                     //Sukulentus 2
@@ -105,7 +132,7 @@ public class ShWorldGen implements IWorldGenerator
                     //Fuchsia
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 2, 58, 186, 2, true);
                     //Sunflower
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 3, 58, 186, 6, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 3, 58, 186, 9, true);
                     //Bonsai
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 4, 58, 186, 1, false);
                     //Snap Dragon
@@ -119,7 +146,7 @@ public class ShWorldGen implements IWorldGenerator
                     //Dahilia Flower
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 9, 58, 186, 2, true);
                     //Lacustrine
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 10, 58, 186, 8, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 10, 58, 186, 11, true);
                     //Yellow Dicot
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 11, 58, 186, 2, true);
                     //Bird of Paradise
@@ -134,7 +161,7 @@ public class ShWorldGen implements IWorldGenerator
                 
                 return;
             }
-            if(biome_type == "Jungle")
+            if( (biome_type == "Jungle") || (biome_type == "JungleHills") )
             {
                 
                 if(ModSharpnet.WorldGenFlowers)
@@ -184,7 +211,7 @@ public class ShWorldGen implements IWorldGenerator
                 
                 return;
             }
-            if(biome_type == "Desert")
+            if( (biome_type == "Desert") || (biome_type == "DesertHills") )
             {
                 
                 if(ModSharpnet.WorldGenFlowers)
@@ -192,7 +219,7 @@ public class ShWorldGen implements IWorldGenerator
                     //Sem příjdou rostlinky, které se mají spawnovat na poušti
                     
                     //Flora Cactus
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 1, 58, 186, 2, true);                    
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 1, 58, 186, 3, true);                    
                     //Mantis Shrimp
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 14, 58, 186, 2, true);
                     //Hedgehog Cactus
@@ -229,7 +256,7 @@ public class ShWorldGen implements IWorldGenerator
                 return;
             }
             
-            if(biome_type == "Taiga")
+            if( (biome_type == "Taiga") || (biome_type == "TaigaHills") )
             {
                 
                 if(ModSharpnet.WorldGenFlowers)
@@ -238,6 +265,20 @@ public class ShWorldGen implements IWorldGenerator
                     
                     //Mechus 1
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 0, 58, 186, 8, true);
+                }
+                
+                return;
+            }
+            
+            if(biome_type == "Swampland")
+            {
+                
+                if(ModSharpnet.WorldGenFlowers)
+                {
+                    //Sem příjdou rostlinky, které se mají spawnovat v kopcích
+                    
+                    //Mantis Shrimp
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 14, 58, 186, 5, true);
                 }
                 
                 return;
