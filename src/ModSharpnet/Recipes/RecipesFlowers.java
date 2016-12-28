@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 import static ModSharpnet.ModSharpnet.SharpnetFlowerBlocks1;
+import static ModSharpnet.ModSharpnet.SharpnetFlowerBlocks2;
 
 public class RecipesFlowers
 {
@@ -31,6 +32,12 @@ public class RecipesFlowers
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetFlowerBlocks1, 3,13), new ItemStack(SharpnetFlowerBlocks1, 1, 13), new ItemStack(Item.dyePowder, 1, 15));
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetFlowerBlocks1, 2,14), new ItemStack(SharpnetFlowerBlocks1, 1, 14), new ItemStack(Item.dyePowder, 1, 15));
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetFlowerBlocks1, 2,15), new ItemStack(SharpnetFlowerBlocks1, 1, 15), new ItemStack(Item.dyePowder, 1, 15));
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(SharpnetFlowerBlocks2, 2,0), new ItemStack(SharpnetFlowerBlocks2, 1, 0), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(SharpnetFlowerBlocks2, 2,1), new ItemStack(SharpnetFlowerBlocks2, 1, 1), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(SharpnetFlowerBlocks2, 2,2), new ItemStack(SharpnetFlowerBlocks2, 1, 2), new ItemStack(Item.dyePowder, 1, 15));
+        GameRegistry.addShapelessRecipe(new ItemStack(SharpnetFlowerBlocks2, 2,3), new ItemStack(SharpnetFlowerBlocks2, 1, 3), new ItemStack(Item.dyePowder, 1, 15));
+        
         
     } 
 }

@@ -253,6 +253,9 @@ public class ShWorldGen implements IWorldGenerator
                 if(ModSharpnet.WorldGenFlowers)
                 {
                     //Sem příjdou rostlinky, které se mají spawnovat v kopcích
+                    
+                    //Bonsai
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 4, 58, 186, 2, true);
                 }
                 
                 return;

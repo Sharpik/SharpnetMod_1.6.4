@@ -111,6 +111,9 @@ public class ModSharpnet
     public static Block SharpnetTilesWoodSlabBlocks2;
     public static int SharpnetTilesWoodSlabBlocks2_ID;
     
+    public static Block SharpnetBushesBlocks;
+    public static int SharpnetBushesBlocksID;
+    
     // Items Register
     public static Item SharpnetTomatoSeeds;
     public static int SharpnetTomatoSeedsID;
@@ -250,6 +253,7 @@ public class ModSharpnet
         Blocks.roof2_stairs_ID = config.get("Blocks", "roof2_stairs", 2579).getInt();
         Blocks.panel_wood1_block_ID = config.get("Blocks", "panel_wood1_block", 2580).getInt();
         SharpnetFlowerBlocks2ID = config.get("Blocks", "SharpnetFlowerBlocks2", 2581).getInt();
+        SharpnetBushesBlocksID = config.get("Blocks", "SharpnetBushesBlocks", 2582).getInt();
         
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
@@ -458,6 +462,7 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetBuildingBlocks1, 1, 2), "Metal 2 Block");
         LanguageRegistry.addName(new ItemStack(SharpnetBuildingBlocks1, 1, 3), "Metal 3 Block");
         LanguageRegistry.addName(new ItemStack(SharpnetBuildingBlocks1, 1, 4), "Metal 4 Block");
+        LanguageRegistry.addName(new ItemStack(SharpnetBuildingBlocks1, 1, 5), "Metal 5 Block");
         
         SharpnetCarpetsBlocks1 = new SharpnetCarpetsBlocks1(SharpnetCarpetsBlocks1ID, "SharpnetCarpetsBlocks1");
         GameRegistry.registerBlock(SharpnetCarpetsBlocks1, SharpnetCarpetItemBlocks1.class, "SharpnetCarpetsBlocks1");
@@ -725,6 +730,13 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetFlowerBlocks2, 1, 1), "Sukulentus 1");
         LanguageRegistry.addName(new ItemStack(SharpnetFlowerBlocks2, 1, 2), "Sukulentus 2");
         LanguageRegistry.addName(new ItemStack(SharpnetFlowerBlocks2, 1, 3), "Sukulentus 3");
+        
+        SharpnetBushesBlocks = new SharpnetBushesBlocks(SharpnetBushesBlocksID, new String[][]
+        {
+            {"mech1","bushes/bush1"}
+        }).setUnlocalizedName("SharpnetBushesBlocks").setHardness(0.0F).setResistance(0.0F).setCreativeTab(CreativeTabs.tabDecorations).setStepSound(Block.soundGrassFootstep);
+        GameRegistry.registerBlock(SharpnetBushesBlocks, SharpnetBushesItemBlocks.class, SharpnetBushesBlocks.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(SharpnetBushesBlocks, 1, 0), "Bush 1");
         
         //Blocks Alcohol
         Blocks.drinks1_block = new SharpnetDrinksBlocks1(Blocks.drinks1_block_ID).setUnlocalizedName("SharpnetDrinksBlocks1");
@@ -1644,6 +1656,8 @@ public class ModSharpnet
         RecipesBricks.register();
         RecipesStone.register();
         RecipesCobblestone.register();
+        RecipesMetals.register();
+        RecipesPanels.register();
         RecipesIC2Machines.register();
         
         GameRegistry.registerFuelHandler(new Fuels());

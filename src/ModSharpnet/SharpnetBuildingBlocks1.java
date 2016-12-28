@@ -25,7 +25,7 @@ public class SharpnetBuildingBlocks1 extends Block
     }
     
     // TADY ZMENIT POCET VARIANT 1 - 16
-    public int pocet = 5;
+    public int pocet = 6;
     
     @Override
     public int idDropped (int par1, Random par2Random, int par3)
@@ -63,6 +63,7 @@ public class SharpnetBuildingBlocks1 extends Block
                 case 2:{icons[i] = par1.registerIcon(modid+":building/metal2");break;}
                 case 3:{icons[i] = par1.registerIcon(modid+":building/metal3");break;}
                 case 4:{icons[i] = par1.registerIcon(modid+":building/metal4");break;}
+                case 5:{icons[i] = par1.registerIcon(modid+":building/metal5");break;}
                 default:{icons[i] = par1.registerIcon(modid+":error");break;}
             }
             
