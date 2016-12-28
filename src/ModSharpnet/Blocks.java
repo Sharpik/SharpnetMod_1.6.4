@@ -139,6 +139,15 @@ public class Blocks
     public static Block roof2_stairs;
     public static int roof2_stairs_ID;
     
+    public static Block SharpnetStairsTile1;
+    public static int SharpnetStairsTile1_ID;
+    
+    public static Block SharpnetStairsTile5;
+    public static int SharpnetStairsTile5_ID;
+    
+    public static Block SharpnetStairsTile11;
+    public static int SharpnetStairsTile11_ID;
+    
     //Project Red
     public static int PR_block_stonesID;
 }

@@ -254,6 +254,9 @@ public class ModSharpnet
         Blocks.panel_wood1_block_ID = config.get("Blocks", "panel_wood1_block", 2580).getInt();
         SharpnetFlowerBlocks2ID = config.get("Blocks", "SharpnetFlowerBlocks2", 2581).getInt();
         SharpnetBushesBlocksID = config.get("Blocks", "SharpnetBushesBlocks", 2582).getInt();
+        Blocks.SharpnetStairsTile1_ID = config.get("Blocks", "SharpnetStairsTile1", 3135).getInt();
+        Blocks.SharpnetStairsTile5_ID = config.get("Blocks", "SharpnetStairsTile5", 3136).getInt();
+        Blocks.SharpnetStairsTile11_ID = config.get("Blocks", "SharpnetStairsTile11", 3137).getInt();
         
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
@@ -545,6 +548,21 @@ public class ModSharpnet
         //LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks2, 1, 13), "Tile 14 Block");
         //LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks2, 1, 14), "Tile 15 Block");
         //LanguageRegistry.addName(new ItemStack(SharpnetTilesBlocks2, 1, 15), "Tile 16 Block");
+        
+        Blocks.SharpnetStairsTile1 = new SharpnetStairsBlock(Blocks.SharpnetStairsTile1_ID, SharpnetTilesBlocks1, 0, new String[]
+        {"StairsTile1","tiles_stone/tile1"});
+        GameRegistry.registerBlock(Blocks.SharpnetStairsTile1, "StairsTile1");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetStairsTile1, 1, 0), "Stairs Tile 1");
+        
+        Blocks.SharpnetStairsTile5 = new SharpnetStairsBlock(Blocks.SharpnetStairsTile5_ID, SharpnetTilesBlocks1, 4, new String[]
+        {"StairsTile5","tiles_stone/tile5"});
+        GameRegistry.registerBlock(Blocks.SharpnetStairsTile5, "StairsTile5");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetStairsTile5, 1, 0), "Stairs Tile 5");
+        
+        Blocks.SharpnetStairsTile11 = new SharpnetStairsBlock(Blocks.SharpnetStairsTile11_ID, SharpnetTilesBlocks1, 10, new String[]
+        {"StairsTile11","tiles_stone/tile11"});
+        GameRegistry.registerBlock(Blocks.SharpnetStairsTile11, "StairsTile11");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetStairsTile11, 1, 0), "Stairs Tile 11");
         
         SharpnetTilesWoodBlocks1 = new SharpnetTilesWoodBlocks1(SharpnetTilesWoodBlocks1ID, "SharpnetTilesWoodBlocks1");
         GameRegistry.registerBlock(SharpnetTilesWoodBlocks1, SharpnetTilesWoodItemBlocks1.class, "SharpnetTilesWoodBlocks1");

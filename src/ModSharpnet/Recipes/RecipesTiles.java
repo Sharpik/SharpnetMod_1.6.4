@@ -1,5 +1,6 @@
 package ModSharpnet.Recipes;
 
+import ModSharpnet.Blocks;
 import ModSharpnet.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -291,15 +292,30 @@ public class RecipesTiles
         });
         
         //Stairs
-        /*
-        GameRegistry.addRecipe(new ItemStack(SharpnetTilesStairs1,6,0), new Object[]
-        {
-            "A",
-            "AA",
-            "AAA",
-            'A', new ItemStack(SharpnetTilesBlocks2,1,1)
-        });
-        */
         
-    } 
+        GameRegistry.addRecipe(new ItemStack(Blocks.SharpnetStairsTile1,6,0), new Object[]
+        {
+            "A  ",
+            "AA ",
+            "AAA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,0)
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(Blocks.SharpnetStairsTile5,6,0), new Object[]
+        {
+            "A  ",
+            "AA ",
+            "AAA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,4)
+        });
+        
+        GameRegistry.addRecipe(new ItemStack(Blocks.SharpnetStairsTile11,6,0), new Object[]
+        {
+            "A  ",
+            "AA ",
+            "AAA",
+            'A', new ItemStack(SharpnetTilesBlocks1,1,10)
+        });
+        
+    }
 }
