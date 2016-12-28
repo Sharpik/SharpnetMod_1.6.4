@@ -13,11 +13,21 @@ public class RecipesOreDict
     {
         //Ore Dictionary
         
+        /*
         GameRegistry.addRecipe(new ShapedOreRecipe(Item.bucketEmpty, new Object[]{
         "FF",
         'F', "ingotCopper"
         }));
-        GameRegistry.addRecipe(new ShapelessOreRecipe(Item.bucketEmpty, "ingotCopper"));
+        */
+        
+        //GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModItems.salt,9),new ItemStack(ModBlocks.saltBlock)));
+        /*
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.saltSword),
+        " s ",
+        " s ",
+        " w ",
+        's',new ItemStack(ModItems.salt,9),'w',"stickWood"));
+        */
         
     } 
 }
