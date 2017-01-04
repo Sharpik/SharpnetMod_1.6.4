@@ -74,5 +74,11 @@ public class RecipesOld
             'G', Item.gunpowder, 'R', Item.redstone, 'S', Block.sand, 'W', new ItemStack(Block.planks, 1, 0)
         });
         
+        //Recipe Mushroom Stew
+        GameRegistry.addShapelessRecipe(new ItemStack(Item.bowlSoup, 1,0), new ItemStack(Item.bowlEmpty, 1, 0), new ItemStack(Block.mushroomBrown, 1, 0), new ItemStack(Block.mushroomBrown, 1, 0));
+        
+        //Recipe Mushroom Stew
+        GameRegistry.addShapelessRecipe(new ItemStack(Item.bowlSoup, 1,0), new ItemStack(Item.bowlEmpty, 1, 0), new ItemStack(Block.mushroomRed, 1, 0), new ItemStack(Block.mushroomRed, 1, 0));
+        
     } 
 }

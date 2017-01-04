@@ -74,5 +74,23 @@ public class RecipesOtherBlocks
             'C', new ItemStack(Items.oil_cell,1,0), 'G', new ItemStack(Block.gravel,1,0)
         });
         
+        //Recipe Road - Black Stairs
+        GameRegistry.addRecipe(new ItemStack(SharpnetRoadStairsBlack,6,0), new Object[]
+        {
+            "R  ",
+            "RR ",
+            "RRR",
+            'R', new ItemStack(SharpnetRoadsBlocks1,1,2)
+        });
+        
+        //Recipe Road - Gray Stairs
+        GameRegistry.addRecipe(new ItemStack(SharpnetRoadStairsGray,6,0), new Object[]
+        {
+            "R  ",
+            "RR ",
+            "RRR",
+            'R', new ItemStack(SharpnetRoadsBlocks1,1,0)
+        });
+        
     } 
 }

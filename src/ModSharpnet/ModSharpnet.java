@@ -332,6 +332,11 @@ public class ModSharpnet
         Items.breadcrumbs_ID = (config.get("Items", "breadcrumbs", 6622).getInt())-256;
         Items.fillet_ID = (config.get("Items", "fillet", 6623).getInt())-256;
         Items.popcorn_ID = (config.get("Items", "popcorn", 6643).getInt())-256;
+        Items.gingerbread_dough_ID = (config.get("Items", "gingerbread_dough", 6645).getInt())-256;
+        Items.gingerbread1_ID = (config.get("Items", "gingerbread1", 6645).getInt())-256;
+        Items.gingerbread2_ID = (config.get("Items", "gingerbread2", 6646).getInt())-256;
+        Items.chocolate_ID = (config.get("Items", "chocolate", 6647).getInt())-256;
+        Items.bonbon_ID = (config.get("Items", "bonbon", 6648).getInt())-256;
 
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
@@ -1258,6 +1263,26 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.popcorn, "Popcorn");
         LanguageRegistry.addName(new ItemStack(Items.popcorn, 1, 0), "Popcorn");
         
+        Items.chocolate = new ItemFood(Items.chocolate_ID, 3 , 1.0F, false ).setUnlocalizedName("chocolate").setTextureName(modid+":food/chocolate");
+        GameRegistry.registerItem(Items.chocolate, "Chocolate");
+        LanguageRegistry.addName(new ItemStack(Items.chocolate, 1, 0), "Chocolate");
+        
+        Items.gingerbread_dough = (new Item(Items.gingerbread_dough_ID).setUnlocalizedName("gingerbread_dough").setTextureName(modid+":food/gingerbread_dough").setCreativeTab(CreativeTabs.tabFood));
+        GameRegistry.registerItem(Items.gingerbread_dough, "Gingerbread Dough");
+        LanguageRegistry.addName(new ItemStack(Items.gingerbread_dough, 1, 0), "Dough");
+        
+        Items.gingerbread1 = new ItemFood(Items.gingerbread1_ID, 2 , 0.5F, false ).setUnlocalizedName("gingerbread1").setTextureName(modid+":food/gingerbread1");
+        GameRegistry.registerItem(Items.gingerbread1, "Gingerbread 1");
+        LanguageRegistry.addName(new ItemStack(Items.gingerbread1, 1, 0), "Gingerbread 1");
+        
+        Items.gingerbread2 = new ItemFood(Items.gingerbread2_ID, 2 , 0.5F, false ).setUnlocalizedName("gingerbread2").setTextureName(modid+":food/gingerbread2");
+        GameRegistry.registerItem(Items.gingerbread2, "Gingerbread 2");
+        LanguageRegistry.addName(new ItemStack(Items.gingerbread2, 1, 0), "Gingerbread 2");
+        
+        Items.bonbon = new ItemFood(Items.bonbon_ID, 1 , 0.5F, false ).setUnlocalizedName("bonbon").setTextureName(modid+":food/bonbon");
+        GameRegistry.registerItem(Items.bonbon, "bonbon");
+        LanguageRegistry.addName(new ItemStack(Items.bonbon, 1, 0), "bonbon");
+        
         //Item Alcohol
         Items.beer = new ShItemFoodPlacer1(Items.beer_ID, 4, 2.0F, false, Blocks.drinks1_block.blockID, 0, 2, 20).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/beer");
         GameRegistry.registerItem(Items.beer, "Beer");
@@ -1662,6 +1687,7 @@ public class ModSharpnet
         RecipesFood.register();
         RecipesResources.register();
         RecipesTools.register();
+        RecipesElectronics.register();
         RecipesFlowers.register();
         RecipesDoors.register();
         RecipesWoodTiles.register();

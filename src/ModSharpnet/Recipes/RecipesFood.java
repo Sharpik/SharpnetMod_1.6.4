@@ -170,5 +170,26 @@ public class RecipesFood
          GameRegistry.addShapelessRecipe(new ItemStack(Items.glass_of_vine, 3,0), new ItemStack(Items.wine, 1, 0));
         
         
+        //Recipe Gingerbread Dought
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.gingerbread_dough, 8,0), new ItemStack(Items.dough, 1, 0), new ItemStack(Items.honey, 1, 0), new ItemStack(Item.dyePowder, 1, 3) );
+
+        //Recipe Gingerbread 1
+        GameRegistry.addRecipe(new ItemStack(Items.gingerbread1,1,0), new Object[]
+        {
+            " G ",
+            "G G",
+            "GGG",
+            'G', Items.gingerbread_dough,
+        });
+        
+        //Recipe Gingerbread 2
+        GameRegistry.addRecipe(new ItemStack(Items.gingerbread2,1,0), new Object[]
+        {
+            " G ",
+            "GGG",
+            "G G",
+            'G', Items.gingerbread_dough,
+        });
+         
     } 
 }

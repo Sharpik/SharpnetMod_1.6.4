@@ -164,7 +164,11 @@ public class RecipesResources
             System.out.println("SH Debug: BC_Bucket_Oil - " + Items.BC_Bucket_Oil.itemID);
             */
             GameRegistry.addShapelessRecipe(new ItemStack(Items.oil_cell, 1, 0), new ItemStack(Items.BC_Bucket_Oil_ID, 1, 0), new ItemStack(ic2.api.item.Items.getItem("cell").getItem(), 1, 0));
+            GameRegistry.addShapelessRecipe(new ItemStack(Items.BC_Bucket_Oil_ID, 1, 0), new ItemStack(Item.bucketEmpty, 1, 0), new ItemStack(Items.oil_cell, 1, 0) );
+            
             GameRegistry.addShapelessRecipe(new ItemStack(Items.fuel_cell, 1, 0), new ItemStack(Items.BC_Bucket_Fuel_ID, 1, 0), new ItemStack(ic2.api.item.Items.getItem("cell").getItem(), 1, 0));
+            GameRegistry.addShapelessRecipe(new ItemStack(Items.BC_Bucket_Fuel_ID, 1, 0), new ItemStack(Item.bucketEmpty, 1, 0), new ItemStack(Items.fuel_cell, 1, 0) );
+            
         }
         
     } 
