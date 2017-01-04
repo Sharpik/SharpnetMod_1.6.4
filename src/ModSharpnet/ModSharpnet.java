@@ -1,6 +1,7 @@
 package ModSharpnet;
 
 // @author Sharpman
+import ModSharpnet.Item.SharpnetLighter;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -349,6 +350,7 @@ public class ModSharpnet
         Items.CD_1_ID = (config.get("Items", "CD_1", 6626).getInt())-256;
         Items.CD_2_ID = (config.get("Items", "CD_2", 6627).getInt())-256;
         Items.debug_ID = (config.get("Items", "debug", 6642).getInt())-256;
+        Items.lighter_ID = (config.get("Items", "lighter", 6643).getInt())-256;
         
         //Items Blocks
         Items.door1_block_item_ID = (config.get("Items", "door1_block_item", 6551).getInt())-256;
@@ -1522,6 +1524,10 @@ public class ModSharpnet
         Items.debug = (new debugItem(Items.debug_ID).setUnlocalizedName("debug_item"));
         GameRegistry.registerItem(Items.debug, "Debug Item");
         LanguageRegistry.addName(new ItemStack(Items.debug, 1, 0), "Debug Item");
+        
+        Items.lighter = (new SharpnetLighter(Items.lighter_ID).setUnlocalizedName("lighter"));
+        GameRegistry.registerItem(Items.lighter, "Lighter");
+        LanguageRegistry.addName(new ItemStack(Items.lighter, 1, 0), "Lighter");
         
         //Item Resources
         Items.roofing_tile = (new Item(Items.roofing_tile_ID).setUnlocalizedName("Roofing_tile").setTextureName(modid+":resources/roofing_tile").setCreativeTab(CreativeTabs.tabMaterials));

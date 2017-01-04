@@ -179,7 +179,7 @@ public class RecipesFood
             " G ",
             "G G",
             "GGG",
-            'G', Items.gingerbread_dough,
+            'G', Items.gingerbread_dough
         });
         
         //Recipe Gingerbread 2
@@ -188,7 +188,21 @@ public class RecipesFood
             " G ",
             "GGG",
             "G G",
-            'G', Items.gingerbread_dough,
+            'G', Items.gingerbread_dough
+        });
+        
+        //Recipe Chocolate
+        GameRegistry.addRecipe(new ItemStack(Items.chocolate,1,0), new Object[]
+        {
+            "MCB",
+            'B', Item.bucketMilk, 'C',new ItemStack(Item.dyePowder,1,3) ,'B', Items.butter
+        });
+        
+        //Recipe Chocolate
+        GameRegistry.addRecipe(new ItemStack(Items.chocolate,1,0), new Object[]
+        {
+            "MCB",
+            'B', Items.bottle_of_milk, 'C',new ItemStack(Item.dyePowder,1,3) ,'B', Items.butter
         });
          
     } 
