@@ -195,14 +195,14 @@ public class RecipesFood
         GameRegistry.addRecipe(new ItemStack(Items.chocolate,1,0), new Object[]
         {
             "MCB",
-            'B', Item.bucketMilk, 'C',new ItemStack(Item.dyePowder,1,3) ,'B', Items.butter
+            'M', Item.bucketMilk, 'C',new ItemStack(Item.dyePowder,1,3) ,'B', Items.butter
         });
         
         //Recipe Chocolate
         GameRegistry.addRecipe(new ItemStack(Items.chocolate,1,0), new Object[]
         {
             "MCB",
-            'B', Items.bottle_of_milk, 'C',new ItemStack(Item.dyePowder,1,3) ,'B', Items.butter
+            'M', Items.bottle_of_milk, 'C',new ItemStack(Item.dyePowder,1,3) ,'B', Items.butter
         });
          
     } 
