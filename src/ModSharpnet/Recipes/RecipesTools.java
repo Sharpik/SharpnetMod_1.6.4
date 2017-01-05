@@ -21,5 +21,15 @@ public class RecipesTools
         GameRegistry.addShapelessRecipe(new ItemStack(Items.trowel,1,16), new ItemStack(Items.trowel,1,Short.MAX_VALUE), Item.clay);
         GameRegistry.addShapelessRecipe(new ItemStack(Items.trowel,1,8), new ItemStack(Items.trowel,1,Short.MAX_VALUE), Item.clay, Item.clay);
         GameRegistry.addShapelessRecipe(new ItemStack(Items.trowel,1,0), new ItemStack(Items.trowel,1,Short.MAX_VALUE), Item.clay, Item.clay, Item.clay);
+        
+        //Recipe Rake
+        GameRegistry.addRecipe(new ItemStack(Items.rake,1,0), new Object[]
+        {
+            "III",
+            "IWI",
+            " S ",
+            'W', Block.planks, 'S', Item.stick, 'I', Item.ingotIron
+        });
+        
     } 
 }

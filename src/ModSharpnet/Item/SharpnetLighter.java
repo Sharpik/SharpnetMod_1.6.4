@@ -1,6 +1,5 @@
 package ModSharpnet.Item;
 
-import ModSharpnet.Blocks;
 import static ModSharpnet.ModSharpnet.modid;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;

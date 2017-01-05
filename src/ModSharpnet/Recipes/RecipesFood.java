@@ -75,6 +75,7 @@ public class RecipesFood
         GameRegistry.addSmelting(Items.mixed_ethanol.itemID, new ItemStack(Items.destiledEthanol_1, 1), 0.35F);
         GameRegistry.addSmelting(Items.destiledEthanol_1.itemID, new ItemStack(Items.destiledEthanol_2, 1), 0.35F);
         GameRegistry.addSmelting(Items.destiledEthanol_2.itemID, new ItemStack(Items.destiledEthanol_3, 1), 0.35F);
+        GameRegistry.addSmelting(Item.sugar.itemID, new ItemStack(Items.bonbon, 1), 0.35F);
         
         //Recipe Drinks
         GameRegistry.addRecipe(new ItemStack(Items.test_tube,6,0), new Object[]
