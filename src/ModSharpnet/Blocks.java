@@ -148,6 +148,15 @@ public class Blocks
     public static Block SharpnetStairsTile11;
     public static int SharpnetStairsTile11_ID;
     
+    public static Block SharpnetPoster1;
+    public static int SharpnetPoster1_ID;
+    
+    public static Block SharpnetPoster2;
+    public static int SharpnetPoster2_ID;
+    
+    public static Block SharpnetStocks10000;
+    public static int SharpnetStocks10000_ID;
+    
     //Project Red
     public static int PR_block_stonesID;
 }

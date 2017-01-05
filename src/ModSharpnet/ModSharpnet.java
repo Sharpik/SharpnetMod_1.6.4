@@ -1,8 +1,6 @@
 package ModSharpnet;
 
 // @author Sharpman
-import ModSharpnet.Item.SharpnetRake;
-import ModSharpnet.Item.SharpnetLighter;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -256,9 +254,12 @@ public class ModSharpnet
         Blocks.panel_wood1_block_ID = config.get("Blocks", "panel_wood1_block", 2580).getInt();
         SharpnetFlowerBlocks2ID = config.get("Blocks", "SharpnetFlowerBlocks2", 2581).getInt();
         SharpnetBushesBlocksID = config.get("Blocks", "SharpnetBushesBlocks", 2582).getInt();
-        Blocks.SharpnetStairsTile1_ID = config.get("Blocks", "SharpnetStairsTile1", 3135).getInt();
-        Blocks.SharpnetStairsTile5_ID = config.get("Blocks", "SharpnetStairsTile5", 3136).getInt();
-        Blocks.SharpnetStairsTile11_ID = config.get("Blocks", "SharpnetStairsTile11", 3137).getInt();
+        Blocks.SharpnetStairsTile1_ID = config.get("Blocks", "SharpnetStairsTile1", 2583).getInt();
+        Blocks.SharpnetStairsTile5_ID = config.get("Blocks", "SharpnetStairsTile5", 2584).getInt();
+        Blocks.SharpnetStairsTile11_ID = config.get("Blocks", "SharpnetStairsTile11", 2585).getInt();
+        Blocks.SharpnetPoster1_ID = config.get("Blocks", "SharpnetPoster1", 2586).getInt();
+        Blocks.SharpnetPoster2_ID = config.get("Blocks", "SharpnetPoster2", 2587).getInt();
+        Blocks.SharpnetStocks10000_ID = config.get("Blocks", "SharpnetStocks10000", 2588).getInt();
         
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
@@ -1148,6 +1149,21 @@ public class ModSharpnet
         Blocks.roof2_stairs = new SharpnetStairsBlocks(Blocks.roof2_stairs_ID, SharpnetRoofsBlocks1, 6).setUnlocalizedName("SharpnetRoof2Stairs");
         GameRegistry.registerBlock(Blocks.roof2_stairs, Blocks.roof2_stairs.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(Blocks.roof2_stairs, 1, 0), "Roof 2 stairs");
+        
+        Blocks.SharpnetPoster1 = new SharpnetPostsBlocks(Blocks.SharpnetPoster1_ID, Material.circuits).setUnlocalizedName("sharpnetposter1")
+        .setHardness(0.4F).setTextureName(modid+":carpets/Koberec2").setCreativeTab(CreativeTabs.tabDecorations);
+        GameRegistry.registerBlock(Blocks.SharpnetPoster1, Blocks.SharpnetPoster1.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPoster1, 1, 0), "Poster 1");
+        
+        Blocks.SharpnetPoster2 = new SharpnetPostsBlocks(Blocks.SharpnetPoster2_ID, Material.circuits).setUnlocalizedName("sharpnetposter2")
+        .setHardness(0.4F).setTextureName(modid+":others/sharpnet").setCreativeTab(CreativeTabs.tabDecorations);
+        GameRegistry.registerBlock(Blocks.SharpnetPoster2, Blocks.SharpnetPoster2.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetPoster2, 1, 0), "Poster 2");
+        
+        Blocks.SharpnetStocks10000 = new SharpnetPostsBlocks(Blocks.SharpnetStocks10000_ID, Material.circuits).setUnlocalizedName("sharpnetstocks10000")
+        .setHardness(0.4F).setTextureName(modid+":money_stacks/stock").setCreativeTab(CreativeTabs.tabDecorations);
+        GameRegistry.registerBlock(Blocks.SharpnetStocks10000, Blocks.SharpnetStocks10000.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetStocks10000, 1, 0), "Sharpnet Stocks 10000");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
