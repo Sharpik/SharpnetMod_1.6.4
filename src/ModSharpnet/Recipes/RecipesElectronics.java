@@ -12,7 +12,7 @@ public class RecipesElectronics
     public static void register()
     {
         
-        //Recipe Cofee Machine
+        //Recipe Mixer
         GameRegistry.addRecipe(new ItemStack(Blocks.electro1_block,1,0), new Object[]
         {
             "WWW",
@@ -30,13 +30,13 @@ public class RecipesElectronics
             'W', new ItemStack(Block.cloth,1,15), 'B', new ItemStack(ic2.api.item.Items.getItem("reBattery").getItem(),1,0), 'C', new ItemStack(ic2.api.item.Items.getItem("electronicCircuit").getItem(),1,0)
         });
         
-        //Recipe Mixer
-        GameRegistry.addRecipe(new ItemStack(Blocks.electro1_block,1,1), new Object[]
+        //Recipe Kettle
+        GameRegistry.addRecipe(new ItemStack(Blocks.electro1_block,1,2), new Object[]
         {
             "W W",
             "WBW",
             "WCW",
-            'W', new ItemStack(Block.cloth,1,15), 'B', new ItemStack(ic2.api.item.Items.getItem("reBattery").getItem(),1,0), 'C', new ItemStack(ic2.api.item.Items.getItem("ironCableBlock").getItem(),1,5)
+            'W', new ItemStack(Block.cloth,1,15), 'B', new ItemStack(ic2.api.item.Items.getItem("reBattery").getItem(),1,0), 'C', new ItemStack(ic2.api.item.Items.getItem("ironCableItem").getItem(),1,5)
         });
         
         //Reload for Throwel
