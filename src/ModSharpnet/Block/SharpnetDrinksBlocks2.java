@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 public class SharpnetDrinksBlocks2 extends Block
 {
     
-    public static final String[] drinkTypes = new String[] {"wine white"};
+    public static final String[] drinkTypes = new String[] {"wine_white", "glass_of_vine_white"};
     
     @SideOnly(Side.CLIENT)
     public Icon[] iconArray;
@@ -71,6 +71,7 @@ public class SharpnetDrinksBlocks2 extends Block
         switch(blockMetaData)
         {
             case 0: dropID = Items.wine_white.itemID; break;
+            case 1: dropID = Items.glass_of_white_vine.itemID; break;
             //default: dropID = Items.bottle.itemID; break;
             default: dropID = 0; break;
         }

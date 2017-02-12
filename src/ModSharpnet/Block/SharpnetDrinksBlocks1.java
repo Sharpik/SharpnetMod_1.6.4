@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 public class SharpnetDrinksBlocks1 extends Block
 {
     
-    public static final String[] drinkTypes = new String[] {"beer", "wine red", "cofee", "whiskey", "tequilla_s", "tequilla_g", "rum", "semtex", "tea_cup", "chocolate_hot", "honey", "catchup", "glass_of_red_vine", "vodka", "cocacola", "bottle"};
+    public static final String[] drinkTypes = new String[] {"beer", "wine_red", "cofee", "whiskey", "tequilla_s", "tequilla_g", "rum", "semtex", "tea_cup", "chocolate_hot", "honey", "catchup", "glass_of_vine_red", "vodka", "cocacola", "bottle"};
     
     @SideOnly(Side.CLIENT)
     public Icon[] iconArray;

@@ -25,7 +25,7 @@ import net.minecraftforge.common.ForgeDirection;
 public class SharpnetPlantsBlocks2 extends BlockFlower
 {
     // TADY ZMENIT POCET VARIANT 1 - 16
-    public static int pocet = 6;
+    public static int pocet = 9;
     
     public SharpnetPlantsBlocks2(int par1, Material par2Material)
     {

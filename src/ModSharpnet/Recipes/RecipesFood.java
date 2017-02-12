@@ -22,6 +22,7 @@ public class RecipesFood
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetCucumberSeeds, 1), new ItemStack(SharpnetCucumber));
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetCornSeeds, 1), new ItemStack(SharpnetCorn));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.grape_red_seeds, 1), new ItemStack(Items.grape_red));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.grape_white_seeds, 1), new ItemStack(Items.grape_white));
         
         GameRegistry.addShapelessRecipe(new ItemStack(Items.sliced_potatoe, 1,0), new ItemStack(Item.potato, 1, 0));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.flour, 4,0), new ItemStack(Item.wheat, 1, 0), new ItemStack(Item.wheat, 1, 0));
