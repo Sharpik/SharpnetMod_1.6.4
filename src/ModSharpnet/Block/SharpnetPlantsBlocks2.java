@@ -87,17 +87,17 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
                     par1World.setBlockMetadataWithNotify(par2, par3, par4, meta, 2);
                 }
             }
-            /*
-            // Third plant Corn
+            // Third plant Vine
             if ((meta > 5) && (meta < 8))
             {
-                maxgrowing = 35.0F;
+                maxgrowing = 75.0F;
                 if (par5Random.nextInt((int)(maxgrowing / f) + 1) == 0)
                 {
                     ++meta;
                     par1World.setBlockMetadataWithNotify(par2, par3, par4, meta, 2);
                 }
             }
+            /*
             // Fourth plant Flax
             if ((meta > 8) && (meta < 11))
             {
@@ -249,11 +249,12 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
             case 3: dropID = Items.cofee_beans_raw.itemID; break;
             case 4: dropID = Items.cofee_beans_raw.itemID; break;
             case 5: dropID = Items.cofee_beans_raw.itemID; break;
-            /*
+            
             //Corn 6 - 8 meta
-            case 6: dropID = SharpnetCornSeeds.itemID; break;
-            case 7: dropID = SharpnetCornSeeds.itemID; break;
-            case 8: dropID = SharpnetCorn.itemID; break;
+            case 6: dropID = Items.grape_white_seeds.itemID; break;
+            case 7: dropID = Items.grape_white_seeds.itemID; break;
+            case 8: dropID = Items.grape_white.itemID; break;
+            /*            
             //Flax 9 - 11 meta
             case 9: dropID = SharpnetFlaxSeeds.itemID; break;
             case 10: dropID = SharpnetFlaxSeeds.itemID; break;
@@ -285,6 +286,7 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
                     {
                         case 2: par5EntityPlayer.inventory.getCurrentItem().stackSize++; break;
                         case 5: par5EntityPlayer.inventory.getCurrentItem().stackSize++; break;
+                        case 8: par5EntityPlayer.inventory.getCurrentItem().stackSize++; break;
                     }
                     return false;
                 }
@@ -309,6 +311,19 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
                 {
                     par1World.spawnEntityInWorld(Ispawn1);
                     par1World.setBlock(par2, par3 , par4, this.blockID, 4, 2);
+                    return true;
+                }
+            }
+            
+            //Vine drop
+            if( blockMetaData == 8)
+            {
+                ItemStack Itemspawn1 = new ItemStack(Items.grape_white,quantityDropped(rand));
+                EntityItem Ispawn1 = new EntityItem(par1World,par2,par3,par4,Itemspawn1);
+                if (!par1World.isRemote)
+                {
+                    par1World.spawnEntityInWorld(Ispawn1);
+                    par1World.setBlock(par2, par3 , par4, this.blockID, 7, 2);
                     return true;
                 }
             }
@@ -359,8 +374,8 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
         
         if(blockMetaData == 2){min = 0; max = 0;}
         if(blockMetaData == 5){min = 2; max = 4;}
-        /*
         if(blockMetaData == 8){max = 3;}
+        /*
         if(blockMetaData == 11){min = 0; max = 0;}
         if(blockMetaData == 14){max = 3;}
         */
@@ -391,10 +406,10 @@ public class SharpnetPlantsBlocks2 extends BlockFlower
                 case 3:{icons[i] = par1.registerIcon(modid+":plants/cofee_1");break;}
                 case 4:{icons[i] = par1.registerIcon(modid+":plants/cofee_2");break;}
                 case 5:{icons[i] = par1.registerIcon(modid+":plants/cofee_3");break;}
+                case 6:{icons[i] = par1.registerIcon(modid+":plants/vine_white_fence_1");break;}
+                case 7:{icons[i] = par1.registerIcon(modid+":plants/vine_white_fence_2");break;}
+                case 8:{icons[i] = par1.registerIcon(modid+":plants/vine_white_fence_3");break;}
                 /*
-                case 6:{icons[i] = par1.registerIcon(modid+":plants/pla_corn1");break;}
-                case 7:{icons[i] = par1.registerIcon(modid+":plants/pla_corn2");break;}
-                case 8:{icons[i] = par1.registerIcon(modid+":plants/pla_corn3");break;}
                 case 9:{icons[i] = par1.registerIcon(modid+":plants/flax_1");break;}
                 case 10:{icons[i] = par1.registerIcon(modid+":plants/flax_4");break;}
                 case 11:{icons[i] = par1.registerIcon(modid+":plants/flax_5.2");break;}

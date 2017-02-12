@@ -72,8 +72,11 @@ public class Items
     public static Item barrel;
     public static int barrel_ID;
     
-    public static Item barrel_of_wine;
-    public static int barrel_of_wine_ID;
+    public static Item barrel_of_wine_red;
+    public static int barrel_of_wine_red_ID;
+    
+    public static Item barrel_of_wine_white;
+    public static int barrel_of_wine_white_ID;
     
     public static Item beer;
     public static int beer_ID;
@@ -213,8 +216,11 @@ public class Items
     public static Item gingerbread_dough;
     public static int gingerbread_dough_ID;
     
-    public static Item glass_of_vine;
-    public static int glass_of_vine_ID;
+    public static Item glass_of_red_vine;
+    public static int glass_of_red_vine_ID;
+    
+    public static Item glass_of_white_vine;
+    public static int glass_of_white_vine_ID;
     
     public static Item guess_100E;
     public static int guess_100E_ID;
@@ -405,9 +411,6 @@ public class Items
     public static Item tomato_puree;
     public static int tomato_puree_ID;
     
-    public static Item vines;
-    public static int vines_ID;
-    
     public static Item vines_scissors;
     public static int vines_scissors_ID;
     
@@ -417,8 +420,11 @@ public class Items
     public static Item whiskey;
     public static int whiskey_ID;
     
-    public static Item wine;
-    public static int wine_ID;
+    public static Item wine_red;
+    public static int wine_red_ID;
+    
+    public static Item wine_white;
+    public static int wine_white_ID;
     
     public static Item wood_tile_oak;
     public static int wood_tile_oak_ID;
@@ -483,8 +489,14 @@ public class Items
     public static Item grape_red_seeds;
     public static int grape_red_seeds_ID;
     
+    public static Item grape_white_seeds;
+    public static int grape_white_seeds_ID;
+    
     public static Item grape_red;
     public static int grape_red_ID;
+    
+    public static Item grape_white;
+    public static int grape_white_ID;
     
     //doors
     public static Item door1_block_item;

@@ -151,24 +151,43 @@ public class RecipesFood
             'B', Items.bottle, 'T', Items.destiledEthanol_3, 'S', Item.reed
         });
         
-        //Recipe Barrel of Vine
-        GameRegistry.addRecipe(new ItemStack(Items.barrel_of_wine,1,0), new Object[]
+        //Recipe Barrel of Vine Red
+        GameRegistry.addRecipe(new ItemStack(Items.barrel_of_wine_red,1,0), new Object[]
         {
             "GGG",
             "GBG",
             "GGG",
             'G', Items.grape_red, 'B', new ItemStack(Items.barrel,1,0)
         });
-        //Recipe Bottle of Vine
-        GameRegistry.addRecipe(new ItemStack(Items.wine,6,0), new Object[]
+        //Recipe Bottle of Vine Red
+        GameRegistry.addRecipe(new ItemStack(Items.wine_red,6,0), new Object[]
         {
             "G G",
             "GBG",
             "G G",
-            'B', new ItemStack(Items.barrel_of_wine,1,0), 'G', Items.bottle
+            'B', new ItemStack(Items.barrel_of_wine_red,1,0), 'G', Items.bottle
         });
-        //Recipe Glass of Vine
-         GameRegistry.addShapelessRecipe(new ItemStack(Items.glass_of_vine, 3,0), new ItemStack(Items.wine, 1, 0));
+        //Recipe Glass of Vine Red
+         GameRegistry.addShapelessRecipe(new ItemStack(Items.glass_of_red_vine, 3,0), new ItemStack(Items.wine_red, 1, 0));
+         
+         //Recipe Barrel of Vine White
+        GameRegistry.addRecipe(new ItemStack(Items.barrel_of_wine_white,1,0), new Object[]
+        {
+            "GGG",
+            "GBG",
+            "GGG",
+            'G', Items.grape_white, 'B', new ItemStack(Items.barrel,2,0)
+        });
+        //Recipe Bottle of Vine White
+        GameRegistry.addRecipe(new ItemStack(Items.wine_white,0,0), new Object[]
+        {
+            "G G",
+            "GBG",
+            "G G",
+            'B', new ItemStack(Items.barrel_of_wine_white,1,0), 'G', Items.bottle
+        });
+        //Recipe Glass of Vine White
+         GameRegistry.addShapelessRecipe(new ItemStack(Items.glass_of_white_vine, 3,0), new ItemStack(Items.wine_white, 1, 0));
         
         
         //Recipe Gingerbread Dought

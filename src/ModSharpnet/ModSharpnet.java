@@ -260,6 +260,7 @@ public class ModSharpnet
         Blocks.SharpnetPoster1_ID = config.get("Blocks", "SharpnetPoster1", 2586).getInt();
         Blocks.SharpnetPoster2_ID = config.get("Blocks", "SharpnetPoster2", 2587).getInt();
         Blocks.SharpnetStocks10000_ID = config.get("Blocks", "SharpnetStocks10000", 2588).getInt();
+        Blocks.drinks2_block_ID = config.get("Blocks", "drinks2_block", 2589).getInt();
         
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
@@ -288,7 +289,7 @@ public class ModSharpnet
         //Items Alcohol
         Items.bottle_ID = (config.get("Items", "bottle", 6522).getInt())-256;
         Items.beer_ID = (config.get("Items", "beer", 6523).getInt())-256;
-        Items.wine_ID = (config.get("Items", "wine", 6524).getInt())-256;
+        Items.wine_red_ID = (config.get("Items", "wine_red", 6524).getInt())-256;
         Items.cofee_ID = (config.get("Items", "cofee", 6525).getInt())-256;
         Items.whiskey_ID = (config.get("Items", "whiskey", 6526).getInt())-256;
         Items.tequilla_silver_ID = (config.get("Items", "tequilla_silver", 6527).getInt())-256;
@@ -299,7 +300,7 @@ public class ModSharpnet
         Items.hot_chocolate_ID = (config.get("Items", "hot_chocolate", 6532).getInt())-256;
         Items.honey_ID = (config.get("Items", "honey", 6533).getInt())-256;
         Items.catchup_ID = (config.get("Items", "catchup", 6534).getInt())-256;
-        Items.glass_of_vine_ID = (config.get("Items", "glass_of_vine", 6535).getInt())-256;
+        Items.glass_of_red_vine_ID = (config.get("Items", "glass_of_red_vine", 6535).getInt())-256;
         Items.vodka_ID = (config.get("Items", "vodka", 6536).getInt())-256;
         Items.cocacola_ID = (config.get("Items", "cocacola", 6537).getInt())-256;
         Items.guttalax_ID = (config.get("Items", "guttalax", 6538).getInt())-256;
@@ -313,6 +314,8 @@ public class ModSharpnet
         Items.destiledEthanol_3_ID = (config.get("Items", "destiledEthanol_3", 6611).getInt())-256;
         Items.liquid_sugar_ID = (config.get("Items", "liquid_sugar", 6612).getInt())-256;
         Items.bottle_of_milk_ID = (config.get("Items", "bottle_of_milk", 6613).getInt())-256;
+        Items.wine_white_ID = (config.get("Items", "wine_white", 6652).getInt())-256;
+        Items.glass_of_white_vine_ID = (config.get("Items", "glass_of_red_vine", 6653).getInt())-256;
         
         //Items Food
         Items.mutton_raw_ID = (config.get("Items", "mutton_raw", 423).getInt())-256;
@@ -340,6 +343,8 @@ public class ModSharpnet
         Items.gingerbread2_ID = (config.get("Items", "gingerbread2", 6646).getInt())-256;
         Items.chocolate_ID = (config.get("Items", "chocolate", 6647).getInt())-256;
         Items.bonbon_ID = (config.get("Items", "bonbon", 6648).getInt())-256;
+        Items.grape_white_seeds_ID = (config.get("Items", "grape_white_seeds", 6654).getInt())-256;
+        Items.grape_white_ID = (config.get("Items", "grape_white", 6655).getInt())-256;
 
         //Items Tools
         Items.trowel_ID = (config.get("Items", "trowel", 6542).getInt())-256;
@@ -369,7 +374,8 @@ public class ModSharpnet
         Items.door11_block_item_ID = (config.get("Items", "door11_block_item", 6561).getInt())-256;
         Items.door12_block_item_ID = (config.get("Items", "door12_block_item", 6562).getInt())-256;
         Items.barrel_ID = (config.get("Items", "barrel", 6563).getInt())-256;
-        Items.barrel_of_wine_ID = (config.get("Items", "barrel_of_wine", 6564).getInt())-256;
+        Items.barrel_of_wine_red_ID = (config.get("Items", "barrel_of_wine_red", 6564).getInt())-256;
+        Items.barrel_of_wine_white_ID = (config.get("Items", "barrel_of_wine_white", 6651).getInt())-256;
                 
         //Items Resources
         Items.roofing_tile_ID = (config.get("Items", "roofing_tile", 6543).getInt())-256;
@@ -661,9 +667,9 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 9), "Flax Plant");
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 10), "Flax Plant");
         LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 11), "Flax Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 12), "Vine Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 13), "Vine Plant");
-        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 14), "Vine Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 12), "Vine Red Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 13), "Vine Red Plant");
+        LanguageRegistry.addName(new ItemStack(SharpnetPlantsBlocks1, 1, 14), "Vine Red Plant");
         
         Blocks.SharpnetPlantsBlocks2 = new SharpnetPlantsBlocks2(Blocks.SharpnetPlantsBlocks2ID, Material.plants);
         GameRegistry.registerBlock(Blocks.SharpnetPlantsBlocks2, SharpnetPlantsItemBlocks2.class, "SharpnetPlantsBlocks2");
@@ -770,7 +776,7 @@ public class ModSharpnet
         Blocks.drinks1_block = new SharpnetDrinksBlocks1(Blocks.drinks1_block_ID).setUnlocalizedName("SharpnetDrinksBlocks1");
         GameRegistry.registerBlock(Blocks.drinks1_block, SharpnetDrinksItemBlocks1.class, Blocks.drinks1_block.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 0), "Beer");
-        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 1), "Wine");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 1), "Wine Red");
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 2), "Cofee");
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 3), "Whiskey");
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 4), "Tequilla Silver");
@@ -781,10 +787,15 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 9), "Hot Chocolate");
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 10), "Honey");
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 11), "Catchup");
-        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 12), "Glass of Vine");
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 12), "Glass of red Vine");
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 13), "Vodka");
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 14), "CocaCola");
         LanguageRegistry.addName(new ItemStack(Blocks.drinks1_block, 1, 15), "Bottle");
+        
+        //Blocks Alcohol
+        Blocks.drinks2_block = new SharpnetDrinksBlocks1(Blocks.drinks2_block_ID).setUnlocalizedName("SharpnetDrinksBlocks2");
+        GameRegistry.registerBlock(Blocks.drinks2_block, SharpnetDrinksItemBlocks2.class, Blocks.drinks2_block.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.drinks2_block, 1, 0), "Wine White");
         
         //Blocks Food
         Blocks.food1_block = new SharpnetFoodBlocks1(Blocks.food1_block_ID).setUnlocalizedName("SharpnetFoodBlocks1");
@@ -1014,8 +1025,8 @@ public class ModSharpnet
         Blocks.deco1_block = new SharpnetDecoBlocks1(Blocks.deco1_block_ID).setUnlocalizedName("SharpnetDecorationBlocks");
         GameRegistry.registerBlock(Blocks.deco1_block, SharpnetDecoItemBlocks1.class, Blocks.deco1_block.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 0), "Barell");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 1), "Barell of Vine");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 2), "Hay Stack");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 1), "Barell of red Vine");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 2), "Barell of white Vine");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 3), "Money Pallet 10E");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 4), "Money Pallet 100E");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 5), "Money Pallet 1000E");
@@ -1023,6 +1034,7 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 7), "Roulette table - Red");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 8), "Roulette table - Black");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 9), "Roulette table");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 10), "Hay Stack");
         
         SharpnetTilesSlabBlocks1 = new SharpnetTilesSlabBlocks1(SharpnetTilesSlabBlocks1ID, false, Material.rock);
         GameRegistry.registerBlock(SharpnetTilesSlabBlocks1, SharpnetTilesItemSlabBlocks1.class, "TilesSlabBlocks1");
@@ -1231,6 +1243,14 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.grape_red, "Grape Red");
         LanguageRegistry.addName(new ItemStack(Items.grape_red, 1, 0), "Grape Red");
         
+        Items.grape_white_seeds = new ShItemSeeds(Items.grape_white_seeds_ID, Blocks.SharpnetPlantsBlocks2.blockID, Block.tilledField.blockID, 6).setUnlocalizedName("SharpnetGrapeWhiteSeedsItem").setTextureName(modid+":seeds/seeds_grape_white");
+        GameRegistry.registerItem(Items.grape_white_seeds, "Grape White Seeds");
+        LanguageRegistry.addName(new ItemStack(Items.grape_white_seeds, 1, 0), "Grape White Seeds");
+        
+        Items.grape_white = new ShItemFood(Items.grape_red_ID, 3 , 0.2F, false ).setUnlocalizedName("grape_white").setTextureName(modid+":food/grape_white");
+        GameRegistry.registerItem(Items.grape_white, "Grape White");
+        LanguageRegistry.addName(new ItemStack(Items.grape_white, 1, 0), "Grape White");
+        
         Items.bottle_of_milk = new ShItemFood(Items.bottle_of_milk_ID, 4 , 1.0F, false ).setUnlocalizedName("bottle_of_milk").setTextureName(modid+":drinks&food/milk_bottle");
         GameRegistry.registerItem(Items.bottle_of_milk, "Bottle of Milk");
         LanguageRegistry.addName(new ItemStack(Items.bottle_of_milk, 1, 0), "Bottle of Milk");
@@ -1308,9 +1328,13 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.beer, "Beer");
         LanguageRegistry.addName(new ItemStack(Items.beer, 1, 0), "Beer");
         
-        Items.wine = new ShItemFoodPlacer1(Items.wine_ID, 10, 3.0F, false, Blocks.drinks1_block.blockID, 1, 2, 60).setUnlocalizedName("Wine").setTextureName(modid+":drinks&food/wine");
-        GameRegistry.registerItem(Items.wine, "Wine");
-        LanguageRegistry.addName(new ItemStack(Items.wine, 1, 0), "Wine");
+        Items.wine_red = new ShItemFoodPlacer1(Items.wine_red_ID, 10, 3.0F, false, Blocks.drinks1_block.blockID, 1, 2, 60).setUnlocalizedName("Wine_red").setTextureName(modid+":drinks&food/wine_red");
+        GameRegistry.registerItem(Items.wine_red, "Wine Red");
+        LanguageRegistry.addName(new ItemStack(Items.wine_red, 1, 0), "Wine Red");
+        
+        Items.wine_white = new ShItemFoodPlacer1(Items.wine_white_ID, 10, 3.0F, false, Blocks.drinks1_block.blockID, 1, 0, 60).setUnlocalizedName("Wine_white").setTextureName(modid+":drinks&food/wine_white");
+        GameRegistry.registerItem(Items.wine_white, "Wine White");
+        LanguageRegistry.addName(new ItemStack(Items.wine_white, 1, 0), "Wine White");
         
         Items.cofee = new ShItemFoodPlacer1(Items.cofee_ID, 3, 0.5F, false, Blocks.drinks1_block.blockID, 2, 1, 40).setUnlocalizedName("Cofee").setTextureName(modid+":drinks&food/cofee");
         GameRegistry.registerItem(Items.cofee, "Cofee");
@@ -1352,9 +1376,13 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.catchup, "Catchup");
         LanguageRegistry.addName(new ItemStack(Items.catchup, 1, 0), "Catchup");
         
-        Items.glass_of_vine = new ShItemFoodPlacer1(Items.glass_of_vine_ID, 2, 0.8F, false, Blocks.drinks1_block.blockID, 12, 2, 15).setUnlocalizedName("Glass_of_vine").setTextureName(modid+":drinks&food/glass_of_vine");
-        GameRegistry.registerItem(Items.glass_of_vine, "Glass of vine");
-        LanguageRegistry.addName(new ItemStack(Items.glass_of_vine, 1, 0), "Glass of vine");
+        Items.glass_of_red_vine = new ShItemFoodPlacer1(Items.glass_of_red_vine_ID, 2, 0.8F, false, Blocks.drinks1_block.blockID, 12, 2, 15).setUnlocalizedName("Glass_of_red_vine").setTextureName(modid+":drinks&food/glass_of_red_vine");
+        GameRegistry.registerItem(Items.glass_of_red_vine, "Glass of red vine");
+        LanguageRegistry.addName(new ItemStack(Items.glass_of_red_vine, 1, 0), "Glass of red vine");
+        
+        Items.glass_of_white_vine = new ShItemFoodPlacer1(Items.glass_of_white_vine_ID, 2, 0.8F, false, Blocks.drinks2_block.blockID, 12, 0, 15).setUnlocalizedName("Glass_of_white_vine").setTextureName(modid+":drinks&food/glass_of_white_vine");
+        GameRegistry.registerItem(Items.glass_of_white_vine, "Glass of white vine");
+        LanguageRegistry.addName(new ItemStack(Items.glass_of_white_vine, 1, 0), "Glass of white vine");
         
         Items.vodka = new ShItemFoodPlacer1(Items.vodka_ID, 6, 1.0F, false, Blocks.drinks1_block.blockID, 13, 2, 5).setUnlocalizedName("Vodka").setTextureName(modid+":drinks&food/vodka");
         GameRegistry.registerItem(Items.vodka, "Vodka");
@@ -1384,9 +1412,13 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.barrel, "Barrel");
         LanguageRegistry.addName(new ItemStack(Items.barrel, 1, 0), "Barrel");
         
-        Items.barrel_of_wine = (new ShItemPlacer(Items.barrel_of_wine_ID, Blocks.deco1_block.blockID,1).setUnlocalizedName("barrel_of_wine").setTextureName(modid+":resources/barrel_of_wine").setCreativeTab(CreativeTabs.tabDecorations));
-        GameRegistry.registerItem(Items.barrel_of_wine, "Barrel of Wine");
-        LanguageRegistry.addName(new ItemStack(Items.barrel_of_wine, 1, 0), "Barrel of Wine");
+        Items.barrel_of_wine_red = (new ShItemPlacer(Items.barrel_of_wine_red_ID, Blocks.deco1_block.blockID,1).setUnlocalizedName("barrel_of_wine_red").setTextureName(modid+":resources/barrel_of_wine").setCreativeTab(CreativeTabs.tabDecorations));
+        GameRegistry.registerItem(Items.barrel_of_wine_red, "Barrel of Wine Red");
+        LanguageRegistry.addName(new ItemStack(Items.barrel_of_wine_red, 1, 0), "Barrel of Wine Red");
+        
+        Items.barrel_of_wine_white = (new ShItemPlacer(Items.barrel_of_wine_white_ID, Blocks.deco1_block.blockID,2).setUnlocalizedName("barrel_of_wine").setTextureName(modid+":resources/barrel_of_wine").setCreativeTab(CreativeTabs.tabDecorations));
+        GameRegistry.registerItem(Items.barrel_of_wine_white, "Barrel of Wine White");
+        LanguageRegistry.addName(new ItemStack(Items.barrel_of_wine_white, 1, 0), "Barrel of Wine White");
         
         Items.test_tube = (new Item(Items.test_tube_ID).setUnlocalizedName("test_tube").setTextureName(modid+":drinks&food/test_tube").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.test_tube, "Test Tube");

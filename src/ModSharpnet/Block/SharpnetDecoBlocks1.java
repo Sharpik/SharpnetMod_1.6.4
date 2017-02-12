@@ -43,7 +43,8 @@ public class SharpnetDecoBlocks1 extends Block
         switch(par6)
         {
             case 0: dropID = Items.barrel.itemID; dropMeta = 0; break;
-            case 1: dropID = Items.barrel_of_wine.itemID; dropMeta = 0; break;
+            case 1: dropID = Items.barrel_of_wine_red.itemID; dropMeta = 0; break;
+            case 2: dropID = Items.barrel_of_wine_white.itemID; dropMeta = 0; break;
             default: dropID = par5; dropMeta = par6; break;
         }
         
@@ -62,7 +63,8 @@ public class SharpnetDecoBlocks1 extends Block
         {
             case 0: { return 1.0F; }
             case 1: { return 1.0F; }
-            case 2: { return 0.5F; }
+            case 2: { return 1.0F; }
+            case 10: { return 0.5F; }
             default: { return this.blockHardness; }
         }
     }
@@ -138,7 +140,14 @@ public class SharpnetDecoBlocks1 extends Block
                 }
                 case 2:
                 {
-                    icons[i] = par1.registerIcon(modid+":others/haystack");isSided[i]=false;break;
+                    isSided[i] = true;
+                    // TOP
+                    topIcon[i] = par1.registerIcon(modid+":others/barell2_top");
+                    // BOTTOM
+                    bottomIcon[i] = par1.registerIcon(modid+":others/barell_top");
+                    // SIDES
+                    sideIcon[i] = par1.registerIcon(modid+":others/barell2_side");
+                    break;
                 }
                 case 3:
                 {
@@ -217,8 +226,11 @@ public class SharpnetDecoBlocks1 extends Block
                     sideIcon[i] = par1.registerIcon(modid+":others/roulette_side");
                     break;
                 }
+                case 10:
+                {
+                    icons[i] = par1.registerIcon(modid+":others/haystack");isSided[i]=false;break;
+                }
                 /*
-                case 10:{icons[i] = par1.registerIcon(modid+":walls_trowel/blockWall.purple");isSided[i]=false;break;}
                 case 11:{icons[i] = par1.registerIcon(modid+":walls_trowel/blockWall.blue");isSided[i]=false;break;}
                 case 12:{icons[i] = par1.registerIcon(modid+":walls_trowel/blockWall.brown");isSided[i]=false;break;}
                 case 13:{icons[i] = par1.registerIcon(modid+":walls_trowel/blockWall.green");isSided[i]=false;break;}

@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 public class SharpnetDrinksBlocks1 extends Block
 {
     
-    public static final String[] drinkTypes = new String[] {"beer", "wine", "cofee", "whiskey", "tequilla_s", "tequilla_g", "rum", "semtex", "tea_cup", "chocolate_hot", "honey", "catchup", "glass_of_vine", "vodka", "cocacola", "bottle"};
+    public static final String[] drinkTypes = new String[] {"beer", "wine red", "cofee", "whiskey", "tequilla_s", "tequilla_g", "rum", "semtex", "tea_cup", "chocolate_hot", "honey", "catchup", "glass_of_red_vine", "vodka", "cocacola", "bottle"};
     
     @SideOnly(Side.CLIENT)
     public Icon[] iconArray;
@@ -71,7 +71,7 @@ public class SharpnetDrinksBlocks1 extends Block
         switch(blockMetaData)
         {
             case 0: dropID = Items.beer.itemID; break;
-            case 1: dropID = Items.wine.itemID; break;
+            case 1: dropID = Items.wine_red.itemID; break;
             case 2: dropID = Items.cofee.itemID; break;
             case 3: dropID = Items.whiskey.itemID; break;
             case 4: dropID = Items.tequilla_silver.itemID; break;
@@ -82,7 +82,7 @@ public class SharpnetDrinksBlocks1 extends Block
             case 9: dropID = Items.hot_chocolate.itemID; break;
             case 10: dropID = Items.honey.itemID; break;
             case 11: dropID = Items.catchup.itemID; break;
-            case 12: dropID = Items.glass_of_vine.itemID; break;
+            case 12: dropID = Items.glass_of_red_vine.itemID; break;
             case 13: dropID = Items.vodka.itemID; break;
             case 14: dropID = Items.cocacola.itemID; break;
             case 15: dropID = Items.bottle.itemID; break;
