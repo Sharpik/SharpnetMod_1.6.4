@@ -40,6 +40,31 @@ public class SharpnetGlassBlock extends Block
             if(this.BlocksInfo[i][1] != null) { this.glassTypes[i] = this.BlocksInfo[i][1]; } else { this.glassTypes[i] = "Error"; }
         }
     }
+    
+    @Override
+    public int getRenderBlockPass()
+    {
+        return 0;
+    }
+    
+    @Override
+    public boolean isOpaqueCube()
+    {
+        return false;
+    }
+    
+    @Override
+    public boolean renderAsNormalBlock()
+    {
+        return false;
+    }
+    
+    @Override
+    protected boolean canSilkHarvest()
+    {
+        return true;
+    }
+    
     @Override
     public int idDropped (int par1, Random par2Random, int par3)
     {
@@ -55,7 +80,7 @@ public class SharpnetGlassBlock extends Block
     @Override
     public int quantityDropped(Random par1Random)
     {
-        return 1;
+        return 0;
     }
     
     @Override
