@@ -190,6 +190,12 @@ public class RecipesFood
         //Recipe Glass of Vine White
          GameRegistry.addShapelessRecipe(new ItemStack(Items.glass_of_white_vine, 3,0), new ItemStack(Items.wine_white, 1, 0));
         
+        //Recipe Cocacola
+        GameRegistry.addRecipe(new ItemStack(Items.cocacola,0,0), new Object[]
+        {
+            "SCS",
+            'S', new ItemStack(Items.liquid_sugar,1,0), 'C', new ItemStack(Items.cofee_beans,1,0)
+        });
         
         //Recipe Gingerbread Dought
         GameRegistry.addShapelessRecipe(new ItemStack(Items.gingerbread_dough, 8,0), new ItemStack(Items.dough, 1, 0), new ItemStack(Items.honey, 1, 0), new ItemStack(Item.dyePowder, 1, 3) );
