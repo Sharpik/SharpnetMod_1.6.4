@@ -1332,7 +1332,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.wine_red, "Wine Red");
         LanguageRegistry.addName(new ItemStack(Items.wine_red, 1, 0), "Wine Red");
         
-        Items.wine_white = new ShItemFoodPlacer(Items.wine_white_ID, 10, 3.0F, false, Blocks.drinks2_block.blockID, 1, 0, 60).setUnlocalizedName("Wine_white").setTextureName(modid+":drinks&food/wine_white");
+        Items.wine_white = new ShItemFoodPlacer(Items.wine_white_ID, 10, 3.0F, false, Blocks.drinks2_block.blockID, 0, 2, 60).setUnlocalizedName("Wine_white").setTextureName(modid+":drinks&food/wine_white");
         GameRegistry.registerItem(Items.wine_white, "Wine White");
         LanguageRegistry.addName(new ItemStack(Items.wine_white, 1, 0), "Wine White");
         
@@ -1380,7 +1380,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.glass_of_red_vine, "Glass of red vine");
         LanguageRegistry.addName(new ItemStack(Items.glass_of_red_vine, 1, 0), "Glass of red vine");
         
-        Items.glass_of_white_vine = new ShItemFoodPlacer(Items.glass_of_white_vine_ID, 2, 0.8F, false, Blocks.drinks2_block.blockID, 0, 2, 15).setUnlocalizedName("Glass_of_white_vine").setTextureName(modid+":drinks&food/glass_of_vine_white");
+        Items.glass_of_white_vine = new ShItemFoodPlacer(Items.glass_of_white_vine_ID, 2, 0.8F, false, Blocks.drinks2_block.blockID, 1, 2, 15).setUnlocalizedName("Glass_of_white_vine").setTextureName(modid+":drinks&food/glass_of_vine_white");
         GameRegistry.registerItem(Items.glass_of_white_vine, "Glass of white vine");
         LanguageRegistry.addName(new ItemStack(Items.glass_of_white_vine, 1, 0), "Glass of white vine");
         
