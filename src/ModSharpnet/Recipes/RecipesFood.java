@@ -180,7 +180,7 @@ public class RecipesFood
             'G', Items.grape_white, 'B', new ItemStack(Items.barrel,2,0)
         });
         //Recipe Bottle of Vine White
-        GameRegistry.addRecipe(new ItemStack(Items.wine_white,0,0), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Items.wine_white,1,0), new Object[]
         {
             "G G",
             "GBG",
@@ -191,7 +191,7 @@ public class RecipesFood
          GameRegistry.addShapelessRecipe(new ItemStack(Items.glass_of_white_vine, 3,0), new ItemStack(Items.wine_white, 1, 0));
         
         //Recipe Cocacola
-        GameRegistry.addRecipe(new ItemStack(Items.cocacola,0,0), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Items.cocacola,1,0), new Object[]
         {
             "SCS",
             'S', new ItemStack(Items.liquid_sugar,1,0), 'C', new ItemStack(Items.cofee_beans,1,0)
