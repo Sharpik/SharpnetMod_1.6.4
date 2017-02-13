@@ -1793,6 +1793,7 @@ public class ModSharpnet
         RecipesCobblestone.register();
         RecipesMetals.register();
         RecipesPanels.register();
+        RecipesWindows.register();
         RecipesIC2Machines.register();
         
         GameRegistry.registerFuelHandler(new Fuels());
