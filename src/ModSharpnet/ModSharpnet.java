@@ -1055,9 +1055,9 @@ public class ModSharpnet
         
         Blocks.deco1_block = new SharpnetDecoBlocks1(Blocks.deco1_block_ID).setUnlocalizedName("SharpnetDecorationBlocks");
         GameRegistry.registerBlock(Blocks.deco1_block, SharpnetDecoItemBlocks1.class, Blocks.deco1_block.getUnlocalizedName());
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 0), "Barell");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 1), "Barell of red Vine");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 2), "Barell of white Vine");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 0), "Barrel");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 1), "Barrel of red Vine");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 2), "Barrel of white Vine");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 3), "Money Pallet 10E");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 4), "Money Pallet 100E");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 5), "Money Pallet 1000E");
@@ -1443,11 +1443,11 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.barrel, "Barrel");
         LanguageRegistry.addName(new ItemStack(Items.barrel, 1, 0), "Barrel");
         
-        Items.barrel_of_wine_red = (new ShItemPlacer(Items.barrel_of_wine_red_ID, Blocks.deco1_block.blockID,1).setUnlocalizedName("barrel_of_wine_red").setTextureName(modid+":resources/barrel_of_wine").setCreativeTab(CreativeTabs.tabDecorations));
+        Items.barrel_of_wine_red = (new ShItemPlacer(Items.barrel_of_wine_red_ID, Blocks.deco1_block.blockID,1).setUnlocalizedName("barrel_of_wine_red").setTextureName(modid+":resources/barrel_of_wine_red").setCreativeTab(CreativeTabs.tabDecorations));
         GameRegistry.registerItem(Items.barrel_of_wine_red, "Barrel of Wine Red");
         LanguageRegistry.addName(new ItemStack(Items.barrel_of_wine_red, 1, 0), "Barrel of Wine Red");
         
-        Items.barrel_of_wine_white = (new ShItemPlacer(Items.barrel_of_wine_white_ID, Blocks.deco1_block.blockID,2).setUnlocalizedName("barrel_of_wine").setTextureName(modid+":resources/barrel_of_wine").setCreativeTab(CreativeTabs.tabDecorations));
+        Items.barrel_of_wine_white = (new ShItemPlacer(Items.barrel_of_wine_white_ID, Blocks.deco1_block.blockID,2).setUnlocalizedName("barrel_of_wine").setTextureName(modid+":resources/barrel_of_wine_white").setCreativeTab(CreativeTabs.tabDecorations));
         GameRegistry.registerItem(Items.barrel_of_wine_white, "Barrel of Wine White");
         LanguageRegistry.addName(new ItemStack(Items.barrel_of_wine_white, 1, 0), "Barrel of Wine White");
         

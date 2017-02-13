@@ -135,7 +135,7 @@ public class SharpnetDecoBlocks1 extends Block
                     // BOTTOM
                     bottomIcon[i] = par1.registerIcon(modid+":others/barell_top");
                     // SIDES
-                    sideIcon[i] = par1.registerIcon(modid+":others/barell2_side");
+                    sideIcon[i] = par1.registerIcon(modid+":others/barell2_side_red");
                     break;
                 }
                 case 2:
@@ -146,7 +146,7 @@ public class SharpnetDecoBlocks1 extends Block
                     // BOTTOM
                     bottomIcon[i] = par1.registerIcon(modid+":others/barell_top");
                     // SIDES
-                    sideIcon[i] = par1.registerIcon(modid+":others/barell2_side");
+                    sideIcon[i] = par1.registerIcon(modid+":others/barell2_side_white");
                     break;
                 }
                 case 3:
