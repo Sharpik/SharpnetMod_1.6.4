@@ -192,7 +192,7 @@ public class ModSharpnet
         WorldGenFlowers = config.get("boolean", "WorldGenFlowers", false).getBoolean(false);
         
         //Blocks ID
-        Blocks.SharpnetOreBlocks1ID = config.get("Blocks", "SharpnetOreBlocks1", 2505).getInt();
+        Blocks.SharpnetWindowsBlocks1_ID = config.get("Blocks", "SharpnetWindowsBlocks1", 2505).getInt();
         SharpnetBuildingBlocks1ID = config.get("Blocks", "SharpnetBuildingBlocks1", 3143).getInt();
         SharpnetCarpetsBlocks1ID = config.get("Blocks", "SharpnetCarpetsBlocks1", 3139).getInt();
         SharpnetCarpetsBlocks2ID = config.get("Blocks", "SharpnetCarpetsBlocks2", 3140).getInt();
@@ -468,11 +468,42 @@ public class ModSharpnet
         
         
         //Sharpnet Blocks
-        Blocks.SharpnetOreBlocks1 = new SharpnetOreBlocks1(Blocks.SharpnetOreBlocks1ID);
-        GameRegistry.registerBlock(Blocks.SharpnetOreBlocks1, SharpnetOreItemBlocks1.class, Blocks.SharpnetOreBlocks1.getUnlocalizedName());
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetOreBlocks1, 1, 0), "SharpNet Ore Block 1");
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetOreBlocks1, 1, 1), "SharpNet Ore Block 2");
-
+        Blocks.SharpnetWindowsBlocks1 = new SharpnetGlassBlock(Blocks.SharpnetWindowsBlocks1_ID, new String[][]
+        {
+            {"wind_type_1_white","windows/wind_type_1_white"},
+            {"wind_type_1_black","windows/wind_type_1_black"},
+            {"wind_type_1_blue","windows/wind_type_1_blue"},
+            {"wind_type_1_blue_light","windows/wind_type_1_blue_light"},
+            {"wind_type_1_brown","windows/wind_type_1_brown"},
+            {"wind_type_1_brown_light","windows/wind_type_1_brown_light"},
+            {"wind_type_1_green","windows/wind_type_1_green"},
+            {"wind_type_1_orange","windows/wind_type_1_orange"},
+            {"wind_type_1_red","windows/wind_type_1_red"},
+            {"wind_type_1_yellow","windows/wind_type_1_yellow"},
+            {"wind_type_2_white","windows/wind_type_2_white"},
+            {"wind_type_3_white","windows/wind_type_3_white"},
+            {"wind_type_6","windows/wind_type_6"},
+            {"wind_type_7","windows/wind_type_7"},
+            {"wind_type_8","windows/wind_type_8"},
+            {"wind_type_9","windows/wind_type_9"}
+        }).setUnlocalizedName("SharpnetWindowsBlocks1").setHardness(0.3F).setResistance(0.1F).setCreativeTab(CreativeTabs.tabDecorations);
+        GameRegistry.registerBlock(Blocks.SharpnetWindowsBlocks1, SharpnetGlassItemBlocks.class, Blocks.SharpnetWindowsBlocks1.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 0), "Window type 1 white");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 1), "Window type 1 black");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 2), "Window type 1 blue");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 3), "Window type 1 light blue");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 4), "Window type 1 brown");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 5), "Window type 1 light brown");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 6), "Window type 1 green");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 7), "Window type 1 orange");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 8), "Window type 1 red");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 9), "Window type 1 yellow");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 10), "Window type 2 white");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 11), "Window type 3 white");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 12), "Window type 6");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 13), "Window type 7");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 14), "Window type 8");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetWindowsBlocks1, 1, 15), "Window type 9");
         
         SharpnetBuildingBlocks1 = new SharpnetBuildingBlocks1(SharpnetBuildingBlocks1ID, "sharpnetbuildingblock1");
         GameRegistry.registerBlock(SharpnetBuildingBlocks1, SharpnetBuildingItemBlocks1.class, "SharpnetBuildingBlocks1");

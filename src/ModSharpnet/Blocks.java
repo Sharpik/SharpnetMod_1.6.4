@@ -5,8 +5,8 @@ import net.minecraft.block.Block;
 public class Blocks
 {
     
-    public static Block SharpnetOreBlocks1;
-    public static int SharpnetOreBlocks1ID;
+    public static Block SharpnetWindowsBlocks1;
+    public static int SharpnetWindowsBlocks1_ID;
     
     public static Block SharpnetPlantsBlocks2;
     public static int SharpnetPlantsBlocks2ID;
