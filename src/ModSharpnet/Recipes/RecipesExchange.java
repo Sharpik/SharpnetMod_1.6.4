@@ -31,5 +31,14 @@ public class RecipesExchange
             'C', new ItemStack(ic2.api.item.Items.getItem("coalfuelCell").getItem(),1,8)
         });
         
+        //Wrench
+        GameRegistry.addRecipe(new ItemStack(ic2.api.item.Items.getItem("wrench").getItem(),1,0), new Object[]
+        {
+            "S S",
+            "SSS",
+            " S ",
+            'S', new ItemStack(Items.IngotSteel,1,0)
+        });
+        
     } 
 }
