@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 public class SharpnetElectro1Block extends Block
 {
     
-    public static final String[] Types = new String[] {"mixer", "cofee_machine", "kettle"};
+    public static final String[] Types = new String[] {"mixer", "cofee_machine", "kettle", "color_extractor"};
     
     @SideOnly(Side.CLIENT)
     public Icon[] iconArray;
@@ -51,47 +51,175 @@ public class SharpnetElectro1Block extends Block
             itemInHandMeta = par5EntityPlayer.getCurrentEquippedItem().getItemDamage();
             BlockMeta = par1World.getBlockMetadata(par2, par3, par4);
         }
-        else {itemInHandID = 0; itemInHandMeta = 0;}
+        else {itemInHandID = 0; itemInHandMeta = 0; BlockMeta = par1World.getBlockMetadata(par2, par3, par4);}
         
-        if ( (itemInHandID == Items.tea_leaves.itemID) && (itemInHandMeta == 0) )
+        if(itemInHandID != 0)
         {
+            //cofee_machine
+            if(BlockMeta == 1)
+            {
+                if(itemInHandID == Items.cofee_beans.itemID)
+                {
+                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Items.cofee,1));
+                    damageItemInHands(par5EntityPlayer);
+                }
+                
+                if( (itemInHandID == Item.dyePowder.itemID) && (itemInHandMeta == 3) )
+                {
+                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Items.hot_chocolate,1));
+                    damageItemInHands(par5EntityPlayer);
+                }
+            }
+            
+            //kettle
             if(BlockMeta == 2)
             {
-                spawnItem(par5EntityPlayer, par1World, par2, par3, par4, Items.tea_leaves, Items.cup_of_tea, 0, 1);
+                if(itemInHandID == Items.tea_leaves.itemID)
+                {
+                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Items.cup_of_tea,1));
+                    damageItemInHands(par5EntityPlayer);
+                }
             }
-        }
-        if ( (itemInHandID == Items.cofee_beans.itemID) && (itemInHandMeta == 0) )
-        {
-            if(BlockMeta == 1)
+            
+            //color_extractor
+            if(BlockMeta == 3)
             {
-                spawnItem(par5EntityPlayer, par1World, par2, par3, par4, Items.cofee_beans, Items.cofee, 0, 1);
+                // Black
+                if(itemInHandID == Item.coal.itemID)
+                {
+                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,0));
+                    damageItemInHands(par5EntityPlayer);
+                }
+                
+                // Green
+                if(itemInHandID == Block.grass.blockID)
+                {
+                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,2));
+                    damageItemInHands(par5EntityPlayer);
+                }
+                
+                // Wool
+                if(itemInHandID == Block.cloth.blockID)
+                {
+                    if(itemInHandMeta == 0)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,15));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 1)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,14));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 2)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,13));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 3)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,12));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 4)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,11));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 5)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,10));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 6)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,9));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 7)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,8));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 8)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,7));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 9)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,6));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 10)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,5));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 11)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,4));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 12)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,3));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 13)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,2));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 14)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,1));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                    if(itemInHandMeta == 15)
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,0));
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                }
             }
+            
         }
-        if ( (itemInHandID == Item.dyePowder.itemID) && (itemInHandMeta == 3) )
-        {
-            if(BlockMeta == 1)
-            {
-                spawnItem(par5EntityPlayer, par1World, par2, par3, par4, Item.dyePowder, Items.hot_chocolate, 3, 1);
-            }
-        }
+        
         
     }
     
-    public void spawnItem(EntityPlayer par5EntityPlayer, World par1World,int x,int y,int z, Item ItemIn, Item ItemOut, int ItemInMeta , int ItemNum)
+    public void spawnItem(EntityPlayer par5EntityPlayer, World par1World,int x,int y,int z, ItemStack Item)
     {
-        damageItemInHands(par5EntityPlayer,ItemIn.itemID, ItemInMeta);
-        ItemStack Itemspawn1 = new ItemStack(ItemOut,ItemNum);
-        EntityItem Ispawn1 = new EntityItem(par1World,x,y,z,Itemspawn1);
+        EntityItem Ispawn1 = new EntityItem(par1World,x,y,z,Item);
         if (!par1World.isRemote)
         {
             par1World.spawnEntityInWorld(Ispawn1);
         }
     }
     
-    public void damageItemInHands(EntityPlayer par5EntityPlayer, int id, int meta)
+    public void damageItemInHands(EntityPlayer par5EntityPlayer)
     {
-        if (id == 0){par5EntityPlayer.inventory.setInventorySlotContents(par5EntityPlayer.inventory.currentItem, (ItemStack)null);}
-        else
+        itemInHandID = par5EntityPlayer.getCurrentEquippedItem().itemID;
+        itemInHandMeta = par5EntityPlayer.getCurrentEquippedItem().getItemDamage();
+        
+        //if (ItemS.itemID == 0){par5EntityPlayer.inventory.setInventorySlotContents(par5EntityPlayer.inventory.currentItem, (ItemStack)null);}
+        if(itemInHandID != 0)
         {
             par5EntityPlayer.inventory.decrStackSize(par5EntityPlayer.inventory.currentItem, 1);
         }

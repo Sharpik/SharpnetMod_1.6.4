@@ -1042,6 +1042,7 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.electro1_block, 1, 0), "Mixer");
         LanguageRegistry.addName(new ItemStack(Blocks.electro1_block, 1, 1), "Cofee Machine");
         LanguageRegistry.addName(new ItemStack(Blocks.electro1_block, 1, 2), "Electric Kettle");
+        LanguageRegistry.addName(new ItemStack(Blocks.electro1_block, 1, 3), "Color Extractor");
         
         Blocks.SharpnetMoneyBlock = new SharpnetMoneyBlock(Blocks.SharpnetMoneyBlock_ID).setUnlocalizedName("SharpnetMoneyBlock");
         GameRegistry.registerBlock(Blocks.SharpnetMoneyBlock, SharpnetMoneyItemBlock.class, Blocks.SharpnetMoneyBlock.getUnlocalizedName());
