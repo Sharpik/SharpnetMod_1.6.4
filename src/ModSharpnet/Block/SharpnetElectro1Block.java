@@ -1,6 +1,9 @@
 package ModSharpnet.Block;
 
+import ModSharpnet.Blocks;
 import ModSharpnet.Items;
+import static ModSharpnet.ModSharpnet.ModProjectRed;
+import static ModSharpnet.ModSharpnet.SharpnetFlowerBlocks1ID;
 import static ModSharpnet.ModSharpnet.modid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -90,9 +93,60 @@ public class SharpnetElectro1Block extends Block
                     spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,0));
                     damageItemInHands(par5EntityPlayer);
                 }
+                if(ModProjectRed)
+                {
+                    // Basalt to Black
+                    if( (itemInHandID == Blocks.PR_block_stonesID) && ((itemInHandMeta == 1) || (itemInHandMeta == 3)) )
+                    {
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,0));
+                        damageItemInHands(par5EntityPlayer);
+                    }
+                }
+                
+                // Red
+                if(itemInHandID == Item.redstone.itemID)
+                {
+                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,1));
+                    damageItemInHands(par5EntityPlayer);
+                }
+                
+                // Brown
+                if(itemInHandID == Block.wood.blockID)
+                {
+                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,3));
+                    damageItemInHands(par5EntityPlayer);
+                }
+                
+                // Blue from Fuschia Flower
+                if( (itemInHandID == SharpnetFlowerBlocks1ID) && (itemInHandMeta == 2) )
+                {
+                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,4));
+                    damageItemInHands(par5EntityPlayer);
+                }
+                
+                // Yellow
+                if(itemInHandID == Block.sand.blockID)
+                {
+                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,11));
+                    damageItemInHands(par5EntityPlayer);
+                }
+                
+                // Gray
+                if(itemInHandID == Block.gravel.blockID)
+                {
+                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,8));
+                    damageItemInHands(par5EntityPlayer);
+                }
+                
+                // Lime
+                if(itemInHandID == Block.reed.blockID)
+                {
+                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,10));
+                    damageItemInHands(par5EntityPlayer);
+                }
                 
                 // Green
-                if(itemInHandID == Block.grass.blockID)
+                if( (itemInHandID == Block.grass.blockID) || (itemInHandID == Block.leaves.blockID) )
                 {
                     spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,2));
                     damageItemInHands(par5EntityPlayer);
