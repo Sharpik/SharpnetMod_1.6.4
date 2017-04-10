@@ -96,7 +96,7 @@ public class SharpnetElectro1Block extends Block
                 if(ModProjectRed)
                 {
                     // Basalt to Black
-                    if( (itemInHandID == Blocks.PR_block_stonesID) && ((itemInHandMeta == 1) || (itemInHandMeta == 3)) )
+                    if( (itemInHandID == Blocks.PR_block_stonesID) && ((itemInHandMeta == 2) || (itemInHandMeta == 3)) )
                     {
                         spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,0));
                         damageItemInHands(par5EntityPlayer);

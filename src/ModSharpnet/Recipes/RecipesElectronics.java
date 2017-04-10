@@ -39,6 +39,15 @@ public class RecipesElectronics
             'W', new ItemStack(Block.cloth,1,15), 'B', new ItemStack(ic2.api.item.Items.getItem("reBattery").getItem(),1,0), 'C', new ItemStack(ic2.api.item.Items.getItem("ironCableItem").getItem(),1,5)
         });
         
+        //Recipe Color Extractor
+        GameRegistry.addRecipe(new ItemStack(Blocks.electro1_block,1,3), new Object[]
+        {
+            "WWW",
+            "WBW",
+            "WWW",
+            'W', new ItemStack(Block.cloth,1,8), 'B', new ItemStack(ic2.api.item.Items.getItem("reBattery").getItem(),1,0)
+        });
+        
         //Reload for Throwel
         //GameRegistry.addShapelessRecipe(new ItemStack(Items.trowel,1,16), new ItemStack(Items.trowel,1,Short.MAX_VALUE), Item.clay);
     } 
