@@ -104,6 +104,25 @@ public class RecipesClothArmor
             " C ",
             'C', Items.cloth_white
         });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_tshirt_red,1,0), new Object[]
+        {
+            " C ",
+            "CCC",
+            " C ",
+            'C', Items.cloth_red
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_skirt_purple,1,0), new Object[]
+        {
+            "CBC",
+            "BCB",
+            'C', Items.cloth_red,'B', Items.cloth_blue
+        });
+        GameRegistry.addRecipe(new ItemStack(Items.armor_skirt_green,1,0), new Object[]
+        {
+            "CCC",
+            "CCC",
+            'C', Items.cloth_green
+        });
         GameRegistry.addRecipe(new ItemStack(Items.armor_sunglasses,1,0), new Object[]
         {
             "GWG",

@@ -143,6 +143,7 @@ public class ModSharpnet
     public static boolean ModIndustrialCraft2;
     public static boolean ModProjectRed;
     public static boolean ModBuildCraft;
+    public static boolean ModFlansMod;
     
     //public static Item 
     //public static int 
@@ -166,6 +167,7 @@ public class ModSharpnet
         ModProjectRed = config.get("boolean", "ModProjectRed", true).getBoolean(true);
         ModBuildCraft = config.get("boolean", "ModBuildCraft", true).getBoolean(true);
         ModIndustrialCraft2 = config.get("boolean", "ModIndustrialCraft2", true).getBoolean(true);
+        ModFlansMod = config.get("boolean", "ModFlansMod", true).getBoolean(true);
         
         if(ModProjectRed)
         {
@@ -181,8 +183,15 @@ public class ModSharpnet
             config_mod_BC.load();
             
             //Items
-            Items.BC_Bucket_Oil_ID = (config.get("item", "bucketOil.id", 19107).getInt())+256;
-            Items.BC_Bucket_Fuel_ID = (config.get("item", "bucketFuel.id", 19110).getInt())+256;
+            Items.BC_Bucket_Oil_ID = (config_mod_BC.get("item", "bucketOil.id", 19107).getInt())+256;
+            Items.BC_Bucket_Fuel_ID = (config_mod_BC.get("item", "bucketFuel.id", 19110).getInt())+256;
+        }
+        
+        if(ModFlansMod)
+        {
+            //Items
+            Items.FLANS_Fuel_Barrel_ID = (config.get("item", "FLANS_Fuel_Barrel", 26874).getInt())+256;
+            Items.FLANS_Fuel_Canister_ID = (config.get("item", "FLANS_Fuel_Canister", 26875).getInt())+256;
         }
         
         //Others
@@ -286,6 +295,9 @@ public class ModSharpnet
         Items.armor_tshirt_green_ID = (config.get("Items", "armor_tshirt_green", 6519).getInt())-256;
         Items.armor_tshirt_orange_ID = (config.get("Items", "armor_tshirt_orange", 6520).getInt())-256;
         Items.armor_tshirt_white_ID = (config.get("Items", "armor_tshirt_white", 6521).getInt())-256;
+        Items.armor_skirt_purple_ID = (config.get("Items", "armor_skirt_purple", 6656).getInt())-256;
+        Items.armor_skirt_green_ID = (config.get("Items", "armor_skirt_green", 6657).getInt())-256;
+        Items.armor_tshirt_red_ID = (config.get("Items", "armor_tshirt_red", 6658).getInt())-256;
         //Items Alcohol
         Items.bottle_ID = (config.get("Items", "bottle", 6522).getInt())-256;
         Items.beer_ID = (config.get("Items", "beer", 6523).getInt())-256;
@@ -1577,6 +1589,18 @@ public class ModSharpnet
         Items.armor_sunglasses = (new SharpnetArmor(Items.armor_sunglasses_ID, SharpnetArmorCloth, 0, 0, 10, "formal", "armor/sun_glass").setUnlocalizedName("sun_glass"));
         GameRegistry.registerItem(Items.armor_sunglasses, "Sunglasses");
         LanguageRegistry.addName(new ItemStack(Items.armor_sunglasses, 1, 0), "Sunglasses");
+        
+        Items.armor_skirt_purple = (new SharpnetArmor(Items.armor_skirt_purple_ID, SharpnetArmorCloth, 0, 2, 6, "skirt_purple", "armor/short").setUnlocalizedName("skirt_purple"));
+        GameRegistry.registerItem(Items.armor_trousers_black, "Skirt Purple");
+        LanguageRegistry.addName(new ItemStack(Items.armor_skirt_purple, 1, 0), "Skirt Purple");
+        
+        Items.armor_skirt_green = (new SharpnetArmor(Items.armor_skirt_green_ID, SharpnetArmorCloth, 0, 2, 6, "skirt_green", "armor/short").setUnlocalizedName("askirt_green"));
+        GameRegistry.registerItem(Items.armor_skirt_green, "Skirt Green");
+        LanguageRegistry.addName(new ItemStack(Items.armor_skirt_green, 1, 0), "Skirt Green");
+        
+        Items.armor_tshirt_red = (new SharpnetArmor(Items.armor_tshirt_red_ID, SharpnetArmorCloth, 0, 1, 10, "tshirt_red", "armor/body").setUnlocalizedName("t-shirt_red"));
+        GameRegistry.registerItem(Items.armor_tshirt_red, "T-Shirt Red");
+        LanguageRegistry.addName(new ItemStack(Items.armor_tshirt_red, 1, 0), "T-Shirt Red");
         
         //Item Tools
         Items.trowel = (new SharpnetThrowel(Items.trowel_ID).setUnlocalizedName("Throwel"));

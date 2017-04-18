@@ -27,7 +27,7 @@ public class RecipesWoodTiles
         {
             "W ",
             " W",
-            'W', new ItemStack(Block.planks,1,1)
+            'W', new ItemStack(Block.planks,1,2)
         });
         //Recipe Wood Tile Birch
         GameRegistry.addRecipe(new ItemStack(Items.wood_tile_birch,4,0), new Object[]
@@ -58,7 +58,7 @@ public class RecipesWoodTiles
         {
             "W ",
             " W",
-            'W', new ItemStack(Block.planks,1,2)
+            'W', new ItemStack(Block.planks,1,1)
         });
         //Recipe Wood Tile Jungle
         GameRegistry.addRecipe(new ItemStack(Items.wood_tile_jungle,4,0), new Object[]

@@ -69,6 +69,15 @@ public class Items
     public static Item armor_tshirt_white;
     public static int armor_tshirt_white_ID;
     
+    public static Item armor_skirt_purple;
+    public static int armor_skirt_purple_ID;
+    
+    public static Item armor_skirt_green;
+    public static int armor_skirt_green_ID;
+    
+    public static Item armor_tshirt_red;
+    public static int armor_tshirt_red_ID;
+    
     public static Item barrel;
     public static int barrel_ID;
     
@@ -583,4 +592,9 @@ public class Items
     public static int BC_Bucket_Oil_ID;
     public static int BC_Bucket_Fuel_ID;
     //public static Item BC_Bucket_Oil;
+    
+    //Flan's Mod
+    public static int FLANS_Fuel_Barrel_ID;
+    public static int FLANS_Fuel_Canister_ID;
+    
 }
