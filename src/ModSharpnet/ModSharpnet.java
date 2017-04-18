@@ -144,6 +144,7 @@ public class ModSharpnet
     public static boolean ModProjectRed;
     public static boolean ModBuildCraft;
     public static boolean ModFlansMod;
+    public static boolean ModForgeMicroPartsMod;
     
     //public static Item 
     //public static int 
@@ -168,6 +169,13 @@ public class ModSharpnet
         ModBuildCraft = config.get("boolean", "ModBuildCraft", true).getBoolean(true);
         ModIndustrialCraft2 = config.get("boolean", "ModIndustrialCraft2", true).getBoolean(true);
         ModFlansMod = config.get("boolean", "ModFlansMod", true).getBoolean(true);
+        ModForgeMicroPartsMod = config.get("boolean", "ModForgeMicroPartsMod", true).getBoolean(true);
+        
+        if(ModForgeMicroPartsMod)
+        {
+            //Items.Forge_itemMicro_id = config.get("item", "Forge_itemMicro.id", 24875).getInt();
+            Items.Forge_stoneRod_id = config.get("item", "Forge_stoneRod.id", 25135).getInt();
+        }
         
         if(ModProjectRed)
         {
@@ -176,6 +184,11 @@ public class ModSharpnet
             
             //Blocks
             Blocks.PR_block_stonesID = config_mod_PR.get("block", "block_stonesID", 0).getInt();
+            Items.PR_item_saw_gold_ID = config_mod_PR.get("item", "goldsaw", 0).getInt()+256;
+            Items.PR_peridotsaw_ID = config_mod_PR.get("item", "peridotsaw", 0).getInt()+256;
+            Items.PR_rubysaw_ID = config_mod_PR.get("item", "rubysaw", 0).getInt()+256;
+            Items.PR_sapphiresaw_ID = config_mod_PR.get("item", "sapphiresaw", 0).getInt()+256;
+            Items.PR_item_sawID = config_mod_PR.get("item", "item_sawID", 0).getInt()+256;
         }
         if(ModBuildCraft)
         {
@@ -185,13 +198,16 @@ public class ModSharpnet
             //Items
             Items.BC_Bucket_Oil_ID = (config_mod_BC.get("item", "bucketOil.id", 19107).getInt())+256;
             Items.BC_Bucket_Fuel_ID = (config_mod_BC.get("item", "bucketFuel.id", 19110).getInt())+256;
+            Items.BC_redstoneChipset_ID = (config_mod_BC.get("item", "redstoneChipset.id", 19117).getInt())+256;
+            Items.BC_pipeGateAutarchic_ID = (config_mod_BC.get("item", "pipeGateAutarchic.id", 19140).getInt())+256;
         }
         
         if(ModFlansMod)
         {
             //Items
-            Items.FLANS_Fuel_Barrel_ID = (config.get("item", "FLANS_Fuel_Barrel", 26874).getInt())+256;
-            Items.FLANS_Fuel_Canister_ID = (config.get("item", "FLANS_Fuel_Canister", 26875).getInt())+256;
+            Items.FLANS_Fuel_Barrel_ID = (config.get("item", "FLANS_Fuel_Barrel", 27130).getInt());
+            Items.FLANS_Fuel_Canister_ID = (config.get("item", "FLANS_Fuel_Canister", 27131).getInt());
+            Items.FLANS_Steel_ID = (config.get("item", "FLANS_Steel", 27000).getInt());
         }
         
         //Others
@@ -1798,6 +1814,9 @@ public class ModSharpnet
         //GameRegistry.addShapelessRecipe(TomatoSeeds, Tomato);
         
         //RecipesOreDict.register();
+        
+        RecipesRemove.unRegisterRecipes();
+        
         RecipesExchange.register();
         RecipesOld.register();
         RecipesFood.register();

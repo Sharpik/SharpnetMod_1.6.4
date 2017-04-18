@@ -586,15 +586,26 @@ public class Items
     public static final int IC2_whitePainterID = ic2.api.item.Items.getItem("whitePainter").itemID;
     public static final int IC2_CoinID = ic2.api.item.Items.getItem("coin").itemID;
     
+    //Forge Micro Parts
+    public static int Forge_itemMicro_id;
+    public static int Forge_stoneRod_id;
+    
     //Project Red
+    public static int PR_item_saw_gold_ID;
+    public static int PR_peridotsaw_ID;
+    public static int PR_rubysaw_ID;
+    public static int PR_sapphiresaw_ID;
+    public static int PR_item_sawID;
     
     //Buildcraft
     public static int BC_Bucket_Oil_ID;
     public static int BC_Bucket_Fuel_ID;
-    //public static Item BC_Bucket_Oil;
+    public static int BC_redstoneChipset_ID;
+    public static int BC_pipeGateAutarchic_ID;
     
     //Flan's Mod
     public static int FLANS_Fuel_Barrel_ID;
     public static int FLANS_Fuel_Canister_ID;
+    public static int FLANS_Steel_ID;
     
 }

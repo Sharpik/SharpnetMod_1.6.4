@@ -1,6 +1,7 @@
 package ModSharpnet.Recipes;
 
 import ModSharpnet.Items;
+import static ModSharpnet.ModSharpnet.ModBuildCraft;
 import static ModSharpnet.ModSharpnet.ModFlansMod;
 import static ModSharpnet.ModSharpnet.ModIndustrialCraft2;
 import net.minecraft.item.Item;
@@ -47,9 +48,16 @@ public class RecipesExchange
         if(ModFlansMod)
         {
             //Exchange Flan's Mod
-            GameRegistry.addShapelessRecipe(new ItemStack(Items.FLANS_Fuel_Barrel_ID, 1, 0), new ItemStack(Items.fuel_cell_ID, 1, 0));
+            GameRegistry.addShapelessRecipe(new ItemStack(Items.FLANS_Steel_ID, 2, 0), new ItemStack(Items.IngotSteel, 1, 0), new ItemStack(Items.IngotSteel, 1, 0));
+            GameRegistry.addShapelessRecipe(new ItemStack(Items.FLANS_Fuel_Barrel_ID, 1, 0), new ItemStack(Items.fuel_cell, 1, 0));
             GameRegistry.addShapelessRecipe(new ItemStack(Items.FLANS_Fuel_Canister_ID, 2, 0), new ItemStack(ic2.api.item.Items.getItem("coalfuelCell").getItem(), 1, 8));
             GameRegistry.addShapelessRecipe(new ItemStack(Items.FLANS_Fuel_Canister_ID, 1, 0), new ItemStack(ic2.api.item.Items.getItem("biofuelCell").getItem(), 1, 9), new ItemStack(ic2.api.item.Items.getItem("biofuelCell").getItem(), 1, 9));
+        }
+        
+        if(ModBuildCraft)
+        {
+            GameRegistry.addShapelessRecipe(new ItemStack(Items.BC_pipeGateAutarchic_ID, 1, 0), new ItemStack(ic2.api.item.Items.getItem("elemotor").getItem(), 1, 1), new ItemStack(Items.BC_redstoneChipset_ID, 1, 0));
+            
         }
         
     }
