@@ -43,6 +43,40 @@ public class RecipesExchange
                 " S ",
                 'S', new ItemStack(Items.IngotSteel,1,0)
             });
+            
+            //Fuel can
+            GameRegistry.addRecipe(new ItemStack(ic2.api.item.Items.getItem("filledFuelCan").getItem(),1,0), new Object[]
+            {
+                "CF",
+                'C', new ItemStack(ic2.api.item.Items.getItem("fuelCan").getItem(),1,0),
+                'F', new ItemStack(ic2.api.item.Items.getItem("coalfuelCell").getItem(),1,8)
+            });
+            
+            //Fuel can
+            GameRegistry.addRecipe(new ItemStack(ic2.api.item.Items.getItem("filledFuelCan").getItem(),1,0), new Object[]
+            {
+                "CF",
+                "FF",
+                'C', new ItemStack(ic2.api.item.Items.getItem("fuelCan").getItem(),1,0),
+                'F', new ItemStack(ic2.api.item.Items.getItem("biofuelCell").getItem(),1,9)
+            });
+            
+            //Fuel can
+            GameRegistry.addRecipe(new ItemStack(ic2.api.item.Items.getItem("filledFuelCan").getItem(),3,0), new Object[]
+            {
+                "FC",
+                "CC",
+                'C', new ItemStack(ic2.api.item.Items.getItem("fuelCan").getItem(),1,0),
+                'F', new ItemStack(Items.fuel_cell,1,0)
+            });
+            
+            //Jetpack Fill
+            GameRegistry.addRecipe(new ItemStack(ic2.api.item.Items.getItem("jetpack").getItem(),1,1), new Object[]
+            {
+                "JF",
+                'J', new ItemStack(ic2.api.item.Items.getItem("jetpack").getItem(),1,Short.MAX_VALUE),
+                'F', new ItemStack(ic2.api.item.Items.getItem("filledFuelCan").getItem(),1,0)
+            });
         }
         
         if(ModFlansMod)
