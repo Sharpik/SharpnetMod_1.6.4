@@ -4,7 +4,7 @@ SET path-mod-dist="Z:\Games\Minecraft\mods\moding\1.6.4\my\SharpnetMod_1.6.4\dis
 SET path-mcp="Z:\Games\Minecraft\mods\moding\1.6.4\forge-1.6.4-9.11.1.1345\mcp"
 SET path-this=%~dp0
 
-%path-7zip%\7z.exe x %path-mod-dist%\%mod-jar% -o%path-mcp%\bin\minecraft\ -aoa -mmt
+%path-7zip%\7z.exe x %path-mod-dist%\dist\%mod-jar% -o%path-mcp%\bin\minecraft\ -aoa -mmt
 
 cd %path-mcp%\
 runtime\bin\python\python_mcp runtime\reobfuscate.py %*

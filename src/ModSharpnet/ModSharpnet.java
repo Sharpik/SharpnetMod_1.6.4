@@ -1270,12 +1270,12 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.guttalax, "Guttalax");
         LanguageRegistry.addName(new ItemStack(Items.guttalax, 1, 0), "Guttalax");
         
-        Items.mutton_raw = (new ItemFood(Items.mutton_raw_ID, 2 , 0.3F, true).setUnlocalizedName("Mutton_Raw").setTextureName(modid+":food/mutton_raw"));
+        Items.mutton_raw = (new ItemFood(Items.mutton_raw_ID, 3 , 0.3F, true).setUnlocalizedName("Mutton_Raw").setTextureName(modid+":food/mutton_raw"));
         GameRegistry.registerItem(Items.mutton_raw, "Mutton Raw");
         LanguageRegistry.addName(new ItemStack(Items.mutton_raw, 1, 0), "Mutton Raw");
         
         //Place holder Mutton for next MC version
-        Items.mutton_cooked = new ShItemFood(Items.mutton_cooked_ID, 6 , 0.6F, true ).setUnlocalizedName("mutton_cooked").setTextureName(modid+":food/mutton_cooked");
+        Items.mutton_cooked = new ShItemFood(Items.mutton_cooked_ID, 6 , 0.8F, true ).setUnlocalizedName("mutton_cooked").setTextureName(modid+":food/mutton_cooked");
         GameRegistry.registerItem(Items.mutton_cooked, "Mutton Cooked");
         LanguageRegistry.addName(new ItemStack(Items.mutton_cooked, 1, 0), "Mutton Cooked");
         
@@ -1299,7 +1299,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.grape_red_seeds, "Grape Red Seeds");
         LanguageRegistry.addName(new ItemStack(Items.grape_red_seeds, 1, 0), "Grape Red Seeds");
         
-        Items.grape_red = new ShItemFood(Items.grape_red_ID, 3 , 0.2F, false ).setUnlocalizedName("grape_red").setTextureName(modid+":food/grape_red");
+        Items.grape_red = new ShItemFood(Items.grape_red_ID, 4 , 0.2F, false ).setUnlocalizedName("grape_red").setTextureName(modid+":food/grape_red");
         GameRegistry.registerItem(Items.grape_red, "Grape Red");
         LanguageRegistry.addName(new ItemStack(Items.grape_red, 1, 0), "Grape Red");
         
@@ -1307,11 +1307,11 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.grape_white_seeds, "Grape White Seeds");
         LanguageRegistry.addName(new ItemStack(Items.grape_white_seeds, 1, 0), "Grape White Seeds");
         
-        Items.grape_white = new ShItemFood(Items.grape_white_ID, 3 , 0.2F, false ).setUnlocalizedName("grape_white").setTextureName(modid+":food/grape_white");
+        Items.grape_white = new ShItemFood(Items.grape_white_ID, 4 , 0.2F, false ).setUnlocalizedName("grape_white").setTextureName(modid+":food/grape_white");
         GameRegistry.registerItem(Items.grape_white, "Grape White");
         LanguageRegistry.addName(new ItemStack(Items.grape_white, 1, 0), "Grape White");
         
-        Items.bottle_of_milk = new ShItemFood(Items.bottle_of_milk_ID, 4 , 1.0F, false ).setUnlocalizedName("bottle_of_milk").setTextureName(modid+":drinks&food/milk_bottle");
+        Items.bottle_of_milk = new ShItemFood(Items.bottle_of_milk_ID, 6 , 1.0F, false ).setUnlocalizedName("bottle_of_milk").setTextureName(modid+":drinks&food/milk_bottle");
         GameRegistry.registerItem(Items.bottle_of_milk, "Bottle of Milk");
         LanguageRegistry.addName(new ItemStack(Items.bottle_of_milk, 1, 0), "Bottle of Milk");
         
@@ -1319,7 +1319,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.sliced_potatoe, "Sliced Potatoe");
         LanguageRegistry.addName(new ItemStack(Items.sliced_potatoe, 1, 0), "Sliced Potatoe");
         
-        Items.potatoes_chips = new ShItemFood(Items.potatoes_chips_ID, 1 , 0.2F, false ).setUnlocalizedName("potatoes_chips").setTextureName(modid+":food/potato_chips");
+        Items.potatoes_chips = new ShItemFood(Items.potatoes_chips_ID, 2 , 0.4F, false ).setUnlocalizedName("potatoes_chips").setTextureName(modid+":food/potato_chips");
         GameRegistry.registerItem(Items.potatoes_chips, "Potatoes Chips");
         LanguageRegistry.addName(new ItemStack(Items.potatoes_chips, 1, 0), "Potatoes Chips");
         
@@ -1339,7 +1339,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.tomato_puree, "Tomato Puree");
         LanguageRegistry.addName(new ItemStack(Items.tomato_puree, 1, 0), "Tomato Puree");
         
-        Items.cheese = new ShItemFood(Items.cheese_ID, 4 , 2.5F, false ).setUnlocalizedName("cheese").setTextureName(modid+":food/cheese");
+        Items.cheese = new ShItemFood(Items.cheese_ID, 8 , 2.5F, false ).setUnlocalizedName("cheese").setTextureName(modid+":food/cheese");
         GameRegistry.registerItem(Items.cheese, "Cheese");
         LanguageRegistry.addName(new ItemStack(Items.cheese, 1, 0), "Cheese");
         
@@ -1347,7 +1347,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.raw_pizza, "Raw Pizza");
         LanguageRegistry.addName(new ItemStack(Items.raw_pizza, 1, 0), "Raw Pizza");
         
-        Items.slice_of_bread = new ShItemFood(Items.slice_of_bread_ID, 1 , 0.8F, false ).setUnlocalizedName("slice_of_bread").setTextureName(modid+":food/bread_slice_of");
+        Items.slice_of_bread = new ShItemFood(Items.slice_of_bread_ID, 2 , 0.8F, false ).setUnlocalizedName("slice_of_bread").setTextureName(modid+":food/bread_slice_of");
         GameRegistry.registerItem(Items.slice_of_bread, "Slice of Bread");
         LanguageRegistry.addName(new ItemStack(Items.slice_of_bread, 1, 0), "Slice of Bread");
         
@@ -1355,7 +1355,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.breadcrumbs, "Breadcrumbs");
         LanguageRegistry.addName(new ItemStack(Items.breadcrumbs, 1, 0), "Breadcrumbs");
         
-        Items.fillet = new ShItemFood(Items.fillet_ID, 4 , 1.0F, false ).setUnlocalizedName("fillet").setTextureName(modid+":food/fillet");
+        Items.fillet = new ShItemFood(Items.fillet_ID, 7 , 1.0F, false ).setUnlocalizedName("fillet").setTextureName(modid+":food/fillet");
         GameRegistry.registerItem(Items.fillet, "Fillet");
         LanguageRegistry.addName(new ItemStack(Items.fillet, 1, 0), "Fillet");
         
@@ -1363,7 +1363,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.popcorn, "Popcorn");
         LanguageRegistry.addName(new ItemStack(Items.popcorn, 1, 0), "Popcorn");
         
-        Items.chocolate = new ShItemFood(Items.chocolate_ID, 3 , 1.0F, false ).setUnlocalizedName("chocolate").setTextureName(modid+":food/chocolate");
+        Items.chocolate = new ShItemFood(Items.chocolate_ID, 5 , 1.0F, false ).setUnlocalizedName("chocolate").setTextureName(modid+":food/chocolate");
         GameRegistry.registerItem(Items.chocolate, "Chocolate");
         LanguageRegistry.addName(new ItemStack(Items.chocolate, 1, 0), "Chocolate");
         
@@ -1371,20 +1371,20 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.gingerbread_dough, "Gingerbread Dough");
         LanguageRegistry.addName(new ItemStack(Items.gingerbread_dough, 1, 0), "Dough");
         
-        Items.gingerbread1 = new ShItemFood(Items.gingerbread1_ID, 2 , 0.5F, false ).setUnlocalizedName("gingerbread1").setTextureName(modid+":food/gingerbread1");
+        Items.gingerbread1 = new ShItemFood(Items.gingerbread1_ID, 3 , 0.5F, false ).setUnlocalizedName("gingerbread1").setTextureName(modid+":food/gingerbread1");
         GameRegistry.registerItem(Items.gingerbread1, "Gingerbread 1");
         LanguageRegistry.addName(new ItemStack(Items.gingerbread1, 1, 0), "Gingerbread 1");
         
-        Items.gingerbread2 = new ShItemFood(Items.gingerbread2_ID, 2 , 0.5F, false ).setUnlocalizedName("gingerbread2").setTextureName(modid+":food/gingerbread2");
+        Items.gingerbread2 = new ShItemFood(Items.gingerbread2_ID, 3 , 0.5F, false ).setUnlocalizedName("gingerbread2").setTextureName(modid+":food/gingerbread2");
         GameRegistry.registerItem(Items.gingerbread2, "Gingerbread 2");
         LanguageRegistry.addName(new ItemStack(Items.gingerbread2, 1, 0), "Gingerbread 2");
         
-        Items.bonbon = new ShItemFood(Items.bonbon_ID, 1 , 0.5F, false ).setUnlocalizedName("bonbon").setTextureName(modid+":food/bonbon");
+        Items.bonbon = new ShItemFood(Items.bonbon_ID, 2 , 0.4F, false ).setUnlocalizedName("bonbon").setTextureName(modid+":food/bonbon");
         GameRegistry.registerItem(Items.bonbon, "bonbon");
         LanguageRegistry.addName(new ItemStack(Items.bonbon, 1, 0), "bonbon");
         
         //Item Alcohol
-        Items.beer = new ShItemFoodPlacer(Items.beer_ID, 4, 2.0F, false, Blocks.drinks1_block.blockID, 0, 2, 20).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/beer");
+        Items.beer = new ShItemFoodPlacer(Items.beer_ID, 6, 2.0F, false, Blocks.drinks1_block.blockID, 0, 2, 20).setUnlocalizedName("Beer").setTextureName(modid+":drinks&food/beer");
         GameRegistry.registerItem(Items.beer, "Beer");
         LanguageRegistry.addName(new ItemStack(Items.beer, 1, 0), "Beer");
         
@@ -1400,51 +1400,51 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.cofee, "Cofee");
         LanguageRegistry.addName(new ItemStack(Items.cofee, 1, 0), "Cofee");
         
-        Items.whiskey = new ShItemFoodPlacer(Items.whiskey_ID, 10, 3.0F, false, Blocks.drinks1_block.blockID, 3, 2, 60).setUnlocalizedName("Whiskey").setTextureName(modid+":drinks&food/whiskey");
+        Items.whiskey = new ShItemFoodPlacer(Items.whiskey_ID, 14, 3.0F, false, Blocks.drinks1_block.blockID, 3, 2, 60).setUnlocalizedName("Whiskey").setTextureName(modid+":drinks&food/whiskey");
         GameRegistry.registerItem(Items.whiskey, "Whiskey");
         LanguageRegistry.addName(new ItemStack(Items.whiskey, 1, 0), "Whiskey");
         
-        Items.tequilla_silver = new ShItemFoodPlacer(Items.tequilla_silver_ID, 6, 1.0F, false, Blocks.drinks1_block.blockID, 4, 2, 60).setUnlocalizedName("Tequilla_silver").setTextureName(modid+":drinks&food/tequilla_s");
+        Items.tequilla_silver = new ShItemFoodPlacer(Items.tequilla_silver_ID, 12, 1.0F, false, Blocks.drinks1_block.blockID, 4, 2, 60).setUnlocalizedName("Tequilla_silver").setTextureName(modid+":drinks&food/tequilla_s");
         GameRegistry.registerItem(Items.tequilla_silver, "Tequilla Silver");
         LanguageRegistry.addName(new ItemStack(Items.tequilla_silver, 1, 0), "Tequilla Silver");
         
-        Items.tequilla_gold = new ShItemFoodPlacer(Items.tequilla_gold_ID, 8, 1.2F, false, Blocks.drinks1_block.blockID, 5, 2, 60).setUnlocalizedName("Tequilla_gold").setTextureName(modid+":drinks&food/tequilla_g");
+        Items.tequilla_gold = new ShItemFoodPlacer(Items.tequilla_gold_ID, 13, 1.2F, false, Blocks.drinks1_block.blockID, 5, 2, 60).setUnlocalizedName("Tequilla_gold").setTextureName(modid+":drinks&food/tequilla_g");
         GameRegistry.registerItem(Items.tequilla_gold, "Tequilla Gold");
         LanguageRegistry.addName(new ItemStack(Items.tequilla_gold, 1, 0), "Tequilla Gold");
         
-        Items.rum = new ShItemFoodPlacer(Items.rum_ID, 5, 1.0F, false, Blocks.drinks1_block.blockID, 6, 2, 50).setUnlocalizedName("Rum").setTextureName(modid+":drinks&food/rum");
+        Items.rum = new ShItemFoodPlacer(Items.rum_ID, 10, 1.0F, false, Blocks.drinks1_block.blockID, 6, 2, 50).setUnlocalizedName("Rum").setTextureName(modid+":drinks&food/rum");
         GameRegistry.registerItem(Items.rum, "Rum");
         LanguageRegistry.addName(new ItemStack(Items.rum, 1, 0), "Rum");
         
-        Items.semtex = new ShItemFoodPlacer(Items.semtex_ID, 2, 0.5F, false, Blocks.drinks1_block.blockID, 7, 1, 60).setUnlocalizedName("Semtex").setTextureName(modid+":drinks&food/semtex");
+        Items.semtex = new ShItemFoodPlacer(Items.semtex_ID, 5, 0.5F, false, Blocks.drinks1_block.blockID, 7, 1, 60).setUnlocalizedName("Semtex").setTextureName(modid+":drinks&food/semtex");
         GameRegistry.registerItem(Items.semtex, "Semtex");
         LanguageRegistry.addName(new ItemStack(Items.semtex, 1, 0), "Semtex");
         
-        Items.cup_of_tea = new ShItemFoodPlacer(Items.cup_of_tea_ID, 3, 0.5F, false, Blocks.drinks1_block.blockID, 8, 0, 0).setUnlocalizedName("Cup_of_tea").setTextureName(modid+":drinks&food/tea_cup");
+        Items.cup_of_tea = new ShItemFoodPlacer(Items.cup_of_tea_ID, 4, 0.5F, false, Blocks.drinks1_block.blockID, 8, 0, 0).setUnlocalizedName("Cup_of_tea").setTextureName(modid+":drinks&food/tea_cup");
         GameRegistry.registerItem(Items.cup_of_tea, "Cup of Tea");
         LanguageRegistry.addName(new ItemStack(Items.cup_of_tea, 1, 0), "Cup of Tea");
         
-        Items.hot_chocolate = new ShItemFoodPlacer(Items.hot_chocolate_ID, 4, 0.8F, false, Blocks.drinks1_block.blockID, 9, 0, 0).setUnlocalizedName("Hot_chocolate").setTextureName(modid+":drinks&food/chocolate_hot");
+        Items.hot_chocolate = new ShItemFoodPlacer(Items.hot_chocolate_ID, 7, 0.8F, false, Blocks.drinks1_block.blockID, 9, 0, 0).setUnlocalizedName("Hot_chocolate").setTextureName(modid+":drinks&food/chocolate_hot");
         GameRegistry.registerItem(Items.hot_chocolate, "Hot Chocolate");
         LanguageRegistry.addName(new ItemStack(Items.hot_chocolate, 1, 0), "Hot Chocolate");
         
-        Items.honey = new ShItemFoodPlacer(Items.honey_ID, 3, 0.8F, false, Blocks.drinks1_block.blockID, 10, 0, 0).setUnlocalizedName("Honey").setTextureName(modid+":drinks&food/honey");
+        Items.honey = new ShItemFoodPlacer(Items.honey_ID, 4, 0.8F, false, Blocks.drinks1_block.blockID, 10, 0, 0).setUnlocalizedName("Honey").setTextureName(modid+":drinks&food/honey");
         GameRegistry.registerItem(Items.honey, "Honey");
         LanguageRegistry.addName(new ItemStack(Items.honey, 1, 0), "Honey");
         
-        Items.catchup = new ShItemFoodPlacer(Items.catchup_ID, 6, 1.0F, false, Blocks.drinks1_block.blockID, 11, 0, 0).setUnlocalizedName("Catchup").setTextureName(modid+":drinks&food/catchup");
+        Items.catchup = new ShItemFoodPlacer(Items.catchup_ID, 9, 1.0F, false, Blocks.drinks1_block.blockID, 11, 0, 0).setUnlocalizedName("Catchup").setTextureName(modid+":drinks&food/catchup");
         GameRegistry.registerItem(Items.catchup, "Catchup");
         LanguageRegistry.addName(new ItemStack(Items.catchup, 1, 0), "Catchup");
         
-        Items.glass_of_red_vine = new ShItemFoodPlacer(Items.glass_of_red_vine_ID, 2, 0.8F, false, Blocks.drinks1_block.blockID, 12, 2, 15).setUnlocalizedName("Glass_of_red_vine").setTextureName(modid+":drinks&food/glass_of_vine_red");
+        Items.glass_of_red_vine = new ShItemFoodPlacer(Items.glass_of_red_vine_ID, 3, 3.0F, false, Blocks.drinks1_block.blockID, 12, 2, 15).setUnlocalizedName("Glass_of_red_vine").setTextureName(modid+":drinks&food/glass_of_vine_red");
         GameRegistry.registerItem(Items.glass_of_red_vine, "Glass of red vine");
         LanguageRegistry.addName(new ItemStack(Items.glass_of_red_vine, 1, 0), "Glass of red vine");
         
-        Items.glass_of_white_vine = new ShItemFoodPlacer(Items.glass_of_white_vine_ID, 2, 0.8F, false, Blocks.drinks2_block.blockID, 1, 2, 15).setUnlocalizedName("Glass_of_white_vine").setTextureName(modid+":drinks&food/glass_of_vine_white");
+        Items.glass_of_white_vine = new ShItemFoodPlacer(Items.glass_of_white_vine_ID, 3, 3.0F, false, Blocks.drinks2_block.blockID, 1, 2, 15).setUnlocalizedName("Glass_of_white_vine").setTextureName(modid+":drinks&food/glass_of_vine_white");
         GameRegistry.registerItem(Items.glass_of_white_vine, "Glass of white vine");
         LanguageRegistry.addName(new ItemStack(Items.glass_of_white_vine, 1, 0), "Glass of white vine");
         
-        Items.vodka = new ShItemFoodPlacer(Items.vodka_ID, 6, 1.0F, false, Blocks.drinks1_block.blockID, 13, 2, 5).setUnlocalizedName("Vodka").setTextureName(modid+":drinks&food/vodka");
+        Items.vodka = new ShItemFoodPlacer(Items.vodka_ID, 10, 1.0F, false, Blocks.drinks1_block.blockID, 13, 2, 5).setUnlocalizedName("Vodka").setTextureName(modid+":drinks&food/vodka");
         GameRegistry.registerItem(Items.vodka, "Vodka");
         LanguageRegistry.addName(new ItemStack(Items.vodka, 1, 0), "Vodka");
         
@@ -1464,7 +1464,7 @@ public class ModSharpnet
         GameRegistry.registerItem(Items.salad, "Salad");
         LanguageRegistry.addName(new ItemStack(Items.salad, 1, 0), "Salad");
         
-        Items.salad_fillet = new ShItemFoodPlacer(Items.salad_fillet_ID, 14, 0.8F, false, Blocks.food1_block.blockID, 2, 0, 0).setUnlocalizedName("salad_fillet").setTextureName(modid+":drinks&food/salad_fillet");
+        Items.salad_fillet = new ShItemFoodPlacer(Items.salad_fillet_ID, 18, 0.8F, false, Blocks.food1_block.blockID, 2, 0, 0).setUnlocalizedName("salad_fillet").setTextureName(modid+":drinks&food/salad_fillet");
         GameRegistry.registerItem(Items.salad_fillet, "Salad + Fillet");
         LanguageRegistry.addName(new ItemStack(Items.salad_fillet, 1, 0), "Salad + Fillet");
                 

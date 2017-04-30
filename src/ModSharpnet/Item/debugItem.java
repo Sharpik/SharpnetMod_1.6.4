@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.packet.Packet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.world.World;
@@ -48,12 +49,14 @@ public class debugItem extends Item
             TileEntity TileEntity = new TileEntity();
             TileEntity = par3World.getBlockTileEntity(par4, par5, par6);
             NBTtext = "";
+            String NBTData = "";
             if (TileEntity != null)
             {
+                
                 //NBTTagCompound TileEntityNBTCompound = new NBTTagCompound();
                 
                 //List TileEntityList = par3World.loadedTileEntityList;
-                NBTtext = "TE-Data: " + TileEntity.toString() + "\n" + "TE-Desc: " + TileEntity.getDescriptionPacket().toString() + "\n" + "TE-List:\n";
+                NBTtext = "TE-Data: " + TileEntity.toString() + "\n" + "TE-Desc: " + NBTData + "\n" + "TE-List:\n";
                 
                 /*
                 for(Object record : TileEntityList)
@@ -94,9 +97,16 @@ public class debugItem extends Item
             NBTtext += recordNBT.getName() + "\n";
         }
         
+        /*
+        if(EntityNBTData.getTag("Profession") != null)
+        {
+            EntityNBTData.setInteger("Profession", 1);
+        }
+        */
+        
         par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Debug Item:"));
         par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Entity-name:" + par3EntityLivingBase.getEntityName() ));
-        par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Entity-Data:" + NBTtext ));
+        //par2EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Entity-Data:" + NBTtext ));
         
         return true;
     }
