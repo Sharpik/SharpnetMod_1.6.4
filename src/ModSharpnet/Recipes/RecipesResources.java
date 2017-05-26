@@ -155,6 +155,14 @@ public class RecipesResources
             'R', Item.redstone, 'S', Block.sand, 'C', Block.cobblestone, 'G', Block.gravel
         });
         
+        //Recipe Bulp
+        GameRegistry.addRecipe(new ItemStack(Blocks.lamps1_block,1,7), new Object[]
+        {
+            " G ",
+            " C ",
+            " R ",
+            'G', Block.glass,'C', new ItemStack(ic2.api.item.Items.getItem("ironCableBlock").getItem(), 1, 5), 'R', Item.redstone,
+        });
         
         if(ModBuildCraft)
         {
