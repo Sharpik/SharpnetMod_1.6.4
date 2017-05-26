@@ -161,7 +161,7 @@ public class RecipesResources
             " G ",
             " C ",
             " R ",
-            'G', Block.glass,'C', new ItemStack(ic2.api.item.Items.getItem("ironCableBlock").getItem(), 1, 5), 'R', Item.redstone,
+            'G', Block.glass,'C', new ItemStack(ic2.api.item.Items.getItem("ironCableItem").getItem(), 1, 5), 'R', Item.redstone,
         });
         
         if(ModBuildCraft)
