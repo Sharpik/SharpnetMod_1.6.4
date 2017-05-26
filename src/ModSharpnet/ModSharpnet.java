@@ -1247,7 +1247,7 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 4), "Lamp Old 1");
         LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 5), "Lamp Old 2");
         LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 6), "Candelier 1");
-        LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 7), "Bulp - On");
+        LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 7), "Bulb - On");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");

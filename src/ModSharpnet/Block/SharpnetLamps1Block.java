@@ -24,7 +24,7 @@ import net.minecraft.world.World;
 public class SharpnetLamps1Block extends Block
 {
     
-    public static final String[] Types = new String[] {"lamp_garden", "lamp_garden2", "lamp_modern", "lamp_modern2", "lamp_old", "lamp_old2", "chandelier", "bulp_on"};
+    public static final String[] Types = new String[] {"lamp_garden", "lamp_garden2", "lamp_modern", "lamp_modern2", "lamp_old", "lamp_old2", "chandelier", "bulb_on"};
     
     @SideOnly(Side.CLIENT)
     public Icon[] iconArray;
