@@ -39,6 +39,7 @@ public class SharpnetStuffs1 extends Item
     }
     */
     @Override
+    @SideOnly(Side.SERVER)
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
         //Check for serverside only

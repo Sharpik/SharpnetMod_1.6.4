@@ -286,6 +286,7 @@ public class ModSharpnet
         Blocks.SharpnetPoster2_ID = config.get("Blocks", "SharpnetPoster2", 2587).getInt();
         Blocks.SharpnetStocks10000_ID = config.get("Blocks", "SharpnetStocks10000", 2588).getInt();
         Blocks.drinks2_block_ID = config.get("Blocks", "drinks2_block", 2589).getInt();
+        Blocks.lamps1_block_ID = config.get("Blocks", "lamps1_block", 2590).getInt();
         
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
@@ -1236,6 +1237,17 @@ public class ModSharpnet
         .setHardness(0.4F).setTextureName(modid+":money_stacks/stock").setCreativeTab(CreativeTabs.tabDecorations);
         GameRegistry.registerBlock(Blocks.SharpnetStocks10000, Blocks.SharpnetStocks10000.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetStocks10000, 1, 0), "Sharpnet Stocks 10000");
+        
+        Blocks.lamps1_block = new SharpnetLamps1Block(Blocks.lamps1_block_ID).setUnlocalizedName("SharpnetLamps1Block");
+        GameRegistry.registerBlock(Blocks.lamps1_block, SharpnetLamps1ItemBlocks.class, Blocks.lamps1_block.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 0), "Garden Lamp 1");
+        LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 1), "Garden Lamp 2");
+        LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 2), "Lamp Modern 1");
+        LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 3), "Lamp Modern 2");
+        LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 4), "Lamp Old 1");
+        LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 5), "Lamp Old 2");
+        LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 6), "Candelier 1");
+        LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 7), "Bulp - On");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");

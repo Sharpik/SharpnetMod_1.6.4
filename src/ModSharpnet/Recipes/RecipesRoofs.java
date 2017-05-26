@@ -14,7 +14,7 @@ public class RecipesRoofs
     public static void register()
     {
         //Recipe roofs
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.roofing_tile,2,0), new ItemStack(Item.brick,1,0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.roofing_tile,4,0), new ItemStack(Item.brick,1,0), new ItemStack(Item.brick,1,0));
         
         GameRegistry.addRecipe(new ItemStack(SharpnetRoofsBlocks1,1,0), new Object[]
         {

@@ -97,11 +97,11 @@ public class Blocks
     public static Block lighting_stick_block;
     public static int lighting_stick_block_ID;
     
+    public static Block lamps1_block;
+    public static int lamps1_block_ID;
+    
     public static Block lights1_block;
     public static int lights1_block_ID;
-    
-    public static Block lights2_block;
-    public static int lights2_block_ID;
     
     public static Block wall_cobblestone_trowel_block;
     public static int wall_cobblestone_trowel_block_ID;
