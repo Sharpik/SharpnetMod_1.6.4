@@ -287,6 +287,8 @@ public class ModSharpnet
         Blocks.SharpnetStocks10000_ID = config.get("Blocks", "SharpnetStocks10000", 2588).getInt();
         Blocks.drinks2_block_ID = config.get("Blocks", "drinks2_block", 2589).getInt();
         Blocks.lamps1_block_ID = config.get("Blocks", "lamps1_block", 2590).getInt();
+        Blocks.garden_deco_block_ID = config.get("Blocks", "garden_deco_block", 2591).getInt();
+        Blocks.flowerPot1_block_ID = config.get("Blocks", "flowerPot1_block", 2592).getInt();
         
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
@@ -1249,6 +1251,23 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 6), "Candelier 1");
         LanguageRegistry.addName(new ItemStack(Blocks.lamps1_block, 1, 7), "Bulb - On");
         
+        Blocks.garden_deco_block = new SharpnetGardenDecoBlocks1(Blocks.garden_deco_block_ID).setUnlocalizedName("SharpnetGardenDecoBlocks1");
+        GameRegistry.registerBlock(Blocks.garden_deco_block, SharpnetGardenDecoItemBlocks1.class, Blocks.garden_deco_block.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.garden_deco_block, 1, 0), "Dwarf");
+        LanguageRegistry.addName(new ItemStack(Blocks.garden_deco_block, 1, 1), "Smurf");
+        LanguageRegistry.addName(new ItemStack(Blocks.garden_deco_block, 1, 2), "X-Mass Tree");
+        LanguageRegistry.addName(new ItemStack(Blocks.garden_deco_block, 1, 3), "Stone 1");
+        LanguageRegistry.addName(new ItemStack(Blocks.garden_deco_block, 1, 4), "Stone 2");
+        LanguageRegistry.addName(new ItemStack(Blocks.garden_deco_block, 1, 5), "Stone 3");
+        LanguageRegistry.addName(new ItemStack(Blocks.garden_deco_block, 1, 6), "Stone 4");
+        LanguageRegistry.addName(new ItemStack(Blocks.garden_deco_block, 1, 7), "Graveyard 1");
+        LanguageRegistry.addName(new ItemStack(Blocks.garden_deco_block, 1, 8), "Graveyard 2");
+        LanguageRegistry.addName(new ItemStack(Blocks.garden_deco_block, 1, 9), "Church Bell");
+        
+        Blocks.flowerPot1_block = new SharpnetFlowerPot1(Blocks.flowerPot1_block_ID).setUnlocalizedName("SharpnetFlowerPot1");
+        GameRegistry.registerBlock(Blocks.flowerPot1_block, Blocks.flowerPot1_block.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.flowerPot1_block, 1, 0), "SH. Flower Pot 1");
+        
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
         GameRegistry.registerItem(SharpnetTomatoSeeds, "Tomato Seeds");
@@ -1851,6 +1870,7 @@ public class ModSharpnet
         RecipesPanels.register();
         RecipesWindows.register();
         RecipesLamps.register();
+        RecipesDecoBlocks.register();
         RecipesIC2Machines.register();
         
         GameRegistry.registerFuelHandler(new Fuels());
