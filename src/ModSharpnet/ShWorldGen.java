@@ -20,7 +20,7 @@ public class ShWorldGen implements IWorldGenerator
             switch(world.provider.dimensionId)
             {
                 case -1: /*Nether*/ break;
-                case 0: /*OverWorld*/ break;
+                //case 0: /*OverWorld*/ break;
                 case 1: /*The End*/ break;
                 default:
                     //Gen specified on Biome type
