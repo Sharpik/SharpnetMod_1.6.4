@@ -34,7 +34,7 @@ import ModSharpnet.Block.*;
 import ModSharpnet.Recipes.*;
 
 
-@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.7", dependencies="required-after:IC2;required-after:BuildCraft|Core;required-after:ProjRed|Core")
+@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.8", dependencies="required-after:IC2;required-after:BuildCraft|Core;required-after:ProjRed|Core")
 @NetworkMod(clientSideRequired=true, serverSideRequired=true)
 
 public class ModSharpnet

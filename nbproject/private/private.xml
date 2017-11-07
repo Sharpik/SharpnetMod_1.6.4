@@ -75,7 +75,7 @@
             <file>file:/Z:/Games/Minecraft/mods/moding/1.6.4/my/SharpnetMod_1.6.4/src/ModSharpnet/ModSharpnet.java</file>
             <file>jar:file:/Z:/Games/Minecraft/mods/moding/1.6.4/my/SharpnetMod_1.6.4/lib/forge-1.6.4-9.11.1.1345_source.jar!/net/minecraft/block/Block.java</file>
             <file>file:/Z:/Games/Minecraft/mods/moding/1.6.4/my/SharpnetMod_1.6.4/src/ModSharpnet/Block/SharpnetFlowerPot1.java</file>
-            <file>file:/Z:/Games/Minecraft/mods/moding/1.6.4/my/SharpnetMod_1.6.4/src/ModSharpnet/Block/SharpnetDoors1Block.java</file>
+            <file>file:/Z:/Games/Minecraft/mods/moding/1.6.4/my/SharpnetMod_1.6.4/src/ModSharpnet/Recipes/RecipesIC2Machines.java</file>
         </group>
     </open-files>
 </project-private>

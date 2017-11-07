@@ -19,8 +19,13 @@ public class ShWorldGen implements IWorldGenerator
         {
             switch(world.provider.dimensionId)
             {
-                case 0: OverworldGen(world, chunkX, chunkZ, random, world.getWorldChunkManager().getBiomeGenAt(chunkX*16, chunkZ*16) ); break;
-                default: break;
+                case -1: /*Nether*/ break;
+                case 0: /*OverWorld*/ break;
+                case 1: /*The End*/ break;
+                default:
+                    //Gen specified on Biome type
+                        OverworldGen(world, chunkX, chunkZ, random, world.getWorldChunkManager().getBiomeGenAt(chunkX*16, chunkZ*16) );
+                    break;
             }
         }
     }

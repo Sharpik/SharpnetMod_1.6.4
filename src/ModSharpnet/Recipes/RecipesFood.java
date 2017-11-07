@@ -181,7 +181,7 @@ public class RecipesFood
             'G', Items.grape_white, 'B', new ItemStack(Items.barrel,2,0)
         });
         //Recipe Bottle of Vine White
-        GameRegistry.addRecipe(new ItemStack(Items.wine_white,1,0), new Object[]
+        GameRegistry.addRecipe(new ItemStack(Items.wine_white,6,0), new Object[]
         {
             "G G",
             "GBG",
