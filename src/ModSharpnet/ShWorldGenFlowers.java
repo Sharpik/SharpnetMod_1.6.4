@@ -43,7 +43,13 @@ public class ShWorldGenFlowers
             
             int orginID = par1World.getBlockId(posX, posY, posZ);
             
-            if (!Arrays.asList(allowedReplacemants).contains(orginID)) { posY++; }
+            if (!Arrays.asList(allowedReplacemants).contains(orginID))
+            {
+                posY++;
+                orginID = par1World.getBlockId(posX, posY, posZ);
+            }
+            
+            int orginMeta = par1World.getBlockMetadata(posX, posY, posZ);
 
             if ((posY >= minY) && (posY <= maxY))
             {
@@ -52,13 +58,12 @@ public class ShWorldGenFlowers
                 
                 if ( par1World.isAirBlock(posX, posY, posZ) || Arrays.asList(allowedReplacemants).contains(orginID) )
                 {
-                    int orginMeta = par1World.getBlockMetadata(posX, posY, posZ);
-                    
+
                     par1World.setBlock(posX, posY, posZ, BlockFlowerID, BlockFlowerMetadata, 2);
                     
                     //System.out.println("ShDebug - spawner: Flower spawned: x:" + par3 +" y:"+ posY +" z:"+ par5);
                     
-                    if(!Block.blocksList[BlockFlowerID].canBlockStay(par1World, posX, posY--, posZ))
+                    if(!Block.blocksList[BlockFlowerID].canBlockStay(par1World, posX, posY, posZ))
                     {
                         par1World.setBlock(posX, posY, posZ, orginID, orginMeta, 2);
                     }
