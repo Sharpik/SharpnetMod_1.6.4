@@ -31,6 +31,9 @@ public class SharpnetElectro1Block extends Block
     private int itemInHandID = 0;
     private int itemInHandMeta = 0;
     private int BlockMeta = 0;
+    private int ex_color = -1;
+    private int ex_color_count = 1;
+    private boolean ex_cloth = false;
     
     public SharpnetElectro1Block(int par1)
     {
@@ -87,169 +90,169 @@ public class SharpnetElectro1Block extends Block
             //color_extractor
             if(BlockMeta == 3)
             {
+                ex_color = -1;
+                ex_color_count = 1;
+                ex_cloth = false;
+                
                 // Black
                 if(itemInHandID == Item.coal.itemID)
                 {
-                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,0));
-                    damageItemInHands(par5EntityPlayer);
+                    ex_color = 15;
+                    ex_color_count = 3;
                 }
                 if(ModProjectRed)
                 {
                     // Basalt to Black
                     if( (itemInHandID == Blocks.PR_block_stonesID) && ((itemInHandMeta == 2) || (itemInHandMeta == 3)) )
                     {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,0));
-                        damageItemInHands(par5EntityPlayer);
+                        ex_color = 15;
+                        ex_color_count = 3;
                     }
                 }
                 
                 // Red
-                if(itemInHandID == Item.redstone.itemID)
+                if( (itemInHandID == Item.redstone.itemID) || (itemInHandID == Block.plantRed.blockID) )
                 {
-                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,1));
-                    damageItemInHands(par5EntityPlayer);
+                    ex_color = 14;
                 }
                 
                 // Brown
                 if(itemInHandID == Block.wood.blockID)
                 {
-                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,3));
-                    damageItemInHands(par5EntityPlayer);
+                    ex_color = 12;
                 }
                 
                 // Blue from Fuschia Flower
                 if( (itemInHandID == SharpnetFlowerBlocks1ID) && (itemInHandMeta == 2) )
                 {
-                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,4));
-                    damageItemInHands(par5EntityPlayer);
+                    ex_color = 11;
                 }
                 
                 // Yellow
+                if(itemInHandID == Block.plantYellow.blockID)
+                {
+                    ex_color = 4;
+                    ex_color_count = 2;
+                }
                 if(itemInHandID == Block.sand.blockID)
                 {
-                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,11));
-                    damageItemInHands(par5EntityPlayer);
+                    ex_color = 4;
                 }
                 
                 // Gray
                 if(itemInHandID == Block.gravel.blockID)
                 {
-                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,8));
-                    damageItemInHands(par5EntityPlayer);
+                    ex_color = 7;
+                    ex_color_count = 2;
                 }
                 
                 // Lime
                 if(itemInHandID == Block.reed.blockID)
                 {
-                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,10));
-                    damageItemInHands(par5EntityPlayer);
+                    ex_color = 5;
                 }
                 
                 // Green
                 if( (itemInHandID == Block.grass.blockID) || (itemInHandID == Block.leaves.blockID) )
                 {
-                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,2));
-                    damageItemInHands(par5EntityPlayer);
+                    ex_color = 13;
                 }
                 
                 // Wool
                 if(itemInHandID == Block.cloth.blockID)
                 {
-                    if(itemInHandMeta == 0)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,15));
+                    ex_color = itemInHandMeta;
+                    ex_cloth = true;
+                }
+                
+                //Color spawner
+                switch(ex_color)
+                {
+                    case 0:
+                        //White
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,15));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 1)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,14));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 1:
+                        //Orange
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,14));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 2)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,13));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 2:
+                        //Magenta
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,13));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 3)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,12));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 3:
+                        //Light blue
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,12));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 4)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,11));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 4:
+                        //Yellow
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,11));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 5)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,10));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 5:
+                        //Lime
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,10));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 6)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,9));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 6:
+                        //Pink
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,9));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 7)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,8));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 7:
+                        //Gray
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,8));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 8)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,7));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 8:
+                        //Light gray
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,7));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 9)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,6));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 9:
+                        //Cyan
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,6));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 10)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,5));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 10:
+                        //Purple
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,5));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 11)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,4));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 11:
+                        //Blue
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,4));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 12)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,3));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 12:
+                        //Brown
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,3));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 13)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,2));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 13:
+                        //Green
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,2));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 14)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,1));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 14:
+                        //Red
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,1));
                         damageItemInHands(par5EntityPlayer);
-                    }
-                    if(itemInHandMeta == 15)
-                    {
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,1,0));
-                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
+                        break;
+                    case 15:
+                        //Black
+                        spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Item.dyePowder,ex_color_count,0));
                         damageItemInHands(par5EntityPlayer);
-                    }
+                        break;
+                }
+                
+                if(ex_cloth)
+                {
+                    spawnItem(par5EntityPlayer, par1World, par2, par3, par4, new ItemStack(Block.cloth,1,0));
                 }
             }
             

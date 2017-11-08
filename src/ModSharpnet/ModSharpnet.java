@@ -217,6 +217,8 @@ public class ModSharpnet
         WorldGenFlowers = config.get("boolean", "WorldGenFlowers", false).getBoolean(false);
         
         //Blocks ID
+        //Blocks.minecraft_red_sandstone_ID = config.get("Blocks", "minecraft:red_sandstone", 179).getInt();
+        //Blocks.minecraft_red_sandstone_stairs_ID = config.get("Blocks", "minecraft:red_sandstone_stairs", 180).getInt();
         Blocks.SharpnetWindowsBlocks1_ID = config.get("Blocks", "SharpnetWindowsBlocks1", 2505).getInt();
         SharpnetBuildingBlocks1ID = config.get("Blocks", "SharpnetBuildingBlocks1", 3143).getInt();
         SharpnetCarpetsBlocks1ID = config.get("Blocks", "SharpnetCarpetsBlocks1", 3139).getInt();
@@ -829,7 +831,7 @@ public class ModSharpnet
         
         SharpnetBushesBlocks = new SharpnetBushesBlocks(SharpnetBushesBlocksID, new String[][]
         {
-            {"mech1","bushes/bush1"}
+            {"bush1","bushes/bush1"}
         }).setUnlocalizedName("SharpnetBushesBlocks").setHardness(0.0F).setResistance(0.0F).setCreativeTab(CreativeTabs.tabDecorations).setStepSound(Block.soundGrassFootstep);
         GameRegistry.registerBlock(SharpnetBushesBlocks, SharpnetBushesItemBlocks.class, SharpnetBushesBlocks.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(SharpnetBushesBlocks, 1, 0), "Bush 1");

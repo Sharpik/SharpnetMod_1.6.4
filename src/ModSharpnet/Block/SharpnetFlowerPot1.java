@@ -164,8 +164,8 @@ public class SharpnetFlowerPot1 extends Block
     @Override
     public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7)
     {
+        /*
         super.dropBlockAsItemWithChance(par1World, par2, par3, par4, par5, par6, par7);
-
         if (par5 > 0)
         {
             ItemStack itemstack = getPlantForMeta(par5);
@@ -174,6 +174,12 @@ public class SharpnetFlowerPot1 extends Block
             {
                 this.dropBlockAsItem_do(par1World, par2, par3, par4, itemstack);
             }
+        }
+        */
+        ItemStack itemstack = getPlantForMeta(par5);
+        if (itemstack != null)
+        {
+            this.dropBlockAsItem_do(par1World, par2, par3, par4, itemstack);
         }
     }
 

@@ -19,7 +19,7 @@ public class ShWorldGenFlowers
         
         boolean spawned = false;
         int posY;
-        Integer[] allowedReplacemants = {18, 31, 78};
+        Integer[] allowedReplacemants = {18, 31, 32, 78, 106};
         
         for (int i1 = 0; i1 < count; ++i1)
         {
