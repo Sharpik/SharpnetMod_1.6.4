@@ -139,7 +139,7 @@ public class ShWorldGen implements IWorldGenerator
                     //Fuchsia
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 2, 58, 186, 2, true);
                     //Sunflower
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 3, 58, 186, 9, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 3, 58, 186, 7, true);
                     //Bonsai
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 4, 58, 186, 1, false);
                     //Snap Dragon
@@ -147,13 +147,13 @@ public class ShWorldGen implements IWorldGenerator
                     //Reddicot Flower
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 6, 58, 186, 2, true);
                     //Tulips
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 7, 58, 186, 2, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 7, 58, 186, 3, true);
                     //African Daisy
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 8, 58, 186, 2, true);
                     //Dahilia Flower
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 9, 58, 186, 2, true);
                     //Lacustrine
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 10, 58, 186, 11, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 10, 58, 186, 9, true);
                     //Yellow Dicot
                         FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 11, 58, 186, 2, true);
                     //Bird of Paradise
@@ -231,14 +231,14 @@ public class ShWorldGen implements IWorldGenerator
                     //Sem příjdou rostlinky, které se mají spawnovat na poušti
                     
                     //Flora Cactus
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 1, 58, 186, 5, true);                                    
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 1, 58, 186, 3, true);                                    
                     //Mantis Shrimp
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 14, 58, 186, 2, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 14, 58, 186, 1, true);
                     //Hedgehog Cactus
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 15, 58, 186, 3, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks1ID, 15, 58, 186, 2, true);
                     
                     //Sukulentus 3
-                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 3, 58, 186, 2, true);
+                        FlowerSpawner(world, chunkX, chunkZ, random, SharpnetFlowerBlocks2ID, 3, 58, 186, 1, true);
                 }  
                 
                 //Zde se kontroluje zda je v konfiguračním souboru povoleno spawnování Sharpneťáckých rud

@@ -40,12 +40,13 @@ public class ShWorldGenFlowers
                 }
                 posY--;
             } while (posY > minY);
-            posY++;
+            
+            int orginID = par1World.getBlockId(posX, posY, posZ);
+            
+            if (!Arrays.asList(allowedReplacemants).contains(orginID)) { posY++; }
 
             if ((posY >= minY) && (posY <= maxY))
             {
-
-                int orginID = par1World.getBlockId(posX, posY, posZ);
                 
                 //System.out.println("ShDebug - spawner: posY-"+posY+" ID-"+orginID);
                 
@@ -57,7 +58,7 @@ public class ShWorldGenFlowers
                     
                     //System.out.println("ShDebug - spawner: Flower spawned: x:" + par3 +" y:"+ posY +" z:"+ par5);
                     
-                    if(!Block.blocksList[BlockFlowerID].canBlockStay(par1World, posX, posY, posZ))
+                    if(!Block.blocksList[BlockFlowerID].canBlockStay(par1World, posX, posY--, posZ))
                     {
                         par1World.setBlock(posX, posY, posZ, orginID, orginMeta, 2);
                     }
