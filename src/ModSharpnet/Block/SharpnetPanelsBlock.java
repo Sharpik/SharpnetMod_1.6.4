@@ -86,6 +86,12 @@ public class SharpnetPanelsBlock  extends BlockPane
     }
     
     @Override
+    public int damageDropped (int metadata)
+    {
+            return metadata;
+    }
+    
+    @Override
     @SideOnly(Side.CLIENT)
     public int getRenderBlockPass()
     {

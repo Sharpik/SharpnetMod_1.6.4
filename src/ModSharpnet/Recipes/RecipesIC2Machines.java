@@ -27,5 +27,10 @@ public class RecipesIC2Machines
         
         Recipes.extractor.addRecipe(new RecipeInputItemStack(new ItemStack(SharpnetFlaxSeeds,16,0)) , null, new ItemStack(Items.oil_cell,1,0) );
         
+        //Recycling of source products
+        Recipes.compressor.addRecipe(new RecipeInputItemStack(new ItemStack(Block.rail,16,0)) , null, new ItemStack(Item.ingotIron,6,0) );
+        Recipes.compressor.addRecipe(new RecipeInputItemStack(new ItemStack(Block.railPowered,6,0)) , null, new ItemStack(Item.ingotGold,6,0) );
+        Recipes.compressor.addRecipe(new RecipeInputItemStack(new ItemStack(Block.fenceIron,16,0)) , null, new ItemStack(Item.ingotIron,6,0) );
+        
     } 
 }

@@ -1,5 +1,6 @@
 package ModSharpnet.Recipes;
 
+import static ModSharpnet.ModSharpnet.SharpnetBushesBlocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.block.Block;
@@ -37,6 +38,8 @@ public class RecipesFlowers
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetFlowerBlocks2, 2,1), new ItemStack(SharpnetFlowerBlocks2, 1, 1), new ItemStack(Item.dyePowder, 1, 15));
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetFlowerBlocks2, 2,2), new ItemStack(SharpnetFlowerBlocks2, 1, 2), new ItemStack(Item.dyePowder, 1, 15));
         GameRegistry.addShapelessRecipe(new ItemStack(SharpnetFlowerBlocks2, 2,3), new ItemStack(SharpnetFlowerBlocks2, 1, 3), new ItemStack(Item.dyePowder, 1, 15));
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(SharpnetBushesBlocks, 2,0), new ItemStack(SharpnetBushesBlocks, 1, 0), new ItemStack(Item.dyePowder, 1, 15));
         
         
     } 
