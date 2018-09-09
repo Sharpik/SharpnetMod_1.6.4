@@ -32,6 +32,7 @@ import ModSharpnet.Events.*;
 import ModSharpnet.Item.*;
 import ModSharpnet.Block.*; 
 import ModSharpnet.Recipes.*;
+import static net.minecraft.block.Block.soundSnowFootstep;
 
 
 @Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.8", dependencies="required-after:IC2;required-after:BuildCraft|Core;required-after:ProjRed|Core")
@@ -291,6 +292,7 @@ public class ModSharpnet
         Blocks.lamps1_block_ID = config.get("Blocks", "lamps1_block", 2590).getInt();
         Blocks.garden_deco_block_ID = config.get("Blocks", "garden_deco_block", 2591).getInt();
         Blocks.flowerPot1_block_ID = config.get("Blocks", "flowerPot1_block", 2592).getInt();
+        Blocks.SharpnetSnowHillSnow_ID = config.get("Blocks", "snowhillsnow_block", 2593).getInt();
         
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
@@ -1271,6 +1273,17 @@ public class ModSharpnet
         GameRegistry.registerBlock(Blocks.flowerPot1_block, Blocks.flowerPot1_block.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(Blocks.flowerPot1_block, 1, 0), "SH. Flower Pot 1");
         */
+        
+        Blocks.SharpnetSnowHillSnow = new SharpnetSnowHillSnowBlocks(Blocks.SharpnetSnowHillSnow_ID, new String[][]
+        {
+            {"snow1","minecraft:snow"},
+            {"snow2","minecraft:snow"},
+            {"snow3","minecraft:snow"}
+        }).setUnlocalizedName("SharpnetSnowHillSnowBlocks").setHardness(0.2F).setResistance(0.0F).setCreativeTab(CreativeTabs.tabDecorations).setStepSound(Block.soundSnowFootstep);
+        GameRegistry.registerBlock(Blocks.SharpnetSnowHillSnow, SharpnetSnowHillSnowItemBlocks.class, Blocks.SharpnetSnowHillSnow.getUnlocalizedName());
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetSnowHillSnow, 1, 0), "Snow (Blue)");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetSnowHillSnow, 1, 1), "Snow (Red)");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetSnowHillSnow, 1, 2), "Snow (Black)");
         
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");

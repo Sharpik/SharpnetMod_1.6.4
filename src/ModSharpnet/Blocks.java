@@ -163,6 +163,9 @@ public class Blocks
     public static Block SharpnetStocks10000;
     public static int SharpnetStocks10000_ID;
     
+    public static Block SharpnetSnowHillSnow;
+    public static int SharpnetSnowHillSnow_ID;
+    
     //Project Red
     public static int PR_block_stonesID;
 }
