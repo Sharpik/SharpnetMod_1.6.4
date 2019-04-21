@@ -293,6 +293,7 @@ public class ModSharpnet
         Blocks.garden_deco_block_ID = config.get("Blocks", "garden_deco_block", 2591).getInt();
         Blocks.flowerPot1_block_ID = config.get("Blocks", "flowerPot1_block", 2592).getInt();
         Blocks.SharpnetSnowHillSnow_ID = config.get("Blocks", "snowhillsnow_block", 2593).getInt();
+        Blocks.SharpnetEasterCrossDeco_ID = config.get("Blocks", "easterCrossDeco_block", 2594).getInt();
         
         
         //Items ID (u itemů je třeba k ID načtenýmu z CFG odečítat 256 jinak dochází k desynchronizaci čísel s hrou)
@@ -411,6 +412,9 @@ public class ModSharpnet
         Items.barrel_ID = (config.get("Items", "barrel", 6563).getInt())-256;
         Items.barrel_of_wine_red_ID = (config.get("Items", "barrel_of_wine_red", 6564).getInt())-256;
         Items.barrel_of_wine_white_ID = (config.get("Items", "barrel_of_wine_white", 6651).getInt())-256;
+        
+        //ester items
+        Items.easter_items_ID = (config.get("Items", "easter_items", 6659).getInt())-256;
                 
         //Items Resources
         Items.roofing_tile_ID = (config.get("Items", "roofing_tile", 6543).getInt())-256;
@@ -1285,6 +1289,21 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetSnowHillSnow, 1, 1), "Snow (Red)");
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetSnowHillSnow, 1, 2), "Snow (Black)");
         
+        //ester blocks
+        Blocks.SharpnetEasterCrossDeco = new SharpnetCrossBlocksSubtypes(Blocks.SharpnetEasterCrossDeco_ID, Material.circuits, new String[][]
+        {
+            /* UnlocalizedName; Texture; BlockDropID; BlockDropMeta; BlockDropCount */
+            {"ester_egg_red", modid+":" + "ester/egg_block-red", ""+Items.easter_items_ID , "0", "1"},
+            {"ester_egg_blue", modid+":" + "ester/egg_block-blue", ""+Items.easter_items_ID , "1", "1"},
+            {"ester_egg_green", modid+":" + "ester/egg_block-green", ""+Items.easter_items_ID , "2", "1"},
+            {"ester_egg_yellow", modid+":" + "ester/egg_block-yellow", ""+Items.easter_items_ID , "3", "1"}
+        });
+        GameRegistry.registerBlock(Blocks.SharpnetEasterCrossDeco, SharpnetCrossBlocksSubtypesItemBlocks.class, "Ester Blocks");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetEasterCrossDeco, 1, 0), "Ester Egg Red");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetEasterCrossDeco, 1, 1), "Ester Egg Blue");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetEasterCrossDeco, 1, 2), "Ester Egg Green");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetEasterCrossDeco, 1, 3), "Ester Egg Yellow");
+        
         //Sharpnet Items
         SharpnetTomatoSeeds = new ShItemSeeds(SharpnetTomatoSeedsID, SharpnetPlantsBlocks1.blockID, Block.tilledField.blockID, 0).setUnlocalizedName("SharpnetTomatoSeedsItem").setTextureName(modid+":seeds/seeds_tomato");
         GameRegistry.registerItem(SharpnetTomatoSeeds, "Tomato Seeds");
@@ -1551,6 +1570,21 @@ public class ModSharpnet
         Items.liquid_sugar = (new Item(Items.liquid_sugar_ID).setUnlocalizedName("liquid_sugar").setTextureName(modid+":drinks&food/flask_sugar").setCreativeTab(CreativeTabs.tabMaterials));
         GameRegistry.registerItem(Items.liquid_sugar, "Liquid Sugar");
         LanguageRegistry.addName(new ItemStack(Items.liquid_sugar, 1, 0), "Liquid Sugar");
+        
+        //ester items
+        Items.easter_items = new ShItemPlacerSubtypes(Items.easter_items_ID, new String[][]
+        {
+            /* UnlocalizedName ; Texture ; BlockID ; BlockMeta */
+            {"ester_egg_red", modid+":" + "ester/egg-red", ""+Blocks.SharpnetEasterCrossDeco_ID , "0"},
+            {"ester_egg_blue", modid+":" + "ester/egg-blue", ""+Blocks.SharpnetEasterCrossDeco_ID , "1"},
+            {"ester_egg_green", modid+":" + "ester/egg-green", ""+Blocks.SharpnetEasterCrossDeco_ID , "2"},
+            {"ester_egg_yellow", modid+":" + "ester/egg-yellow", ""+Blocks.SharpnetEasterCrossDeco_ID , "3"}
+        }).setCreativeTab(CreativeTabs.tabDecorations);
+        GameRegistry.registerItem(Items.easter_items, "Ester Items");
+        LanguageRegistry.addName(new ItemStack(Items.easter_items, 1, 0), "Ester Egg Red");
+        LanguageRegistry.addName(new ItemStack(Items.easter_items, 1, 1), "Ester Egg Blue");
+        LanguageRegistry.addName(new ItemStack(Items.easter_items, 1, 2), "Ester Egg Green");
+        LanguageRegistry.addName(new ItemStack(Items.easter_items, 1, 3), "Ester Egg Yellow");
         
         //Records
         Items.CD_1 = new ShRecord(Items.CD_1_ID, "modsharpnet:cd1") .setTextureName(modid+":records/1") .setUnlocalizedName("cd1");

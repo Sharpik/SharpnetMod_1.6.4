@@ -29,6 +29,9 @@ public class Blocks
     public static Block flowerPot1_block;
     public static int flowerPot1_block_ID;
     
+    public static Block SharpnetEasterCrossDeco;
+    public static int SharpnetEasterCrossDeco_ID;
+    
     //ID TODO Blocks
     
     public static Block door1_block;
