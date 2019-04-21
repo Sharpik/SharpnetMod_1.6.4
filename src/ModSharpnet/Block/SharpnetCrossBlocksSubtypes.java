@@ -44,7 +44,7 @@ public class SharpnetCrossBlocksSubtypes extends Block
         this.block_variants = blocksInfo.length;
         this.UnlocalizedNames = new String[this.block_variants];
         this.textures = new String[this.block_variants];
-        this.BlockDropID = new int[this.block_variants];
+        this.BlockDropID = new int[this.block_variants]; // If it's return intem, ID should be bigger with + 256
         this.BlockDropMeta = new int[this.block_variants];
         this.BlockDropCount = new int[this.block_variants];
         
@@ -64,6 +64,8 @@ public class SharpnetCrossBlocksSubtypes extends Block
     @Override
     public void breakBlock(World world, int x, int y, int z, int BlockID, int BlockMeta)
     {
+        //Debug
+        //System.out.println("SHDebug: " + this.BlockDropID[BlockMeta] + "; " + this.BlockDropMeta[BlockMeta] + "; " + this.BlockDropCount[BlockMeta] );
         if (this.BlockDropCount[BlockMeta] > 0)
         {
             ItemStack SpawnedItemStack = new ItemStack(this.BlockDropID[BlockMeta], this.BlockDropCount[BlockMeta], this.BlockDropMeta[BlockMeta]);

@@ -1293,10 +1293,11 @@ public class ModSharpnet
         Blocks.SharpnetEasterCrossDeco = new SharpnetCrossBlocksSubtypes(Blocks.SharpnetEasterCrossDeco_ID, Material.circuits, new String[][]
         {
             /* UnlocalizedName; Texture; BlockDropID; BlockDropMeta; BlockDropCount */
-            {"ester_egg_red", modid+":" + "ester/egg_block-red", ""+Items.easter_items_ID , "0", "1"},
-            {"ester_egg_blue", modid+":" + "ester/egg_block-blue", ""+Items.easter_items_ID , "1", "1"},
-            {"ester_egg_green", modid+":" + "ester/egg_block-green", ""+Items.easter_items_ID , "2", "1"},
-            {"ester_egg_yellow", modid+":" + "ester/egg_block-yellow", ""+Items.easter_items_ID , "3", "1"}
+            {"ester_egg_red", modid+":" + "ester/egg_block-red", ""+(Items.easter_items_ID + 256) , "0", "1"},
+            {"ester_egg_blue", modid+":" + "ester/egg_block-blue", ""+(Items.easter_items_ID + 256) , "1", "1"},
+            {"ester_egg_green", modid+":" + "ester/egg_block-green", ""+(Items.easter_items_ID + 256) , "2", "1"},
+            {"ester_egg_yellow", modid+":" + "ester/egg_block-yellow", ""+(Items.easter_items_ID + 256) , "3", "1"},
+            {"ester_rabbit", modid+":" + "ester/rabbit_choco_block", ""+(Items.easter_items_ID + 256) , "4", "1"}
         });
         GameRegistry.registerBlock(Blocks.SharpnetEasterCrossDeco, SharpnetCrossBlocksSubtypesItemBlocks.class, "Ester Blocks");
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetEasterCrossDeco, 1, 0), "Ester Egg Red");
@@ -1578,13 +1579,15 @@ public class ModSharpnet
             {"ester_egg_red", modid+":" + "ester/egg-red", ""+Blocks.SharpnetEasterCrossDeco_ID , "0"},
             {"ester_egg_blue", modid+":" + "ester/egg-blue", ""+Blocks.SharpnetEasterCrossDeco_ID , "1"},
             {"ester_egg_green", modid+":" + "ester/egg-green", ""+Blocks.SharpnetEasterCrossDeco_ID , "2"},
-            {"ester_egg_yellow", modid+":" + "ester/egg-yellow", ""+Blocks.SharpnetEasterCrossDeco_ID , "3"}
+            {"ester_egg_yellow", modid+":" + "ester/egg-yellow", ""+Blocks.SharpnetEasterCrossDeco_ID , "3"},
+            {"ester_rabbit", modid+":" + "ester/rabbit_choco", ""+Blocks.SharpnetEasterCrossDeco_ID , "4"}
         }).setCreativeTab(CreativeTabs.tabDecorations);
         GameRegistry.registerItem(Items.easter_items, "Ester Items");
         LanguageRegistry.addName(new ItemStack(Items.easter_items, 1, 0), "Ester Egg Red");
         LanguageRegistry.addName(new ItemStack(Items.easter_items, 1, 1), "Ester Egg Blue");
         LanguageRegistry.addName(new ItemStack(Items.easter_items, 1, 2), "Ester Egg Green");
         LanguageRegistry.addName(new ItemStack(Items.easter_items, 1, 3), "Ester Egg Yellow");
+        LanguageRegistry.addName(new ItemStack(Items.easter_items, 1, 4), "Ester Choco Rabbit");
         
         //Records
         Items.CD_1 = new ShRecord(Items.CD_1_ID, "modsharpnet:cd1") .setTextureName(modid+":records/1") .setUnlocalizedName("cd1");
