@@ -31,5 +31,7 @@ public class RecipesTools
             'W', Block.planks, 'S', Item.stick, 'I', Item.ingotIron
         });
         
+        //easter
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.rejuvenation_rod, 1, 0), new ItemStack(Item.swordWood, 1, 0), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(Item.dyePowder, 1, 4), new ItemStack(Item.dyePowder, 1, 11));
     } 
 }

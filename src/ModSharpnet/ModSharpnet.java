@@ -33,9 +33,11 @@ import ModSharpnet.Item.*;
 import ModSharpnet.Block.*; 
 import ModSharpnet.Recipes.*;
 import static net.minecraft.block.Block.soundSnowFootstep;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.ItemSword;
 
 
-@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.8", dependencies="required-after:IC2;required-after:BuildCraft|Core;required-after:ProjRed|Core")
+@Mod(modid="ModSharpnet", name="SharpnetMod", version="1.0.9", dependencies="required-after:IC2;required-after:BuildCraft|Core;required-after:ProjRed|Core")
 @NetworkMod(clientSideRequired=true, serverSideRequired=true)
 
 public class ModSharpnet
@@ -415,6 +417,7 @@ public class ModSharpnet
         
         //ester items
         Items.easter_items_ID = (config.get("Items", "easter_items", 6659).getInt())-256;
+        Items.rejuvenation_rod_ID = (config.get("Items", "rejuvenation_rod", 6660).getInt())-256;
                 
         //Items Resources
         Items.roofing_tile_ID = (config.get("Items", "roofing_tile", 6543).getInt())-256;
@@ -1588,6 +1591,11 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Items.easter_items, 1, 2), "Ester Egg Green");
         LanguageRegistry.addName(new ItemStack(Items.easter_items, 1, 3), "Ester Egg Yellow");
         LanguageRegistry.addName(new ItemStack(Items.easter_items, 1, 4), "Ester Choco Rabbit");
+        
+        Items.rejuvenation_rod = (new ItemSword(Items.rejuvenation_rod_ID, EnumToolMaterial.WOOD)).setUnlocalizedName("rejuvenation_rod")
+            .setTextureName(modid+":" + "ester/rejuvenation_rod").setMaxDamage(128);
+        GameRegistry.registerItem(Items.rejuvenation_rod, "rejuvenation_rod");
+        LanguageRegistry.addName(new ItemStack(Items.rejuvenation_rod, 1, 0), "Rejuvenation Rod");
         
         //Records
         Items.CD_1 = new ShRecord(Items.CD_1_ID, "modsharpnet:cd1") .setTextureName(modid+":records/1") .setUnlocalizedName("cd1");

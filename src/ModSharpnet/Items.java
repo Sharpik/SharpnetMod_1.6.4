@@ -511,6 +511,9 @@ public class Items
     public static Item easter_items;
     public static int easter_items_ID;
     
+    public static Item rejuvenation_rod;
+    public static int rejuvenation_rod_ID;
+    
     //doors
     public static Item door1_block_item;
     public static int door1_block_item_ID;
