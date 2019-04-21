@@ -1926,6 +1926,7 @@ public class ModSharpnet
         RecipesLamps.register();
         RecipesDecoBlocks.register();
         RecipesIC2Machines.register();
+        RecipesMelting.register();
         
         GameRegistry.registerFuelHandler(new Fuels());
         

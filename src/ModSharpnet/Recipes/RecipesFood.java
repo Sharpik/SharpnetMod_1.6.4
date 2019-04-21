@@ -47,6 +47,13 @@ public class RecipesFood
         
         GameRegistry.addShapelessRecipe(new ItemStack(Items.salad_fillet, 1,0), new ItemStack(Items.salad, 1, 0), new ItemStack(Items.fillet, 1, 0));
         
+        //Easter
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.easter_items, 1,0), new ItemStack(Item.egg, 1, 0), new ItemStack(Item.dyePowder, 1, 1));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.easter_items, 1,1), new ItemStack(Item.egg, 1, 0), new ItemStack(Item.dyePowder, 1, 4));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.easter_items, 1,2), new ItemStack(Item.egg, 1, 0), new ItemStack(Item.dyePowder, 1, 2));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.easter_items, 1,3), new ItemStack(Item.egg, 1, 0), new ItemStack(Item.dyePowder, 1, 11));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.easter_items, 1,4), new ItemStack(Item.egg, 1, 0), new ItemStack(Items.chocolate, 1, 0));
+        
         GameRegistry.addRecipe(new ItemStack(Items.catchup,1,0), new Object[]
         {
             "TTT",
