@@ -1085,18 +1085,18 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 1), "8 Euro");
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 2), "Money Bag 81C");
         LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 3), "Money Bag 72E");
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 4), "Money stack 9x10E");
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 5), "Money stack 9x100E");
-        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 6), "Money stack 9x1000E");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 4), "Money stack 90E");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 5), "Money stack 900E");
+        LanguageRegistry.addName(new ItemStack(Blocks.SharpnetMoneyBlock, 1, 6), "Money stack 9000E");
         
         Blocks.deco1_block = new SharpnetDecoBlocks1(Blocks.deco1_block_ID).setUnlocalizedName("SharpnetDecorationBlocks");
         GameRegistry.registerBlock(Blocks.deco1_block, SharpnetDecoItemBlocks1.class, Blocks.deco1_block.getUnlocalizedName());
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 0), "Barrel");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 1), "Barrel of red Vine");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 2), "Barrel of white Vine");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 3), "Money Pallet 10E");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 4), "Money Pallet 100E");
-        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 5), "Money Pallet 1000E");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 3), "Money Pallet 810E");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 4), "Money Pallet 8100E");
+        LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 5), "Money Pallet 81000E");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 6), "Roulette");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 7), "Roulette table - Red");
         LanguageRegistry.addName(new ItemStack(Blocks.deco1_block, 1, 8), "Roulette table - Black");
@@ -1578,16 +1578,16 @@ public class ModSharpnet
         LanguageRegistry.addName(new ItemStack(Items.money1000eu, 1, 0), "1000eu");
         
         Items.stack_9x10euMoneys = (new ShItemPlacer(Items.stack_9x10euMoneys_ID, Blocks.SharpnetMoneyBlock.blockID,4).setUnlocalizedName("stack_9x10euMoneys").setTextureName(modid+":resources/10E_stack").setCreativeTab(CreativeTabs.tabDecorations));
-        GameRegistry.registerItem(Items.stack_9x10euMoneys, "Stack of 900Eu");
-        LanguageRegistry.addName(new ItemStack(Items.stack_9x10euMoneys, 1, 0), "Stack of 900Eu");
+        GameRegistry.registerItem(Items.stack_9x10euMoneys, "Stack of 90Eu");
+        LanguageRegistry.addName(new ItemStack(Items.stack_9x10euMoneys, 1, 0), "Stack of 90Eu");
         
         Items.stack_9x100euMoneys = (new ShItemPlacer(Items.stack_9x100euMoneys_ID, Blocks.SharpnetMoneyBlock.blockID,5).setUnlocalizedName("stack_9x100euMoneys").setTextureName(modid+":resources/100E_stack").setCreativeTab(CreativeTabs.tabDecorations));
-        GameRegistry.registerItem(Items.stack_9x100euMoneys, "Stack of 9000Eu");
-        LanguageRegistry.addName(new ItemStack(Items.stack_9x100euMoneys, 1, 0), "Stack of 9000Eu");
+        GameRegistry.registerItem(Items.stack_9x100euMoneys, "Stack of 900Eu");
+        LanguageRegistry.addName(new ItemStack(Items.stack_9x100euMoneys, 1, 0), "Stack of 900Eu");
         
         Items.stack_9x1000euMoneys = (new ShItemPlacer(Items.stack_9x1000euMoneys_ID, Blocks.SharpnetMoneyBlock.blockID,6).setUnlocalizedName("stack_9x1000euMoneys").setTextureName(modid+":resources/1000E_stack").setCreativeTab(CreativeTabs.tabDecorations));
-        GameRegistry.registerItem(Items.stack_9x1000euMoneys, "Stack of 90000Eu");
-        LanguageRegistry.addName(new ItemStack(Items.stack_9x1000euMoneys, 1, 0), "Stack of 90000Eu");
+        GameRegistry.registerItem(Items.stack_9x1000euMoneys, "Stack of 9000Eu");
+        LanguageRegistry.addName(new ItemStack(Items.stack_9x1000euMoneys, 1, 0), "Stack of 9000Eu");
         
         Items.sgros = (new Item(Items.sgros_ID).setUnlocalizedName("sgros").setTextureName(modid+":resources/gros_s").setCreativeTab(CreativeTabs.tabDecorations));
         GameRegistry.registerItem(Items.sgros, "Stribrnak");
